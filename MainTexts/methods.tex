@@ -1,0 +1,29 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Methods}
+\label{methods}
+
+
+\subsection{Screening coronavirus long-range interactions computationally}
+\label{screen_lri_comp}
+
+All coronaviruses with reference genomes in the NCBI Reference Sequence Database~\cite{OLeary2016} were searched for using the following query:
+\begin{verbatim}
+refseq[filter] AND ("Alphacoronavirus"[Organism] OR
+                    "Betacoronavirus"[Organism] OR
+                    "Gammacoronavirus"[Organism] OR
+                    "Deltacoronavirus"[Organism])
+\end{verbatim}
+The complete record of every reference genome was downloaded both in FASTA format (for the reference sequence) and in Feature Table format (for feature locations).
+The location of the frameshift stimulating element (FSE) in each genome was estimated from the feature table, and the nearest instance of \verb|TTTAAAC| was used as the slippery site, using a custom Python script.
+The 2,000 nt segment beginning 100 nt upstream of and ending 1,893 nt downstream of the slippery site was used for predicting long-range interactions involving the FSE.
+Genomes with ambiguous nucleotides (e.g. \verb|N|) in this segment were discarded.
+For each coronavirus genome, up to 100 secondary structure models of the 2,000 nt segment were generated using Fold version 6.3 from RNAstructure~\cite{Mathews2004a} with \verb|-M 100| and otherwise default parameters.
+Then, for each position, the fraction of models for the coronavirus in which the base at the position paired with any other base between positions 101 (the first base of the slippery sequence) and 250 was calculated using a custom Python script.
+The coronaviruses were clustered by their fraction vectors using the unweighted pair group method with arithmetic mean (UPGMA) and a euclidean distance metric, implemented in Seaborn version 0.11~\cite{Waskom2021} and SciPy version 1.7~\cite{Virtanen2020}.
+The resulting hierarchically-clustered heatmap was examined manually to select coronaviruses based on the prominence of potential long-range interactions with the FSE (relatively large fractions far from positions 101-250).
+
+\end{document}
