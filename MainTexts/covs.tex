@@ -6,8 +6,8 @@
 
 \subsection{Frameshift stimulating elements of multiple coronaviruses form long-range RNA--RNA interactions}
 
-Within the genomes of many RNA viruses, long-range RNA--RNA interactions regulate core processes such as viral protein synthesis~\cite{Nicholson2014}.
-In SARS coronavirus 2 (SARS-CoV-2), the frameshift stimulating element (FSE) base pairs with another genomic element over 1,000 nt downstream~\cite{Ziv2020}.
+Long-range RNA--RNA interactions in many species of virus regulate core processes such as viral protein synthesis~\cite{Nicholson2014}.
+In SARS coronavirus 2 (SARS-CoV-2), the frameshift stimulating element (FSE) was shown to base pair with another genomic element over 1,000 nt downstream~\cite{Ziv2020}.
 For its length, this RNA--RNA interaction appears surprisingly favorable, forming in approximately half of the genomic RNA molecules within infected cells~\cite{Lan2022}.
 Although the FSE is essential for synthesizing five viral proteins including the RNA polymerase, the function (if any) of the long-range interaction it forms remains unknown~\cite{Allan2023}.
 
@@ -18,8 +18,8 @@ To test this hypothesis, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799
 \subsubsection{Computational and experimental screening identifies eight coronaviruses with potential long-range interactions}
 
 As of December 2021, the NCBI Reference Sequence Database~\cite{OLeary2016} contained sixty-two complete genomes of coronaviruses.
-To focus on those likely to have long-range interactions involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE.
-Based on these predicted interactions (SFIG), we selected ten coronaviruses (including SARS-CoV-2) for further study -- at least one from each genus.
+To focus on those likely to have long-range interactions involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE (SFIG).
+Based on these predicted interactions, we selected ten coronaviruses (including SARS-CoV-2) for further study -- at least one from each genus (SFIG).
 Within the genus \textit{Betacoronavirus}, we included all three of the SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup, distinct from all other coronaviruses.
 The other three strains of \textit{Betacoronavirus} that we selected were MERS coronavirus (\verb|NC_019843.3|) with a predicted interaction at positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both with a predicted upstream interaction at positions 10-20.
 We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have interactions at positions 440-460 and 350-360, respectively.
@@ -32,14 +32,14 @@ All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed 
 
 \subsubsection{SEARCH-MaP reveals long-range interactions involving the FSE in four coronaviruses}
 
-To determine whether the FSE forms a long-range interaction with another RNA element -- and if so, which element -- in each coronavirus, we performed SEARCH-MaP on the 1,799 nt RNA segment using FSE-targeted ASOs.
-We computed the Spearman correlation using a sliding window between the DMS reactivities with and without ASOs (Figure \ref{fig3}).
+To determine whether the FSE interacts with another RNA element -- and if so, which -- in each coronavirus, we performed SEARCH-MaP on the 1,799 nt RNA segment using two ASOs targeting the FSE.
+We generated the mutational profile for each segment using SEISMIC-RNA, then calculated the Spearman correlation between the +ASO and --ASO conditions using a sliding window (Figure \ref{covs}).
 [HOW MANY] coronaviruses 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\includegraphics[height=0.95\textheight]{../MainFigures/fig3.pdf}
 	\caption{}
-	\label{fig3}
+	\label{covs}
 \end{figure}
 
 
