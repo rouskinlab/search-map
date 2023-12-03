@@ -1,0 +1,24 @@
+{
+    "Name of Sample": "long1",
+    "Name of Reference": "MERS_1799",
+    "Number of Reads": 77967,
+    "Number of Batches": 3,
+    "MD5 Checksums of Batches": {
+        "relate": [
+            "ab9e8b3d7094496fe338dfc709d5e5f6",
+            "a8603593e8140a7fb0777a06bed3a040",
+            "d0f863a0451c65f2f18b5d35e9fa4561"
+        ],
+        "qnames": [
+            "da01af9868516863b70d83c2edecc08f",
+            "8e7c49b146752587b4ae845836e9add5",
+            "5932946cc8ec9330d988f78f6bba3b5d"
+        ]
+    },
+    "MD5 Checksum of Reference Sequence File": "63376e6c127678c8dd846153015362c9",
+    "Branches": [],
+    "Time Began": "2023-12-02 at 19:07:34",
+    "Time Ended": "2023-12-02 at 19:08:42",
+    "Time Taken (minutes)": 1.15,
+    "Version of SEISMIC-RNA": "0.10.0"
+}
