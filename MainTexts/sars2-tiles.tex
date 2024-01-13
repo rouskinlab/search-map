@@ -1,0 +1,29 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+
+
+\subsection{}
+
+Having demonstrated that SEARCH-MaP can find well-known long-range RNA--RNA interactions in ribosomal RNA, we next sought to apply it to viral RNA.
+Long-range RNA--RNA interactions in many species of virus regulate core processes such as viral protein synthesis~\cite{Nicholson2014}.
+In SARS coronavirus 2 (SARS-CoV-2), the frameshift stimulating element (FSE) was shown to base pair with another genomic element over 1,000 nt downstream~\cite{Ziv2020}.
+For its length, this RNA--RNA interaction appears surprisingly favorable, forming in approximately half of the genomic RNA molecules within infected cells~\cite{Lan2022}.
+
+To determine whether we could detect this interaction with SEARCH-MaP, we first \textit{in vitro} transcribed and performed DMS-MaPseq on a 2.9 kb segment of the SARS-CoV-2 genome centered on the long-range interaction.
+Using SEISMIC-RNA, we clustered the data to determine alternative structures and found that they were not only reproducible between replicates but also highly similar to the two clusters from our previous experiment with infected cells~\cite{Lan2022}.
+Therefore, the 2.9 kb RNA segment provides a good model for studying the long-range interaction in SARS-CoV-2.
+Furthermore, it shows that the long-range interaction is an intrinsic characteristic of the RNA, requiring no proteins or other cellular/viral factors.
+
+To determine whether we could detect this interaction with SEARCH-MaP, we tiled ASOs across a 2.9 kb segment of the SARS-CoV-2 genome centered on the long-range interaction (Figure).
+After adding each set of ASOs, we performed DMS-MaPseq using primers targeting the FSE.
+Only ASOs targeting the distant part of the long-range interaction perturbed the structure of the FSE.
+To confirm, we added ASOs to the FSE and found that the structure on the other side of the interaction also changed.
+
+After adding these ASOs, the mutational profile correlated well with the mutational profile of one cluster, but not of the other, indicating that these clusters correspond to the long-range interaction unformed and formed.
+Indeed, comparing the mutational profiles to an independently published model of the long-range interaction~\cite{Ziv2020} confirmed that these clusters are indeed the unformed and formed interactions.
+Thus, we found that a 2.9 kb segment of the SARS-CoV-2 genome forms the same long-range interaction as in infected cells; we were able to detect it with SEARCH-MaP and determine which mutational profile corresponds to the interaction formed or unformed.
+
+
+\end{document}

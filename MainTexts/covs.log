@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.4)  2 DEC 2023 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.4)  10 JAN 2024 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -404,41 +404,19 @@ LaTeX Font Info:    Font shape `OT1/lato-TLF/m/n' will be
 (Font)              scaled to size 17.28pt on input line 7.
 LaTeX Font Info:    Font shape `OT1/lato-TLF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `OT1/lato-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 9.
-
-
-Package natbib Warning: Citation `Nicholson2014' on page 1 undefined on input l
-ine 9.
-
-
-Package natbib Warning: Citation `Ziv2020' on page 1 undefined on input line 10
-.
-
-
-Package natbib Warning: Citation `Lan2022' on page 1 undefined on input line 11
-.
-
-
-Package natbib Warning: Citation `Allan2023' on page 1 undefined on input line 
-12.
-
-
-Overfull \hbox (2.91211pt too wide) in paragraph at lines 14--16
-[]\OT1/lato-TLF/m/n/12 We hy-poth-e-sized that if the long-range in-ter-ac-tion
- is func-tional, then other SARS-related
- []
-
 LaTeX Font Info:    Font shape `OT1/lato-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 18.
+(Font)              scaled to size 14.4pt on input line 13.
 LaTeX Font Info:    Font shape `OT1/lato-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 18.
+(Font)              scaled to size 14.4pt on input line 13.
+LaTeX Font Info:    Font shape `OT1/lato-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 15.
+
 
 Package natbib Warning: Citation `OLeary2016' on page 1 undefined on input line
- 20.
+ 15.
 
 LaTeX Font Info:    Font shape `OT1/lato-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 23.
+(Font)              scaled to size 12.0pt on input line 18.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -446,18 +424,26 @@ al/texlive/2023/texmf-dist/fonts/enc/dvips/lato/a_y72t7m.enc}{/usr/local/texliv
 e/2023/texmf-dist/fonts/enc/dvips/lato/a_vc7epu.enc}]
 
 Package natbib Warning: Citation `Zubradt2016' on page 2 undefined on input lin
-e 29.
+e 24.
 
 
+Package natbib Warning: Citation `Ziv2020' on page 2 undefined on input line 34
+.
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../MainFigures/fig3.pdf): PD
-F inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<../MainFigures/fig3.pdf, id=26, 497.92322pt x 845.0471pt>
-File: ../MainFigures/fig3.pdf Graphic file (type pdf)
-<use ../MainFigures/fig3.pdf>
-Package pdftex.def Info: ../MainFigures/fig3.pdf  used on input line 40.
-(pdftex.def)             Requested size: 364.10393pt x 617.90651pt.
 [2]
+
+Package natbib Warning: Citation `Mathews2004a' on page 3 undefined on input li
+ne 46.
+
+
+Package natbib Warning: Citation `Cordero2012' on page 3 undefined on input lin
+e 46.
+
+<../MainFigures/covs/covs.pdf, id=31, 512.1496pt x 768.22438pt>
+File: ../MainFigures/covs/covs.pdf Graphic file (type pdf)
+<use ../MainFigures/covs/covs.pdf>
+Package pdftex.def Info: ../MainFigures/covs/covs.pdf  used on input line 53.
+(pdftex.def)             Requested size: 411.95526pt x 617.90651pt.
 
 Package natbib Warning: There were undefined citations.
 
@@ -466,27 +452,27 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.46 \end{document}
-                    <../MainFigures/fig3.pdf>] (./covs.aux)
+l.59 \end{document}
+                    <../MainFigures/covs/covs.pdf>] (./covs.aux)
 Package rerunfilecheck Info: File `covs.out' has not changed.
-(rerunfilecheck)             Checksum: F48B2733D3837E3D2A2D3117954A8BDE;1699.
+(rerunfilecheck)             Checksum: E4949025777ACB8D6BF803475EC105EA;1699.
  ) 
 Here is how much of TeX's memory you used:
- 10489 strings out of 476025
- 170502 string characters out of 5790018
- 1862388 words of memory out of 5000000
+ 10488 strings out of 476025
+ 170533 string characters out of 5790018
+ 1860388 words of memory out of 5000000
  30786 multiletter control sequences out of 15000+600000
  541439 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,6n,92p,696b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,6n,92p,696b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/typoland/lato/Lato-Bold.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/typoland/lato/Lato-Italic.pfb></
 usr/local/texlive/2023/texmf-dist/fonts/type1/typoland/lato/Lato-Regular.pfb></
 usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on covs.pdf (4 pages, 546273 bytes).
+Output written on covs.pdf (4 pages, 422732 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  9 named destinations out of 1000 (max. 500000)
  30 words of extra memory for PDF output out of 10000 (max. 10000000)
 
