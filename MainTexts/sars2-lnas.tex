@@ -65,6 +65,19 @@ We predict the following results if the pseudoknot and the long-range interactio
 - +Anti-long and +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure
 - +Anti-long and +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure
 
+We first used SEISMIC-RNA to cluster each replicate without ASOs with 1 to 8 clusters and found that they generated reproducible results up to 6 clusters, but not with more, suggesting that the RNA forms 6 predominant structural states.
+For each of these states, we computed the AUC-ROC versus a model of the FSE pseudoknot from another study~\cite{KZhang2021}.
+Only one state came close to agreeing with the pseudoknot (AUC = 0.88); it was the least abundant state in the ensemble (only 7\%) and was also inconsistent with the long-range interaction (AUC = 0.70).
+
+When we blocked AS1 before folding the RNA, we found that it formed two structures: one (59\% abundance) highly consistent with the pseudoknot (AUC = 0.96) but not the long-range interaction (AUC = 0.59), and another (41\% abundance) more consistent with the long-range interaction (AUC = 0.80) than the pseudoknot (AUC = 0.75).
+We obtained similar, though slightly more pronounced, results when we added the anti-AS1 ASO after folding the RNA.
+These results show that blocking AS1 does enable the pseudoknot to fold, mutually exclusively with the long-range interaction.
+
+Blocking the base pairs between the pseudoknot stem 2 and the long-range stem resulted, to our surprise, in a pseudoknot-like structure (AUC = 0.92) being detectible with only two clusters, at an abundance of 17\% (the other cluster had an AUC of 0.69).
+Increasing to three clusters split the non-pseudoknot cluster into 49\% long-range conformation (albeit with the ASO-targeted stem perturbed) and 34\% non-long-range conformation; the pseudoknot-like cluster was unchanged.
+Interestingly, the pseudoknot-like state was more consistent with the long-range interaction forming, which is the opposite of what we observed in the no-ASO condition.
+This suggests that when the long-range interaction forms, it inhibits the pseudoknot stem specifically with the base pairs that this ASO targeted.
+It also shows that the remainder of the long-range interaction can still form even when these inhibiting base pairs are blocked -- thus the formation of the long-range interaction can be "decoupled" from blocking the pseudoknot by blocking the long-range base pairs that inhibit the pseudoknot.
 
 
 \end{document}
