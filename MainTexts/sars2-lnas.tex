@@ -4,80 +4,51 @@
 \begin{document}
 
 
-\subsection{Improving the model of the SARS-CoV-2 long-range interaction}
+\subsection{The frameshifting pseudoknot competes with the long-range interaction}
 
-Clustering the mutational profile of the long-range interaction formed state enabled us to refine the model of the long-range interaction in SARS-CoV-2.
-We predicted the structure of a 1,799 nt segment of the genome centered on the long-range interaction, using the DMS reactivities of the clusters .
+We refined the model of the long-range interaction using the mutational profiling data from both clusters that corresponded to this interaction forming (Figure \ref{tiles}c, d).
+We predicted the structure of a 1,799 nt segment of the genome centered on the long-range interaction using RNAstructure Fold \cite{Mathews2004a}.
+The minimum free energy structure (Figure \ref{lnas}) contained not only the two inner stems of the FSE-arch (LS1 and LS2a/b) but also two additional stems that were not part of the original FSE-arch model~\cite{Ziv2020} (LS3a/b and LS4).
+The structure also contained the alternative stem 1 (AS1) that we had previously discovered~\cite{Lan2022}, which encircles the attenuator hairpin (AH)~\cite{Su2005}.
+Because we had collected DMS-MaPseq data on both ends of LS3a/b, but only the 5' end of LS4, we focused on LS3a/b.
 
-To verify the predicted structures, we performed SEARCH-MaP on the 1,799 nt segment, this time with shorter ASOs (15-20 nt) to reach single-stem precision.
+To our surprise, LS2b, LS3a/b, and LS4 of the new model penetrate into structures within the FSE pseudoknot that is widely thought to stimulate frameshifting -- LS2b overlaps with PS2, LS3 with PS3, and LS4 with PS1.
+We had previously shown that AS1 also overlaps with and seems to outcompete PS1~\cite{Lan2022}.
+If these stems existed, then they would be mutually exclusive with the FSE pseudoknot, which suggests that the long-range interaction could inhibit the formation of the pseudoknot and possibly regulate the rate of frameshifting.
+
+Thus, we verified these structures of the long-range interaction using SEARCH-MaP.
+We performed SEARCH-MaP on the same 1,799 nt segment for which we had predicted the structure, this time with shorter LNA/DNA mixmer ASOs (15-20 nt) to reach single-stem precision.
 Each ASO targeted a single stem in the downstream portion of the interaction, and we measured the change in DMS reactivities of the FSE.
-ASOs targeting the inner stem and the outer half of the middle stem perturbed the DMS reactivities in exactly the anticipated locations.
-The other ASOs also perturbed the DMS reactivities at the anticipated location with additional other off-target perturbations that were likely due to the other parts of the structure rearranging as a consequence of the primary perturbation from the ASO.
-These results show that each stem in the refined model of the long-range interaction does exist and can be detected with SEARCH-MaP -- sometimes cleanly and sometimes with other off-target effects.
-It appears that combining SEARCH-MaP data and computational modeling based on SEISMIC-RNA clustering out the long-range mutational profile offers better ability of finding long-range interactions than either technique alone.
-SEARCH-MaP compensates for the known difficulties in modeling long-range interactions computationally [CITE sources], while the predictions based on the long-range mutational profile found with SEISMIC-RNA can reveal the base pairs involved in the long-range interaction and compensate for secondary effects during SEARCH-MaP.
+ASOs targeting the 3' sides of LS1 and LS2a perturbed the DMS reactivities in exactly the expected locations on the 5' sides (Figure \ref{lnas}b).
+Binding an ASO to the 3' side of LS2b caused a larger perturbation with more off-target effects, likely because this stem overlaps with stem 2 of the pseudoknot (PS2), so blocking it with an ASO could promote pseudoknot formation.
+Blocking LS3b also resulted in a main effect around the intended location, with one off-target effect upstream, suggesting that there may be another RNA--RNA interaction with the pseudoknot and this upstream region.
+These results show that stems LS1, LS2a/b, and LS3b in the refined model of the long-range interaction do exist and can be detected with SEARCH-MaP -- cleanly if the stem does not interact with anything else, otherwise with off-target effects.
 
-\subsection{The long-range interaction inhibits the FSE pseudoknot}
+Assuming that all stems in Figure \ref{lnas}a do exist, we found that there are six possible structure models resulting from all possible combinations of non-overlapping stems (Figure \ref{lnas}c).
+We ordered these models from most long-range character (A) to most pseudoknot-like character (F).
+We then determined whether each model actually exists in the ensemble and estimated its proportion.
 
-The refined model of the long-range interaction recapitulated the inner and middle stems of the previously proposed FSE-arch~\cite{Ziv2020}.
-The outer stem differed -- rather than occur before the FSE, it was actually predicted to overlap the FSE, suggesting that it would be mutually exclusive with some structures in the FSE.
-Specifically, the bases predicted to form stem 2 of the pseudoknot -- essential for frameshifting [CITE mutational studies] -- were predicted to participate in the long-range interaction.
-This finding suggests that the long-range interaction would prevent the FSE pseudoknot from forming.
+We found that our no-ASO control clustered reproducibly up to 6 clusters (SFIG).
+For each cluster, we found how well it agreed with each structure model by calculating the area under the receiver operating characteristic curve (AUC-ROC).
+We graph the results as a heatmap with clusters on the x-axis, in order of and their widths indicating their proportions in the ensemble, and the models on the y-axis.
+We consider a cluster and model to be consistent with each other if the AUC-ROC is at least 0.90, and explicitly print all such AUC-ROC values.
+We found that model C -- in which AS1 folds along with stems PS2 and PS3 of the pseudoknot -- was consistent with three clusters representing 52\% of the ensemble (Figure \ref{lnas}d, top).
+Model A -- where the full long-range interaction forms -- was consistent with one cluster (20\%).
+No clusters were consistent with the pseudoknot (Model F); the least-abundant cluster (7\%) came close with an AUC-ROC of 0.88.
+The remaining cluster (21\%) was not even close to being consistent with any model, suggesting that there are still other structures in the ensemble besides those in Figure \ref{lnas}c.
 
-To test this hypothesis, we used one ASO that targeted specifically the six base pairs that would be mutually exclusive with the pseudoknot stem 2 and one ASO to disrupt alternative stem 1 (AS1), which competes with pseudoknot stem 1~\cite{Lan2022}.
-Because AS1 strongly outcompetes with the pseudoknot (such that it is the predominant structure even without the long-range interaction)~\cite{Lan2022}, we expected that we would not detect the pseudoknot without the anti-AS1 ASO.
-Adding this ASO before folding the RNA should enable the pseudoknot to form unless another structure (e.g. the long-range interaction) outcompetes it.
-Adding this ASO after folding the RNA should enable the pseudoknot to form only if it can outcompete all other structures (e.g. the long-range interaction) that could inhibit it.
+These results suggested to us that the primary competitors of the pseudoknot are AS1 and LS2b, since both are present in the most abundant model, C (52\%), while LS3 and LS4 fold in model A, which is only 20\% of the ensemble.
+We thus reasoned that if the long-range interaction does actually compete with the pseudoknot, then blocking AS1 and LS2b simultaneously should allow the pseudoknot to fold, while blocking either would have a much smaller effect on the pseudoknot.
+To test this hypothesis, we repeated the above experiment while adding an ASO targeting either AS1 or just the part of LS2b that overlaps with the pseudoknot, or both ASOs together.
+Blocking AS1 (Figure \ref{lnas}d, left) reduced the proportion of clusters consistent with AS1 (Models A, B, and C) from 72\% to 16\%, as expected; it also resulted in two clusters consistent with the pseudoknot (56\% total) and one cluster (20\%) consistent with Model D, which includes PS1.
+Blocking the part of LS2b that seems to overlap with PS2 (Figure \ref{lnas}d, right) eliminated Model A but not Model C (as expected, since Model A includes LS2b, while Model C does not), and also produced one cluster (13\%) that was consistent with the pseudoknot.
+Blocking both AS1 and LS2b together (Figure \ref{lnas}d, bottom) forced the entire ensemble into the pseudoknot state, with 87\% of the ensemble highly consistent with Model F (AUC-ROC = 0.97) and the remaining 13\% still somewhat consistent (AUC-ROC = 0.87).
+Thus, we conclude that the long-range interaction -- particularly LS2b -- along with AS1, does compete with the pseudoknot.
 
-We predict the following results if the long-range interaction outcompetes the pseudoknot:
-
-- Control: Roughly 50/50 mix of long-range formed and unformed structures; no detectible pseudoknot
-- +Anti-AS1, before folding: Roughly 50/50 mix of long-range formed and unformed structures (but with unfolded AS1 and possibly folded PS1); no detectible pseudoknot in any long-range cluster
-- +Anti-AS1, after folding: Roughly 50/50 mix of long-range formed and unformed structures (but with unfolded AS1 and possibly folded PS1); no detectible pseudoknot in any long-range cluster
-- +Anti-long: Mix of long-range formed and unformed structures (formed will have a different structure and may be less abundant than usual); no detectible pseudoknot
-- +Anti-long and +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure
-- +Anti-long and +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure
-
-We predict the following results if the pseudoknot outcompetes the long-range interaction:
-
-- Control: Roughly 50/50 mix of long-range formed and unformed structures; no detectible pseudoknot
-- +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure that is not long-range
-- +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure that is not long-range
-- +Anti-long: Mix of long-range formed and unformed structures (formed will have a different structure and may be less abundant than usual); no detectible pseudoknot
-- +Anti-long and +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure
-- +Anti-long and +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure
-
-We predict the following results if the two structures are mutually exclusive and the first formed structure prevents the other from forming:
-
-- Control: Roughly 50/50 mix of long-range formed and unformed structures; no detectible pseudoknot
-- +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure that is not long-range
-- +Anti-AS1, after folding: Roughly 50/50 mix of long-range formed and unformed structures (but with unfolded AS1 and possibly folded PS1); no detectible pseudoknot in any long-range cluster
-- +Anti-long: Mix of long-range formed and unformed structures (formed will have a different structure and may be less abundant than usual); no detectible pseudoknot
-- +Anti-long and +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure
-- +Anti-long and +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure
-
-We predict the following results if the pseudoknot and the long-range interaction are not mutually exclusive:
-
-- Control: Roughly 50/50 mix of long-range formed and unformed structures; no detectible pseudoknot
-- +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure that may be long-range
-- +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure that may be long-range
-- +Anti-long: Mix of long-range formed and unformed structures (formed will have a different structure and may be less abundant than usual); no detectible pseudoknot
-- +Anti-long and +Anti-AS1, before folding: Pseudoknot detectible in at least one alternative structure
-- +Anti-long and +Anti-AS1, after folding: Pseudoknot detectible in at least one alternative structure
-
-We first used SEISMIC-RNA to cluster each replicate without ASOs with 1 to 8 clusters and found that they generated reproducible results up to 6 clusters, but not with more, suggesting that the RNA forms 6 predominant structural states.
-For each of these states, we computed the AUC-ROC versus a model of the FSE pseudoknot from another study~\cite{KZhang2021}.
-Only one state came close to agreeing with the pseudoknot (AUC = 0.88); it was the least abundant state in the ensemble (only 7\%) and was also inconsistent with the long-range interaction (AUC = 0.70).
-
-When we blocked AS1 before folding the RNA, we found that it formed two structures: one (59\% abundance) highly consistent with the pseudoknot (AUC = 0.96) but not the long-range interaction (AUC = 0.59), and another (41\% abundance) more consistent with the long-range interaction (AUC = 0.80) than the pseudoknot (AUC = 0.75).
-We obtained similar, though slightly more pronounced, results when we added the anti-AS1 ASO after folding the RNA.
-These results show that blocking AS1 does enable the pseudoknot to fold, mutually exclusively with the long-range interaction.
-
-Blocking the base pairs between the pseudoknot stem 2 and the long-range stem resulted, to our surprise, in a pseudoknot-like structure (AUC = 0.92) being detectible with only two clusters, at an abundance of 17\% (the other cluster had an AUC of 0.69).
-Increasing to three clusters split the non-pseudoknot cluster into 49\% long-range conformation (albeit with the ASO-targeted stem perturbed) and 34\% non-long-range conformation; the pseudoknot-like cluster was unchanged.
-Interestingly, the pseudoknot-like state was more consistent with the long-range interaction forming, which is the opposite of what we observed in the no-ASO condition.
-This suggests that when the long-range interaction forms, it inhibits the pseudoknot stem specifically with the base pairs that this ASO targeted.
-It also shows that the remainder of the long-range interaction can still form even when these inhibiting base pairs are blocked -- thus the formation of the long-range interaction can be "decoupled" from blocking the pseudoknot by blocking the long-range base pairs that inhibit the pseudoknot.
-
+\begin{figure}[ht]
+	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
+	\caption{}
+	\label{lnas}
+\end{figure}
 
 \end{document}
