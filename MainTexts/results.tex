@@ -167,7 +167,7 @@ To test this hypothesis, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799
 As of December 2021, the NCBI Reference Sequence Database~\cite{OLeary2016} contained 62 complete genomes of coronaviruses.
 To focus on those likely to have long-range interactions involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE (SFIG).
 Based on these predicted interactions, we selected ten coronaviruses -- at least one from each genus (SFIG) -- including SARS-CoV-2 as a positive control.
-Within the genus \textit{Betacoronavirus}, we included all three of the SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup, distinct from all other coronaviruses.
+Within the genus \textit{Betacoronavirus}, we included all three SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup.
 The other three strains of \textit{Betacoronavirus} that we selected were MERS coronavirus (\verb|NC_019843.3|) with a predicted interaction at positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both with a predicted upstream interaction at positions 10-20.
 We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have interactions at positions 440-460 and 350-360, respectively.
 Avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a strain of \textit{Gammacoronavirus} -- was predicted to have a strong interaction at positions 330-350, while common moorhen coronavirus HKU21 (\verb|NC_016996.1|) was the species of \textit{Deltacoronavirus} with the most promising FSE interactions.
@@ -181,7 +181,7 @@ All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed 
 To determine which RNA elements the FSE base-pairs with in each coronavirus, we performed SEARCH-MaP on the 1,799 nt RNA segment using DNA ASOs targeting the vicinity of the FSE (Figure \ref{covs}).
 The rolling Spearman correlation coefficient (SCC) between the +ASO and no-ASO mutational profiles dipped below 0.9 at the ASO target site in every coronavirus segment, confirming the ASOs bound and altered the structure.
 
-To confirm we could detect long-range interactions, we compared the rolling SCC for the SARS-CoV-2 segment to our model of the long-range interaction (Figure \ref{lnas}a).
+To confirm we could detect long-range interactions, we compared the rolling SCC for the SARS-CoV-2 segment to our model of the long-range interaction (Figure \ref{lnas}a, green).
 The SCC dipped below 0.9 at positions 1,483-1,560 and at 1,611-1,642, which coincide with stems LS2a-LS3b (positions 1,476-1,550 within the 1,799 nt segment) and stem LS4 (positions 1,600-1,622) of the long-range interaction.
 These dips were the two largest downstream of the FSE; although others (corresponding to no known base pairs) existed, they were barely below 0.9 and could have resulted from base pairing between these regions and other (non-FSE) regions.
 Near LS1 (positions 1,367-1,381), the SCC dipped only slightly to a minimum of 0.95, presumably because LS1 is the smallest (15 nt) and most isolated long-range stem.
@@ -189,13 +189,14 @@ Therefore, this method was sensitive enough to detect all but the smallest long-
 
 We found similar long-range interactions in SARS-CoV-1 and another SARS-related virus, Bat coronavirus BM48-31.
 Both viruses showed dips in SCC at roughly the same positions as LS2a-LS4 in SARS-CoV-2, indicating that they have homologous structures.
-SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, presumably corresponding to a homologous LS1.
+SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, corresponding to a homologous LS1.
 Thus, three SARS-related viruses share this multi-stemmed long-range interaction involving the FSE, suggesting this structure is functional.
 
-Examining the other species, we found prominent dips in SCC below 0.9 further than 200 nt from the ASO target site in all except common moorhen coronavirus.
-We modeled potential structures for these long-range interactions using the Fold program from RNAstructure~\cite{Mathews2004a} with the no-ASO mutational profiles as DMS constraints~\cite{Cordero2012}.
-The computationally predicted structures for murine hepatitis virus and transmissible gastroenteritis virus were consistent with the SEARCH-MaP data (Figure \ref{covs}).
-We subsequently focused on transmissible gastroenteritis virus because its long-range interaction lay downstream of the FSE, as in the SARS-related viruses.
+In every other species except common moorhen coronavirus, we found prominent dips in SCC at least 200 nt from the ASO target site.
+To model potential base pairing between these dip positions and the FSE, we used the Fold program from RNAstructure~\cite{Mathews2004a} with the no-ASO ensemble average mutational profiles as DMS constraints~\cite{Cordero2012}.
+Predictions based on ensemble averages (of all structural states) generally underperform those based on clustered mutational profiles (of fewer states or one state); the ensemble average prediction for SARS-CoV-2 included LS1 and LS2b but missed the other long-range stems.
+Nevertheless, we found long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure \ref{covs}, orange).
+We conclude that long-range interactions involving the FSE occur more widely than in just SARS-CoV-2, including in \textit{Alphacoronavirus} species.
 
 
 \begin{figure}[ht]
@@ -207,7 +208,8 @@ We subsequently focused on transmissible gastroenteritis virus because its long-
 
 \subsection{}
 
-To verify that the long-range interaction also forms in live transmissible gastroenteritis virus (TGEV), we infected ST cells with TGEV (two biological replicates) and performed DMS-MaPseq (two technical replicates per biological replicate).
+We 
+To verify that the long-range interaction also forms in live transmissible gastroenteritis virus (TGEV), we treated TGEV-infected ST cells with DMS (two biological replicates) and performed DMS-MaPseq (two technical replicates per biological replicate).
 The DMS reactivities were highly reproducible over the whole TGEV genome (\textit{r} = 0.96-0.97, SFIG).
 As expected, they differed from those of the 1.8 kb segment \textit{in vitro} (\textit{r} = 0.82, SFIG), showing why it is necessary to verify the long-range interaction in TGEV-infected cells.
 
