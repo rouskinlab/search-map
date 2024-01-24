@@ -42,8 +42,22 @@ Therefore, a cluster that correlates well ($r \approx 1$) with the +ASO ensemble
 
 \subsection{(I hope) SEARCH-MaP detects long-range base-pairing in ribosomal RNA}
 
+We first validated SEARCH-MaP using 16S and 23S ribosomal RNA (rRNA) from \textit{E. coli}.
+For each rRNA, we selected two RNA--RNA interactions spanning > [HOW MANY] nt that had been detected in a cell-free system~\cite{Mustoe2019}.
+For each interaction, we hypothesized that binding an ASO to either side would break the interaction and perturb the structure of the other side (distant from the ASO binding site) and designed two ASOs, one targeting each side.
+As a negative control, we also designed one ASO targeting a stem loop in each rRNA, which we hypothesized would perturb only the structure near the ASO binding site.
 
-\subsection{}
+We folded the 16S and 23S rRNAs with each ASO, performed DMS-MaPseq over the entire transcripts, and compared ensemble average mutational profiles with and without ASOs using SEISMIC-RNA.
+[DESCRIBE THE RESULTS]
+
+\begin{figure}[H]
+	%\includegraphics[height=0.95\textheight]{../MainFigures/fig2.pdf}
+	\caption{}
+	\label{rrna}
+\end{figure}
+
+
+\subsection{SARS-CoV-2 tiling}
 
 Long-range RNA--RNA interactions in many species of virus regulate core processes such as viral protein synthesis~\cite{Nicholson2014}.
 
@@ -94,9 +108,113 @@ Moreover, we generated a mutational profile of the formed and the unformed state
 \end{figure}
 
 
+\subsection{The frameshifting pseudoknot competes with the long-range interaction}
 
-\subfile{covs}
-\subfile{tgev}
+We refined the model of the long-range interaction using the mutational profiling data from both clusters that corresponded to this interaction forming (Figure \ref{tiles}c, d).
+We predicted the structure of a 1,799 nt segment of the genome centered on the long-range interaction using RNAstructure Fold \cite{Mathews2004a}.
+The minimum free energy structure (Figure \ref{lnas}) contained not only the two inner stems of the FSE-arch (LS1 and LS2a/b) but also two additional stems that were not part of the original FSE-arch model~\cite{Ziv2020} (LS3a/b and LS4).
+The structure also contained the alternative stem 1 (AS1) that we had previously discovered~\cite{Lan2022}, which encircles the attenuator hairpin (AH)~\cite{Su2005}.
+Because we had collected DMS-MaPseq data on both ends of LS3a/b, but only the 5' end of LS4, we focused on LS3a/b.
+
+To our surprise, LS2b, LS3a/b, and LS4 of the new model penetrate into structures within the FSE pseudoknot that is widely thought to stimulate frameshifting -- LS2b overlaps with PS2, LS3 with PS3, and LS4 with PS1.
+We had previously shown that AS1 also overlaps with and seems to outcompete PS1~\cite{Lan2022}.
+If these stems existed, then they would be mutually exclusive with the FSE pseudoknot, which suggests that the long-range interaction could inhibit the formation of the pseudoknot and possibly regulate the rate of frameshifting.
+
+Thus, we verified these structures of the long-range interaction using SEARCH-MaP.
+We performed SEARCH-MaP on the same 1,799 nt segment for which we had predicted the structure, this time with shorter LNA/DNA mixmer ASOs (15-20 nt) to reach single-stem precision.
+Each ASO targeted a single stem in the downstream portion of the interaction, and we measured the change in DMS reactivities of the FSE.
+ASOs targeting the 3' sides of LS1 and LS2a perturbed the DMS reactivities in exactly the expected locations on the 5' sides (Figure \ref{lnas}b).
+Binding an ASO to the 3' side of LS2b caused a larger perturbation with more off-target effects, likely because this stem overlaps with stem 2 of the pseudoknot (PS2), so blocking it with an ASO could promote pseudoknot formation.
+Blocking LS3b also resulted in a main effect around the intended location, with one off-target effect upstream, suggesting that there may be another RNA--RNA interaction with the pseudoknot and this upstream region.
+These results show that stems LS1, LS2a/b, and LS3b in the refined model of the long-range interaction do exist and can be detected with SEARCH-MaP -- cleanly if the stem does not interact with anything else, otherwise with off-target effects.
+
+Assuming that all stems in Figure \ref{lnas}a do exist, we found that there are six possible structure models resulting from all possible combinations of non-overlapping stems (Figure \ref{lnas}c).
+We ordered these models from most long-range character (A) to most pseudoknot-like character (F).
+We then determined whether each model actually exists in the ensemble and estimated its proportion.
+
+We found that our no-ASO control clustered reproducibly up to 6 clusters (SFIG).
+For each cluster, we found how well it agreed with each structure model by calculating the area under the receiver operating characteristic curve (AUC-ROC).
+We graph the results as a heatmap with clusters on the x-axis, in order of and their widths indicating their proportions in the ensemble, and the models on the y-axis.
+We consider a cluster and model to be consistent with each other if the AUC-ROC is at least 0.90, and explicitly print all such AUC-ROC values.
+We found that model C -- in which AS1 folds along with stems PS2 and PS3 of the pseudoknot -- was consistent with three clusters representing 52\% of the ensemble (Figure \ref{lnas}d, top).
+Model A -- where the full long-range interaction forms -- was consistent with one cluster (20\%).
+No clusters were consistent with the pseudoknot (Model F); the least-abundant cluster (7\%) came close with an AUC-ROC of 0.88.
+The remaining cluster (21\%) was not even close to being consistent with any model, suggesting that there are still other structures in the ensemble besides those in Figure \ref{lnas}c.
+
+These results suggested to us that the primary competitors of the pseudoknot are AS1 and LS2b, since both are present in the most abundant model, C (52\%), while LS3 and LS4 fold in model A, which is only 20\% of the ensemble.
+We thus reasoned that if the long-range interaction does actually compete with the pseudoknot, then blocking AS1 and LS2b simultaneously should allow the pseudoknot to fold, while blocking either would have a much smaller effect on the pseudoknot.
+To test this hypothesis, we repeated the above experiment while adding an ASO targeting either AS1 or just the part of LS2b that overlaps with the pseudoknot, or both ASOs together.
+Blocking AS1 (Figure \ref{lnas}d, left) reduced the proportion of clusters consistent with AS1 (Models A, B, and C) from 72\% to 16\%, as expected; it also resulted in two clusters consistent with the pseudoknot (56\% total) and one cluster (20\%) consistent with Model D, which includes PS1.
+Blocking the part of LS2b that seems to overlap with PS2 (Figure \ref{lnas}d, right) eliminated Model A but not Model C (as expected, since Model A includes LS2b, while Model C does not), and also produced one cluster (13\%) that was consistent with the pseudoknot.
+Blocking both AS1 and LS2b together (Figure \ref{lnas}d, bottom) forced the entire ensemble into the pseudoknot state, with 87\% of the ensemble highly consistent with Model F (AUC-ROC = 0.97) and the remaining 13\% still somewhat consistent (AUC-ROC = 0.87).
+Thus, we conclude that the long-range interaction -- particularly LS2b -- along with AS1, does compete with the pseudoknot.
+
+\begin{figure}[ht]
+	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
+	\caption{}
+	\label{lnas}
+\end{figure}
+
+
+\subsection{Frameshift stimulating elements of multiple coronaviruses form long-range RNA--RNA interactions}
+
+We hypothesized that similar long-range interactions could exist in other coronaviruses -- particularly other SARS-related viruses.
+To test this hypothesis, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799 nt segments from eight selected coronaviruses.
+
+
+\subsubsection{Computational and experimental screening identifies eight coronaviruses with potential long-range interactions}
+
+As of December 2021, the NCBI Reference Sequence Database~\cite{OLeary2016} contained sixty-two complete genomes of coronaviruses.
+To focus on those likely to have long-range interactions involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE (SFIG).
+Based on these predicted interactions, we selected ten coronaviruses (including SARS-CoV-2) for further study -- at least one from each genus (SFIG).
+Within the genus \textit{Betacoronavirus}, we included all three of the SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup, distinct from all other coronaviruses.
+The other three strains of \textit{Betacoronavirus} that we selected were MERS coronavirus (\verb|NC_019843.3|) with a predicted interaction at positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both with a predicted upstream interaction at positions 10-20.
+We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have interactions at positions 440-460 and 350-360, respectively.
+Avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a strain of \textit{Gammacoronavirus} -- was predicted to have a strong interaction at positions 330-350, while common moorhen coronavirus HKU21 (\verb|NC_016996.1|) was the species of \textit{Deltacoronavirus} with the most promising FSE interactions.
+
+We reasoned that if an FSE does interact with a distant RNA element, then removing that element by truncating the RNA would break the interaction, causing a structural change in the FSE that could be detected though chemical probing.
+For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq~\cite{Zubradt2016} on both a 239 nt segment comprising the FSE and minimal flanking sequences and a 1.8 kb segment encompassing the FSE and all sites with which it was predicted to interact.
+All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 nt and 1.8 kb segments (SFIG), suggesting long-range interactions between the FSE and another element within the 1.8 kb segment.
+
+
+\subsubsection{SEARCH-MaP reveals long-range interactions involving the FSE in four other coronaviruses}
+
+To determine whether the FSE interacts with another RNA element -- and if so, which -- in each coronavirus, we performed SEARCH-MaP on the 1.8 kb RNA segment using ASOs targeting the bases that changed the most between the 239 nt and 1.8 kb segments.
+Using SEISMIC-RNA, we computed the mutational profiles with and without ASOs and calculated the Spearman correlation coefficient (SCC) between them via a sliding window (Figure \ref{covs}).
+In every coronavirus, the ASO target site (light green) showed a large dip in SCC, confirming that the ASOs bound and altered the structure.
+
+The long-range interaction in SARS-CoV-2 was suggested to comprise three stems~\cite{Ziv2020}.
+SEARCH-MaP found two (dips in SCC around positions 1,500 and 1,615); the third stem (around position 1,375) may have been missed because it is not only the shortest (15 nt) but also has just one unpaired base on each side.
+Similar long-range interactions appeared in the other SARS-related viruses: SARS-CoV-1 and bat coronavirus BM48-31.
+Like SARS-CoV-2, both had a dip in SCC near position 1,500 and another dip downstream, between positions 1,575 and 1,675. 
+The SCC also dipped around position 1,375 for SARS-CoV-1, matching the location of the missed stem in SARS-CoV-2.
+Therefore, this three-stemmed long-range interaction involving the FSE appears to be conserved among three strains of SARS-related viruses, suggesting it is functional.
+
+Examining the other species, we found prominent dips in SCC below 0.9 further than 200 nt from the ASO target site in all except common moorhen coronavirus.
+We modeled potential structures for these long-range interactions using the Fold program from RNAstructure~\cite{Mathews2004a} with the no-ASO mutational profiles as DMS constraints~\cite{Cordero2012}.
+The computationally predicted structures for murine hepatitis virus and transmissible gastroenteritis virus were consistent with the SEARCH-MaP data (Figure \ref{covs}).
+We subsequently focused on transmissible gastroenteritis virus because its long-range interaction lay downstream of the FSE, as in the SARS-related viruses.
+
+
+\begin{figure}[ht]
+	\includegraphics[height=0.95\textheight]{../MainFigures/covs/covs.pdf}
+	\caption{}
+	\label{covs}
+\end{figure}
+
+
+\subsection{}
+
+To verify that the long-range interaction also forms in live transmissible gastroenteritis virus (TGEV), we infected ST cells with TGEV (two biological replicates) and performed DMS-MaPseq (two technical replicates per biological replicate).
+The DMS reactivities were highly reproducible over the whole TGEV genome (\textit{r} = 0.96-0.97, SFIG).
+As expected, they differed from those of the 1.8 kb segment \textit{in vitro} (\textit{r} = 0.82, SFIG), showing why it is necessary to verify the long-range interaction in TGEV-infected cells.
+
+First, to determine whether the FSE and the region with which it may interact form alternative structures, we amplified and deeply sequenced these two regions from each sample.
+Clustering the reads using SEISMIC-RNA revealed that both regions adopt at least two alternative structures.
+The two clusters of the downstream region differed most around positions 1,120-1,140 -- the site of the 3' end of the predicted long-range interaction.
+In cluster 1 (63\% of the ensemble), bases 1,129-1,136 (all part of the predicted interaction) had DMS reactivities less than 0.01; while in cluster 2, the DMS reactivities were all greater than 0.01.
+This result suggests that cluster 1 corresponds to the state in which the long-range interaction forms.
+
 
 
 \end{document}
