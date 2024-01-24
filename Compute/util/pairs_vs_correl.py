@@ -30,7 +30,9 @@ POSITION_STEP = 300
 
 PAIR_NONE = "#e5e5e5"
 PAIR_TRUE = "#0072b2"
-PAIR_FALSE = "#e69f00"
+PAIR_FALSE = "#e5e5e5"
+ASO_COLOR = "#f0e442"
+NO_ASO_COLOR = "#009e73"
 
 
 def calc_arc_aspect_ratio(ax: plt.Axes):
@@ -155,12 +157,15 @@ def graph_structure(ax: plt.Axes,
 def graph_correl(ax: plt.Axes, correl: pd.Series, aso_coords: tuple[int, int]):
     """ Graph the normalized CORR. """
     aso5, aso3 = aso_coords
-    positions = correl.index
+    positions = pd.Series(correl.index, index=correl.index)
     where_aso = np.logical_and(positions >= aso5, positions <= aso3)
     ax.fill_between(positions, correl, 1.0,
-                    where=where_aso, facecolor="#f0e442")
+                    where=where_aso, facecolor=ASO_COLOR)
     ax.fill_between(positions, correl, 1.0,
-                    where=~where_aso, facecolor="#009e73")
+                    where=~where_aso, facecolor=NO_ASO_COLOR)
+    ax.plot(positions[: aso5 - 1], correl[: aso5 - 1], color=NO_ASO_COLOR)
+    ax.plot(positions[aso5: aso3], correl[aso5: aso3], color=ASO_COLOR)
+    ax.plot(positions[aso3 + 1:], correl[aso3 + 1:], color=NO_ASO_COLOR)
     ax.plot(ax.get_xlim(), [CORR_THRESH, CORR_THRESH],
             color="#d55e00", linewidth=0.5)
 
@@ -187,6 +192,7 @@ def graph(struct: rna.RNAStructure,
     ax.set_ylabel("Correlation")
     graph_structure(ax, struct, correl, aso_coords)
     graph_correl(ax, correl, aso_coords)
+    ax.plot(aso_coords, [0., 0.], color="#f0e442")
     plt.savefig(outfile)
 
 
