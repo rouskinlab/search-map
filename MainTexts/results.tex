@@ -59,53 +59,52 @@ We folded the 16S and 23S rRNAs with each ASO, performed DMS-MaPseq over the ent
 
 \subsection{SARS-CoV-2 tiling}
 
-Long-range RNA--RNA interactions in many species of virus regulate core processes such as viral protein synthesis~\cite{Nicholson2014}.
+Aside from ribosomes, many of the best-characterized, functional long-range RNA--RNA interactions occur in the genomes of RNA viruses~\cite{Nicholson2014}.
+Coronaviruses regulate translation of their first open reading frame (ORF1) using programmed ribosomal frameshifting~\cite{Plant2008}.
+In the middle of ORF1, a switch called a frameshift stimulation element (FSE) makes a fraction of ribosomes slip backwards into the -1 reading frame.
+Ribosomes that maintain reading frame terminate at a stop codon shortly after the FSE, while those that frameshift bypass that stop codon and reach the end of ORF1.
+Why coronaviruses need a frameshifting mechanism remains an open question~\cite{Allan2023}, yet they all have FSEs~\cite{Plant2008}.
 
-In SARS coronavirus 2 (SARS-CoV-2), the frameshift stimulating element (FSE) was shown to base pair with another genomic element over 1,000 nt downstream, a structure the authors named the "FSE-arch"~\cite{Ziv2020}.
-We had found that about 45\% of the genomic RNA molecules within infected cells have DMS mutational profiles consistent with the FSE-arch~\cite{Lan2022}, which had surprised us given the length of this RNA--RNA interaction.
-Therefore, we sought to investigate and potentially improve the model of the FSE-arch using SEARCH-MaP.
+Every coronaviral FSE contains a ``slippery site" (UUUAAAC) and a structure characterized as a pseudoknot in multiple species~\cite{Brierley1989,Herald1993,Plant2005b}.
+Indeed, the isolated core of the SARS coronavirus 2 (SARS-CoV-2) FSE was shown to fold into a pseudoknot with three stems~\cite{KZhang2021,Jones2022}.
+However, we discovered that when FSE is in its natural place in the SARS-CoV-2 genome, pseudoknot stem 1 is disassembled while an alternative stem 1 folds~\cite{Lan2022}.
+Others identified a long-range RNA--RNA interaction encompassing the FSE, a structure they named the ``FSE-arch"~\cite{Ziv2020}.
+These findings hinted that the pseudoknot is not the only coronaviral RNA structure involved in frameshifting.
 
-We \textit{in vitro} transcribed a 2,924 nt RNA segment of the SARS-CoV-2 genome centered on the long-range interaction (Figure \ref{tiles}a).
-We added groups of DNA ASOs; each group targeted a different section of the RNA (Figure \ref{tiles}a).
-Groups 9 and 10 targeted the 3' side of the FSE-arch; we expected that if this structure exists, then adding either group should block part of the FSE-arch and change the structure near the FSE.
-We confirmed the ASOs bound using DMS-MaPseq (SFIG).
-We then assessed the structure near the FSE via DMS-MaPseq with RT-PCR primers flanking the FSE, including the entire 5' side of the FSE-arch.
+We applied SEARCH-MaP to determine the ensemble of structures into which the SARS-CoV-2 FSE folds.
+To a 2,924 nt segment of the SARS-CoV-2 genome centered on the putative FSE-arch~\cite{Ziv2020}, we added (separately) thirteen groups of DNA ASOs (Figure \ref{tiles}a).
+Each group contained four or five ASOs targeting a contiguous 213-244 nt section of the RNA.
+After adding each group of ASOs, we performed DMS-MaPseq with two pairs of RT-PCR primers: flanking the ASO target site (to confirm binding) and flanking the 5' FSE-arch (to detect structural changes).
+Every ASO group bound properly, evidenced by a decrease in DMS reactivities over its target site (SFIG).
 
-The mutational profiles of the FSE region with no ASOs were highly reproducible: the Pearson correlation coefficient (PCC) between two replicates was 0.98 (Figure \ref{tiles}b, light gray).
-Binding ASO group F (targeting the FSE itself) plunged the correlation with the no-ASO control to 0.55 (Figure \ref{tiles}b, dark gray), confirming that we could detect ASO-induced structural changes around the FSE.
-Of the other ASO groups, only the addition of group 9 dropped the correlation with the no-ASO control below 0.90 (Figure \ref{tiles}b).
-This drop in correlation localized to the stems predicted to be part of the FSE-arch (SFIG, on rolling correlation).
-This result supports the inner two stems of the FSE-arch.
-That adding ASO group 10 had no effect on the FSE (PCC = 0.97) suggests that the outer stem either does not exist or forms less often or under more specific conditions than do the inner two stems.
-
-We next sought to determine in what fraction of molecules the inner two stems of the FSE-arch fold.
-We clustered the reads for the no-ASO control using SEISMIC-RNA and found that they form at least two distinct clusters.
-These clusters were consistent with our previous data in Vero and Huh-7 cells~\cite{Lan2022} (SFIG), showing that this RNA segment adequately models of the RNA structure in the full-length virus.
-We compared the mutational profile of each cluster to that of the ensemble average after adding ASO group 9 (Figure \ref{tiles}c, top).
-Cluster 2 (57\% of the ensemble) was very similar (PCC = 0.95), suggesting that this cluster corresponds to the FSE-arch unformed.
-Cluster 1 (43\% of the ensemble) was distinct (PCC = 0.64), suggesting that it corresponds to the the FSE-arch formed.
-
-To gain further support for these assignments, we took advantage of having a preexisting model of the FSE-arch~\cite{Ziv2020}.
-If these assignments were true, then the mutational profile of Cluster 1 should agree well with the structure of the FSE-arch (i.e. paired and unpaired bases should have low and high mutation rates, respectively); and Cluster 2 should agree less.
-We assessed the agreement by constructing a receiver operating characteristic (ROC) curve with respect to the inner two stems of the preexisting model (Figure \ref{tiles}c, bottom).
-The area under the curve (AUC) for Cluster 1 was 1.0, indicating perfect agreement with the inner two stems of the FSE-arch, while that of Cluster 2 (AUC = 0.57) was only marginally better than the null expectation of 0.50.
-This result supports that Cluster 1 is the mutational profile when the inner two stems of the FSE-arch form, and Cluster 2 when they do not.
-
-If the FSE-arch exists, then blocking the 5' side of the FSE-arch should also alter the structure of the 3' side.
-We investigated by RT-PCRing the region surrounding the inner two stems of the FSE-arch on the 3' side with and without adding ASO group F, which targets the FSE.
-Similar to the previous result, we found that the 3' side of the FSE-arch also forms two clusters of roughly even proportions (Figure \ref{tiles}d).
-The mutational profile (ignoring one outlier) of Cluster 2 resembled blocking the FSE-arch (PCC = 0.95), while Cluster 1 did not (PCC = 0.80); and Cluster 1 agreed with the FSE-arch model (AUC = 1.0), while Cluster 2 did not (AUC = 0.57).
-Thus, the 3' side of the FSE-arch also appears to form two structural states, one of which corresponds to the long-range interaction forming.
-
-We conclude that this 2,924 nt segment mimics the FSE-arch in cells and exists as a structure ensemble in which the inner two stems of the FSE-arch fold in 47\% ± 4\% of the molecules (Figure \ref{tiles}e).
-As this structure folds \textit{in vitro}, it depends on the RNA sequence itself, not on proteins or other cellular/viral factors.
-Moreover, we generated a mutational profile of the formed and the unformed states on both sides of the FSE-arch, which could assist with structure modeling.
-
-\begin{figure}[ht]
+\begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
-	\caption{}
+	\caption{\textbf{Characterization of a long-range RNA--RNA interaction in SARS-CoV-2.} \textbf{(a)}~The 2,924 nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target of each ASO group is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Pearson correlation coefficient (PCC) of the DMS reactivities over the 5' FSE-arch between each sample and one no-ASO control; n.d. = no data. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9; each point is one position in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924 nt segment.}
 	\label{tiles}
 \end{figure}
+
+To quantify structural changes over the 5' FSE-arch, we calculated the Pearson correlation coefficient (PCC) of the DMS reactivities after adding each ASO group versus one no-ASO control (Figure \ref{tiles}b).
+A replicate no-ASO sample confirmed the DMS reactivities were reproducible (PCC = 0.98).
+Among the ASO groups, group 9 perturbed the 5' FSE-arch the most (PCC = 0.82), and by a large margin (0.11), evidencing that the structures it targets -- the two inner stems of the FSE-arch -- exist.
+ASO group 10 had no effect on the 5' FSE-arch (PCC = 0.97), suggesting that its target -- the outer stem -- does not exist or is more sensitive to its environment than are the two inner stems.
+
+We next sought to determine in what fraction of molecules the two inner stems of the FSE-arch fold.
+Using SEISMIC-RNA, we clustered reads from the 5' side of the FSE-arch for the no-ASO control and found two distinct clusters, with a 43\%/57\% split.
+To determine if these clusters corresponded to the two inner stems formed and unformed, we compared their DMS reactivities to those after adding ASO group 9, which blocks the two inner stems (Figure \ref{tiles}c, top).
+Cluster 2 had similar DMS reactivities (PCC = 0.95), indicating that it corresponds to the unformed state.
+Meanwhile, cluster 1 had distinct DMS reactivities (PCC = 0.64), suggesting that it corresponds to the two inner stems forming.
+
+To further verify this correspondence, we leveraged the preexisting model of the FSE-arch~\cite{Ziv2020}.
+If cluster 1 did correspond to the two inner stems formed, then we would expect its DMS reactivities to agree well with their structures (i.e. paired and unpaired bases should have low and high mutation rates, respectively) and those of cluster 2 to agree much less.
+We quantified this agreement using receiver operating characteristic (ROC) curves (Figure \ref{tiles}c, bottom).
+The area under the curve (AUC) for cluster 1 was 1.0, indicating perfect agreement with the two inner stems of the FSE-arch, while that of cluster 2 (AUC = 0.57) was close to null (0.50).
+This result further supports that cluster 1 (43\%) corresponds to the two inner stems formed, and cluster 2 (57\%) to these stems unformed.
+
+If the RNA really exists as an ensemble of the two inner stems formed and unformed, then we would also expect the 3' side of the FSE-arch to cluster into "formed" and "unformed" states.
+To investigate, we performed RT-PCR with primers flanking the 3' side of the inner two stems -- both without ASOs and with ASO group 4 (targeting the 5' side of the FSE-arch).
+We clustered the no-ASO control and found -- similar to the previous result -- that cluster 1 (51\%) matched the structure of the inner two stems (AUC = 1.0), while cluster 2 (49\%) agreed with the DMS reactivities (PCC = 0.94) after blocking the FSE-arch with ASO group 4 (Figure \ref{tiles}d).
+We concluded that the RNA exists as an ensemble of structures in which the two inner stems of the FSE-arch form in 47\% ± 4\% of molecules (Figure \ref{tiles}e).
+This result is consistent with our previous suggestion that a stem similar to the FSE-arch constitutes 45\% of the ensemble in cells infected with SARS-CoV-2~\cite{Lan2022}.
 
 
 \subsection{The frameshifting pseudoknot competes with the long-range interaction}
