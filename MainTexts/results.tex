@@ -82,7 +82,7 @@ Every ASO group bound properly, evidenced by suppression of DMS reactivities ove
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
-	\caption{\textbf{Characterization of a long-range RNA--RNA interaction in SARS-CoV-2.} \textbf{(a)}~The 2,924 nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target of each ASO group is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window = 45 nt) Pearson correlation coefficient (PCC) of the DMS reactivities between each sample and a no-ASO control over the 5' FSE-arch. Each curve represents one sample, colored as in (a); ASO groups 4 and 13 are not shown. The locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9; each point is one position in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC. \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924 nt segment.}
+	\caption{\textbf{Search for a long-range RNA--RNA interaction with the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924 nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target of each ASO group is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window = 45 nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5' FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups 4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9; each point is one position in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC. \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924 nt segment.}
 	\label{tiles}
 \end{figure}
 
@@ -98,7 +98,7 @@ To determine if these clusters corresponded to the two inner stems formed and un
 Cluster 2 had similar DMS reactivities (PCC = 0.95), indicating it corresponds to the stems unformed.
 Meanwhile, the DMS reactivities of cluster 1 differed (PCC = 0.64), suggesting it corresponds to the stems formed.
 
-To further verify this correspondence, we leveraged the preexisting model of the FSE-arch~\cite{Ziv2020}.
+To further support this result, we leveraged the preexisting model of the FSE-arch~\cite{Ziv2020}.
 If cluster 1 did correspond to the two inner stems formed, then we would expect its DMS reactivities to agree well with their structures (i.e. paired and unpaired bases should have low and high reactivities, respectively) and those of cluster 2 to agree much less.
 We quantified this agreement using receiver operating characteristic (ROC) curves (Figure \ref{tiles}c, bottom).
 The area under the curve (AUC) for cluster 1 was 1.00, indicating perfect agreement with the two inner stems of the FSE-arch; while that of cluster 2 was 0.57, close to null (0.50).
@@ -120,11 +120,11 @@ Thus, these long stems -- if they exist -- and the pseudoknot would be mutually 
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
-	\caption{\textbf{Refinement of the long-range interaction and competition with the frameshift pseudoknot.} \textbf{(a)} Refined model of the long-range interaction (predicted from cluster 1 in Figure \ref{tiles}c and d) featuring alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. The location of pseudoknot stems PS1, PS2, and PS3 is also indicated; as are the base pairs they overlap in AS1 and LS2b.}
+	\caption{\textbf{Refinement of the long-range interaction and competition with the frameshift pseudoknot.} \textbf{(a)} Refined model of the long-range interaction (predicted from cluster 1 in Figure \ref{tiles}c and d) including alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)} Rolling (window = 21 nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)} Models of possible structures for the FSE, by combining mutually compatible stems from (a). \textbf{(d)} Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
 	\label{lnas}
 \end{figure}
 
-To verify the newly predicted long stems, we performed SEARCH-MaP on the 1,799 nt segment using 15-20 nt LNA/DNA mixmer ASOs to reach single-stem precision (Figure \ref{lnas}b).
+To verify this refined model, we performed SEARCH-MaP on the 1,799 nt segment using 15-20 nt LNA/DNA mixmer ASOs for single-stem precision (Figure \ref{lnas}b).
 Each ASO targeted one stem in the downstream portion of the interaction, and we measured the change in DMS reactivities of the FSE.
 ASOs targeting the 3' sides of LS1 and LS2a perturbed the DMS reactivities in exactly the expected locations on the 5' sides.
 Binding an ASO to the 3' side of LS2b caused a larger perturbation with more off-target effects, likely because this stem overlaps with pseudoknot stem 2 (PS2).
@@ -149,9 +149,8 @@ Since blocking the PS2-overlapping portion of LS2b increased the proportion of c
 
 \subsection{Frameshift stimulating elements of multiple coronaviruses participate in long-range RNA--RNA interactions}
 
-We hypothesized that similar long-range interactions could exist in other coronaviruses -- particularly other SARS-related viruses.
-To test this hypothesis, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799 nt segments from eight selected coronaviruses.
-
+We surmised that other coronaviruses would also feature long-range RNA--RNA interactions involving the FSE.
+To search for such structures, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799 nt segments from eight coronaviral genomes.
 
 \subsubsection{Computational and experimental screening identifies eight coronaviruses with potential long-range interactions}
 
@@ -163,38 +162,38 @@ The other three strains of \textit{Betacoronavirus} that we selected were MERS c
 We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have interactions at positions 440-460 and 350-360, respectively.
 Avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a strain of \textit{Gammacoronavirus} -- was predicted to have a strong interaction at positions 330-350, while common moorhen coronavirus HKU21 (\verb|NC_016996.1|) was the species of \textit{Deltacoronavirus} with the most promising FSE interactions.
 
-We reasoned that if an FSE does interact with a distant RNA element, then removing that element by truncating the RNA would break the interaction, causing a structural change in the FSE that could be detected though chemical probing.
+We reasoned that if an FSE does interact with a distant RNA element, removing that element by truncating the RNA would change the structure of the FSE, which we could detect with DMS-MaPseq.
 For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq~\cite{Zubradt2016} on both a 239 nt segment comprising the FSE and minimal flanking sequences and a 1,799 nt segment encompassing the FSE and all sites with which it was predicted to interact.
 All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 nt and 1,799 nt segments (SFIG), suggesting long-range interactions involving the FSE.
 
-\subsubsection{SEARCH-MaP reveals long-range interactions involving the FSE in four other coronaviruses}
+\subsubsection{SEARCH-MaP reveals long-range interactions involving the FSE in four additional coronaviruses}
 
 To determine which RNA elements the FSE base-pairs with in each coronavirus, we performed SEARCH-MaP on the 1,799 nt RNA segment using DNA ASOs targeting the vicinity of the FSE (Figure \ref{covs}).
 The rolling Spearman correlation coefficient (SCC) between the +ASO and no-ASO mutational profiles dipped below 0.9 at the ASO target site in every coronavirus segment, confirming the ASOs bound and altered the structure.
 
-To confirm we could detect long-range interactions, we compared the rolling SCC for the SARS-CoV-2 segment to our model of the long-range interaction (Figure \ref{lnas}a, green).
-The SCC dipped below 0.9 at positions 1,483-1,560 and at 1,611-1,642, which coincide with stems LS2a-LS3b (positions 1,476-1,550 within the 1,799 nt segment) and stem LS4 (positions 1,600-1,622) of the long-range interaction.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../MainFigures/covs/covs.pdf}
+	\caption{\textbf{Evidence for long-range RNA--RNA interactions involving the FSE in five coronaviruses.} Rolling (window = 45 nt) Spearman correlation coefficient (SCC) of DMS reactivities between the +ASO and no-ASO samples for each 1,799 nt segment of a coronaviral genome. The target site of each ASO is highlighted on the SCC data and shown above each graph. Structures predicted with RNAstructure~\cite{Mathews2004} using no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012} are drawn above each graph; base pairs connecting the ASO target site to an off-target position with SCC less than 0.9 are colored. For SARS-CoV-2, the refined model (Figure~\ref{lnas}a) is also drawn, with LS1-LS4 labeled.}
+	\label{covs}
+\end{figure}
+
+To confirm we could detect long-range interactions, we compared the rolling SCC for the SARS-CoV-2 segment to our refined model of the long-range interaction (Figure \ref{covs}, blue).
+The SCC dipped below 0.9 at positions 1,483-1,560 and at 1,611-1,642, which coincide with stems LS2-LS3 (positions 1,476-1,550 within the 1,799 nt segment) and stem LS4 (positions 1,600-1,622).
 These dips were the two largest downstream of the FSE; although others (corresponding to no known base pairs) existed, they were barely below 0.9 and could have resulted from base pairing between these regions and other (non-FSE) regions.
 Near LS1 (positions 1,367-1,381), the SCC dipped only slightly to a minimum of 0.95, presumably because LS1 is the smallest (15 nt) and most isolated long-range stem.
 Therefore, this method was sensitive enough to detect all but the smallest long-range stem, and specific enough that the two largest dips corresponded to validated base pairs.
 
-We found similar long-range interactions in SARS-CoV-1 and another SARS-related virus, Bat coronavirus BM48-31.
-Both viruses showed dips in SCC at roughly the same positions as LS2a-LS4 in SARS-CoV-2, indicating that they have homologous structures.
+We found similar long-range interactions in SARS-CoV-1 and another SARS-related virus, bat coronavirus BM48-31.
+Both viruses showed dips in SCC at roughly the same positions as LS2-LS4 in SARS-CoV-2, indicating that they have homologous structures.
 SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, corresponding to a homologous LS1.
-Thus, three SARS-related viruses share this multi-stemmed long-range interaction involving the FSE, suggesting this structure is functional.
+Thus, three SARS-related viruses share this multi-stemmed long-range interaction involving the FSE, hinting that this structure is functional.
 
 In every other species except common moorhen coronavirus, we found prominent dips in SCC at least 200 nt from the ASO target site.
-To model potential base pairing between these dip positions and the FSE, we used the Fold program from RNAstructure~\cite{Mathews2004a} with the no-ASO ensemble average mutational profiles as DMS constraints~\cite{Cordero2012}.
-Predictions based on ensemble averages (of all structural states) generally underperform those based on clustered mutational profiles (of fewer states or one state); the ensemble average prediction for SARS-CoV-2 included LS1 and LS2b but missed the other long-range stems.
-Nevertheless, we found long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure \ref{covs}, orange).
+To model potential base pairing between these dip positions and the FSE, we used the Fold program from RNAstructure~\cite{Mathews2004a} with the no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012}.
+We surmised that using DMS reactivities of clusters corresponding to long-range interactions would generally yield more accurate predictions of long-range interactions than would ensemble averages (over all structural states).
+For instance, the prediction for SARS-CoV-2 based on the ensemble average included LS1 and LS2b but missed the other long-range stems.
+Although clustered data were unavailable in this case, we were still able to find long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure \ref{covs}, orange).
 We conclude that long-range interactions involving the FSE occur more widely than in just SARS-CoV-2, including in \textit{Alphacoronavirus} species.
-
-
-\begin{figure}[ht]
-	\includegraphics[height=0.95\textheight]{../MainFigures/covs/covs.pdf}
-	\caption{}
-	\label{covs}
-\end{figure}
 
 
 \subsection{}
