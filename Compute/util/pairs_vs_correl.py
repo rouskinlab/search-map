@@ -76,6 +76,13 @@ def get_table_path_from_structs_path(structs_path: Path):
     return path.build(*path.POS_TABLE_SEGS, **table_fields)
 
 
+def iter_rna_structs(structs_path: Path):
+    """ Yield the RNA structures. """
+    # Make an RNA state from each structure.
+    for struct in rna.from_ct(structs_path):
+        yield struct
+
+
 def iter_rna_states(structs_path: Path):
     """ Yield the RNA states. """
     # Load the RNA profile (mutation rates).
@@ -199,7 +206,7 @@ def graph(struct: rna.RNAStructure,
 def main(structs_path: Path, correl_path: Path, asos_path: Path, outdir: Path):
     correl = load_correl_data(correl_path).squeeze()
     assert isinstance(correl, pd.Series)
-    for i, state in enumerate(iter_rna_states(structs_path)):
+    for i, state in enumerate(iter_rna_structs(structs_path)):
         correl_state = correl.reindex(state.table.index)
         correl_state.index = correl_state.index.get_level_values(seq.POS_NAME)
         correl_state.loc[correl_state < CORR_MIN] = CORR_MIN

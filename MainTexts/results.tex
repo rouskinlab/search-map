@@ -120,7 +120,7 @@ Thus, these long stems -- if they exist -- and the pseudoknot would be mutually 
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
-	\caption{\textbf{Refinement of the long-range interaction and competition with the frameshift pseudoknot.} \textbf{(a)} Refined model of the long-range interaction (predicted from cluster 1 in Figure~\ref{tiles}c and d) including alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)} Rolling (window~=~21 nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)} Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)} Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
+	\caption{\textbf{Refinement of the long-range interaction and competition with the frameshift pseudoknot.} \textbf{(a)} Refined model of the long-range interaction (minimum free energy prediction based on cluster 1 in Figure~\ref{tiles}c and d) including alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)} Rolling (window~=~21 nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)} Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)} Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
 	\label{lnas}
 \end{figure}
 
@@ -198,23 +198,35 @@ We conclude that long-range interactions involving the FSE occur more widely tha
 
 \subsection{}
 
-Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea -- often fatally in baby piglets~\cite{Liu2021}.
-Due to the large health and economic impacts of TGEV~\cite{Liu2021} and our evidence of a long-range RNA--RNA interaction, we sought to model the genomic secondary structure of live TGEV.
-We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq (two technical replicates per biological replicate).
-The DMS reactivities were highly reproducible between biological replicates (PCC~=~0.97), albeit only modestly consistent with the 1,799 nt segment \textit{in vitro} (PCC~=~0.82) (Supplementary Figure~\ref{tgev_reps}).
+Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea -- almost always fatally in baby piglets~\cite{Liu2021}.
+Due to the impacts of TGEV on animal health and economics~\cite{Liu2021} and our evidence of a long-range RNA--RNA interaction, we sought to model the genomic secondary structures of live TGEV.
+We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq (two technical replicates per biological replicate) (Figure~\ref{tgev}a).
+The DMS reactivities over the full genome were consistent between biological replicates (PCC~=~0.97), albeit not with the 1,799 nt segment \textit{in vitro} (PCC~=~0.82), which showed that verifying the long-range interaction in live virus would be necessary (Supplementary Figure~\ref{tgev_reps}).
 
-We used the ensemble average DMS reactivities to produce one "ensemble average" model of the TGEV genome secondary structure (SUPPLEMENTARY FIGURE).
-To verify the model quality, we confirmed that the predicted structure of the first 520 nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} and agreed well (AUC-ROC~=~0.94) with the DMS reactivities (Supplementary Figure~\ref{tgev_5utr}).
-For the SARS-CoV-2 genome, we had shown that the first roughly 500 nt were represented well by a single secondary structure, while many other regions -- including the FSE -- seemed better represented as two or more structures~\cite{Lan2022}.
-Likewise for TGEV, we found some regions of the ensemble average model with low AUC-ROC scores compared to the ensemble average DMS reactivities (SUPPLEMENTARY FIGURE).
-We surmised that such regions likely formed alternative structures, long-range interactions that the model could not capture, or both.
+\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{../MainFigures/tgev/tgev.pdf}
+	\caption{\textbf{Structure of the TGEV genome.} \textbf{(a)} Schematic of the experiment in which two biological replicates of ST cells were infected with TGEV, DMS-treated, and pelleted. Cell pellets were divided into two technical replicates prior to extraction of DMS-modified RNA.}
+	\label{tgev}
+\end{figure}
 
+To determine the structure ensembles, we clustered the reads from the amplicons on both sides of the long-range interaction into two clusters.
+The two clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{sars2-tile}).
+Nevertheless, we realized that on each side, the bases that were predicted to interact had generally lower DMS reactivities in one cluster compared to the other cluster, and hypothesized that this cluster corresponded to the long-range interaction (Figure~\ref{tgev}b).
+To investigate, we refined the structure of the 1,799 nt segment using the DMS reactivities from both less-reactive clusters.
+% FSE side: Cluster 2 is less reactive, 52% of ensemble
+% 3' side: Cluster 1 is less reactive, 60% of ensemble
+Consistent with our hypothesis, the minimum free energy (MFE) model included the long-range interaction, which we hereafter call long stem 3 (LS3) (Figure~\ref{tgev}c); predicting the structure using both more-reactive clusters did not produce LS3 (Supplementary Figure).
+The refined model also featured a prominent new interaction connecting 20 nt upstream of the FSE with 400 nt downstream, which we call LS2.
+We suspect that LS2 exists because it coincides with a prominent dip in SCC at positions 661-779 in the 1,799 nt segment of TGEV (Figure~\ref{tgev}c, blue).
+The 
 
-First, to determine whether the FSE and the region with which it may interact form alternative structures, we amplified and deeply sequenced these two regions from each sample.
-Clustering the reads using SEISMIC-RNA revealed that both regions adopt at least two alternative structures.
-The two clusters of the downstream region differed most around positions 1,120-1,140 -- the site of the 3' end of the predicted long-range interaction.
-In cluster 1 (63\% of the ensemble), bases 1,129-1,136 (all part of the predicted interaction) had DMS reactivities less than 0.01; while in cluster 2, the DMS reactivities were all greater than 0.01.
-This result suggests that cluster 1 corresponds to the state in which the long-range interaction forms.
+We used the ensemble average DMS reactivities to produce one "ensemble average" model of short-range base pairs (spanning up to 300 nt) in the TGEV genome (SUPPLEMENTARY FIGURE).
+To verify the model quality, we confirmed that the predicted structure of the first 520 nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a).
+This structure was also consistent with the DMS reactivities: the area under the receiver operating characteristic curve (AUC-ROC) was 0.94 (Supplementary Figure~\ref{tgev_5utr}b).
+We had found the first roughly 500 nt of the SARS-CoV-2 genome in Vero cells was also consistent with a single secondary structure (AUC-ROC = 0.98)~\cite{Lan2022}.
+However, for many other regions -- including the FSE -- a single structure consistent with the DMS reactivities could not be found, evidenced by lower AUC-ROC scores (below 0.6 for the FSE)~\cite{Lan2022}.
+Likewise for TGEV, we found regions with low AUC-ROC scores between the ensemble average model and DMS reactivities (SUPPLEMENTARY FIGURE).
+We surmised that such regions likely formed alternative structures or long-range interactions -- or both -- that the ensemble average model could not capture.
 
 
 
