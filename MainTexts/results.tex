@@ -17,8 +17,8 @@
 % Since its purpose is only to illustrate a toy example, this sequence is never specified in the paper.
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{../MainFigures/strat.pdf}
-	\caption{\textbf{The strategy of SEARCH-MaP and SEISMIC-RNA.} \textbf{(a)}~This toy RNA is partitioned into three sections (P, Q, and R) whose molecules exist in two structural states: one in which an interaction between P and R forms (blue) and one in which it does not (purple). \textbf{(b)}~Hybridizing an ASO (red) to P blocks it from interacting with R and forces all RNA molecules into the state where the P--R interaction is unformed. \textbf{(c)} A SEARCH-MaP experiment entails separate chemical probing and mutational profiling (MaP) with (+ASO) and without (--ASO) the ASO, followed by sequencing to generate FASTQ files. The RNA molecules and FASTQ files use the same color scheme as in (a) and are illustrated/colored in proportion to their abundances in the ensemble. \textbf{(d)} Ensemble average mutational profiles with (+ASO) and without (--ASO) the ASO, computed with SEISMIC-RNA. The \textit{x}-axis is the position in the RNA sequence; the \textit{y}-axis is the fraction of mutations ($\mu$) at the position. Each bar in the --ASO profile is drawn in two colors merely to illustrate how much each structural state contributes to each position; in a real experiment, states cannot be distinguished before clustering. The change upon ASO binding (green) indicates the difference in the fraction of mutations ($\Delta \mu$) between the +ASO and --ASO conditions. \textbf{(e)} Mutational profiles of two clusters (top) obtained by clustering the --ASO ensemble in (d) using SEISMIC-RNA, and the scatter plot of the mutation rates of bases in R (bottom) between the +ASO ensemble average (\textit{x}-axis) and each cluster (\textit{y}-axis). The expected correlation ($r$) is shown beside each scatter plot.}
+	\includegraphics[width=\textwidth]{../MainFigures/strategy/strategy.pdf}
+	\caption{\textbf{The strategy of SEARCH-MaP and SEISMIC-RNA.} \textbf{(a)}~This toy RNA is partitioned into three sections (P, Q, and R) whose molecules exist in two structural states: one in which an interaction between P and R forms and one in which it does not. \textbf{(b)}~Hybridizing an ASO to P blocks it from interacting with R and forces all RNA molecules into the state where the P--R interaction is unformed. \textbf{(c)} A SEARCH-MaP experiment entails separate chemical probing and mutational profiling (MaP) with (+ASO) and without (No-ASO) the ASO, followed by sequencing to generate FASTQ files. The RNA molecules and FASTQ files use the same color scheme as in (a) and are illustrated/colored in proportion to their abundances in the ensemble. \textbf{(d)} Ensemble average mutational profiles with (+ASO) and without (No-ASO) the ASO, computed with SEISMIC-RNA. The \textit{x}-axis is the position in the RNA sequence; the \textit{y}-axis is the fraction of mutations ($\mu$) at the position. Each bar in the No-ASO profile is drawn in two colors merely to illustrate how much each structural state contributes to each position; in a real experiment, states cannot be distinguished before clustering. The change upon ASO binding indicates the difference in the fraction of mutations ($\Delta \mu$) between the +ASO and No-ASO conditions. \textbf{(e)} Mutational profiles of two clusters (top) obtained by clustering the No-ASO ensemble in (d) using SEISMIC-RNA, and the scatter plot of the mutation rates of bases in R (bottom) between the +ASO ensemble average (\textit{x}-axis) and each cluster (\textit{y}-axis). The expected Pearson correlation coefficient (PCC) is shown beside each scatter plot. \textbf{(f)} The workflow of SEISMIC-RNA. First, sequencing reads (in FASTQ files) are aligned to reference sequence(s). For every read, the relationship to each base in the reference sequence (i.e. match, substitution, deletion, insertion) is determined. In the next step, relationships are called as mutated, matched, or uninformative; and positions and reads failing to meet certain criteria are masked out. Optionally, masked reads can be clustered to reveal alternative structures. The types of relationships at each position and in each read are then counted and tabulated. SEISMIC-RNA can use these tables to predict RNA secondary structures or draw a variety of graphs, such as the mutation rate per position.}
 	\label{strat}
 \end{figure}
 
@@ -40,19 +40,24 @@ The interaction-unformed state has a mutational profile similar to that of the +
 Therefore, a cluster that correlates well ($r \approx 1$) with the +ASO ensemble average (here, Cluster 2) corresponds to the interaction-unformed state; while a cluster that correlates weakly ($r \ll 1$) corresponds to the interaction-formed state (Figure~\ref{strat}e, bottom).
 
 
-\subsection{(I hope) SEARCH-MaP detects long-range base-pairing in ribosomal RNA}
+\subsection{SEARCH-MaP detects base-pairing in ribosomal RNA}
 
-We first validated SEARCH-MaP using 16S and 23S ribosomal RNA (rRNA) from \textit{E. coli}.
-For each rRNA, we selected two RNA--RNA interactions spanning > [HOW MANY] nt that had been detected in a cell-free system~\cite{Mustoe2019}.
-For each interaction, we hypothesized that binding an ASO to either side would break the interaction and perturb the structure of the other side (distant from the ASO binding site) and designed two ASOs, one targeting each side.
-As a negative control, we also designed one ASO targeting a stem loop in each rRNA, which we hypothesized would perturb only the structure near the ASO binding site.
+We first validated SEARCH-MaP using 23S ribosomal RNA (rRNA) from \textit{E. coli}.
+For each rRNA, we selected two RNA--RNA interactions that had been detected in a cell-free system~\cite{Mustoe2019}.
+Binding an ASO to either side of an interaction would block its formation, perturbing the structure of the other side (distant from the ASO binding site).
+Thus, for each interaction, we designed two ASOs, one targeting each side.
 
-We folded the 16S and 23S rRNAs with each ASO, performed DMS-MaPseq over the entire transcripts, and compared ensemble average mutational profiles with and without ASOs using SEISMIC-RNA.
-[DESCRIBE THE RESULTS]
+We folded the 23S rRNAs with each ASO, performed DMS-MaPseq over the entire transcripts, and compared ensemble average mutational profiles with and without ASOs using SEISMIC-RNA (Figure~\ref{rrna}).
+Every ASO caused a prominent dip in the rolling Pearson correlation coefficient (PCC) at its target site and the immediate vicinity, confirming that each ASO bound properly to the RNA.
+The ASO targeting positions 1,647-1,668 also caused a smaller dip in PCC around positions 1,987-2,045 -- coinciding with the 3' side of a stem whose 5' side was targeted by the ASO -- showing that this interaction could be detected with SEARCH-MaP.
+Conversely, targeting the 3' side of this stem with an ASO binding positions 1,978-2,010 caused a small -- though still above-baseline -- dip in PCC around position 1,670 (near the stem's 5' side) and another around position 1,800 (the 5' side of another stem targeted by the ASO).
+Shifting the ASO slightly downstream to target positions 2,042-2,076 maintained the dips in PCC around 1,670 and 1,800 while introducing new dips around positions 2,245, 2,435, and 2,630, which correspond to the 3' sides of three stems within or close to the ASO target site.
+Binding an ASO to 2,429-2,452 -- the 3' side of one such stem -- caused the PCC to dip around position 2,055 at the 5' end of this stem.
+These results show that SEARCH-MaP could detect multiple stems ranging from 200 to 600 nt in 23S rRNA from \textit{E. coli}.
 
 \begin{figure}[H]
-	%\includegraphics[height=0.95\textheight]{../MainFigures/fig2.pdf}
-	\caption{}
+	\includegraphics[width=0.5\textwidth]{../MainFigures/rrna/rrna.pdf}
+	\caption{\textbf{Validation of SEARCH-MaP on 23S ribosomal RNA from \textit{E. coli}.} Each graph shows the rolling (window = 45 nt) Pearson correlation coefficient (PCC) between the rRNA to which one ASO was added and a no-ASO control. The known secondary structure of the 23S rRNA~\cite{Cannone2002} is drawn above the graph; base pairs with one side within the ASO target site are highlighted.}
 	\label{rrna}
 \end{figure}
 
@@ -66,7 +71,7 @@ Ribosomes that maintain reading frame terminate at a stop codon shortly after th
 Why coronaviruses need a frameshifting mechanism remains an open question~\cite{Allan2023}, yet all have FSEs~\cite{Plant2008}.
 
 Every coronaviral FSE contains a ``slippery site" (UUUAAAC) and a structure characterized as a pseudoknot in multiple species~\cite{Brierley1989,Herald1993,Plant2005b}.
-Indeed, the isolated core of the SARS coronavirus 2 (SARS-CoV-2) FSE was shown to fold into a pseudoknot with three stems~\cite{KZhang2021,Jones2022}.
+Indeed, the isolated core of the SARS coronavirus 2 (SARS-CoV-2) FSE was shown to fold into a pseudoknot with three stems~\cite{KZhang2021,Roman2021,Jones2022}.
 However, we discovered that when FSE is in its natural place in the SARS-CoV-2 genome, pseudoknot stem 1 is disassembled while an alternative stem 1 folds~\cite{Lan2022}.
 A 283 nt segment of the RNA genome -- containing both the FSE and alternative stem 1 -- failed to fully mimic the DMS reactivities of the full virus (PCC~=~0.75).
 A 2,924 nt segment came closer (PCC~=~0.93), suggesting that -- only in the context of this longer sequence -- the FSE adopts yet another structure, presumably a long-range interaction~\cite{Lan2022}.
@@ -196,38 +201,41 @@ Although clustered data were unavailable in this case, we were still able to fin
 We conclude that long-range interactions involving the FSE occur more widely than in just SARS-CoV-2, including in the genus \textit{Alphacoronavirus}.
 
 
-\subsection{}
+\subsection{Structure of the full TGEV genome based on DMS-MaPseq supports a long-range RNA--RNA interaction involving the FSE}
 
 Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea -- almost always fatally in baby piglets~\cite{Liu2021}.
 Due to the impacts of TGEV on animal health and economics~\cite{Liu2021} and our evidence of a long-range RNA--RNA interaction, we sought to model the genomic secondary structures of live TGEV.
-We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq (two technical replicates per biological replicate) (Figure~\ref{tgev}a).
+We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq (two technical replicates per biological replicate) on the extracted RNA (Figure~\ref{tgev}a).
 The DMS reactivities over the full genome were consistent between biological replicates (PCC~=~0.97), albeit not with the 1,799 nt segment \textit{in vitro} (PCC~=~0.82), which showed that verifying the long-range interaction in live virus would be necessary (Supplementary Figure~\ref{tgev_reps}).
 
 \begin{figure}[H]
 	\includegraphics[width=0.5\textwidth]{../MainFigures/tgev/tgev.pdf}
-	\caption{\textbf{Structure of the TGEV genome.} \textbf{(a)} Schematic of the experiment in which two biological replicates of ST cells were infected with TGEV, DMS-treated, and pelleted. Cell pellets were divided into two technical replicates prior to extraction of DMS-modified RNA.}
+	\caption{\textbf{Genomic secondary structure of live TGEV.} \textbf{(a)} Schematic of the experiment in which two biological replicates of ST cells were infected with TGEV, DMS-treated, and pelleted. Cell pellets were divided into two technical replicates prior to extraction of DMS-modified RNA. \textbf{(b)} Differences in DMS reactivities between the two clusters on each side of the long-range interaction. Each bar represents one base. Bases are shaded dark blue if they interact in the initial model of the long-range interaction (from Figure~\ref{covs}), shown above along with its location in the full genome. The locations of FSE pseudoknot stem 1 (PS1) and the regions amplified for clustering are also indicated. \textbf{(c)} Refined model of the long-range interaction in TGEV based on the DMS reactivities of the less-reactive cluster from both sides. Long stems 1 (LS1), 2 (LS2), and 3 (LS3) are labeled. For comparison with the regions of the 1,799 nt segment perturbed by the ASO (Figure~\ref{covs}), positions after the FSE where the SCC dipped below 0.9 are shaded light blue. \textbf{(d)} Rolling AUC-ROC (window = 45 nt) between the full-genome DMS reactivities and full-genome secondary structure modeled from the DMS reactivities (maximum 300 nt between paired bases). The structure model is drawn above the graph. Only positions 12,042-13,840 are shown here. For comparison, the locations of PS1, LS1, LS2, LS3, and dips in SCC after the FSE are also indicated.}
 	\label{tgev}
 \end{figure}
 
-To determine the structure ensembles, we clustered the reads from the amplicons on both sides of the long-range interaction into two clusters.
-The two clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{sars2-tile}).
+To determine the structure ensembles, we performed RT-PCR on the extracted RNA using primers targeting both sides of the long-range interaction.
+The ensemble average DMS reactivities were consistent with those over the full genome (Supplementary Figure).
+For each side of the long-range interaction, we clustered the reads into two clusters (Figure~\ref{tgev}b).
+These clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{sars2-tile}).
 Nevertheless, we realized that on each side, the bases that were predicted to interact had generally lower DMS reactivities in one cluster compared to the other cluster, and hypothesized that this cluster corresponded to the long-range interaction (Figure~\ref{tgev}b).
-To investigate, we refined the structure of the 1,799 nt segment using the DMS reactivities from both less-reactive clusters.
-% FSE side: Cluster 2 is less reactive, 52% of ensemble
-% 3' side: Cluster 1 is less reactive, 60% of ensemble
+On the 5' side, the less-reactive cluster constituted 52\% of the ensemble; on the 3' side, 60\%.
+To investigate, we refined the structure of the 1,799 nt segment using the DMS reactivities from both of these clusters.
 Consistent with our hypothesis, the minimum free energy (MFE) model included the long-range interaction, which we hereafter call long stem 3 (LS3) (Figure~\ref{tgev}c); predicting the structure using both more-reactive clusters did not produce LS3 (Supplementary Figure).
 The refined model also featured a prominent new interaction connecting 20 nt upstream of the FSE with 400 nt downstream, which we call LS2.
-We suspect that LS2 exists because it coincides with a prominent dip in SCC at positions 661-779 in the 1,799 nt segment of TGEV (Figure~\ref{tgev}c, blue).
-The 
+We suspect that LS2 exists because it coincides with a broad region perturbed by adding an ASO to the FSE in the 1,799 nt segment of TGEV (Figure~\ref{tgev}c).
+Another stem spanning just under 300 nt, which we call LS1, was also predicted in the same location as in the 1,799 nt segment.
 
-We used the ensemble average DMS reactivities to produce one "ensemble average" model of short-range base pairs (spanning up to 300 nt) in the TGEV genome (SUPPLEMENTARY FIGURE).
-To verify the model quality, we confirmed that the predicted structure of the first 520 nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a).
-This structure was also consistent with the DMS reactivities: the area under the receiver operating characteristic curve (AUC-ROC) was 0.94 (Supplementary Figure~\ref{tgev_5utr}b).
-We had found the first roughly 500 nt of the SARS-CoV-2 genome in Vero cells was also consistent with a single secondary structure (AUC-ROC = 0.98)~\cite{Lan2022}.
-However, for many other regions -- including the FSE -- a single structure consistent with the DMS reactivities could not be found, evidenced by lower AUC-ROC scores (below 0.6 for the FSE)~\cite{Lan2022}.
-Likewise for TGEV, we found regions with low AUC-ROC scores between the ensemble average model and DMS reactivities (SUPPLEMENTARY FIGURE).
-We surmised that such regions likely formed alternative structures or long-range interactions -- or both -- that the ensemble average model could not capture.
+We used the ensemble average DMS reactivities to produce one "ensemble average" model of the secondary structure of the full TGEV genome (SUPPLEMENTARY FIGURE).
+We restricted base pairs to a maximum distance of 300 nt to make the computation tractable and avoid over-predicting spurious long-range interactions.
+To verify the model quality, we confirmed that the predicted structure of the first 520 nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a) and was consistent with the DMS reactivities (AUC-ROC = 0.94) (Supplementary Figure~\ref{tgev_5utr}b).
 
+The AUC-ROC was lower in many locations throughout the rest of the genome (Supplementary Figure), indicating that a single secondary structure consistent with the ensemble average DMS reactivities could not be found.
+We had noticed a similar phenomenon in SARS-CoV-2 -- in particular, at the FSE~\cite{Lan2022}.
+Thus, we surmised that regions with low AUC-ROC scores likely form alternative structures or long-range interactions -- or both -- that a single secondary structure model could not capture.
+Checking if this relationship also held for TGEV, we found a large dip in AUC-ROC just upstream of the FSE, centered on the 5' ends of LS2 and LS3, as well as smaller dips at the 3' ends of both stems (Figure~\ref{tgev}d).
+In fact, at or near every location that SEARCH-MaP had evidenced to interact with the FSE -- where the rolling SCC had dipped -- the AUC-ROC also dipped.
+This finding supports the hypothesis that long-range interactions and/or alternative structures are often the reason why predicted structures are not locally consistent with the DMS reactivities on which they were based.
 
 
 \end{document}
