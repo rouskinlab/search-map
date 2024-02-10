@@ -5,8 +5,6 @@
 
 
 \section{Results}
-\label{results}
-
 
 \subsection{Strategy of SEARCH-MaP and SEISMIC-RNA}
 
@@ -33,11 +31,11 @@ Because the structures -- and therefore mutational profiles -- of R differ betwe
 However, this is not the case for element Q, which has the same secondary structure in both states (Figure~\ref{strat}d, middle).
 Therefore, one can deduce that P interacts with R -- but not with Q -- because hybridizing an ASO to P alters the mutational profile of R but not of Q.
 
-After identifying RNA--RNA interactions, SEISMIC-RNA can also determine the mutational profiles of the states where the P--R interaction is formed and unformed -- even if their secondary structures are unknown.
-Inferring mutational profiles for the interaction-formed and -unformed states requires clustering the --ASO ensemble into two clusters of RNA molecules (Figure~\ref{strat}e, top).
+SEISMIC-RNA can also determine the mutational profiles of the states where the P--R interaction is formed and unformed -- even if their secondary structures are unknown.
+Inferring mutational profiles for the interaction-formed/unformed states requires clustering the --ASO ensemble into two clusters of RNA molecules (Figure~\ref{strat}e, top); SEISMIC-RNA uses an optimized version of the DREEM algorithm~\cite{Tomezsko2020} for clustering.
 Each cluster has its own mutational profile and corresponds to one structural state, but which cluster corresponds to the interaction-formed (or -unformed) state is not yet known.
 The interaction-unformed state has a mutational profile similar to that of the +ASO ensemble average, since the ASO blocks the interaction and forces the RNA into the interaction-unformed state.
-Therefore, a cluster that correlates well ($r \approx 1$) with the +ASO ensemble average (here, Cluster 2) corresponds to the interaction-unformed state; while a cluster that correlates weakly ($r \ll 1$) corresponds to the interaction-formed state (Figure~\ref{strat}e, bottom).
+Therefore, a cluster that correlates well with the +ASO ensemble average (here, cluster 2) corresponds to the interaction-unformed state, while a cluster that correlates weakly (here, cluster 1) corresponds to the interaction-formed state (Figure~\ref{strat}e, bottom).
 
 
 \subsection{SEARCH-MaP detects base-pairing in ribosomal RNA}
@@ -81,7 +79,7 @@ We hypothesized it would turn out to be the structure another group had discover
 If so, the structure of the FSE would be perturbed by -- and only by -- ASOs targeting either side of the putative FSE-arch.
 To investigate, we added (separately) thirteen groups of DNA ASOs to the 2,924 nt segment (Figure~\ref{tiles}a).
 Each group contained four or five ASOs targeting a contiguous 213-244 nt section of the RNA; target sites of adjacent groups abutted without overlapping.
-After adding each group of ASOs, we performed DMS-MaPseq with two pairs of RT-PCR primers: flanking the ASO target site (to confirm binding) and flanking the 5' FSE-arch (to detect structural changes).
+After adding each group of ASOs, we performed DMS-MaPseq~\cite{Zubradt2016} with two pairs of RT-PCR primers: flanking the ASO target site (to confirm binding) and flanking the 5' FSE-arch (to detect structural changes).
 We obtained data for every ASO group except 13.
 All ASO groups bound properly, evidenced by suppression of DMS reactivities over their target sites (SFIG).
 
@@ -167,8 +165,8 @@ The other three strains of \textit{Betacoronavirus} that we selected were MERS c
 We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have interactions at positions 440-460 and 350-360, respectively.
 Avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a strain of \textit{Gammacoronavirus} -- was predicted to have a strong interaction at positions 330-350, while common moorhen coronavirus HKU21 (\verb|NC_016996.1|) was the species of \textit{Deltacoronavirus} with the most promising FSE interactions.
 
-We reasoned that if an FSE does interact with a distant RNA element, removing that element by truncating the RNA would change the structure of the FSE, which we could detect with DMS-MaPseq.
-For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq~\cite{Zubradt2016} on both a 239 nt segment comprising the FSE and minimal flanking sequences and a 1,799 nt segment encompassing the FSE and all sites with which it was predicted to interact.
+We reasoned that if an FSE does interact with a distant RNA element, removing that element by truncating the RNA would change the structure of the FSE, which we could detect with DMS-MaPseq~\cite{Zubradt2016}.
+For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq on both a 239 nt segment comprising the FSE and minimal flanking sequences and a 1,799 nt segment encompassing the FSE and all sites with which it was predicted to interact.
 All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 nt and 1,799 nt segments (SFIG), suggesting long-range interactions involving the FSE.
 
 \subsubsection{SEARCH-MaP reveals long-range interactions involving the FSE in four additional coronaviruses}
@@ -178,7 +176,7 @@ The rolling Spearman correlation coefficient (SCC) between the +ASO and no-ASO m
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/covs/covs.pdf}
-	\caption{\textbf{Evidence for long-range RNA--RNA interactions involving the FSE in five coronaviruses.} Rolling (window~=~45 nt) Spearman correlation coefficient (SCC) of DMS reactivities between the +ASO and no-ASO samples for each 1,799 nt segment of a coronaviral genome. The target site of each ASO is highlighted on the SCC data and shown above each graph. Structures predicted with RNAstructure~\cite{Mathews2004} using no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012} are drawn above each graph; base pairs connecting the ASO target site to an off-target position with SCC less than 0.9 are colored. For SARS-CoV-2, the refined model (Figure~\ref{lnas}a) is also drawn, with LS1-LS4 labeled.}
+	\caption{\textbf{Evidence for long-range RNA--RNA interactions involving the FSE in five coronaviruses.} Rolling (window~=~45 nt) Spearman correlation coefficient (SCC) of DMS reactivities between the +ASO and no-ASO samples for each 1,799 nt segment of a coronaviral genome. The target site of each ASO is highlighted on the SCC data and shown above each graph. Structures predicted with RNAstructure~\cite{Mathews2004a} using no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012} are drawn above each graph; base pairs connecting the ASO target site to an off-target position with SCC less than 0.9 are colored. For SARS-CoV-2, the refined model (Figure~\ref{lnas}a) is also drawn, with LS1-LS4 labeled.}
 	\label{covs}
 \end{figure}
 
@@ -201,11 +199,11 @@ Although clustered data were unavailable in this case, we were still able to fin
 We conclude that long-range interactions involving the FSE occur more widely than in just SARS-CoV-2, including in the genus \textit{Alphacoronavirus}.
 
 
-\subsection{Structure of the full TGEV genome based on DMS-MaPseq supports a long-range RNA--RNA interaction involving the FSE}
+\subsection{Structure of the full TGEV genome in ST cells supports a long-range RNA--RNA interaction involving the FSE}
 
 Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea -- almost always fatally in baby piglets~\cite{Liu2021}.
 Due to the impacts of TGEV on animal health and economics~\cite{Liu2021} and our evidence of a long-range RNA--RNA interaction, we sought to model the genomic secondary structures of live TGEV.
-We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq (two technical replicates per biological replicate) on the extracted RNA (Figure~\ref{tgev}a).
+We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq~\cite{Zubradt2016} (two technical replicates per biological replicate) on the extracted RNA (Figure~\ref{tgev}a).
 The DMS reactivities over the full genome were consistent between biological replicates (PCC~=~0.97), albeit not with the 1,799 nt segment \textit{in vitro} (PCC~=~0.82), which showed that verifying the long-range interaction in live virus would be necessary (Supplementary Figure~\ref{tgev_reps}).
 
 \begin{figure}[H]
@@ -217,7 +215,7 @@ The DMS reactivities over the full genome were consistent between biological rep
 To determine the structure ensembles, we performed RT-PCR on the extracted RNA using primers targeting both sides of the long-range interaction.
 The ensemble average DMS reactivities were consistent with those over the full genome (Supplementary Figure).
 For each side of the long-range interaction, we clustered the reads into two clusters (Figure~\ref{tgev}b).
-These clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{sars2-tile}).
+These clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{tiles}).
 Nevertheless, we realized that on each side, the bases that were predicted to interact had generally lower DMS reactivities in one cluster compared to the other cluster, and hypothesized that this cluster corresponded to the long-range interaction (Figure~\ref{tgev}b).
 On the 5' side, the less-reactive cluster constituted 52\% of the ensemble; on the 3' side, 60\%.
 To investigate, we refined the structure of the 1,799 nt segment using the DMS reactivities from both of these clusters.

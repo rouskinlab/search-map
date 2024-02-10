@@ -19,7 +19,7 @@ clean_pdfa ()
 
 
 # Remove all existing output and temporary files, if any.
-for name in main abstract intro results strat discuss methods
+for name in main abstract intro results strat discuss methods suppfigs
 do
 	echo "Cleaning files for $name"
 	clean_prefix "$name"

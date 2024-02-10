@@ -13,7 +13,7 @@ High-quality tertiary structures provide more information than primary or second
 However, nearly all RNA sequences fold into an ensemble of coexisting structures~\cite{Mustoe2014,Spitale2023}; resolving individual tertiary structures often proves difficult or impossible with mainstay methods used for proteins~\cite{Kappel2020}.
 Consequently, the world's largest database of tertiary structures -- the Protein Data Bank~\cite{Berman2000} -- has accumulated only 1,839 structures of RNAs (compared to 198,506 of proteins) as of February 2024.
 Worse, most of those RNAs are short: only 119 are longer than 200 nt; and of those, only 24 are not ribosomal RNAs or group I/II introns.
-Due in part to the paucity of non-redundant long RNA structures, methods of predicting tertiary structures for RNAs lag far behind those for proteins~\cite{Schneider2023}.
+Due partly to the paucity of non-redundant long RNA structures, methods of predicting tertiary structures for RNAs lag far behind those for proteins~\cite{Schneider2023}.
 
 The situation is only marginally better for RNA secondary structures.
 If a diverse set of homologous RNA sequences is available, a consensus secondary structure can often be predicted using comparative sequence analysis, which has proven accurate for ribosomal and transfer RNAs, among others~\cite{Cannone2002}.
@@ -34,17 +34,16 @@ Determining the base pairs in those structures still requires structure predicti
 
 Several experimental methods have been developed to find base pairs directly, with minimal reliance on structure prediction.
 M2-seq~\cite{Cheng2017} introduces random mutagenesis before chemical probing to detect correlated mutations between pairs of bases, which indicates the bases interact.
-Formation of alternative structures complicates the data analysis~\cite{Cordero2015}.
-DANCE-MaP~\cite{Olson2022} was developed to find alternative structures from M2-seq datasets via clustering; still, it can only find interactions between bases on the same read (typically up to 300 nt) and requires very high sequencing depth (over 1 million reads).
+However, alternative structures complicate the data analysis~\cite{Cordero2015}, and detectible base pairs can be no longer than the sequencing reads (typically 300 nt).
 For long-range base pairs, many methods involving crosslinking, proximity ligation, and sequencing have been developed~\cite{Kudla2020}.
-These methods can find RNA--RNA interactions spanning arbitrarily long distances -- as well as intermolecular RNA--RNA interactions -- but nether achieve single-nucleotide resolution nor resolve alternative structures.
+These methods can find RNA--RNA interactions spanning arbitrarily long distances -- as well as intermolecular RNA--RNA interactions -- but neither achieve single-nucleotide resolution nor resolve alternative structures.
 Detecting, resolving, and quantifying alternative structures with base pairs that span arbitrarily long distances remains an open challenge.
 
 Here, we introduce ``Structure Ensemble Ablation by Reverse Complement Hybridization with Mutational Profiling" (SEARCH-MaP) to probe RNA--RNA interactions spanning arbitrarily large distances.
-We also develop the software ``Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering of RNA" (SEISMIC-RNA) to analyze data from SEARCH-MaP (as well as DMS-MaPseq~\cite{Zubradt2016} and SHAPE-MaP~\cite{Siegfried2014}).
+We also develop the software ``Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering for RNA" (SEISMIC-RNA) to analyze data from SEARCH-MaP (and other MaP methods~\cite{Siegfried2014,Zubradt2016}).
 Using SEARCH-MaP and SEISMIC-RNA, we discover and quantify an extensive set of long-range base pairs in the genome of SARS coronavirus 2.
 We show that this long-range structure inhibits the folding of a pseudoknot that stimulates ribosomal frameshifting~\cite{Kelly2020,KZhang2021}, hinting that it could regulate viral protein synthesis.
-We also discover homologous structures in other SARS-related viruses and other long-range base-pairing involving the frameshift elements of more dissimilar coronaviruses including transmissible gastroenteritis virus (TGEV).
+We also discover homologous structures in other SARS-related viruses and other long-range base-pairing involving the frameshift stimulating elements of more dissimilar coronaviruses including transmissible gastroenteritis virus (TGEV).
 Finally, we model the full genomic secondary structure of live TGEV in ST cells and suggest other regions that form long-range base pairs.
 In addition to revealing new structures in coronaviral genomes, our findings show how SEARCH-MaP and SEISMIC-RNA can characterize secondary structure ensembles of long RNA molecules in general -- a necessary step in developing a true ``AlphaFold for RNA"~\cite{Schneider2023}.
 
