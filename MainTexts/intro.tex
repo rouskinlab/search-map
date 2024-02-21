@@ -5,46 +5,44 @@
 
 \section{Introduction}
 
-Across all domains of life, RNA molecules perform myriad functions in development~\cite{Klattenhoff2013}, epigenetics~\cite{Bhan2015}, sensing~\cite{Kortmann2012,Serganov2013}, translation~\cite{Noller2012}, immunity~\cite{Wiedenheft2012}, cancer~\cite{Hajjari2015}, and more.
+Across all domains of life, RNA molecules perform myriad functions in development~\cite{Klattenhoff2013}, immunity~\cite{Wiedenheft2012}, translation~\cite{Noller2012}, sensing~\cite{Kortmann2012,Serganov2013}, epigenetics~\cite{Bhan2015}, cancer~\cite{Hajjari2015}, and more.
 RNA also constitutes the genomes of many threatening viruses~\cite{Woolhouse2018}, including influenza viruses~\cite{Bouvier2008} and coronaviruses~\cite{Yang2015a}.
 The capabilities of an RNA molecule depend not only on its sequence (primary structure) but also on its base pairs (secondary structure) and three-dimensional shape (tertiary structure)~\cite{Mortimer2014}.
 
-High-quality tertiary structures provide more information than primary or secondary structures.
-However, most RNA sequences fold into an ensemble of coexisting structures~\cite{Mustoe2014,Spitale2023}; resolving individual tertiary structures often proves difficult or impossible with mainstay methods used for proteins~\cite{Kappel2020}.
+Although high-quality tertiary structures provide the most information, resolving them often proves difficult or impossible with mainstay methods used for proteins~\cite{Kappel2020}.
 Consequently, the world's largest database of tertiary structures -- the Protein Data Bank~\cite{Berman2000} -- has accumulated only 1,839 structures of RNAs (compared to 198,506 of proteins) as of February 2024.
-Worse, most of those RNAs are short: only 119 are longer than 200 nt; and of those, only 24 are not ribosomal RNAs or group I/II introns.
+Worse, most of those RNAs are short: only 119 are longer than 200 nt; of those, only 24 are not ribosomal RNAs or group I/II introns.
 Due partly to the paucity of non-redundant long RNA structures, methods of predicting tertiary structures for RNAs lag far behind those for proteins~\cite{Schneider2023}.
 
 The situation is only marginally better for RNA secondary structures.
-If a diverse set of homologous RNA sequences is available, a consensus secondary structure can often be predicted using comparative sequence analysis, which has proven accurate for ribosomal and transfer RNAs, among others~\cite{Cannone2002}.
-An extension known as a covariance model~\cite{Eddy1994} underlies the widely-used Rfam database~\cite{Kalvari2020} of consensus secondary structures for 4,170 RNA families (as of version 14.10).
-Although extensive, Rfam contains no protein-coding sequences (with rare exceptions such as frameshift stimulating elements) and provides one secondary structure for each family (while many RNAs fold into multiple functional structures~\cite{Spitale2023}).
-Each family also represents only a short segment of a full RNA sequence; for coronaviruses, families exist for only the 5' and 3' untranslated regions, the frameshift stimulating element, and the packaging signal, which collectively constitute only 3\% of the genomic RNA.
+If a diverse set of homologous RNA sequences is available, a consensus secondary structure can often be predicted using comparative sequence analysis, which has accurately modeled ribosomal and transfer RNAs, among others~\cite{Cannone2002}.
+A formalization known as the covariance model~\cite{Eddy1994} underlies the widely-used Rfam database~\cite{Kalvari2020} of consensus secondary structures for 4,170 RNA families (as of version 14.10).
+Although extensive, Rfam contains no protein-coding sequences (with some exceptions such as frameshift stimulating elements) and provides only one secondary structure for each family, even though many RNAs fold into multiple functional structures~\cite{Mustoe2014,Spitale2023}).
+Each family also models only a short segment of a full RNA sequence; for coronaviruses, existing families encompass the 5' and 3' untranslated regions, the frameshift stimulating element, and the packaging signal, which collectively constitute only 3\% of the genomic RNA.
 
-Predicting secondary structures faces two major obstacles due to the scarcity of high-quality RNA structures, particularly for RNAs longer than 200 nt including long non-coding~\cite{Quinn2016}, messenger~\cite{Lange2012}, and viral genomic~\cite{Nicholson2015} RNAs.
+Predicting secondary structures faces two major obstacles due to the scarcity of high-quality RNA structures, particularly for RNAs longer than 200 nt (including long non-coding~\cite{Quinn2016}, messenger~\cite{Lange2012}, and viral genomic~\cite{Nicholson2015} RNAs).
 First, prediction methods trained on known RNA structures are limited to small, low-diversity training datasets (generally of short sequences), which causes overfitting and hence inaccurate predictions for dissimilar RNAs (including longer sequences)~\cite{Flamm2022,Sato2023}.
 Second, without known secondary structures of many diverse RNAs, the accuracy of any prediction method cannot be properly benchmarked~\cite{Lange2012,Mathews2019}.
 For these reasons, and because thermodynamic-based models also tend to be less accurate for longer RNAs~\cite{Nicholson2015} and base pairs spanning longer distances~\cite{Doshi2004}, predicting secondary structures of long RNAs remains unreliable.
 
 The most promising methods for determining the structures of long RNAs use experimental data.
-Chemical probing is a broad class of methods that involve treating RNA with reagents that modify nucleotides depending on the local secondary structure; for instance, dimethyl sulfate (DMS) methylates adenosine and cytidine residues only if they are not base-paired~\cite{Kubota2015}.
-The latest approaches use reverse transcription to encode modifications to the RNA as mutations in the cDNA, followed by next-generation sequencing -- a strategy known as mutational profiling (MaP)~\cite{Siegfried2014,Zubradt2016}.
+Chemical probing experiments involve treating RNA with reagents that modify nucleotides depending on the local secondary structure; for instance, dimethyl sulfate (DMS) methylates adenosine (A) and cytidine (C) residues only if they are not base-paired~\cite{Kubota2015}.
+Modern methods use reverse transcription to encode modifications of the RNA as mutations in the cDNA, followed by next-generation sequencing -- a strategy known as mutational profiling (MaP)~\cite{Siegfried2014,Zubradt2016}.
 A key advantage of MaP is that the sequencing reads can be clustered to detect multiple secondary structures in an ensemble~\cite{Tomezsko2020,Morandi2021}.
-Determining the base pairs in those structures still requires structure prediction algorithms~\cite{Mathews2004a}, although incorporating chemical probing data does improve accuracy~\cite{Cordero2012,Sloma2015}.
+Determining the base pairs in those structures still requires structure prediction~\cite{Mathews2004a}, although incorporating chemical probing data does improve accuracy~\cite{Cordero2012,Sloma2015}.
 
 Several experimental methods have been developed to find base pairs directly, with minimal reliance on structure prediction.
 M2-seq~\cite{Cheng2017} introduces random mutations before chemical probing to detect correlated mutations between pairs of bases, which indicates the bases interact.
 However, alternative structures complicate the data analysis~\cite{Cordero2015}, and detectible base pairs can be no longer than the sequencing reads (typically 300 nt).
 For long-range base pairs, many methods involving crosslinking, proximity ligation, and sequencing have been developed~\cite{Kudla2020}.
-These methods can find base pairs spanning arbitrarily long distances -- as well as between different RNA molecules -- but cannot achieve single-nucleotide resolution or resolve alternative structures.
+These methods can find base pairs spanning arbitrarily long distances -- as well as between different RNA molecules -- but cannot resolve single base pairs or alternative structures.
 Detecting, resolving, and quantifying alternative structures with base pairs that span arbitrarily long distances remains an open challenge.
 
-Here, we introduce ``Structure Ensemble Ablation by Reverse Complement Hybridization with Mutational Profiling" (SEARCH-MaP) to find base pairs spanning arbitrarily large distances.
-We also develop the software ``Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering for RNA" (SEISMIC-RNA) to analyze data from any MaP method~\cite{Siegfried2014,Zubradt2016} including SEARCH-MaP.
-Using SEARCH-MaP and SEISMIC-RNA, we discover and quantify an extensive set of long-range base pairs in the genome of SARS coronavirus 2.
-We show that this long-range structure inhibits the folding of a pseudoknot that stimulates ribosomal frameshifting~\cite{Kelly2020,KZhang2021}, hinting that it could regulate viral protein synthesis.
-We also discover homologous structures in other SARS-related viruses and other long-range base-pairing involving the frameshift stimulating elements of more dissimilar coronaviruses including transmissible gastroenteritis virus (TGEV).
-Finally, we model the full genomic secondary structure of live TGEV in ST cells and suggest other regions that form long-range base pairs.
-In addition to revealing new structures in coronaviral genomes, our findings show how SEARCH-MaP and SEISMIC-RNA can characterize secondary structure ensembles of long RNA molecules in general -- a necessary step in developing a true ``AlphaFold for RNA"~\cite{Schneider2023}.
+Here, we introduce ``Structure Ensemble Ablation by Reverse Complement Hybridization with Mutational Profiling" (SEARCH-MaP), an experimental method to discover RNA base pairs spanning arbitrarily long distances.
+We also develop the software ``Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering of RNA" (SEISMIC-RNA) to analyze MaP data and resolve alternative structures.
+Using SEARCH-MaP and SEISMIC-RNA, we discover an RNA structure in severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) that comprises dozens of long-range base pairs and folds in nearly half of genomic RNA molecules.
+We show that it inhibits the folding of a pseudoknot that stimulates ribosomal frameshifting~\cite{Kelly2020,KZhang2021}, hinting a role in regulating viral protein synthesis.
+We find similar structures in other SARS-related viruses and transmissible gastroenteritis virus (TGEV), suggesting that long-range base pairs involving the frameshift stimulation element are a general feature of coronaviruses.
+In addition to revealing new structures in coronaviral genomes, our findings show how SEARCH-MaP and SEISMIC-RNA can resolve secondary structure ensembles of long RNA molecules -- a necessary step towards a true ``AlphaFold for RNA"~\cite{Schneider2023}.
 
 \end{document}

@@ -5,11 +5,11 @@
 
 \section{Discussion}
 
-In this work, we developed SEARCH-MaP and SEISMIC-RNA and applied them to detect structural ensembles of SARS-CoV-2 and other coronaviruses.
-A previous study demonstrated that binding an ASO to one side of a long-range RNA--RNA interaction would perturb the chemical reactivities of the other side~\cite{Archer2013}.
-Here, we separate and identify the chemical reactivities corresponding to the interaction-formed and -unformed structures.
-This advance enables isolating the chemical reactivities of the interaction-formed state -- on not just one but both sides of a long-range interaction, linking corresponding alternative structures over distances much greater than the length of a read, which has not been possible in previous studies~\cite{Tomezsko2020,Morandi2021}.
-Using the linked reactivities from both sides of a long-range interaction, its secondary structure can be modeled more accurately than would be possible using the ensemble average reactivities, as we have done for SARS-CoV-2 (Figure~\ref{lnas}) and TGEV (Figure~\ref{tgev}).
+In this work, we developed SEARCH-MaP and SEISMIC-RNA and applied them to detect structural ensembles involving long-range base pairs in SARS-CoV-2 and other coronaviruses.
+A previous study demonstrated that binding an ASO to one side of a long-range stem would perturb the chemical probing reactivities of the other side~\cite{Archer2013}.
+Here, we separated and identified the reactivities corresponding to long-range stems formed and unformed.
+This advance enables isolating the reactivities of the long-range stem formed -- on not just one but both sides of the stem, linking corresponding alternative structures over distances much greater than the length of a read, which has not been possible in previous studies~\cite{Tomezsko2020,Morandi2021}.
+Using the linked reactivities from both sides of a long-range stem, its secondary structure can be modeled more accurately than would be possible using the ensemble average reactivities, as we have done for SARS-CoV-2 (Figure~\ref{lnas}) and TGEV (Figure~\ref{tgev}).
 
 SEISMIC-RNA builds upon our previous work, the DREEM algorithm~\cite{Tomezsko2020}.
 Here, we have optimized the algorithm to run approximately 10-30 times faster and built an entirely new workflow around it for aligning reads, calling mutations, masking data, and outputting a variety of graphs.
@@ -22,7 +22,7 @@ Indeed, the first evidence of the FSE-arch in SARS-CoV-2 came from such a study~
 To investigate RNA structures in detail, M2-seq~\cite{Cheng2017} and related methods~\cite{Cordero2015} can pinpoint base pairs with up to single-nucleotide resolution and minimal need for structure prediction.
 However, base pairs are detectible only if the paired bases occur on the same sequencing read, which restricts their spans to at most the read length (typically 300 nt).
 Because the capabilities of M2-seq and SEARCH-MaP complement each other, they could be integrated: first SEARCH-MaP/SEISMIC-RNA to discover, quantify, and model long-range base pairs; then M2-seq for short-range base pairs.
-By providing the missing link -- structure ensembles involving long-range base pairs -- SEARCH-MaP and SEISMIC-RNA could link broad and detailed views of RNA structure into one coherent model.
+By providing the missing link -- structure ensembles involving long-range base pairs -- SEARCH-MaP and SEISMIC-RNA could combine broad and detailed views of RNA structure into one coherent model.
 
 To understand structures of long RNA molecules, SEARCH-MaP and SEISMIC-RNA could also be used to validate predicted secondary structures and benchmark structure prediction algorithms.
 Algorithms that predict secondary structures achieve lower accuracies for longer sequences~\cite{Doshi2004,Nicholson2015}, hence long-range base pairs in particular must be confirmed independently.
@@ -35,29 +35,29 @@ This integrated workflow could characterize the secondary structures of RNA mole
 In this study, we focused on the genomes of coronaviruses, specifically long-range base pairs involving the frameshift stimulating element (FSE).
 Long-range base pairs implicated in frameshifting also occur in several plant viruses of the family \textit{Tombusviridae}~\cite{Barry2002,Tajima2011,Mikkelsen2023}.
 However, in \textit{Tombusviridae} species, the frameshift pseudoknots themselves are made of long-range base pairs; in coronaviruses, the pseudoknots are local structures~\cite{Brierley1989,Herald1993,Plant2005b,KZhang2021} and (at least in SARS-CoV-2) compete with long-range base pairs.
-Consequently, the long-range base pairs are necessary for frameshifting in \textit{Tombusviridae} species~\cite{Barry2002,Tajima2011,Mikkelsen2023} but dispensable in coronaviruses: even the 80-90 nt core FSE of SARS-CoV-2 stimulates 15-40\% of ribosomes to frameshift in luciferase assays~\cite{Kelly2020,Haniff2020,KZhang2021,Bhatt2021,YSun2021,Lan2022}.
-In live SARS-CoV-2, frameshifting has appeared to be nearly twice as frequent (50-70\%)~\cite{Finkel2021a,Kim2021,PurayChavez2022}; whether this discrepancy is due to long-range base-pairing, methodological artifacts, or \textit{trans} factors~\cite{Riegger2022} is unknown~\cite{Allan2023}.
+Consequently, the long-range base pairs are necessary for frameshifting in \textit{Tombusviridae} species~\cite{Barry2002,Tajima2011,Mikkelsen2023} but dispensable in coronaviruses: even the 80-90 nt core FSE of SARS-CoV-2 has stimulated 15-40\% of ribosomes to frameshift in dual luciferase constructs~\cite{Kelly2020,Haniff2020,KZhang2021,Bhatt2021,YSun2021,Lan2022}.
+Surprisingly, frameshifting has appeared to be nearly twice as frequent (50-70\%) in live SARS-CoV-2~\cite{Finkel2021a,Kim2021,PurayChavez2022}; whether this discrepancy is due to long-range base-pairing, methodological artifacts, or \textit{trans} factors~\cite{Riegger2022} is unknown~\cite{Allan2023}.
 
 If, how, and why the long-range base pairs affect frameshifting in coronaviruses are open questions.
-For \textit{Tombusviridae}, one study~\cite{Barry2002} suggested that the long-range interaction regulates viral RNA synthesis by negative feedback: without RNA polymerase, the long-range interaction would form and stimulate frameshifting to produce polymerase, which would then disrupt the long-range interaction while replicating the genome.
+For \textit{Tombusviridae}, one study~\cite{Barry2002} suggested that the long-range stem regulates viral RNA synthesis by negative feedback: without RNA polymerase, the long-range stem would form and stimulate frameshifting to produce polymerase, which would then unwind the long-range stem while replicating the genome.
 However, this mechanism seems implausible in coronaviruses, where RNA synthesis and translation occur in separate subcellular compartments (the double-membrane vesicles and the cytosol, respectively)~\cite{Wolff2020}.
-Another study on \textit{Tombusviridae}~\cite{Mikkelsen2023} hypothesized that after the ribosome has frameshifted, long-range interactions destabilize the FSE so the ribosome can unwind it and continue translating.
+Another study on \textit{Tombusviridae}~\cite{Mikkelsen2023} hypothesized that after the ribosome has frameshifted, long-range stems destabilize the FSE so the ribosome can unwind it and continue translating.
 As the long-range base pairs in SARS-CoV-2 do compete with the pseudoknot, they might also have this role, which -- for coronaviruses -- could not be strictly necessary for frameshifting.
 One study~\cite{Kim2021} of translation in SARS-CoV-2 at different time points measured frameshifting around 20\% at 4 hours post infection but 60-80\% at 12-36 hours.
 This result is consistent with a previous hypothesis~\cite{Kelly2021} that coronaviruses use frameshifting to time protein synthesis: first translating ORF1a to suppress the immune system, then translating ORF1b containing the RNA polymerase.
 We surmise the long-range base pairs would form in virions and persist when the virus released its genome into a host cell, where they would initially suppress frameshifting.
 Once host protein synthesis had been inhibited and the double-membrane vesicles formed, a signal specific to the cytosol would disassemble the long-range base pairs so that frameshifting could occur efficiently and produce the replication machinery from ORF1b.
 The long-range base pairs would form in viral progeny but not in genomic RNA released into the cytosol for translation, so that more ORF1b could be translated.
-This possible role of long-range base pairs in the coronaviral life cycle could be tested by probing the RNA structure in subcellular compartments and virions, identifying cytosolic factors that could disassemble the long-range interaction, and quantifying how the long-range base pairs affect frameshifting in the context of a live coronavirus.
+This possible role of long-range base pairs in the coronaviral life cycle could be tested by probing the RNA structure in subcellular compartments and virions, identifying cytosolic factors that could disassemble the long-range base pairs, and quantifying how they affect frameshifting in the context of a live coronavirus.
 
 Future studies could also expand the scope of SEARCH-MaP and SEISMIC-RNA.
-While all SEARCH-MaP experiments in this study were performed \textit{in vitro}, the method would likely be feasible \textit{in cellulo}: DMS-MaPseq can detect ASOs binding to RNAs within cells~\cite{Zhu2022}.
+While all SEARCH-MaP experiments in this study were performed \textit{in vitro}, the method would likely also be feasible \textit{in cellulo}: DMS-MaPseq can detect ASOs binding to RNAs within cells~\cite{Zhu2022}.
 The main challenges would likely involve optimizing the ASO probes and transfection protocols to maximize the signal while minimizing unwanted side effects such as immunogenicity.
 SEARCH-MaP can screen an entire transcript (as in Figure~\ref{tiles}), but scaling up to an entire transcriptome could prove challenging.
 One strategy for probing many RNAs simultaneously could involve adding a pool of ASOs -- with no more than one ASO capable of binding each RNA -- rather than one ASO at a time.
 In this manner, a similar number of samples would be needed to search all RNAs as would be needed for the longest RNA.
-Distinguishing direct from indirect RNA--RNA interactions is another area for development: if segment Q could base-pair with either P or R, then blocking P could perturb R (and vice versa) as a consequence of perturbing Q, even though P and R could not base-pair directly.
-A solution could be to first block Q with one ASO; then, if blocking P with another ASO caused no change in R (and vice versa), it would be clear that they could only interact indirectly (through Q).
+Distinguishing direct from indirect base pairing is another area for development: if segment Q could base-pair with either P or R, then blocking P could perturb R (and vice versa) as a consequence of perturbing Q, even though P and R could not base-pair directly.
+A solution could be to first block Q with one ASO; then, if blocking P with another ASO caused no change in R (and vice versa), it would suggest that they could only interact indirectly (through Q).
 
 We imagine that SEARCH-MaP and SEISMIC-RNA will make it practical to determine accurate secondary structure ensembles of entire messenger, long noncoding, and viral RNAs.
 Collected in a database of long RNA structures, these results would facilitate subsequent efforts to predict RNA structures and benchmark algorithms, culminating in a real ``AlphaFold for RNA"~\cite{Schneider2023} in the hands of every biologist.
