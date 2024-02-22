@@ -80,9 +80,9 @@ We hypothesized they would match a structure another group had discovered and na
 If so, the structure of the FSE would be perturbed by -- and only by -- ASOs targeting either side of the putative FSE-arch.
 To investigate, we added (separately) thirteen groups of DNA ASOs to the 2,924 nt segment (Figure~\ref{tiles}a).
 Each group contained four or five ASOs targeting a contiguous 213-244 nt section of the RNA; target sites of adjacent groups abutted without overlapping.
-After adding each group of ASOs, we performed DMS-MaPseq~\cite{Zubradt2016} with two pairs of RT-PCR primers: flanking the ASO target site (to confirm binding) and flanking the 5' FSE-arch (to detect structural changes).
-We obtained data for every ASO group except 13 (Supplementary Figure~\ref{sars2-tile-fse}).
-All ASO groups bound properly, evidenced by suppression of DMS reactivities over their target sites (Supplementary Figure~\ref{sars2-tile-target}).
+After adding each group of ASOs, we performed DMS-MaPseq~\cite{Zubradt2016} with two pairs of RT-PCR primers.
+With the first pair of primers, flanking the ASO target site, we confirmed that the DMS reactivities were suppressed -- hence the ASO groups bound -- except for group 13, for which we obtained no data (Supplementary Figure~\ref{sars2-tile-target}).
+With the second pair of primers, flanking the 5' side of the FSE-arch, we investigated how its structure was perturbed by each ASO group (Supplementary Figure~\ref{sars2-tile-fse}).
 
 To quantify structural changes over the 5' FSE-arch, we calculated the rolling Pearson correlation coefficient (PCC) of the DMS reactivities between each sample and a no-ASO control (Figure~\ref{tiles}b).
 The rolling PCC of a no-ASO replicate remained between 0.93 and 1.00 (mean~=~0.97), confirming the DMS reactivities were reproducible.
@@ -117,10 +117,11 @@ We concluded that the RNA exists as an ensemble of structures in which the two i
 
 To determine if the FSE forms other long-range stems, in lieu of the original outer stem of the FSE-arch~\cite{Ziv2020}, we modeled a 1,799 nt segment centered on the FSE-arch.
 Although computationally predicting long-range base pairs is notoriously unreliable~\cite{Doshi2004,Nicholson2015}, we speculated that we could increase consistency by incorporating the DMS reactivities of cluster 1 on both sides of the FSE-arch (Figure~\ref{tiles}c and d).
-In agreement, among the top 20 structures predicted from the cluster 1 DMS reactivities, 100\% included the inner two stems, compared to ? using the ensemble average, ? using cluster 2, and ? using no DMS reactivities (Supplementary Figure).
-Using the DMS reactivities of the long-range cluster thus enabled predicting the long-range stems consistently.
+In support, of the thirteen structures predicted from the cluster 1 DMS reactivities, nine (69\%) contained the innermost stem -- which we call long stem 1 (LS1) -- compared to five of eleven (45\%) using the ensemble average and four of twenty (20\%) using no DMS reactivities (Supplementary Figure~\ref{sars2-clusters-fold}).
+The middle stem of the FSE-arch -- long stem 2 (LS2) -- was predicted in eight structures (62\%) using the cluster 1 DMS reactivities, and zero using the ensemble average or no DMS reactivities.
+Thus, we found that the DMS reactivities of the long-range cluster enabled predicting the long-range stems more consistently.
 
-Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- which we hereafter call long stems 1 (LS1) and 2 (LS2) -- but also two stems (LS3 and LS4) that were not in the original FSE-arch model~\cite{Ziv2020}.
+Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2 -- but also two stems (LS3 and LS4) that were not in the original FSE-arch model~\cite{Ziv2020}.
 The structure also contained the alternative stem 1 (AS1) that we had previously discovered~\cite{Lan2022}.
 To our surprise, LS2b, LS3, and LS4 of the new model collectively overlapped all three stems of the pseudoknot (PS1, PS2, and PS3) that is thought to stimulate frameshifting~\cite{Kelly2020,KZhang2021,Jones2022}.
 Thus, these long stems -- if they exist -- would be mutually exclusive with the pseudoknot.
