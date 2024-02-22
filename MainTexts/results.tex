@@ -116,14 +116,14 @@ We concluded that the RNA exists as an ensemble of structures in which the two i
 \subsection{The long-range stems compete with the frameshift pseudoknot in SARS-CoV-2}
 
 To determine if the FSE forms other long-range stems, in lieu of the original outer stem of the FSE-arch~\cite{Ziv2020}, we modeled a 1,799 nt segment centered on the FSE-arch.
-Although computationally predicting long-range base pairs is notoriously unreliable~\cite{Doshi2004,Nicholson2015}, we speculated that we could increase consistency by incorporating the DMS reactivities of cluster 1 on both sides of the FSE-arch (Figure~\ref{tiles}c and d).
-In support, of the thirteen structures predicted from the cluster 1 DMS reactivities, nine (69\%) contained the innermost stem -- which we call long stem 1 (LS1) -- compared to five of eleven (45\%) using the ensemble average and four of twenty (20\%) using no DMS reactivities (Supplementary Figure~\ref{sars2-clusters-fold}).
-The middle stem of the FSE-arch -- long stem 2 (LS2) -- was predicted in eight structures (62\%) using the cluster 1 DMS reactivities, and zero using the ensemble average or no DMS reactivities.
-Thus, we found that the DMS reactivities of the long-range cluster enabled predicting the long-range stems more consistently.
+Although computationally predicting long-range base pairs is notoriously unreliable~\cite{Doshi2004,Nicholson2015}, we speculated that we could improve accuracy by incorporating the DMS reactivities of cluster 1 on both sides of the FSE-arch (Supplementary Figure~\ref{sars2-clusters-fold}).
+For the innermost stem -- which we call long stem 1 (LS1) -- nine of thirteen structures (69\%) predicted using the cluster 1 DMS reactivities contained LS1, compared to five of eleven (45\%) using the ensemble average and four of twenty (20\%) using no DMS reactivities.
+For the second-most inner stem (LS2), eight structures (62\%) predicted using cluster 1 contained LS2, while none did using average or no DMS reactivities.
+Thus, the DMS reactivities corresponding to the long-range cluster enabled predicting the long-range stems more consistently, allowing us to refine our model of the long-range stems.
 
-Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2 -- but also two stems (LS3 and LS4) that were not in the original FSE-arch model~\cite{Ziv2020}.
+Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2a/b -- but also two long stems (LS3a/b and LS4) that were not in the original FSE-arch model~\cite{Ziv2020}.
 The structure also contained the alternative stem 1 (AS1) that we had previously discovered~\cite{Lan2022}.
-To our surprise, LS2b, LS3, and LS4 of the new model collectively overlapped all three stems of the pseudoknot (PS1, PS2, and PS3) that is thought to stimulate frameshifting~\cite{Kelly2020,KZhang2021,Jones2022}.
+To our surprise, LS2b, LS3, and LS4 of the refined model collectively overlapped all three stems of the pseudoknot (PS1, PS2, and PS3) that is thought to stimulate frameshifting~\cite{Kelly2020,KZhang2021,Jones2022}.
 Thus, these long stems -- if they exist -- would be mutually exclusive with the pseudoknot.
 
 To verify this refined model, we performed SEARCH-MaP on the 1,799 nt segment using 15-20 nt LNA/DNA mixmer ASOs for single-stem precision (Figure~\ref{lnas}b).
@@ -136,16 +136,16 @@ Therefore, stems LS1, LS2a/b, and LS3b do exist -- at least in a portion of the 
 We then investigated whether the long-range stems compete with the pseudoknot.
 If they did, blocking them with ASOs would increase the proportion of the pseudoknot in the ensemble.
 To test this hypothesis, we first generated four possible models of the FSE structure by combining mutually compatible stems from the refined model (Figure~\ref{lnas}c).
-Then, we clustered the 1,799 nt segment without ASOs up to 6 clusters -- the maximum number reproducible between replicates -- (Supplementary Figure) and compared each cluster to each structure model using the area under the receiver operating characteristic curve (AUC-ROC) over the positions spanned by the pseudoknot, 305-371 (Figure~\ref{lnas}d, top).
+Then, we clustered the 1,799 nt segment without ASOs up to 6 clusters -- the maximum number reproducible between replicates -- (Supplementary Figure~\ref{sars2-compare-clusters}a) and compared each cluster to each structure model using the area under the receiver operating characteristic curve (AUC-ROC) over the positions spanned by the pseudoknot, 305-371 (Figure~\ref{lnas}d, top).
 We considered a cluster and model to be ``consistent" if the AUC-ROC was at least 0.90.
 The locally nested model (AS1 plus PS2 and PS3) was consistent with three clusters totaling 52\% of the ensemble, while the extended model (AS1 plus all long-range stems) was consistent with one cluster (20\%).
 No clusters were fully consistent with the pseudoknotted model, though the least-abundant cluster (7\%) came close with an AUC-ROC of 0.88.
 The remaining cluster (21\%) was not consistent with any model, suggesting that the ensemble contains structures beyond those in Figure~\ref{lnas}c.
 
-Adding an ASO targeting the 5' side of AS1 reduced the proportion of AS1-containing states (extended and locally nested) from 72\% to 16\% (Figure~\ref{lnas}d, left).
-In their absence emerged clusters consistent with the pseudoknotted and truncated models, representing 56\% and 20\% of the ensemble, respectively.
-Meanwhile, adding an ASO that blocked the part of LS2b that overlaps PS2 eliminated the extended state (which includes LS2b) and produced one cluster (13\%) consistent with the pseudoknotted model (Figure~\ref{lnas}d, right).
-Adding both ASOs simultaneously collapsed the ensemble into three clusters of which two (87\%) were highly consistent with the pseudoknotted model (Figure~\ref{lnas}d, bottom).
+Adding an ASO targeting the 5' side of AS1 reduced the proportion of AS1-containing states (extended and locally nested) from 72\% to 16\% (Figure~\ref{lnas}d, left; Supplementary Figure~\ref{sars2-compare-clusters}b).
+In their absence emerged clusters consistent with the pseudoknotted and truncated models, constituting 56\% and 20\% of the ensemble, respectively.
+Meanwhile, adding an ASO that blocked the part of LS2b that overlaps PS2 eliminated the extended state (which includes LS2b) and produced one cluster (13\%) consistent with the pseudoknotted model (Figure~\ref{lnas}d, right; Supplementary Figure~\ref{sars2-compare-clusters}c).
+Adding both ASOs simultaneously collapsed the ensemble into three clusters of which two (87\%) were highly consistent with the pseudoknotted model (Figure~\ref{lnas}d, bottom; Supplementary Figure~\ref{sars2-compare-clusters}d).
 Since blocking the PS2-overlapping portion of LS2b increased the proportion of clusters consistent (or nearly so) with the pseudoknotted model -- both alone and combined with the anti-AS1 ASO -- we conclude that the long-range stems do outcompete the pseudoknot.
 
 \begin{figure}[H]
