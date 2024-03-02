@@ -22,7 +22,7 @@
 \addtocounter{figure}{-1}
 \begin{figure}[H]
 	\caption[]{(Continued from previous page.) \textbf{(a)}~This toy RNA is partitioned into three sections (P, Q, and R) and folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not. \textbf{(b)}~Hybridizing an ASO to P blocks it from base-pairing with R. \textbf{(c)}~A SEARCH-MaP experiment entails separate chemical probing and mutational profiling (MaP) with (+ASO) and without (no-ASO) the ASO, followed by sequencing to generate FASTQ files. The RNA molecules and FASTQ files use the same color scheme as in (a) and are illustrated/colored in proportion to their abundances in the ensemble. \textbf{(d)}~Mutational profiles with (+ASO) and without (no-ASO) the ASO, computed as ensemble averages with SEISMIC-RNA. The \textit{x}-axis is the position in the RNA sequence; the \textit{y}-axis is the fraction of mutated bases ($\mu$) at the position. Each bar in the no-ASO profile is drawn in two colors merely to illustrate how many mutations at each position come from each structure; in a real experiment, this information would not exist before clustering. The change upon ASO binding indicates the difference in the fraction of mutated bases ($\Delta \mu$) between the +ASO and no-ASO conditions. \textbf{(e)}~Mutational profiles of two clusters (top) obtained by clustering the no-ASO ensemble in (d) using SEISMIC-RNA, and scatter plots comparing the mutational profiles (bottom) between the +ASO ensemble average (\textit{x}-axis) and each cluster (\textit{y}-axis); each point represents one base in section R. The expected Pearson correlation coefficient (PCC) is shown beside each scatter plot. \textbf{(f)}~The workflow of SEISMIC-RNA. First, sequencing reads (in FASTQ files) are aligned to reference sequence(s). For every read, the relationship to each base in the reference sequence (i.e. match, substitution, deletion, insertion) is determined. In the next step, relationships are called as mutated, matched, or uninformative; and positions and reads failing to meet certain criteria are masked out. Optionally, masked reads can be clustered to reveal alternative structures. The types of relationships at each position and in each read are then counted and tabulated. SEISMIC-RNA can use these tables to predict RNA secondary structures or draw a variety of graphs including mutational profiles, scatter plots, and receiver operating characteristic (ROC) curves.}
-	
+
 \end{figure}
 
 We illustrate SEARCH-MaP with an RNA comprising three sections (P, Q, and R) that folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not (Figure~\ref{strat}a).
@@ -156,12 +156,12 @@ Since blocking the PS2-overlapping portion of LS2b increased the proportion of c
 
 \subsection{Frameshift stimulating elements of multiple coronaviruses form long-range base pairs}
 
-We surmised that other coronaviruses would also feature long-range base pairs involving the FSE.
+We hypothesized that other coronaviruses would also feature long-range base pairs involving the FSE.
 To search for these structures, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799 nt segments from eight coronaviral genomes.
 
 As of December 2021, the NCBI Reference Sequence Database~\cite{OLeary2016} contained 62 complete genomes of coronaviruses.
-To focus on those likely to have long-range base pairs involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE (Supplementary Figure).
-Based on these predicted structures, we selected ten coronaviruses -- at least one from each genus (Supplementary Figure) -- including SARS-CoV-2 as a positive control.
+To focus on those likely to have long-range base pairs involving the FSE, we predicted the likelihood that each base in a 2,000 nt section surrounding the FSE would pair with a base in the FSE (Supplementary Figure~\ref{contact_freqs}).
+Based on these predicted structures, we selected ten coronaviruses -- at least one from each genus (Supplementary Figure~\ref{ten-covs}a) -- including SARS-CoV-2 as a positive control.
 Within the genus \textit{Betacoronavirus}, we included all three SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup.
 The other three strains of \textit{Betacoronavirus} that we selected were MERS coronavirus (\verb|NC_019843.3|) with predicted base pairs at positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both with a predicted upstream base pairs at positions 10-20.
 We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have base pairs at positions 440-460 and 350-360, respectively.
@@ -169,7 +169,7 @@ For avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a
 
 We reasoned that if an FSE does interact with a distant RNA element, removing that element by truncating the RNA would change the structure of the FSE, which we could detect with DMS-MaPseq~\cite{Zubradt2016}.
 For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq on both a 239 nt segment comprising the FSE and minimal flanking sequences and a 1,799 nt segment encompassing the FSE and all sites with which it was predicted to interact.
-All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 nt and 1,799 nt segments (Supplementary Figure), suggesting the FSE forms long-range base pairs.
+All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 nt and 1,799 nt segments (Supplementary Figure~\ref{ten-covs}b), suggesting the FSE forms long-range base pairs.
 
 To determine which RNA elements the FSE base-pairs with in each coronavirus, we performed SEARCH-MaP on the 1,799 nt RNA segment using DNA ASOs targeting the vicinity of the FSE (Figure~\ref{covs}).
 The rolling Spearman correlation coefficient (SCC) between the +ASO and no-ASO mutational profiles dipped below 0.9 at the ASO target site in every coronavirus segment, confirming the ASOs bound and altered the structure.
