@@ -7,6 +7,38 @@
 \label{methods}
 
 
+\subsection{SEARCH-MaP of the 2,924 nt segment of SARS-CoV-2 genomic RNA}
+
+A DNA template of the 2,924 nt segment of the SARS-CoV-2 genome, plus an upstream T7 promoter, was PCR-amplified from our previously constructed pmirGLO plasmid \cite{Lan2022} with 250 nM primers TAATACGACTCACTATAGAATAATGAGCTTAGTCCTGTTGCACTACG and TAAATTGCGGACATACTTATCGGCAATTTTGTTACC (Thermo Fisher) using 2X CloneAmp HiFi PCR Premix (Takara) in a 50 \textmu l volume with initial denaturation at 98\textdegree C for 60 s; 35 cycles of 98\textdegree C for 10 s, 65\textdegree C for 10 s, and 72\textdegree C for 15 s; and final extension at 72\textdegree C for 60 s.
+The 50 \textmu l PCR product was mixed with 10 \textmu l of 6X Purple Loading Dye (New England Biolabs) alongside 10 \textmu l of 0.1X 1 kb DNA Ladder (New England Biolabs) and electrophoresed through a 1\% agarose gel -- 50 ml of 1X tris-acetate-EDTA buffer (Boston BioProducts), 0.5 g of agarose powder, and 5 \textmu l of 10,000X SYBR Safe (Thermo Fisher) -- in 1X tris-acetate-EDTA buffer (Boston BioProducts) within a Mini-Sub cell GT (Bio-Rad) at 60 V for 60 min.
+The band at roughly 3 kb was excised and the DNA purified using a Zymoclean Gel DNA Recovery Kit (Zymo Research) according to the manufacturer's protocol; samples were eluted in 10 \textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher).
+To increase the DNA yield, the gel-extracted DNA was amplified by a second round of PCR followed by gel extraction, using the same protocol as above.
+To remove contaminants after the second gel extraction, the DNA was further purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; samples were eluted in 10 \textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher).
+
+RNA was transcribed using the MEGAscript T7 Transcription Kit (Thermo Fisher) according to the manufacturer's protocol.
+Briefly, 1 \textmu l (150 ng) of DNA template from the previous step was diluted in 7 ul of nuclease-free water (Fisher Bioreagents), mixed with 2 \textmu l of each 10X ribonucleotide solution followed by 2 \textmu l of the 10X reaction buffer and 2 \textmu l of the 10X enzyme mix, and then incubated at 37\textdegree C for 3 hr.
+The DNA template was then degraded by adding 1 \textmu l of TURBO DNase (Thermo Fisher) and incubating at 37\textdegree C for 15 min.
+The RNA transcript was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; samples were eluted in 20 \textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher).
+DID YOU CONFIRM THE RNA HAS NO OFF-TARGET BANDS?
+
+Antisense oligonucleotides (ASOs) were ordered from Integrated DNA Technologies in a 96-well PCR plate, each ASO already resuspended to 10 \textmu M in 1X IDTE buffer (10 mM Tris, 0.1 mM EDTA).
+Each ASO pool (of up to 5 ASOs) was made by mixing 2.5 \textmu l (25 pmol) of each constituent ASO; the volume of each pool was adjusted to 12.5 \textmu l by adding 10 mM Tris (SUPPLIER) with 0.1 mM EDTA (SUPPLIER).
+Each 12.5 \textmu l ASO pool was then mixed with 1 \textmu l (425 ng, 453 fmol) of RNA (55X molar excess of each ASO) in a PCR tube.
+The tubes were heated to 95\textdegree C for 60 seconds to denature the RNA, then placed into an ice block for several minutes.
+The RNA was transferred to 1.5 ml tubes; to each, 35 \textmu l of 1.4X refolding buffer comprising 400 mM sodium cacodylate (Electron Microscopy Sciences) and 6 mM magnesium chloride (SUPPLIER) was added, followed by incubation at 37\textdegree C for 25 min to allow the RNA to refold and bind the ASOs.
+No-ASO control 1 was handled in the same manner but with 12.5 \textmu l of TE buffer in lieu of an ASO pool.
+For no-ASO control 2, 12.5 \textmu l of TE buffer was added after placing on ice and before adding refolding buffer, to confirm that the timing of adding TE buffer would not alter the RNA structure.
+
+For chemical probing, 1.5 \textmu l of neat DMS (MilliporeSigma) was added to each tube for a total volume of 50 \textmu l including 320 mM DMS, 280 mM cacodylate, and 9.1 nM RNA.
+The DMS was mixed in by swirling the pipette tip and kept resuspended by shaking at 500 rpm in a thermomixer (Eppendorf) throughout the treatment at 37\textdegree C for 5 min.
+The reactions were quenched by adding 30 \textmu l neat beta-mercaptoethanol (SUPPLIER) and mixing thoroughly.
+Each sample of DMS-modified RNA was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; samples were eluted in 10 \textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher).
+
+ASOs were removed from each sample using TURBO DNase (Thermo Fisher) according to the manufacturer's protocol.
+Briefly, 4 \textmu l of each DMS-modified RNA was mixed with 4 \textmu l of nuclease-free water (Fisher Bioreagents), 1 \textmu l of 10X TURBO DNase Buffer, and 1 \textmu l of TURBO DNase in a PCR tube; and then incubated at 37\textdegree C for 30 min.
+To stop each reaction, 2 \textmu l of DNase Inactivation Reagent was mixed in and incubated at room temperature for 10 min, and mixed throughout by flicking several times.
+The DNase Inactivation Reagent was precipitated by spinning the tubes on a benchtop PCR tube centrifuge for 10 min, then transferring 4 \textmu l of each supernatant to a new tube.
+
 \subsection{Correcting observer bias due to drop-out of reads}
 
 Let $N$ reads from $K$ clusters align to a reference sequence of length $L$.
