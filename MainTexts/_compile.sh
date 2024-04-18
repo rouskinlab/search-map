@@ -23,5 +23,4 @@ compile_main
 compile_refs
 compile_main
 compile_main
-compile_main
 
