@@ -29,15 +29,19 @@
 % wrapped figures
 \usepackage{wrapfig}
 
-% supplementary figures
+% wrapped tables
+\usepackage{tabularray}
+
+% supplementary items
 \usepackage{newfloat}
-\DeclareFloatingEnvironment[name={Supplementary Figure}]{suppfigure}
+\DeclareFloatingEnvironment[name={Supplementary Figure}]{sifigure}
+\DeclareFloatingEnvironment[name={Supplementary Table}]{sitable}
 
 % bibliography
 \usepackage{natbib}
 
 % main typeface
-%\usepackage[default]{lato}
+\usepackage[default]{lato}
 
 % title and heading typefaces
 \usepackage{titlesec}
@@ -51,7 +55,7 @@
 
 % title
 \title{Discovery and Quantification of Long-Range RNA Base Pairs in Coronavirus Genomes with SEARCH-MaP and SEISMIC-RNA}
-\author{Matthew F. Allan, Justin Aruda, Yves Martin, Scott Grote,\\ Alberic de Lajarte, Jesse Plung, Mateo Valenzuela,\\ Mark Bathe, and Silvi Rouskin}
+\author{Matthew F. Allan, Justin Aruda, Yves Martin, Scott Grote,\\Alberic de Lajarte, Jesse Plung, Mateo Valenzuela,\\Mark Bathe, and Silvi Rouskin}
 
 
 \begin{document}
@@ -67,9 +71,9 @@
 \subfile{results}
 \newpage
 \subfile{discuss}
-%\subfile{methods}
 \newpage
-\subfile{suppfigs}
+\subfile{methods}
+
 % Create the references section.
 \newpage
 \begin{singlespace}
@@ -77,5 +81,8 @@
 	\bibliography{refs}
 \end{singlespace}
 
+% Include supplementary information.
+\newpage
+\subfile{../SupplementaryInformation/si}
 
 \end{document}

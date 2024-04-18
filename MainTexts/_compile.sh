@@ -8,7 +8,7 @@ PREFIX=main
 
 compile_main () {
     clear
-    pdflatex -shell-escape -output-driver="xdvipdfmx -z 0" $PREFIX.tex
+    pdflatex -shell-escape $PREFIX.tex
 }
 
 
@@ -21,6 +21,7 @@ compile_refs () {
 # Compile the new files.
 compile_main
 compile_refs
+compile_main
 compile_main
 compile_main
 

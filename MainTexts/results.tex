@@ -67,7 +67,6 @@ Aside from ribosomes, many of the best-characterized functional long-range RNA b
 Coronaviruses regulate translation of their first open reading frame (ORF1) using programmed ribosomal frameshifting~\cite{Plant2008}.
 In the middle of ORF1, a switch called a frameshift stimulation element (FSE) makes a fraction of ribosomes slip backwards into the -1 reading frame.
 Ribosomes that maintain reading frame terminate at a stop codon shortly after the FSE, while those that frameshift bypass that stop codon and reach the end of ORF1.
-Why coronaviruses need a frameshifting mechanism remains an open question~\cite{Allan2023}, yet all have FSEs~\cite{Plant2008}.
 
 Every coronaviral FSE contains a ``slippery site" (UUUAAAC) and a structure characterized as a pseudoknot in multiple species~\cite{Brierley1989,Herald1993,Plant2005b}.
 Indeed, the isolated core of the FSE in SARS-CoV-2 was shown to fold into a pseudoknot with three stems~\cite{KZhang2021,Roman2021,Jones2022}.
@@ -79,9 +78,9 @@ We used SEARCH-MaP and SEISMIC-RNA to find the long-range base pairs formed by t
 We hypothesized they would match a structure another group had discovered and named the ``FSE-arch"~\cite{Ziv2020}.
 If so, the structure of the FSE would be perturbed by -- and only by -- ASOs targeting either side of the putative FSE-arch.
 To investigate, we added (separately) thirteen groups of DNA ASOs to the 2,924 nt segment (Figure~\ref{tiles}a).
-Each group contained four or five ASOs targeting a contiguous 213-244 nt section of the RNA; target sites of adjacent groups abutted without overlapping.
+Each group contained up to five ASOs targeting a contiguous 213-244 nt section of the RNA; target sites of adjacent groups abutted without overlapping (Supplementary Table \ref{asos2924}).
 After adding each group of ASOs, we performed DMS-MaPseq~\cite{Zubradt2016} with two pairs of RT-PCR primers.
-With the first pair of primers, flanking the ASO target site, we confirmed that the DMS reactivities were suppressed -- hence the ASO groups bound -- except for group 13, for which we obtained no data (Supplementary Figure~\ref{sars2-tile-target}).
+With the first pair of primers, flanking the ASO target site (Supplementary Table \ref{primers2924}), we confirmed that the DMS reactivities were suppressed -- hence the ASO groups bound -- except for group 13, for which we obtained no data (Supplementary Figure~\ref{sars2-tile-target}).
 With the second pair of primers, flanking the 5' side of the FSE-arch, we investigated how its structure was perturbed by each ASO group (Supplementary Figure~\ref{sars2-tile-fse}).
 
 To quantify structural changes over the 5' FSE-arch, we calculated the rolling Pearson correlation coefficient (PCC) of the DMS reactivities between each sample and a no-ASO control (Figure~\ref{tiles}b).
