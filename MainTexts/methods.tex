@@ -7,7 +7,14 @@
 \label{methods}
 
 
-\subsection{SEARCH-MaP of the 2,924 nt segment of SARS-CoV-2 genomic RNA}
+\subsection{Development of SEISMIC-RNA}
+
+SEISMIC-RNA has been written in entirely in Python; it is currently compatible with version 3.10 or greater.
+It relies extensively on several Python packages including NumPy~\cite{Harris2020}, Pandas~\cite{McKinney2010,Reback2020}, SciPy~\cite{Virtanen2020}, and Numba~\cite{Lam2015}.
+SEISMIC-RNA also requires Samtools~\cite{Li2009} for processing alignment maps and has several optional dependencies including Cutadapt~\cite{Martin2011} for trimming reads, Bowtie 2~\cite{Langmead2012} for aligning reads, and RNAstructure~\cite{Reuter2010} for modeling RNA secondary structures using chemical probing data.
+
+
+\subsection{Confirmation of long-range base pairs in SARS-CoV-2 RNA}
 
 A DNA template of the 2,924 nt segment of the SARS-CoV-2 genome, plus an upstream T7 promoter, was amplified from our previously constructed pmirGLO plasmid \cite{Lan2022} with 250 nM primers TAATACGACTCACTATAGAATAATGAGCTTAGTCCTGTTGCACTACG and TAAATTGCGGACATACTTATCGGCAATTTTGTTACC (Thermo Fisher Scientific) using 2X CloneAmp HiFi PCR Premix (Takara Bio) in a 50 \textmu l volume with initial denaturation at 98\textdegree C for 60 s; 35 cycles of 98\textdegree C for 10 s, 65\textdegree C for 10 s, and 72\textdegree C for 15 s; and final extension at 72\textdegree C for 60 s.
 The 50 \textmu l PCR product was mixed with 10 \textmu l of 6X Purple Loading Dye (New England Biolabs) alongside 10 \textmu l of 0.1X 1 kb DNA Ladder (New England Biolabs) and electrophoresed through a 1\% agarose gel -- 50 ml of 1X tris-acetate-EDTA buffer (Boston BioProducts), 0.5 g of SeaKem Agarose (Lonza), and 5 \textmu l of 10,000X SYBR Safe (Invitrogen) -- in 1X tris-acetate-EDTA buffer (Boston BioProducts) at 60 V for 60 min.
@@ -57,30 +64,14 @@ Samples were extracted in 50 \textmu l nuclease-free water (Fisher Bioreagents).
 DNA concentrations were measured using a Qubit 3.0 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
 Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
 
-
-\subsection{Screening coronavirus long-range interactions computationally}
-\label{screen_lri_comp}
-
-All coronaviruses with reference genomes in the NCBI Reference Sequence Database~\cite{OLeary2016} were searched for using the following query:
-\begin{verbatim}
-refseq[filter] AND ("Alphacoronavirus"[Organism] OR
-                    "Betacoronavirus"[Organism] OR
-                    "Gammacoronavirus"[Organism] OR
-                    "Deltacoronavirus"[Organism])
-\end{verbatim}
-The complete record of every reference genome was downloaded both in FASTA format (for the reference sequence) and in Feature Table format (for feature locations).
-The location of the frameshift stimulating element (FSE) in each genome was estimated from the feature table, and the nearest instance of \verb|TTTAAAC| was used as the slippery site, using a custom Python script.
-The 2,000 nt segment beginning 100 nt upstream of and ending 1,893 nt downstream of the slippery site was used for predicting long-range interactions involving the FSE.
-Genomes with ambiguous nucleotides (e.g. \verb|N|) in this segment were discarded.
-For each coronavirus genome, up to 100 secondary structure models of the 2,000 nt segment were generated using Fold version 6.3 from RNAstructure~\cite{Mathews2004a} with \verb|-M 100| and otherwise default parameters.
-Then, for each position, the fraction of models for the coronavirus in which the base at the position paired with any other base between positions 101 (the first base of the slippery sequence) and 250 was calculated using a custom Python script.
-The coronaviruses were clustered by their fraction vectors using the unweighted pair group method with arithmetic mean (UPGMA) and a euclidean distance metric, implemented in Seaborn version 0.11~\cite{Waskom2021} and SciPy version 1.7~\cite{Virtanen2020}.
-The resulting hierarchically-clustered heatmap was examined manually to select coronaviruses based on the prominence of potential long-range interactions with the FSE (relatively large fractions far from positions 101-250).
+Reads from sequencing (FASTQ files) were processed with SEISMIC-RNA v0.12 and v0.13 to compute mutation rates, clusters, correlations between samples, and secondary structure models.
+Commands for computing the effects of each ASO group are in the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2.9kb/run-tile.sh}.
+Commands for finding alternative secondary structures and models are in the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2.9kb/run-deep.sh}.
 
 
-\subsection{SEARCH-MaP of the 1,799 nt segment of SARS-CoV-2 genomic RNA}
+\subsection{Verification of the refined model of long-range base pairs and mutually exclusive base pairs in SARS-CoV-2}
 
-A DNA template of the 1,799 nt segment of the SARS-CoV-2 genome, plus an upstream T7 promoter, was amplified from the SARS Coronavirus 2 1,799 bp construct (Twist Bioscience) with 250 nM primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG (Integrated DNA Technologies) using 2X CloneAmp HiFi PCR Premix (Takara Bio) in a 20 \textmu l volume with initial denaturation at 98\textdegree C for 30 s; 30 cycles of 98\textdegree C for 10 s, 65\textdegree C for 10 s, and 72\textdegree C for 10 s; and final extension at 72\textdegree C for 60 s.
+A DNA template of a 1,799 nt segment of the SARS-CoV-2 genome, plus an upstream T7 promoter, was amplified from the SARS Coronavirus 2 1,799 bp construct (Twist Bioscience) with 250 nM primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG (Integrated DNA Technologies) using 2X CloneAmp HiFi PCR Premix (Takara Bio) in a 20 \textmu l volume with initial denaturation at 98\textdegree C for 30 s; 30 cycles of 98\textdegree C for 10 s, 65\textdegree C for 10 s, and 72\textdegree C for 10 s; and final extension at 72\textdegree C for 60 s.
 The PCR product was purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; it was eluted in 18 \textmu l of 10 mM Tris-HCl pH 8 (Invitrogen) and measured with a NanoDrop One (Thermo Fisher Scientific).
 RNA was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol.
 Specifically, 100 ng of DNA template from the previous step was diluted to 8 \textmu l in nuclease-free water (Fisher Bioreagents), mixed with 2 \textmu l of each of the four 10X (100 mM) NTP solutions followed by 2 \textmu l of the 10X reaction buffer and 2 \textmu l of the 10X T7 RNA polymerase mix, and then incubated at 37\textdegree C for 11 hr.
@@ -120,6 +111,29 @@ After indexing, PCR products were pooled in pairs; each pool (50 \textmu l) was 
 Samples were extracted in 50 \textmu l nuclease-free water (Fisher Bioreagents).
 DNA concentrations were measured using a Qubit 4 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
 Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
+
+
+\subsection{Computational screen of long-range interactions in coronaviruses}
+\label{screen_lri_comp}
+
+All coronaviruses with reference genomes in the NCBI Reference Sequence Database~\cite{OLeary2016} were searched for using the following query:
+\begin{verbatim}
+refseq[filter] AND ("Alphacoronavirus"[Organism] OR
+                    "Betacoronavirus"[Organism] OR
+                    "Gammacoronavirus"[Organism] OR
+                    "Deltacoronavirus"[Organism])
+\end{verbatim}
+The complete record of every reference genome was downloaded both in FASTA format (for the reference sequence) and in Feature Table format (for feature locations).
+The location of the frameshift stimulating element (FSE) in each genome was estimated from the feature table, and the nearest instance of \verb|TTTAAAC| was used as the slippery site, using a custom Python script.
+The 2,000 nt segment beginning 100 nt upstream of and ending 1,893 nt downstream of the slippery site was used for predicting long-range interactions involving the FSE.
+Genomes with ambiguous nucleotides (e.g. \verb|N|) in this segment were discarded.
+For each coronavirus genome, up to 100 secondary structure models of the 2,000 nt segment were generated using Fold version 6.3 from RNAstructure~\cite{Mathews2004a} with \verb|-M 100| and otherwise default parameters.
+Then, for each position, the fraction of models for the coronavirus in which the base at the position paired with any other base between positions 101 (the first base of the slippery sequence) and 250 was calculated using a custom Python script.
+The coronaviruses were clustered by their fraction vectors using the unweighted pair group method with arithmetic mean (UPGMA) and a euclidean distance metric, implemented in Seaborn version 0.11~\cite{Waskom2021} and SciPy version 1.7~\cite{Virtanen2020}.
+The resulting hierarchically-clustered heatmap was examined manually to select coronaviruses based on the prominence of potential long-range interactions with the FSE (relatively large fractions far from positions 101-250).
+
+
+\subsection{SEARCH-MaP  1,799 nt segment of SARS-CoV-2 genomic RNA}
 
 
 \subsection{DMS-MaPseq of live transmissible gastroenteritis virus}
