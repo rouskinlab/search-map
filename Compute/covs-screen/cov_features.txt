@@ -1,0 +1,4640 @@
+>Feature ref|AC_000192.1|
+1	214	5'UTR
+1	76	misc_feature
+			note	leader sequence
+60	76	misc_feature
+			note	transcription regulatory sequence
+215	21756	gene
+			gene	ORF1ab
+			locus_tag	MHV-JHMgp01
+			db_xref	GeneID:3283258
+215	13618	CDS
+13618	21756
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_209229.2|
+			note	-1 frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+215	13639	CDS
+			product	ORF1a polyprotein
+			product	pp1a polyprotein
+			protein_id	ref|YP_209230.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+3572	3574	misc_feature
+			note	Catalytic Cys of PLP1
+4025	4027	misc_feature
+			note	Catalytic His of PLP1
+5357	5359	misc_feature
+			note	Catalytic Cys of PLP2
+5828	5830	misc_feature
+			note	Catalytic His of PLP2
+10343	10345	misc_feature
+			note	Catalytic His of 3CLPro
+10655	10657	misc_feature
+			note	Catalytic Cys of 3CLPro
+13612	13612	misc_feature
+			note	slippery sequence
+13624	13699	misc_feature
+			note	RNA pseudo knot
+21756	21764	misc_feature
+			note	transcription regulatory sequence for gene 2
+21770	22567	gene
+			locus_tag	MHV-JHMgp03
+			db_xref	GeneID:3283264
+21770	22567	CDS
+			product	p30 accessory protein
+			protein_id	ref|YP_209231.1|
+22589	22598	misc_feature
+			note	transcription regulatory sequence for gene 2-1
+22613	23932	gene
+			gene	HE
+			locus_tag	MHV-JHMgp04
+			db_xref	GeneID:3283263
+22613	23932	CDS
+			product	hemagglutinin-esterase glycoprotein
+			protein_id	ref|YP_209232.1|
+23933	23939	misc_feature
+			note	transcription regulatory sequence for gene 3
+23940	28070	gene
+			gene	S
+			locus_tag	MHV-JHMgp05
+			db_xref	GeneID:3283262
+23940	28070	CDS
+			product	spike glycoprotein
+			product	surface protein
+			protein_id	ref|YP_209233.1|
+28102	28108	misc_feature
+			note	transcription regulatory sequence for gene 4
+28162	28581	gene
+			locus_tag	MHV-JHMgp06
+			db_xref	GeneID:3283256
+28162	28581	CDS
+			product	accessory protein 4
+			protein_id	ref|YP_209234.1|
+28495	28849	misc_feature
+			note	transcription regulatory sequence for gene 5
+28563	28886	gene
+			locus_tag	MHV-JHMgp07
+			db_xref	GeneID:3283255
+28563	28886	CDS
+			product	accessory protein 5a
+			protein_id	ref|YP_209235.1|
+28879	29145	gene
+			gene	E
+			locus_tag	MHV-JHMgp08
+			db_xref	GeneID:3283254
+28879	29145	CDS
+			product	envelope protein
+			protein_id	ref|YP_209236.1|
+29132	29138	misc_feature
+			note	transcription regulatory sequence for gene 6
+29142	29828	gene
+			gene	M
+			locus_tag	MHV-JHMgp09
+			db_xref	GeneID:3283261
+29142	29828	CDS
+			product	membrane protein
+			protein_id	ref|YP_209237.1|
+29829	29835	misc_feature
+			function	transcription regulatory signal for gene 7
+29843	31210	gene
+			gene	N
+			locus_tag	MHV-JHMgp10
+			db_xref	GeneID:3283260
+29843	31210	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_209238.1|
+30120	30530	gene
+			locus_tag	MHV-JHMgp11
+			db_xref	GeneID:3283259
+30120	30530	CDS
+			product	putative internal (I) ORF
+			protein_id	ref|YP_209239.1|
+30531	31526	3'UTR
+
+>Feature ref|NC_001451.1|
+529	20417	gene
+			gene	1ab
+			locus_tag	IBVgp1
+			note	translational frameshift on a slippery sequence results in expression of orf1a and orf1b as a single polyprotein 1ab
+			db_xref	GeneID:1489740
+529	12354	CDS
+12354	20417
+			product	ORF1ab polyprotein
+			product	frameshift product
+			protein_id	ref|NP_066134.1|
+			evidence	experimental
+529	12384	CDS
+			product	ORF1a polyprotein
+			protein_id	ref|NP_040829.1|
+			note	ORF for gene 1; label: 1a
+20368	23856	gene
+			gene	2
+			locus_tag	IBVgp2
+			db_xref	GeneID:1489741
+20368	23856	CDS
+			product	spike protein
+			protein_id	ref|NP_040831.1|
+			note	gene 2; label: S
+23856	24553	gene
+			gene	3
+			locus_tag	IBVgp3
+			db_xref	GeneID:1489742
+23856	24029	CDS
+			product	3a protein
+			protein_id	ref|NP_040832.1|
+			note	ORF for gene 3; label: 3a
+24029	24223	CDS
+			product	3b protein
+			protein_id	ref|NP_040833.1|
+			note	ORF for gene 3; label: 3b
+24207	24533	CDS
+			product	small virion-associated protein
+			protein_id	ref|NP_040834.1|
+			note	ORF for gene 3; label: sM
+24505	25182	gene
+			gene	M
+			locus_tag	IBVgp4
+			db_xref	GeneID:1489743
+24505	25182	CDS
+			product	membrane protein
+			protein_id	ref|NP_040835.1|
+			note	ORF for gene 4; label: M
+25488	25930	gene
+			gene	5
+			locus_tag	IBVgp5
+			db_xref	GeneID:1489744
+25488	25685	CDS
+			product	5a protein
+			protein_id	ref|NP_040836.1|
+			note	ORF for gene 5; label: 5a
+25682	25930	CDS
+			product	5b protein
+			protein_id	ref|NP_040837.1|
+			note	ORF for gene 5; label: 5b
+25873	27102	gene
+			gene	N
+			locus_tag	IBVgp6
+			db_xref	GeneID:1489745
+25873	27102	CDS
+			product	nucleocapsid protein
+			protein_id	ref|NP_040838.1|
+			note	ORF for gene 6; label: N
+
+>Feature ref|NC_001846.1|
+1	209	5'UTR
+210	21745	gene
+			gene	ORF1ab
+			locus_tag	MHVgp1
+			note	translational frameshift on a slippery sequence results in expression of orf1a and orf1b as a single polyprotein 1ab; gene1
+			db_xref	GeneID:1489749
+210	13619	CDS
+13619	21745
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|NP_045299.2|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+210	13622	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|NP_045298.1|
+			note	ORF1a polyprotein is cleaved to yield the nonstructural proteins
+21771	22556	gene
+			gene	ORF2a
+			locus_tag	MHVgp2
+			note	gene 2
+			db_xref	GeneID:58783427
+21771	22556	CDS
+			product	nonstructural protein 2a
+			prot_desc	ORF2a
+			protein_id	ref|YP_009915698.1|
+22602	23921	misc_feature
+			pseudo
+			note	hemagglutinin-esterase glycoprotein pseudogene
+23929	27903	gene
+			gene	S
+			locus_tag	MHVgp4
+			db_xref	GeneID:1489752
+23929	27903	CDS
+			product	E2 glycoprotein precursor
+			product	spike protein
+			prot_desc	surface protein
+			protein_id	ref|NP_045300.1|
+28706	28957	gene
+			gene	E
+			locus_tag	MHVgp3
+			db_xref	GeneID:59893232
+28706	28957	CDS
+			product	envelope protein
+			product	small membrane protein
+			protein_id	ref|YP_009944252.1|
+28968	29654	gene
+			gene	M
+			locus_tag	MHVgp8
+			db_xref	GeneID:1489756
+28968	29654	CDS
+			product	E1 glycoprotein
+			product	matrix glycoprotein
+			product	membrane protein
+			protein_id	ref|NP_045301.1|
+29669	31033	gene
+			gene	N
+			locus_tag	MHVgp9
+			db_xref	GeneID:1489757
+29669	31033	CDS
+			product	nucleocapsid protein
+			protein_id	ref|NP_045302.1|
+29733	30356	CDS
+			product	I protein
+			product	internal protein
+			protein_id	ref|NP_068674.1|
+31032	31357	3'UTR
+
+>Feature ref|NC_002306.3|
+311	20439	gene
+			gene	ORF 1a/1b
+			locus_tag	FIPV_gp01
+			db_xref	GeneID:1724653
+311	12409	CDS
+12409	20439
+			product	polyprotein ab
+			prot_desc	replicase
+			protein_id	ref|YP_004070193.2|
+			note	-1 ribosomal frame shift
+			ribosomal_slippage
+			exception	ribosomal slippage
+20436	24794	gene
+			gene	S
+			locus_tag	FIPV_gp02
+			db_xref	GeneID:920849
+20436	24794	CDS
+			product	spike protein
+			prot_desc	receptor binding molecule
+			protein_id	ref|YP_004070194.1|
+24861	25076	gene
+			gene	nsp 3a
+			locus_tag	FIPV_gp03
+			db_xref	GeneID:10040181
+24861	25076	CDS
+			product	putative 3a protein
+			protein_id	ref|YP_004070195.1|
+25021	25236	gene
+			gene	nsp 3b
+			locus_tag	FIPV_gp04
+			db_xref	GeneID:10040182
+25021	25236	CDS
+			product	putative 3b protein
+			protein_id	ref|YP_004070196.1|
+25233	25967	gene
+			gene	nsp 3c
+			locus_tag	FIPV_gp05
+			pseudo
+			db_xref	GeneID:10040183
+25233	25967	misc_feature
+			note	non-structural protein 3c
+25954	26202	gene
+			gene	E
+			locus_tag	FIPV_gp06
+			db_xref	GeneID:10040184
+25954	26202	CDS
+			product	E protein
+			protein_id	ref|YP_004070197.1|
+			note	required for budding
+26213	27001	gene
+			gene	M
+			locus_tag	FIPV_gp07
+			db_xref	GeneID:10040185
+26213	27001	CDS
+			product	matrix protein
+			protein_id	ref|YP_004070198.1|
+			note	major structural protein
+27014	28147	gene
+			gene	N
+			locus_tag	FIPV_gp08
+			db_xref	GeneID:10040186
+27014	28147	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_004070199.1|
+			note	major structural protein
+28152	28457	gene
+			gene	nsp 7a
+			locus_tag	FIPV_gp09
+			db_xref	GeneID:10040187
+28152	28457	CDS
+			product	non-structural protein 7a
+			protein_id	ref|YP_004070200.1|
+28462	29082	gene
+			gene	nsp 7b
+			locus_tag	FIPV_gp10
+			db_xref	GeneID:10040188
+28462	29082	CDS
+			product	non-structural protein 7b
+			protein_id	ref|YP_004070201.1|
+
+>Feature ref|NC_002645.1|
+1	292	5'UTR
+293	20568	gene
+			locus_tag	HCoV229Egp1
+			db_xref	GeneID:918764
+293	12520	CDS
+12520	20568
+			product	replicase polyprotein 1ab
+			prot_note	translated by -1 ribosomal frameshift
+			protein_id	ref|NP_073549.1|
+293	12550	CDS
+			product	replicase polyprotein 1a
+			protein_id	ref|NP_073550.1|
+20570	24091	gene
+			gene	S
+			locus_tag	HCoV229Egp2
+			db_xref	GeneID:918758
+20570	24091	CDS
+			product	surface glycoprotein
+			prot_desc	structural protein
+			protein_id	ref|NP_073551.1|
+24091	24492	gene
+			gene	4a
+			locus_tag	HCoV229Egp3
+			db_xref	GeneID:918759
+24091	24492	CDS
+			product	4a protein
+			protein_id	ref|NP_073552.1|
+24482	24748	gene
+			gene	4b
+			locus_tag	HCoV229Egp4
+			db_xref	GeneID:918760
+24482	24748	CDS
+			product	4b protein
+			protein_id	ref|NP_073553.1|
+24750	24983	gene
+			gene	E
+			locus_tag	HCoV229Egp5
+			db_xref	GeneID:918761
+24750	24983	CDS
+			product	envelope protein
+			protein_id	ref|NP_073554.1|
+			note	structural protein; E protein
+24995	25672	gene
+			gene	M
+			locus_tag	HCoV229Egp6
+			db_xref	GeneID:918762
+24995	25672	CDS
+			product	membrane protein
+			prot_desc	structural protein
+			protein_id	ref|NP_073555.1|
+25686	26855	gene
+			gene	N
+			locus_tag	HCoV229Egp7
+			db_xref	GeneID:918763
+25686	26855	CDS
+			product	nucleocapsid protein
+			prot_desc	structural protein
+			protein_id	ref|NP_073556.1|
+26856	27317	3'UTR
+
+>Feature ref|NC_003045.1|
+1	210	5'UTR
+			note	functions in replication and transcription
+211	21494	gene
+			gene	ORF1ab
+			locus_tag	BCoVgp01
+			db_xref	GeneID:921688
+211	13332	CDS
+13332	21494
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|NP_150073.3|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+211	13362	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			function	essential for proteolysis
+			protein_id	ref|NP_150074.1|
+			note	ORF1a polyprotein is cleaved to yield the nonstructural proteins
+21504	22340	gene
+			gene	NS
+			locus_tag	BCoVgp02
+			db_xref	GeneID:921690
+21504	22340	CDS
+			product	32 kDa non-structural protein
+			protein_id	ref|NP_150075.1|
+22352	23626	gene
+			gene	HE
+			locus_tag	BCoVgp03
+			db_xref	GeneID:921684
+22352	23626	CDS
+			product	hemmaglutinin-esterase
+			protein_id	ref|NP_150076.1|
+			note	structural protein
+23641	27732	gene
+			gene	S
+			locus_tag	BCoVgp04
+			db_xref	GeneID:921689
+23641	27732	CDS
+			product	spike structural protein
+			product	surface protein
+			protein_id	ref|NP_150077.1|
+27722	27811	gene
+			locus_tag	BCoVgp05
+			db_xref	GeneID:1724648
+27722	27811	CDS
+			product	4.9 kDa non-structural protein
+			protein_id	ref|NP_150078.1|
+			gene	-
+27889	28026	gene
+			locus_tag	BCoVgp06
+			db_xref	GeneID:1724649
+27889	28026	CDS
+			product	4.8 kDa non-structural protein
+			protein_id	ref|NP_150079.1|
+28106	28435	gene
+			locus_tag	BCoVgp07
+			db_xref	GeneID:1724647
+28106	28435	CDS
+			product	12.7 kDa non-structural protein
+			protein_id	ref|NP_150080.1|
+			gene	-
+28422	28676	gene
+			gene	E
+			locus_tag	BCoVgp08
+			db_xref	GeneID:921685
+28422	28676	CDS
+			product	small membrane protein
+			protein_id	ref|NP_150081.1|
+28691	29383	gene
+			gene	M
+			locus_tag	BCoVgp09
+			db_xref	GeneID:921686
+28691	29383	CDS
+			product	matrix protein
+			protein_id	ref|NP_150082.1|
+			note	structural protein
+29393	30739	gene
+			gene	N
+			locus_tag	BCoVgp10
+			db_xref	GeneID:921687
+29393	30739	CDS
+			product	nucleocapsid protein
+			protein_id	ref|NP_150083.1|
+			note	structural protein
+29454	30077	CDS
+			product	internal protein
+			protein_id	ref|NP_150084.1|
+			note	ORF 1
+30740	31028	3'UTR
+			note	functions in replication and transcription
+
+>Feature ref|NC_003436.1|
+297	20641	gene
+			locus_tag	PEDVgp1
+			db_xref	GeneID:935181
+297	12620	CDS
+12620	20641
+			product	Pol1
+			protein_id	ref|NP_598309.2|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20638	24789	gene
+			locus_tag	PEDVgp2
+			db_xref	GeneID:935184
+20638	24789	CDS
+			product	spike protein
+			protein_id	ref|NP_598310.1|
+24789	25463	gene
+			locus_tag	PEDVgp3
+			db_xref	GeneID:935183
+24789	25463	CDS
+			product	hypothetical protein
+			prot_desc	ORF3
+			protein_id	ref|NP_598311.1|
+			note	showed unexpected variability in cell culture-adapted virus
+25444	25674	gene
+			locus_tag	PEDVgp4
+			db_xref	GeneID:935180
+25444	25674	CDS
+			product	envelope protein
+			protein_id	ref|NP_598312.1|
+25682	26362	gene
+			locus_tag	PEDVgp5
+			db_xref	GeneID:935182
+25682	26362	CDS
+			product	membrane protein
+			protein_id	ref|NP_598313.1|
+26374	27699	gene
+			locus_tag	PEDVgp6
+			db_xref	GeneID:935179
+26374	27699	CDS
+			product	nucleocapsid protein
+			protein_id	ref|NP_598314.1|
+
+>Feature ref|NC_004718.3|
+1	264	5'UTR
+265	21485	gene
+			gene	ORF1ab
+			locus_tag	sarsp1
+			db_xref	GeneID:1489680
+265	13392	CDS
+13392	21485
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicase 1AB
+			protein_id	ref|NP_828849.7|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+265	13413	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009944365.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21492	25259	gene
+			gene	S
+			gene_syn	E2
+			locus_tag	sars2
+			db_xref	GeneID:1489668
+21492	25259	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009825051.1|
+25268	26092	gene
+			gene	ORF3a
+			locus_tag	sars3a
+			db_xref	GeneID:1489669
+25268	26092	CDS
+			product	ORF3a protein
+			protein_id	ref|YP_009825052.1|
+25689	26153	gene
+			gene	ORF3b
+			locus_tag	sars3b
+			db_xref	GeneID:1489670
+25689	26153	CDS
+			product	ORF3b protein
+			prot_desc	ORF4
+			protein_id	ref|YP_009825053.1|
+26117	26347	gene
+			gene	E
+			locus_tag	sars4
+			db_xref	GeneID:1489671
+26117	26347	CDS
+			product	small envelope protein
+			protein_id	ref|YP_009825054.1|
+26398	27063	gene
+			gene	M
+			locus_tag	sars5
+			db_xref	GeneID:1489672
+26398	27063	CDS
+			product	membrane glycoprotein M
+			protein_id	ref|YP_009825055.1|
+26913	27265	gene
+			gene	ORF6
+			locus_tag	sars6
+			db_xref	GeneID:1489673
+27074	27265	CDS
+			product	ORF6 protein
+			prot_desc	ORF7
+			protein_id	ref|YP_009825056.1|
+27273	27641	gene
+			gene	ORF7a
+			locus_tag	sars7a
+			db_xref	GeneID:1489674
+27273	27641	CDS
+			product	ORF7a protein
+			prot_desc	ORF8
+			protein_id	ref|YP_009825057.1|
+27638	27772	gene
+			gene	ORF7b
+			locus_tag	sars7b
+			db_xref	GeneID:1489675
+27638	27772	CDS
+			product	ORF7b protein
+			prot_desc	ORF9
+			protein_id	ref|YP_009825058.1|
+27779	27898	gene
+			gene	ORF8a
+			locus_tag	sars8a
+			db_xref	GeneID:1489676
+27779	27898	CDS
+			product	ORF8a protein
+			prot_desc	ORF10
+			protein_id	ref|YP_009825059.1|
+27864	28118	gene
+			gene	ORF8b
+			locus_tag	sars8b
+			db_xref	GeneID:1489677
+27864	28118	CDS
+			product	ORF8b protein
+			prot_desc	ORF11
+			protein_id	ref|YP_009825060.1|
+28120	29388	gene
+			gene	N
+			locus_tag	sars9a
+			db_xref	GeneID:1489678
+28120	29388	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009825061.1|
+28130	28426	gene
+			locus_tag	sars9b
+			db_xref	GeneID:1489679
+28130	28426	CDS
+			product	ORF9b protein
+			prot_desc	ORF13
+			protein_id	ref|YP_009825062.1|
+28583	28795	CDS
+			product	ORF9a protein
+			prot_desc	ORF14
+			protein_id	ref|YP_009825063.1|
+28796	29751	3'UTR
+
+>Feature ref|NC_005831.2|
+1	286	5'UTR
+			evidence	not_experimental
+287	20475	gene
+			gene	ORF1ab
+			locus_tag	HCNV63gp1
+			db_xref	GeneID:2943501
+287	12439	CDS
+12439	20475
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicase polyprotein 1ab
+			prot_desc	ORF1a/1b
+			protein_id	ref|YP_003766.2|
+			note	translated via -1 ribosomal frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			evidence	not_experimental
+			ribosomal_slippage
+			exception	ribosomal slippage
+287	12469	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			prot_note	ORF1a polyprotein is cleaved to yield the nonstructural proteins
+			protein_id	ref|YP_010229075.1|
+20472	24542	gene
+			locus_tag	HCNV63gp2
+			db_xref	GeneID:2943499
+20472	24542	CDS
+			product	spike protein
+			prot_desc	ORF2
+			protein_id	ref|YP_003767.1|
+			evidence	not_experimental
+24542	25219	gene
+			locus_tag	HCNV63gp3
+			db_xref	GeneID:2943500
+24542	25219	CDS
+			product	protein 3
+			prot_desc	ORF3
+			protein_id	ref|YP_003768.1|
+			evidence	not_experimental
+25200	25433	gene
+			gene	E
+			locus_tag	HCNV63gp4
+			db_xref	GeneID:2943502
+25200	25433	CDS
+			product	envelope protein
+			prot_desc	ORF4
+			protein_id	ref|YP_003769.1|
+			note	small membrane protein
+			evidence	not_experimental
+25442	26122	gene
+			gene	M
+			locus_tag	HCNV63gp5
+			db_xref	GeneID:2943503
+25442	26122	CDS
+			product	membrane protein
+			prot_desc	ORF5
+			protein_id	ref|YP_003770.1|
+			evidence	not_experimental
+26133	27266	gene
+			gene	N
+			locus_tag	HCNV63gp6
+			db_xref	GeneID:2943504
+26133	27266	CDS
+			product	nucleocapsid protein
+			prot_desc	ORF6
+			protein_id	ref|YP_003771.1|
+			evidence	not_experimental
+27267	27553	3'UTR
+			evidence	not_experimental
+
+>Feature ref|NC_006213.1|
+1	209	5'UTR
+210	21496	gene
+			gene	ORF1ab
+			locus_tag	EYW02_gp1
+			db_xref	GeneID:39105222
+210	13340	CDS
+13340	21496
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_desc	replicase polyprotein
+			protein_id	ref|YP_009555238.1|
+			note	translated via a -1 ribosomal frameshift; ORF 1a/1b; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+210	13361	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009924317.1|
+			note	ORF1a polyprotein is cleaved to yield the nonstructural proteins
+21506	22342	gene
+			gene	ns2
+			locus_tag	EYW02_gp2
+			db_xref	GeneID:39105215
+21506	22342	CDS
+			product	ns2
+			protein_id	ref|YP_009555239.1|
+			note	non-structural protein 2
+22354	23628	gene
+			gene	HE
+			locus_tag	EYW02_gp3
+			db_xref	GeneID:39105216
+22354	23628	CDS
+			product	hemagglutinin-esterase
+			protein_id	ref|YP_009555240.1|
+23643	27704	gene
+			gene	S
+			locus_tag	EYW02_gp4
+			db_xref	GeneID:39105218
+23643	27704	CDS
+			product	spike surface glycoprotein
+			protein_id	ref|YP_009555241.1|
+27792	28121	gene
+			gene	ns12.9
+			locus_tag	EYW02_gp5
+			db_xref	GeneID:39105219
+27792	28121	CDS
+			product	ns12.9
+			protein_id	ref|YP_009555242.1|
+			note	non-structural protein; ORF5
+28108	28362	gene
+			gene	E
+			locus_tag	EYW02_gp6
+			db_xref	GeneID:39105217
+28108	28362	CDS
+			product	envelope protein
+			protein_id	ref|YP_009555243.1|
+			gene	-
+28377	29069	gene
+			gene	M
+			locus_tag	EYW02_gp7
+			db_xref	GeneID:39105220
+28377	29069	CDS
+			product	membrane protein
+			protein_id	ref|YP_009555244.1|
+29079	30425	gene
+			gene	N
+			locus_tag	EYW02_gp8
+			db_xref	GeneID:39105221
+29079	30425	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009555245.1|
+29140	29322	CDS
+			product	I protein
+			product	internal protein
+			protein_id	ref|YP_009924318.1|
+30424	30741	3'UTR
+
+>Feature ref|NC_006577.2|
+1	205	5'UTR
+206	21753	gene
+			gene	ORF1ab
+			locus_tag	HCHV1gp1
+			db_xref	GeneID:3200429
+206	13600	CDS
+13600	21753
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_note	translated via -1 ribosomal frameshift
+			protein_id	ref|YP_173236.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+206	13621	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			prot_note	PL1-PRO cleavage product
+			protein_id	ref|YP_009944268.1|
+			note	ORF1ab polyprotein is cleaved to yield nonstructural proteins
+21773	22933	gene
+			gene	HE
+			locus_tag	HCHV1gp2
+			db_xref	GeneID:3200425
+21773	22933	CDS
+			product	hemagglutinin-esterase glycoprotein
+			protein_id	ref|YP_173237.1|
+22942	27012	gene
+			gene	S
+			locus_tag	HCHV1gp3
+			db_xref	GeneID:3200426
+22942	27012	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_173238.1|
+27051	27380	gene
+			gene	orf4
+			locus_tag	HCHV1gp4
+			db_xref	GeneID:3200427
+27051	27380	CDS
+			product	non-structural protein
+			protein_id	ref|YP_173239.1|
+27373	27621	gene
+			gene	E
+			locus_tag	HCHV1gp5
+			db_xref	GeneID:3200430
+27373	27621	CDS
+			product	envelope protein
+			product	small membrane protein
+			protein_id	ref|YP_173240.1|
+27633	28304	gene
+			gene	M
+			locus_tag	HCHV1gp6
+			db_xref	GeneID:3200428
+27633	28304	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_173241.1|
+28320	29645	gene
+			gene	N
+			locus_tag	HCHV1gp7
+			db_xref	GeneID:3200423
+28320	29645	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_173242.1|
+28342	28959	gene
+			gene	N2
+			gene_desc	ORF8
+			locus_tag	HCHV1gp8
+			db_xref	GeneID:3200424
+28342	28959	CDS
+			product	nucleocapsid phosphoprotein 2
+			protein_id	ref|YP_173243.1|
+28960	29926	3'UTR
+
+>Feature ref|NC_009019.1|
+1	266	5'UTR
+267	21625	gene
+			gene	ORF1ab
+			locus_tag	BatCoVHKU4_gp1
+			db_xref	GeneID:4835998
+267	13550	CDS
+13550	21625
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_001039952.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+267	13571	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009944308.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21570	25628	gene
+			gene	S
+			locus_tag	BatCoVHKU4_gp2
+			db_xref	GeneID:4835991
+21570	25628	CDS
+			product	spike glycoprotein
+			product	surface protein
+			protein_id	ref|YP_001039953.1|
+25655	25930	gene
+			gene	NS3a
+			locus_tag	BatCoVHKU4_gp3
+			db_xref	GeneID:4835990
+25655	25930	CDS
+			product	hypothetical protein
+			product	ORF3 protein
+			protein_id	ref|YP_001039954.1|
+25948	26307	gene
+			gene	NS3b
+			locus_tag	BatCoVHKU4_gp4
+			db_xref	GeneID:4835992
+25948	26307	CDS
+			product	hypothetical protein
+			product	ORF4a protein
+			protein_id	ref|YP_001039955.1|
+26111	26968	gene
+			gene	NS3c
+			locus_tag	BatCoVHKU4_gp5
+			db_xref	GeneID:4835994
+26111	26968	CDS
+			product	hypothetical protein
+			product	ORF4b protein
+			protein_id	ref|YP_001039956.1|
+26984	27667	gene
+			gene	NS3d
+			locus_tag	BatCoVHKU4_gp6
+			db_xref	GeneID:4835995
+26984	27667	CDS
+			product	hypothetical protein
+			product	ORF5 protein
+			protein_id	ref|YP_001039957.1|
+27737	27985	gene
+			gene	E
+			locus_tag	BatCoVHKU4_gp7
+			db_xref	GeneID:4835997
+27737	27985	CDS
+			product	small membrane protein
+			product	envelope protein
+			protein_id	ref|YP_001039958.1|
+28000	28659	gene
+			gene	M
+			locus_tag	BatCoVHKU4_gp8
+			db_xref	GeneID:4835996
+28000	28659	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_001039959.1|
+28697	29968	gene
+			gene	N
+			locus_tag	BatCoVHKU4_gp9
+			db_xref	GeneID:4835993
+28697	29968	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_001039960.1|
+28743	29333	gene
+			gene	ORF8b
+			db_xref	GeneID:60196436
+28743	29333	CDS
+			product	ORF8b
+			protein_id	ref|YP_009944336.1|
+29969	30286	3'UTR
+
+>Feature ref|NC_009020.1|
+1	260	5'UTR
+261	21808	gene
+			gene	ORF1ab
+			locus_tag	BatCoVHKU5_gp1
+			db_xref	GeneID:4836003
+261	13685	CDS
+13685	21808
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_001039961.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+261	13706	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009944337.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21735	25793	gene
+			gene	S
+			locus_tag	BatCoVHKU5_gp2
+			db_xref	GeneID:4836002
+21735	25793	CDS
+			product	spike glycoprotein
+			product	surface glycoprotein
+			protein_id	ref|YP_001039962.1|
+25756	26121	gene
+			gene	NS3a
+			locus_tag	BatCoVHKU5_gp3
+			db_xref	GeneID:4836004
+25756	26121	CDS
+			product	hypothetical protein
+			product	ORF3 protein
+			protein_id	ref|YP_001039963.1|
+26134	26493	gene
+			gene	NS3b
+			locus_tag	BatCoVHKU5_gp4
+			db_xref	GeneID:4836005
+26134	26493	CDS
+			product	hypothetical protein
+			product	ORF4a protein
+			protein_id	ref|YP_001039964.1|
+26375	27145	gene
+			gene	NS3c
+			locus_tag	BatCoVHKU5_gp5
+			db_xref	GeneID:4836006
+26375	27145	CDS
+			product	hypothetical protein
+			product	ORF4b protein
+			protein_id	ref|YP_001039965.1|
+27154	27825	gene
+			gene	NS3d
+			locus_tag	BatCoVHKU5_gp6
+			db_xref	GeneID:4836007
+27154	27825	CDS
+			product	hypothetical protein
+			product	ORF5 protein
+			protein_id	ref|YP_001039966.1|
+27903	28151	gene
+			gene	E
+			locus_tag	BatCoVHKU5_gp7
+			db_xref	GeneID:4836008
+27903	28151	CDS
+			product	small membrane protein
+			product	envelope protein
+			protein_id	ref|YP_001039967.1|
+28166	28828	gene
+			gene	M
+			locus_tag	BatCoVHKU5_gp8
+			db_xref	GeneID:4836001
+28166	28828	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_001039968.1|
+28878	30161	gene
+			gene	N
+			locus_tag	BatCoVHKU5_gp9
+			db_xref	GeneID:4836000
+28878	30161	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_001039969.1|
+28918	29496	gene
+			gene	ORF8b
+			db_xref	GeneID:60196443
+28918	29496	CDS
+			product	ORF8b
+			protein_id	ref|YP_009944338.1|
+30162	30482	3'UTR
+
+>Feature ref|NC_009021.1|
+1	228	5'UTR
+229	21020	gene
+			gene	ORF1ab
+			locus_tag	BatCoVHKU9_gp1
+			db_xref	GeneID:4836014
+229	12951	CDS
+12951	21020
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_001039970.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+229	12975	CDS
+			product	ORF1a polyprotein
+			prot_desc	polyprotein pp1a
+			protein_id	ref|YP_009944377.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+20974	24798	gene
+			gene	S
+			locus_tag	BatCoVHKU9_gp2
+			db_xref	GeneID:4836012
+20974	24798	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_001039971.1|
+24795	25457	gene
+			gene	NS3
+			locus_tag	BatCoVHKU9_gp3
+			db_xref	GeneID:4836013
+24795	25457	CDS
+			product	hypothetical protein NS3
+			protein_id	ref|YP_001039972.1|
+25457	25696	gene
+			gene	E
+			locus_tag	BatCoVHKU9_gp4
+			db_xref	GeneID:4836015
+25457	25696	CDS
+			product	envelope protein
+			product	small membrane protein
+			protein_id	ref|YP_001039973.1|
+25689	26357	gene
+			gene	M
+			locus_tag	BatCoVHKU9_gp5
+			db_xref	GeneID:4836016
+25689	26357	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_001039974.1|
+26419	27825	gene
+			gene	N
+			locus_tag	BatCoVHKU9_gp6
+			db_xref	GeneID:4836017
+26419	27825	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_001039975.1|
+27869	28426	gene
+			gene	NS7a
+			locus_tag	BatCoVHKU9_gp7
+			db_xref	GeneID:4836010
+27869	28426	CDS
+			product	hypothetical protein NS7a
+			protein_id	ref|YP_001039976.1|
+28433	28882	gene
+			gene	NS7b
+			locus_tag	BatCoVHKU9_gp8
+			db_xref	GeneID:4836011
+28433	28882	CDS
+			product	hypothetical protein NS7b
+			protein_id	ref|YP_001039977.1|
+28883	29114	3'UTR
+
+>Feature ref|NC_009657.1|
+1	293	5'UTR
+294	20674	gene
+			locus_tag	Sc-BatCoV-512_gp1
+			db_xref	GeneID:11266518
+294	12650	CDS
+12650	20674
+			product	ORF1 polyprotein
+			protein_id	ref|YP_001351683.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20671	24786	gene
+			locus_tag	Sc-BatCoV-512_gp2
+			db_xref	GeneID:11266523
+20671	24786	CDS
+			product	spike protein
+			prot_desc	S
+			protein_id	ref|YP_001351684.1|
+24786	25460	gene
+			locus_tag	Sc-BatCoV-512_gp3
+			db_xref	GeneID:11266519
+24786	25460	CDS
+			product	putative ORF3
+			protein_id	ref|YP_001351685.1|
+25441	25671	gene
+			locus_tag	Sc-BatCoV-512_gp4
+			db_xref	GeneID:11266520
+25441	25671	CDS
+			product	envelope protein
+			prot_desc	E
+			protein_id	ref|YP_001351686.1|
+25678	26361	gene
+			locus_tag	Sc-BatCoV-512_gp5
+			db_xref	GeneID:11266521
+25678	26361	CDS
+			product	matrix protein
+			prot_desc	M
+			protein_id	ref|YP_001351687.1|
+26372	27556	gene
+			locus_tag	Sc-BatCoV-512_gp6
+			db_xref	GeneID:11266522
+26372	27556	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_001351688.1|
+27557	28203	3'UTR
+
+>Feature ref|NC_009988.1|
+1	296	5'UTR
+297	20479	gene
+			locus_tag	BCHV2_gp1
+			db_xref	GeneID:5741388
+297	12446	CDS
+12446	20479
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_001552234.1|
+			gene	-
+			note	translated by -1 ribosomal frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+297	12476	gene
+			locus_tag	BCHV2_gp2
+			db_xref	GeneID:5741384
+297	12476	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_001552235.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+20476	23862	gene
+			gene	S
+			locus_tag	BCHV2_gp3
+			db_xref	GeneID:5741389
+20476	23862	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_001552236.1|
+23862	24551	gene
+			gene	NS3
+			locus_tag	BCHV2_gp4
+			db_xref	GeneID:5741385
+23862	24551	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_001552237.1|
+24532	24759	gene
+			gene	E
+			locus_tag	BCHV2_gp5
+			db_xref	GeneID:5741386
+24532	24759	CDS
+			product	small membrane protein
+			protein_id	ref|YP_001552238.1|
+24768	25457	gene
+			gene	M
+			locus_tag	BCHV2_gp6
+			db_xref	GeneID:5741387
+24768	25457	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_001552239.1|
+25469	26596	gene
+			gene	N
+			locus_tag	BCHV2_gp7
+			db_xref	GeneID:5741383
+25469	26596	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_001552240.1|
+26608	26907	gene
+			gene	NS7a
+			locus_tag	BCHV2_gp8
+			db_xref	GeneID:5741382
+26608	26907	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_001552241.1|
+26908	27165	3'UTR
+
+>Feature ref|NC_010437.1|
+272	21069	gene
+			gene	ORF1ab
+			locus_tag	BatCo1A_gp1
+			db_xref	GeneID:6020270
+272	13048	CDS
+13048	21069
+			product	ORF1ab polyprotein
+			protein_id	ref|YP_001718603.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+272	13078	CDS
+			product	ORF1a polyprotein
+			protein_id	ref|YP_001718604.1|
+21071	25198	gene
+			gene	S
+			locus_tag	BatCo1A_gp2
+			db_xref	GeneID:6020275
+21071	25198	CDS
+			product	spike protein
+			protein_id	ref|YP_001718605.1|
+25198	25857	gene
+			gene	ORF3
+			locus_tag	BatCo1A_gp3
+			db_xref	GeneID:6020274
+25198	25857	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_001718606.1|
+25851	26075	gene
+			gene	E
+			locus_tag	BatCo1A_gp4
+			db_xref	GeneID:6020273
+25851	26075	CDS
+			product	envelope protein
+			protein_id	ref|YP_001718607.1|
+26082	26849	gene
+			gene	M
+			locus_tag	BatCo1A_gp5
+			db_xref	GeneID:6020272
+26082	26849	CDS
+			product	membrane protein
+			protein_id	ref|YP_001718608.1|
+26870	28039	gene
+			gene	N
+			locus_tag	BatCo1A_gp6
+			db_xref	GeneID:6020271
+26870	28039	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_001718609.1|
+
+>Feature ref|NC_010438.1|
+1	269	5'UTR
+270	20959	gene
+			gene	ORF1ab
+			locus_tag	BatCoVHKU8_gp1
+			db_xref	GeneID:6020263
+270	12935	CDS
+12935	20959
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_001718610.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural#proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+270	12965	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_001718611.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+20956	25083	gene
+			gene	S
+			locus_tag	BatCoVHKU8_gp2
+			db_xref	GeneID:6020262
+20956	25083	CDS
+			product	spike protein
+			protein_id	ref|YP_001718612.1|
+25083	25751	gene
+			gene	ORF3
+			locus_tag	BatCoVHKU8_gp3
+			db_xref	GeneID:6020261
+25083	25751	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_001718613.1|
+25735	25959	gene
+			gene	E
+			locus_tag	BatCoVHKU8_gp4
+			db_xref	GeneID:6020260
+25735	25959	CDS
+			product	envelope protein
+			protein_id	ref|YP_001718614.1|
+25966	26721	gene
+			gene	M
+			locus_tag	BatCoVHKU8_gp5
+			db_xref	GeneID:6020266
+25966	26721	CDS
+			product	membrane protein
+			protein_id	ref|YP_001718615.1|
+26770	28038	gene
+			gene	N
+			locus_tag	BatCoVHKU8_gp6
+			db_xref	GeneID:6020264
+26770	28038	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_001718616.1|
+27788	28534	gene
+			gene	ORF7
+			locus_tag	BatCoVHKU8_gp7
+			db_xref	GeneID:6020265
+27788	28534	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_001718617.1|
+28535	28773	3'UTR
+
+>Feature ref|NC_010646.1|
+1	523	5'UTR
+1	76	misc_feature
+			note	leader
+72	76	misc_feature
+			note	transcription-regulating sequence; TRS
+524	20514	gene
+			locus_tag	CoVSW1_gp01
+			db_xref	GeneID:6264444
+524	12388	CDS
+12388	20514
+			product	ORF 1ab polyprotein
+			protein_id	ref|YP_001876435.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+524	12418	gene
+			locus_tag	CoVSW1_gp02
+			db_xref	GeneID:6264438
+524	12418	CDS
+			product	ORF 1a polyprotein
+			protein_id	ref|YP_001876436.1|
+12382	12388	misc_feature
+			note	slippery sequence
+20415	20419	misc_feature
+			note	transcription-regulating sequence; TRS
+20450	24868	gene
+			locus_tag	CoVSW1_gp03
+			db_xref	GeneID:6264443
+20450	24868	CDS
+			product	spike protein
+			prot_desc	S glycoprotein
+			protein_id	ref|YP_001876437.1|
+24874	25161	gene
+			locus_tag	CoVSW1_gp04
+			db_xref	GeneID:6264434
+24874	25161	CDS
+			product	small membrane protein
+			prot_desc	E protein
+			protein_id	ref|YP_001876438.1|
+25078	25082	misc_feature
+			note	transcription-regulating sequence; TRS
+25145	25927	gene
+			locus_tag	CoVSW1_gp05
+			db_xref	GeneID:6264441
+25145	25927	CDS
+			product	matrix glycoprotein
+			prot_desc	M protein; membrane protein
+			protein_id	ref|YP_001876439.1|
+25926	25930	misc_feature
+			note	transcription-regulating sequence; TRS
+25930	26346	gene
+			locus_tag	CoVSW1_gp06
+			db_xref	GeneID:6264437
+25930	26346	CDS
+			product	ORF 5a
+			protein_id	ref|YP_001876440.1|
+26339	26857	gene
+			locus_tag	CoVSW1_gp07
+			db_xref	GeneID:6264440
+26339	26857	CDS
+			product	ORF 5b
+			protein_id	ref|YP_001876441.1|
+26847	27374	gene
+			locus_tag	CoVSW1_gp08
+			db_xref	GeneID:6264445
+26847	27374	CDS
+			product	ORF 5c
+			protein_id	ref|YP_001876442.1|
+27373	27377	misc_feature
+			note	transcription-regulating sequence; TRS
+27378	28064	gene
+			locus_tag	CoVSW1_gp09
+			db_xref	GeneID:6264433
+27378	28064	CDS
+			product	ORF 6
+			protein_id	ref|YP_001876443.1|
+			note	similar to Human astrovirus 5 capsid protein precursor
+28063	28067	misc_feature
+			note	transcription-regulating sequence; TRS
+28067	28552	gene
+			locus_tag	CoVSW1_gp10
+			db_xref	GeneID:6264446
+28067	28552	CDS
+			product	ORF 7
+			protein_id	ref|YP_001876444.1|
+28693	28697	misc_feature
+			note	transcription-regulating sequence; TRS
+28705	28884	gene
+			locus_tag	CoVSW1_gp11
+			db_xref	GeneID:6264442
+28705	28884	CDS
+			product	ORF 8
+			protein_id	ref|YP_001876445.1|
+28937	28941	misc_feature
+			note	transcription-regulating sequence; TRS
+28941	29399	gene
+			locus_tag	CoVSW1_gp12
+			db_xref	GeneID:6264436
+28941	29399	CDS
+			product	ORF 9
+			protein_id	ref|YP_001876446.1|
+29398	29402	misc_feature
+			note	transcription-regulating sequence; TRS
+29402	30034	gene
+			locus_tag	CoVSW1_gp13
+			db_xref	GeneID:6264435
+29402	30034	CDS
+			product	ORF 10
+			protein_id	ref|YP_001876447.1|
+			note	similar to uridine kinases
+30033	30037	misc_feature
+			note	transcription-regulating sequence; TRS
+30146	31285	gene
+			locus_tag	CoVSW1_gp14
+			db_xref	GeneID:6264439
+30146	31285	CDS
+			product	nucleocapsid protein
+			prot_desc	N protein
+			protein_id	ref|YP_001876448.1|
+31286	31686	3'UTR
+
+>Feature ref|NC_010800.1|
+529	20336	gene
+			gene	1ab
+			locus_tag	TCoV_gp01
+			db_xref	GeneID:6353556
+529	12354	CDS
+12354	20336
+			product	ORF1ab polyprotein
+			protein_id	ref|YP_001941164.2|
+			note	translated by ribosomal frameshift
+			ribosomal_slippage
+			exception	ribosomal slippage
+529	12384	gene
+			gene	1a
+			locus_tag	TCoV_gp02
+			db_xref	GeneID:6353560
+529	12384	CDS
+			product	ORF1a
+			protein_id	ref|YP_001941165.1|
+20360	24040	gene
+			gene	S
+			locus_tag	TCoV_gp03
+			db_xref	GeneID:6353553
+20360	24040	CDS
+			product	spike protein
+			protein_id	ref|YP_001941166.1|
+23988	24161	gene
+			gene	3a
+			locus_tag	TCoV_gp04
+			db_xref	GeneID:6353554
+23988	24161	CDS
+			product	3a protein
+			protein_id	ref|YP_001941167.1|
+24161	24355	gene
+			gene	3b
+			locus_tag	TCoV_gp05
+			db_xref	GeneID:6353552
+24161	24355	CDS
+			product	3b protein
+			protein_id	ref|YP_001941168.1|
+24336	24635	gene
+			gene	3c
+			locus_tag	TCoV_gp06
+			db_xref	GeneID:6353555
+24336	24635	CDS
+			product	envelope protein
+			prot_desc	small virion-associated protein
+			protein_id	ref|YP_001941169.1|
+24637	25308	gene
+			gene	M
+			locus_tag	TCoV_gp07
+			db_xref	GeneID:6353557
+24637	25308	CDS
+			product	membrane protein
+			protein_id	ref|YP_001941170.1|
+25309	25593	gene
+			gene	ORFX
+			locus_tag	TCoV_gp08
+			db_xref	GeneID:6353559
+25309	25593	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_001941171.1|
+25669	25866	gene
+			gene	5a
+			locus_tag	TCoV_gp09
+			db_xref	GeneID:6353562
+25669	25866	CDS
+			product	5a protein
+			protein_id	ref|YP_001941172.1|
+25863	26111	gene
+			gene	5b
+			locus_tag	TCoV_gp10
+			db_xref	GeneID:6353561
+25863	26111	CDS
+			product	5b protein
+			protein_id	ref|YP_001941173.1|
+26054	27283	gene
+			gene	N
+			locus_tag	TCoV_gp11
+			db_xref	GeneID:6353558
+26054	27283	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_001941174.1|
+
+>Feature ref|NC_011547.1|
+607	19400	gene
+			gene	orf1ab
+			locus_tag	D1P21_gp1
+			db_xref	GeneID:37616153
+607	11352	CDS
+11352	19400
+			product	orf1ab polyprotein
+			protein_id	ref|YP_002308478.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+19382	22879	gene
+			gene	S
+			locus_tag	D1P21_gp2
+			db_xref	GeneID:37616145
+19382	22879	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_002308479.1|
+22873	23121	gene
+			gene	E
+			locus_tag	D1P21_gp3
+			db_xref	GeneID:37616146
+22873	23121	CDS
+			product	small membrane protein
+			protein_id	ref|YP_002308480.1|
+23118	23819	gene
+			gene	M
+			locus_tag	D1P21_gp4
+			db_xref	GeneID:37616147
+23118	23819	CDS
+			product	membrane protein
+			protein_id	ref|YP_002308481.1|
+23819	24106	gene
+			gene	NS6
+			locus_tag	D1P21_gp5
+			db_xref	GeneID:37616148
+23819	24106	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308482.1|
+24127	25176	gene
+			gene	N
+			locus_tag	D1P21_gp6
+			db_xref	GeneID:37616149
+24127	25176	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_002308483.1|
+25355	25726	gene
+			gene	NS7a
+			locus_tag	D1P21_gp7
+			db_xref	GeneID:37616150
+25355	25726	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308484.1|
+25732	25986	gene
+			gene	NS7b
+			locus_tag	D1P21_gp8
+			db_xref	GeneID:37616151
+25732	25986	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308485.1|
+25983	26267	gene
+			gene	NS7c
+			locus_tag	D1P21_gp9
+			db_xref	GeneID:37616152
+25983	26267	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308486.1|
+
+>Feature ref|NC_011549.1|
+592	19451	gene
+			gene	orf1ab
+			locus_tag	ThCoV_gp1
+			db_xref	GeneID:7040223
+592	11403	CDS
+11403	19451
+			product	orf1ab polyprotein
+			protein_id	ref|YP_002308496.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+19433	23011	gene
+			gene	S
+			locus_tag	ThCoV_gp2
+			db_xref	GeneID:7040215
+19433	23011	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_002308497.1|
+23005	23253	gene
+			gene	E
+			locus_tag	ThCoV_gp3
+			db_xref	GeneID:7040216
+23005	23253	CDS
+			product	small membrane protein
+			protein_id	ref|YP_002308498.1|
+23246	23899	gene
+			gene	M
+			locus_tag	ThCoV_gp4
+			db_xref	GeneID:7040217
+23246	23899	CDS
+			product	membrane protein
+			protein_id	ref|YP_002308499.1|
+23899	24174	gene
+			gene	NS6
+			locus_tag	ThCoV_gp5
+			db_xref	GeneID:7040218
+23899	24174	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308500.1|
+24192	25223	gene
+			gene	N
+			locus_tag	ThCoV_gp6
+			db_xref	GeneID:7040219
+24192	25223	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_002308501.1|
+25255	25626	gene
+			gene	NS7a
+			locus_tag	ThCoV_gp7
+			db_xref	GeneID:7040220
+25255	25626	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308502.1|
+25632	25883	gene
+			gene	NS7b
+			locus_tag	ThCoV_gp8
+			db_xref	GeneID:7040221
+25632	25883	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308503.1|
+25940	26173	gene
+			gene	NS7c
+			locus_tag	ThCoV_gp9
+			db_xref	GeneID:7040222
+25940	26173	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308504.1|
+
+>Feature ref|NC_011550.1|
+595	19517	gene
+			gene	orf1ab
+			locus_tag	MuCoV_gp1
+			db_xref	GeneID:7040225
+595	11592	CDS
+11592	19517
+			product	orf1ab polyprotein
+			protein_id	ref|YP_002308505.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+19499	22969	gene
+			gene	S
+			locus_tag	MuCoV_gp2
+			db_xref	GeneID:7040226
+19499	22969	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_002308506.1|
+22963	23211	gene
+			gene	E
+			locus_tag	MuCoV_gp3
+			db_xref	GeneID:7040227
+22963	23211	CDS
+			product	small membrane protein
+			protein_id	ref|YP_002308507.1|
+23204	23860	gene
+			gene	M
+			locus_tag	MuCoV_gp4
+			db_xref	GeneID:7040228
+23204	23860	CDS
+			product	membrane protein
+			protein_id	ref|YP_002308508.1|
+23860	24186	gene
+			gene	NS6
+			locus_tag	MuCoV_gp5
+			db_xref	GeneID:7040229
+23860	24186	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308509.1|
+24326	25384	gene
+			gene	N
+			locus_tag	MuCoV_gp6
+			db_xref	GeneID:7040230
+24326	25384	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_002308510.1|
+25417	25788	gene
+			gene	NS7a
+			locus_tag	MuCoV_gp7
+			db_xref	GeneID:7040231
+25417	25788	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308511.1|
+25794	26051	gene
+			gene	NS7b
+			locus_tag	MuCoV_gp8
+			db_xref	GeneID:7040232
+25794	26051	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308512.1|
+26048	26329	gene
+			gene	NS7c
+			locus_tag	MuCoV_gp9
+			db_xref	GeneID:7040233
+26048	26329	CDS
+			product	nonstructural protein
+			protein_id	ref|YP_002308513.1|
+
+>Feature ref|NC_012936.1|
+1	182	5'UTR
+183	21700	gene
+			gene	ORF1ab
+			locus_tag	PRCV_gp01
+			db_xref	GeneID:11273175
+183	13556	CDS
+13556	21700
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_003029844.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+183	13577	gene
+			locus_tag	PRCV_gp02
+			db_xref	GeneID:11273166
+183	13577	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_003029845.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21714	22511	gene
+			locus_tag	PRCV_gp03
+			db_xref	GeneID:11273167
+21714	22511	CDS
+			product	32 kD non-structural protein
+			product	NS2A
+			product	non-structural protein 2a
+			protein_id	ref|YP_003029846.1|
+22557	23876	gene
+			gene	HE
+			locus_tag	PRCV_gp04
+			db_xref	GeneID:11273168
+22557	23876	CDS
+			product	hemagglutinin-esterase
+			protein_id	ref|YP_003029847.1|
+23891	27973	gene
+			gene	S
+			locus_tag	PRCV_gp05
+			db_xref	GeneID:11273169
+23891	27973	CDS
+			product	spike protein
+			protein_id	ref|YP_003029848.1|
+28064	28465	gene
+			locus_tag	PRCV_gp06
+			db_xref	GeneID:11273170
+28064	28465	CDS
+			product	15 kD non-structural protein
+			product	NS4
+			product	Non-structural protein 4
+			protein_id	ref|YP_003029849.1|
+28639	28905	gene
+			gene	E
+			locus_tag	PRCV_gp07
+			db_xref	GeneID:11273171
+28639	28905	CDS
+			product	envelope protein
+			protein_id	ref|YP_003029850.1|
+28902	29588	gene
+			gene	M
+			locus_tag	PRCV_gp08
+			db_xref	GeneID:11273172
+28902	29588	CDS
+			product	membrane protein
+			protein_id	ref|YP_003029851.1|
+29603	30967	gene
+			gene	N
+			locus_tag	PRCV_gp09
+			db_xref	GeneID:11273173
+29603	30967	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_003029852.1|
+29667	30290	gene
+			locus_tag	PRCV_gp10
+			db_xref	GeneID:11273174
+29667	30290	CDS
+			product	internal protein
+			protein_id	ref|YP_003029853.1|
+30968	31250	3'UTR
+
+>Feature ref|NC_014470.1|
+1	190	5'UTR
+191	21384	gene
+			gene	ORF1ab
+			locus_tag	BtCoVBM48_gp1
+			db_xref	GeneID:9714832
+191	13297	CDS
+13297	21384
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			protein_id	ref|YP_003858583.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+191	13312	CDS
+			product	ORF1a polyprotein
+			prot_desc	polyprotein pp1a
+			protein_id	ref|YP_010229071.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21391	25170	gene
+			gene	S
+			locus_tag	BtCoVBM48_gp2
+			db_xref	GeneID:9714824
+21391	25170	CDS
+			product	spike protein
+			protein_id	ref|YP_003858584.1|
+25179	25994	gene
+			gene	ORF3
+			locus_tag	BtCoVBM48_gp3
+			db_xref	GeneID:9714825
+25179	25994	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_003858585.1|
+26018	26248	gene
+			gene	E
+			locus_tag	BtCoVBM48_gp4
+			db_xref	GeneID:9714826
+26018	26248	CDS
+			product	envelope protein
+			protein_id	ref|YP_003858586.1|
+26299	26982	gene
+			gene	M
+			locus_tag	BtCoVBM48_gp5
+			db_xref	GeneID:9714827
+26299	26982	CDS
+			product	membrane protein
+			protein_id	ref|YP_003858587.1|
+26993	27181	gene
+			gene	ORF6
+			locus_tag	BtCoVBM48_gp6
+			db_xref	GeneID:9714828
+26993	27181	CDS
+			product	ORF6 protein
+			protein_id	ref|YP_003858588.1|
+27188	27544	gene
+			gene	ORF7a
+			locus_tag	BtCoVBM48_gp7
+			db_xref	GeneID:9714829
+27188	27544	CDS
+			product	ORF7a protein
+			protein_id	ref|YP_003858589.1|
+27541	27663	gene
+			gene	ORF7b
+			locus_tag	BtCoVBM48_gp8
+			db_xref	GeneID:9714830
+27541	27663	CDS
+			product	ORF7b protein
+			protein_id	ref|YP_003858590.1|
+27665	28918	gene
+			gene	N
+			locus_tag	BtCoVBM48_gp9
+			db_xref	GeneID:9714831
+27665	28918	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_003858591.1|
+28919	29276	3'UTR
+
+>Feature ref|NC_016991.1|
+1	511	5'UTR
+511	19397	gene
+			gene	ORF1ab
+			locus_tag	WECoV-HKU16_gp1
+			db_xref	GeneID:11945629
+511	11349	CDS
+11349	19397
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicase polyprotein
+			prot_desc	translated via a -1 ribosomal frameshift; ORF1ab
+			protein_id	ref|YP_005352837.1|
+			note	translated via a -1 ribosomal frameshift; ORF1ab; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+19379	22918	gene
+			gene	S
+			locus_tag	WECoV-HKU16_gp2
+			db_xref	GeneID:11945622
+19379	22918	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352838.1|
+22912	23160	gene
+			gene	E
+			locus_tag	WECoV-HKU16_gp3
+			db_xref	GeneID:11945623
+22912	23160	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352839.1|
+23153	23809	gene
+			gene	M
+			locus_tag	WECoV-HKU16_gp4
+			db_xref	GeneID:11945624
+23153	23809	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352840.1|
+23809	24090	gene
+			gene	NS6
+			locus_tag	WECoV-HKU16_gp5
+			db_xref	GeneID:11945625
+23809	24090	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352841.1|
+24115	25158	gene
+			gene	N
+			locus_tag	WECoV-HKU16_gp6
+			db_xref	GeneID:11945626
+24115	25158	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352842.1|
+24143	24811	gene
+			gene	NS7a
+			locus_tag	WECoV-HKU16_gp7
+			db_xref	GeneID:11945627
+24143	24811	CDS
+			product	NS7a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352843.1|
+25139	25270	gene
+			gene	NS7b
+			locus_tag	WECoV-HKU16_gp8
+			db_xref	GeneID:11945628
+25139	25270	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352844.1|
+25271	26041	3'UTR
+
+>Feature ref|NC_016992.1|
+1	26083	misc_feature
+			note	NS7 proteins were annotated with the kind help of E. Wong, PhD, The University of Hong Kong.
+1	519	5'UTR
+520	19352	gene
+			gene	orf1ab
+			locus_tag	SpCoV-HKU17_gp1
+			db_xref	GeneID:11945639
+520	11424	CDS
+11424	19352
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicase polyprotein
+			protein_id	ref|YP_005352845.1|
+			note	translated via a -1 ribosomal frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+19334	22954	gene
+			gene	S
+			locus_tag	SpCoV-HKU17_gp2
+			db_xref	GeneID:11945632
+19334	22954	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352846.1|
+22948	23196	gene
+			gene	E
+			locus_tag	SpCoV-HKU17_gp3
+			db_xref	GeneID:11945633
+22948	23196	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352847.1|
+23189	23842	gene
+			gene	M
+			locus_tag	SpCoV-HKU17_gp4
+			db_xref	GeneID:11945634
+23189	23842	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352848.1|
+23842	24129	gene
+			gene	NS6
+			locus_tag	SpCoV-HKU17_gp5
+			db_xref	GeneID:11945635
+23842	24129	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352849.1|
+24150	25178	gene
+			gene	N
+			locus_tag	SpCoV-HKU17_gp6
+			db_xref	GeneID:11945636
+24150	25178	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352850.1|
+24244	24846	gene
+			gene	NS7a
+			locus_tag	SpCoV-HKU17p1
+			db_xref	GeneID:34719090
+24244	24846	CDS
+			product	NS7a protein
+			protein_id	ref|YP_009433743.1|
+25189	25623	gene
+			gene	NS7b
+			locus_tag	SpCoV-HKU17_gp7
+			db_xref	GeneID:11945637
+25189	25623	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352851.1|
+25539	25751	gene
+			gene	NS7c
+			locus_tag	SpCoV-HKU17_gp8
+			db_xref	GeneID:11945638
+25539	25751	CDS
+			product	NS7c protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352852.1|
+25752	26083	3'UTR
+
+>Feature ref|NC_016993.1|
+1	595	5'UTR
+596	19356	gene
+			gene	ORF1ab
+			locus_tag	MRCoV-HKU18_gp1
+			db_xref	GeneID:11945642
+596	11434	CDS
+11434	19356
+			product	replicase polyprotein
+			prot_desc	ORF1ab polyprotein
+			prot_note	translated via a -1 ribosomal frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			protein_id	ref|YP_005352853.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+596	11440	CDS
+			product	ORF1a polyprotein
+			prot_desc	polyprotein pp1a
+			prot_note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+			protein_id	ref|YP_010229072.1|
+19338	22991	gene
+			gene	S
+			locus_tag	MRCoV-HKU18_gp2
+			db_xref	GeneID:11945643
+19338	22991	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352854.1|
+22985	23233	gene
+			gene	E
+			locus_tag	MRCoV-HKU18_gp3
+			db_xref	GeneID:11945644
+22985	23233	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352855.1|
+23226	23882	gene
+			gene	M
+			locus_tag	MRCoV-HKU18_gp4
+			db_xref	GeneID:11945645
+23226	23882	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352856.1|
+23882	24172	gene
+			gene	NS6
+			locus_tag	MRCoV-HKU18_gp5
+			db_xref	GeneID:11945646
+23882	24172	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352857.1|
+24355	25395	gene
+			gene	N
+			locus_tag	MRCoV-HKU18_gp6
+			db_xref	GeneID:11945647
+24355	25395	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352858.1|
+25407	25580	gene
+			gene	NS7a
+			locus_tag	MRCoV-HKU18_gp7
+			db_xref	GeneID:11945648
+25407	25580	CDS
+			product	NS7a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352859.1|
+25561	25932	gene
+			gene	NS7b
+			locus_tag	MRCoV-HKU18_gp8
+			db_xref	GeneID:11945649
+25561	25932	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352860.1|
+25941	26195	gene
+			gene	NS7c
+			locus_tag	MRCoV-HKU18_gp9
+			db_xref	GeneID:11945650
+25941	26195	CDS
+			product	NS7c protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352861.1|
+26196	26689	3'UTR
+
+>Feature ref|NC_016994.1|
+482	19323	gene
+			gene	orf1ab
+			locus_tag	NHCoV-HKU19_gp1
+			db_xref	GeneID:11945653
+482	11311	CDS
+11311	19323
+			product	replicase polyprotein
+			prot_desc	translated via a -1 ribosomal frameshift; ORF1ab
+			protein_id	ref|YP_005352862.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+19305	23069	gene
+			gene	S
+			locus_tag	NHCoV-HKU19_gp2
+			db_xref	GeneID:11945654
+19305	23069	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352863.1|
+23069	23317	gene
+			gene	E
+			locus_tag	NHCoV-HKU19_gp3
+			db_xref	GeneID:11945655
+23069	23317	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352864.1|
+23310	23960	gene
+			gene	M
+			locus_tag	NHCoV-HKU19_gp4
+			db_xref	GeneID:11945656
+23310	23960	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352865.1|
+23960	24238	gene
+			gene	NS6
+			locus_tag	NHCoV-HKU19_gp5
+			db_xref	GeneID:11945657
+23960	24238	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352866.1|
+24248	25276	gene
+			gene	N
+			locus_tag	NHCoV-HKU19_gp6
+			db_xref	GeneID:11945658
+24248	25276	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352867.1|
+25277	25573	gene
+			gene	NS7a
+			locus_tag	NHCoV-HKU19_gp7
+			db_xref	GeneID:11945659
+25277	25573	CDS
+			product	NS7a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352868.1|
+25583	25876	gene
+			gene	NS7b
+			locus_tag	NHCoV-HKU19_gp8
+			db_xref	GeneID:11945660
+25583	25876	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352869.1|
+
+>Feature ref|NC_016995.1|
+1	218	5'UTR
+219	18838	gene
+			gene	ORF1ab
+			locus_tag	WiCoV-HKU20_gp01
+			db_xref	GeneID:11945664
+219	10922	CDS
+10922	18838
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_desc	replicase polyprotein
+			protein_id	ref|YP_005352870.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins; translated via a -1 ribosomal frameshift
+			ribosomal_slippage
+			exception	ribosomal slippage
+219	10928	CDS
+			product	ORF1a polyprotein
+			prot_desc	polyprotein pp1a
+			protein_id	ref|YP_010229073.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+18817	22455	gene
+			gene	S
+			locus_tag	WiCoV-HKU20_gp02
+			db_xref	GeneID:11945665
+18817	22455	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352871.1|
+22455	22715	gene
+			gene	E
+			locus_tag	WiCoV-HKU20_gp03
+			db_xref	GeneID:11945666
+22455	22715	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352872.1|
+22708	23358	gene
+			gene	M
+			locus_tag	WiCoV-HKU20_gp04
+			db_xref	GeneID:11945667
+22708	23358	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352873.1|
+23358	23630	gene
+			gene	NS6
+			locus_tag	WiCoV-HKU20_gp05
+			db_xref	GeneID:11945668
+23358	23630	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352874.1|
+23646	24698	gene
+			gene	N
+			locus_tag	WiCoV-HKU20_gp06
+			db_xref	GeneID:11945669
+23646	24698	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352875.1|
+24695	24928	gene
+			gene	NS7a
+			locus_tag	WiCoV-HKU20_gp07
+			db_xref	GeneID:11945670
+24695	24928	CDS
+			product	NS7a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352876.1|
+25218	25466	gene
+			gene	NS7b
+			locus_tag	WiCoV-HKU20_gp08
+			db_xref	GeneID:11945671
+25218	25466	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352877.1|
+25450	25716	gene
+			gene	NS7c
+			locus_tag	WiCoV-HKU20_gp09
+			db_xref	GeneID:11945672
+25450	25716	CDS
+			product	NS7c protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352878.1|
+25752	25952	gene
+			gene	NS7d
+			locus_tag	WiCoV-HKU20_gp10
+			db_xref	GeneID:11945673
+25752	25952	CDS
+			product	NS7d protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352879.1|
+25953	26227	3'UTR
+
+>Feature ref|NC_016996.1|
+1	477	5'UTR
+478	19103	gene
+			gene	orf1ab
+			locus_tag	CMCoV-HKU21_gp1
+			db_xref	GeneID:11945676
+478	11061	CDS
+11061	19103
+			product	ORF1ab polyprotein
+			prot_desc	replicase polyprotein
+			protein_id	ref|YP_005352880.1|
+			note	translated via a -1 ribosomal frameshift; ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+478	11067	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_010229074.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+19085	22729	gene
+			gene	S
+			locus_tag	CMCoV-HKU21_gp2
+			db_xref	GeneID:11945677
+19085	22729	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_005352881.1|
+22723	22971	gene
+			gene	E
+			locus_tag	CMCoV-HKU21_gp3
+			db_xref	GeneID:11945678
+22723	22971	CDS
+			product	envelope protein
+			protein_id	ref|YP_005352882.1|
+22973	23779	gene
+			gene	M
+			locus_tag	CMCoV-HKU21_gp4
+			db_xref	GeneID:11945679
+22973	23779	CDS
+			product	membrane protein
+			protein_id	ref|YP_005352883.1|
+23779	24024	gene
+			gene	NS6
+			locus_tag	CMCoV-HKU21_gp5
+			db_xref	GeneID:11945680
+23779	24024	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352884.1|
+24052	25107	gene
+			gene	N
+			locus_tag	CMCoV-HKU21_gp6
+			db_xref	GeneID:11945681
+24052	25107	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005352885.1|
+25107	25379	gene
+			gene	NS7a
+			locus_tag	CMCoV-HKU21_gp7
+			db_xref	GeneID:11945682
+25107	25379	CDS
+			product	NS7a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352886.1|
+25391	25576	gene
+			gene	NS7b
+			locus_tag	CMCoV-HKU21_gp8
+			db_xref	GeneID:11945683
+25391	25576	CDS
+			product	NS7b protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352887.1|
+25500	25916	gene
+			gene	NS7c
+			locus_tag	CMCoV-HKU21_gp9
+			db_xref	GeneID:11945684
+25500	25916	CDS
+			product	NS7c protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005352888.1|
+25917	26223	3'UTR
+
+>Feature ref|NC_017083.1|
+1	208	5'UTR
+209	21663	gene
+			gene	ORF1ab
+			locus_tag	RbCoV-HKU14_gp01
+			db_xref	GeneID:13230771
+209	13519	CDS
+13519	21663
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_005454239.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+209	13540	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009944253.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21673	21804	gene
+			gene	NS2a1
+			locus_tag	RbCoV-HKU14_gp02
+			db_xref	GeneID:11948229
+21673	21804	CDS
+			product	NS2a1 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005454240.1|
+21829	22020	gene
+			gene	NS2a2
+			locus_tag	RbCoV-HKU14_gp03
+			db_xref	GeneID:11948230
+21829	22020	CDS
+			product	NS2a2 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005454241.1|
+22126	22254	gene
+			gene	NS2a3
+			locus_tag	RbCoV-HKU14_gp04
+			db_xref	GeneID:11948231
+22126	22254	CDS
+			product	NS2a3 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005454242.1|
+22277	22492	gene
+			gene	NS2a4
+			locus_tag	RbCoV-HKU14_gp05
+			db_xref	GeneID:11948232
+22277	22492	CDS
+			product	NS2a4 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005454243.1|
+22504	23778	gene
+			gene	HE
+			locus_tag	RbCoV-HKU14_gp06
+			db_xref	GeneID:11948233
+22504	23778	CDS
+			product	hemagglutinin-esterase protein
+			protein_id	ref|YP_005454244.1|
+23793	27881	gene
+			gene	S
+			locus_tag	RbCoV-HKU14_gp07
+			db_xref	GeneID:11948234
+23793	27881	CDS
+			product	spike protein
+			protein_id	ref|YP_005454245.1|
+28178	28507	gene
+			gene	NS5a
+			locus_tag	RbCoV-HKU14_gp08
+			db_xref	GeneID:11948235
+28178	28507	CDS
+			product	NS5a protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_005454246.1|
+28494	28763	gene
+			gene	E
+			locus_tag	RbCoV-HKU14_gp09
+			db_xref	GeneID:11948236
+28494	28763	CDS
+			product	envelope protein
+			protein_id	ref|YP_005454247.1|
+28760	29452	gene
+			gene	M
+			locus_tag	RbCoV-HKU14_gp10
+			db_xref	GeneID:11948237
+28760	29452	CDS
+			product	membrane protein
+			protein_id	ref|YP_005454248.1|
+29462	30796	gene
+			gene	N
+			locus_tag	RbCoV-HKU14_gp11
+			db_xref	GeneID:11948238
+29462	30796	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_005454249.1|
+30797	31100	3'UTR
+
+>Feature ref|NC_018871.1|
+1	302	5'UTR
+303	20644	gene
+			gene_desc	ORF1ab
+			locus_tag	D425_gp1
+			db_xref	GeneID:13842724
+303	12617	CDS
+12617	20644
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_006908641.2|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+20641	24690	gene
+			gene_desc	S
+			locus_tag	D425_gp2
+			db_xref	GeneID:13842716
+20641	24690	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_006908642.1|
+24690	25346	gene
+			gene_desc	NS3
+			locus_tag	D425_gp3
+			db_xref	GeneID:13842717
+24690	25346	CDS
+			product	non-structural protein NS3
+			protein_id	ref|YP_006908643.1|
+25375	25602	gene
+			gene_desc	E
+			locus_tag	D425_gp4
+			db_xref	GeneID:13842718
+25375	25602	CDS
+			product	envelope protein
+			protein_id	ref|YP_006908644.1|
+25608	26297	gene
+			gene_desc	M
+			locus_tag	D425_gp5
+			db_xref	GeneID:13842719
+25608	26297	CDS
+			product	membrane protein
+			protein_id	ref|YP_006908645.1|
+26308	27516	gene
+			gene_desc	N
+			locus_tag	D425_gp6
+			db_xref	GeneID:13842720
+26308	27516	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_006908646.1|
+27532	27777	gene
+			gene_desc	NS7a
+			locus_tag	D425_gp7
+			db_xref	GeneID:13842721
+27532	27777	CDS
+			product	non-structural protein NS7a
+			protein_id	ref|YP_006908647.1|
+27787	28248	gene
+			gene_desc	NS7b
+			locus_tag	D425_gp8
+			db_xref	GeneID:13842722
+27787	28248	CDS
+			product	non-structural protein NS7b
+			protein_id	ref|YP_006908648.1|
+27986	28216	gene
+			gene_desc	NS7c
+			locus_tag	D425_gp9
+			db_xref	GeneID:13842723
+27986	28216	CDS
+			product	non-structural protein NS7c
+			protein_id	ref|YP_006908649.1|
+28249	28494	3'UTR
+
+>Feature ref|NC_019843.3|
+1	278	5'UTR
+279	21514	gene
+			gene	orf1ab
+			locus_tag	G128_gp01
+			db_xref	GeneID:14254602
+279	13433	CDS
+13433	21514
+			product	1AB polyprotein
+			prot_desc	ORF1ab product; pp1ab
+			protein_id	ref|YP_009047202.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+279	13454	CDS
+			product	1A polyprotein
+			prot_desc	ORF1a product; pp1a
+			protein_id	ref|YP_009047203.1|
+21456	25517	gene
+			gene	S
+			locus_tag	G128_gp02
+			db_xref	GeneID:14254594
+21456	25517	CDS
+			product	spike protein
+			product	surface glycoprotein
+			prot_desc	S protein
+			protein_id	ref|YP_009047204.1|
+25532	25843	gene
+			gene	orf3
+			locus_tag	G128_gp03
+			db_xref	GeneID:14254595
+25532	25843	CDS
+			product	NS3 protein
+			prot_desc	ORF3 protein
+			protein_id	ref|YP_009047205.1|
+25852	26181	gene
+			gene	orf4a
+			locus_tag	G128_gp04
+			db_xref	GeneID:14254596
+25852	26181	CDS
+			product	NS4A protein
+			prot_desc	ORF4a protein
+			protein_id	ref|YP_009047206.1|
+26093	26833	gene
+			gene	orf4b
+			locus_tag	G128_gp05
+			db_xref	GeneID:14254597
+26093	26833	CDS
+			product	NS4B protein
+			prot_desc	ORF4b protein
+			protein_id	ref|YP_009047207.1|
+26840	27514	gene
+			gene	orf5
+			locus_tag	G128_gp06
+			db_xref	GeneID:14254598
+26840	27514	CDS
+			product	NS5 protein
+			prot_desc	ORF5 protein
+			protein_id	ref|YP_009047208.1|
+27590	27838	gene
+			gene	E
+			locus_tag	G128_gp07
+			db_xref	GeneID:14254599
+27590	27838	CDS
+			product	envelope protein
+			prot_desc	E protein
+			protein_id	ref|YP_009047209.1|
+27853	28512	gene
+			gene	M
+			locus_tag	G128_gp08
+			db_xref	GeneID:14254600
+27853	28512	CDS
+			product	membrane protein
+			prot_desc	M protein
+			protein_id	ref|YP_009047210.1|
+28566	29807	gene
+			gene	N
+			locus_tag	G128_gp09
+			db_xref	GeneID:14254601
+28566	29807	CDS
+			product	nucleocapsid protein
+			product	nucleoprotein
+			prot_desc	N protein
+			protein_id	ref|YP_009047211.1|
+28762	29100	gene
+			gene	orf8b
+			locus_tag	G128_gp10
+			db_xref	GeneID:19910005
+28762	29100	CDS
+			product	ORF8b protein
+			protein_id	ref|YP_009047212.1|
+29101	30119	3'UTR
+
+>Feature ref|NC_022103.1|
+80	20556	gene
+			gene	PP1ab
+			locus_tag	O191_gp1
+			db_xref	GeneID:16607894
+80	12532	CDS
+12532	20556
+			product	replicase polyprotein 1ab
+			protein_id	ref|YP_008439200.1|
+			note	ORF1ab polyprotein
+			ribosomal_slippage
+			exception	ribosomal slippage
+80	12562	gene
+			gene	PP1a
+			locus_tag	O191_gp2
+			db_xref	GeneID:16607889
+80	12562	CDS
+			product	replicase polyprotein 1a
+			protein_id	ref|YP_008439201.1|
+			note	ORF1a polyprotein
+20553	24647	gene
+			gene	S
+			locus_tag	O191_gp3
+			db_xref	GeneID:16607888
+20553	24647	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_008439202.1|
+			note	E2; peplomer protein
+24647	25324	gene
+			gene	NS3
+			locus_tag	O191_gp4
+			db_xref	GeneID:16607890
+24647	25324	CDS
+			product	non-structural protein 3
+			protein_id	ref|YP_008439203.1|
+			note	accessory protein 3a
+25308	25532	gene
+			gene	E
+			locus_tag	O191_gp5
+			db_xref	GeneID:16607891
+25308	25532	CDS
+			product	envelope small membrane protein
+			protein_id	ref|YP_008439204.1|
+			note	E protein; envelope protein
+25539	26219	gene
+			gene	M
+			locus_tag	O191_gp6
+			db_xref	GeneID:16607892
+25539	26219	CDS
+			product	membrane protein
+			protein_id	ref|YP_008439205.1|
+			note	matrix protein; E1 glycoprotein
+26230	27507	gene
+			gene	N
+			locus_tag	O191_gp7
+			db_xref	GeneID:16607893
+26230	27507	CDS
+			product	nucleoprotein
+			protein_id	ref|YP_008439206.1|
+			note	nucleocapsid protein
+
+>Feature ref|NC_023760.1|
+273	20320	gene
+			locus_tag	CN73_gp01
+			db_xref	GeneID:18585637
+273	12287	CDS
+12287	20320
+			product	orf1ab polyprotein
+			protein_id	ref|YP_009019180.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+273	12329	gene
+			locus_tag	CN73_gp02
+			db_xref	GeneID:18585629
+273	12329	CDS
+			product	orf1a polyprotein
+			protein_id	ref|YP_009019181.1|
+20322	24638	gene
+			locus_tag	CN73_gp03
+			db_xref	GeneID:18585628
+20322	24638	CDS
+			product	spike protein
+			protein_id	ref|YP_009019182.1|
+24656	25399	gene
+			locus_tag	CN73_gp04
+			db_xref	GeneID:18585630
+24656	25399	CDS
+			product	non-structural protein 3c
+			protein_id	ref|YP_009019183.1|
+25368	25616	gene
+			locus_tag	CN73_gp05
+			db_xref	GeneID:18585631
+25368	25616	CDS
+			product	envelope protein
+			protein_id	ref|YP_009019184.1|
+25633	26439	gene
+			locus_tag	CN73_gp06
+			db_xref	GeneID:18585632
+25633	26439	CDS
+			product	membrane protein
+			protein_id	ref|YP_009019185.1|
+26454	27584	gene
+			locus_tag	CN73_gp07
+			db_xref	GeneID:18585633
+26454	27584	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009019186.1|
+27589	27885	gene
+			locus_tag	CN73_gp08
+			db_xref	GeneID:18585634
+27589	27885	CDS
+			product	non-structural protein 7a
+			protein_id	ref|YP_009019187.1|
+27870	28091	gene
+			locus_tag	CN73_gp09
+			db_xref	GeneID:18585635
+27870	28091	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_009019188.1|
+28033	28647	gene
+			locus_tag	CN73_gp10
+			db_xref	GeneID:18585636
+28033	28647	CDS
+			product	hypothetical protein orf7b
+			protein_id	ref|YP_009019189.1|
+
+>Feature ref|NC_025217.1|
+1	302	5'UTR
+303	22045	gene
+			gene	ORF1ab
+			locus_tag	NA39_gp1
+			db_xref	GeneID:20522562
+303	13931	CDS
+13931	22045
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_desc	ORF1ab
+			protein_id	ref|YP_009072438.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+303	13946	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009915659.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+22058	23413	gene
+			locus_tag	NA39_gp2
+			db_xref	GeneID:20522554
+22058	23413	CDS
+			product	putative surface protein
+			prot_desc	S-related ORF2
+			protein_id	ref|YP_009072439.1|
+			note	putative surface protein
+23563	27516	gene
+			gene	S
+			locus_tag	NA39_gp3
+			db_xref	GeneID:20522555
+23563	27516	CDS
+			product	spike protein
+			product	surface glycoprotein
+			prot_desc	S
+			protein_id	ref|YP_009072440.1|
+27523	28260	gene
+			gene	ORF4
+			locus_tag	NA39_gp4
+			db_xref	GeneID:20522556
+27523	28260	CDS
+			product	ORF4 protein
+			prot_desc	ORF4
+			protein_id	ref|YP_009072441.1|
+28315	28554	gene
+			gene	E
+			locus_tag	NA39_gp5
+			db_xref	GeneID:20522557
+28315	28554	CDS
+			product	envelope protein
+			prot_desc	E
+			protein_id	ref|YP_009072442.1|
+28610	29281	gene
+			gene	M
+			locus_tag	NA39_gp6
+			db_xref	GeneID:20522558
+28610	29281	CDS
+			product	membrane protein
+			prot_desc	M
+			protein_id	ref|YP_009072443.1|
+29297	29515	gene
+			gene	ORF7
+			locus_tag	NA39_gp7
+			db_xref	GeneID:20522559
+29297	29515	CDS
+			product	ORF7 protein
+			prot_desc	ORF7
+			protein_id	ref|YP_009072444.1|
+29534	29857	gene
+			gene	ORF8
+			locus_tag	NA39_gp8
+			db_xref	GeneID:20522560
+29534	29857	CDS
+			product	ORF8 protein
+			prot_desc	ORF8
+			protein_id	ref|YP_009072445.1|
+29917	31173	gene
+			gene	N
+			locus_tag	NA39_gp9
+			db_xref	GeneID:20522561
+29917	31173	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_009072446.1|
+31174	31491	3'UTR
+
+>Feature ref|NC_026011.1|
+1	212	5'UTR
+213	21637	gene
+			gene	ORF1ab
+			locus_tag	SF15_gp01
+			db_xref	GeneID:22807888
+213	13484	CDS
+13484	21637
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			prot_desc	replicase polyprotein
+			protein_id	ref|YP_009113022.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+213	13505	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009944267.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21639	22469	gene
+			gene_desc	NS2a
+			locus_tag	SF15_gp02
+			db_xref	GeneID:22807879
+21639	22469	CDS
+			product	non-structural protein NS2a
+			protein_id	ref|YP_009113023.1|
+22484	23761	gene
+			gene	HE
+			locus_tag	SF15_gp03
+			db_xref	GeneID:22807880
+22484	23761	CDS
+			product	hemagglutinin-esterase protein
+			protein_id	ref|YP_009113024.1|
+23777	27853	gene
+			gene	S
+			locus_tag	SF15_gp04
+			db_xref	GeneID:22807881
+23777	27853	CDS
+			product	spike glycoprotein
+			product	surface protein
+			protein_id	ref|YP_009113025.1|
+27946	28356	gene
+			gene	NS4
+			locus_tag	SF15_gp05
+			db_xref	GeneID:22807882
+27946	28356	CDS
+			product	non-structural protein NS4
+			protein_id	ref|YP_009113026.1|
+28338	28652	gene
+			gene	NS5
+			locus_tag	SF15_gp06
+			db_xref	GeneID:22807883
+28338	28652	CDS
+			product	non-structural protein NS5
+			protein_id	ref|YP_009113027.1|
+28645	28893	gene
+			gene	E
+			locus_tag	SF15_gp07
+			db_xref	GeneID:22807884
+28645	28893	CDS
+			product	envelope protein
+			protein_id	ref|YP_009113028.1|
+28908	29603	gene
+			gene	M
+			locus_tag	SF15_gp08
+			db_xref	GeneID:22807885
+28908	29603	CDS
+			product	membrane protein
+			protein_id	ref|YP_009113029.1|
+29596	30288	gene
+			gene	N2
+			locus_tag	SF15_gp09
+			db_xref	GeneID:22807886
+29596	30288	CDS
+			product	internal protein
+			protein_id	ref|YP_009113030.1|
+29613	30944	gene
+			gene	N
+			locus_tag	SF15_gp10
+			db_xref	GeneID:22807887
+29613	30944	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009113031.1|
+30945	31249	3'UTR
+
+>Feature ref|NC_028752.1|
+293	20583	gene
+			gene	orf1ab
+			locus_tag	AU268_gp1
+			db_xref	GeneID:26613670
+293	12534	CDS
+12534	20583
+			product	polyprotein ORF1ab
+			protein_id	ref|YP_009194637.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+293	12565	gene
+			gene	orf1a
+			locus_tag	AU268_gp2
+			db_xref	GeneID:26613665
+293	12565	CDS
+			product	polyprotein ORF1a
+			protein_id	ref|YP_009194638.1|
+20585	24094	gene
+			gene	S
+			locus_tag	AU268_gp3
+			db_xref	GeneID:26613664
+20585	24094	CDS
+			product	spike protein
+			protein_id	ref|YP_009194639.1|
+24094	24774	gene
+			gene	orf4
+			locus_tag	AU268_gp4
+			db_xref	GeneID:26613666
+24094	24774	CDS
+			product	ORF4
+			protein_id	ref|YP_009194640.1|
+24752	24985	gene
+			gene	E
+			locus_tag	AU268_gp5
+			db_xref	GeneID:26613667
+24752	24985	CDS
+			product	envelope protein
+			protein_id	ref|YP_009194641.1|
+24997	25677	gene
+			gene	M
+			locus_tag	AU268_gp6
+			db_xref	GeneID:26613668
+24997	25677	CDS
+			product	membrane protein
+			protein_id	ref|YP_009194642.1|
+25691	26839	gene
+			gene	N
+			locus_tag	AU268_gp7
+			db_xref	GeneID:26613669
+25691	26839	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009194643.1|
+
+>Feature ref|NC_028806.1|
+307	12354	gene
+			locus_tag	AVT88_gp1
+			db_xref	GeneID:26626395
+307	12354	CDS
+			product	replicase polyprotein 1a
+			protein_id	ref|YP_009199240.1|
+12312	20354	gene
+			locus_tag	AVT88_gp2
+			db_xref	GeneID:26626387
+<12312	20354	CDS
+			product	replicase polyprotein 1b
+			protein_id	ref|YP_009199241.1|
+20355	24503	gene
+			locus_tag	AVT88_gp3
+			db_xref	GeneID:26626388
+20355	24503	CDS
+			product	spike protein
+			protein_id	ref|YP_009199242.1|
+24493	24585	gene
+			locus_tag	AVT88_gp4
+			db_xref	GeneID:26626389
+24493	24585	CDS
+			product	non-structural protein 3a
+			protein_id	ref|YP_009199243.1|
+24666	25400	gene
+			locus_tag	AVT88_gp5
+			db_xref	GeneID:26626390
+24666	25400	CDS
+			product	non-structural protein 3b
+			protein_id	ref|YP_009199244.1|
+25387	25635	gene
+			locus_tag	AVT88_gp6
+			db_xref	GeneID:26626391
+25387	25635	CDS
+			product	envelope protein
+			protein_id	ref|YP_009199245.1|
+25646	26434	gene
+			locus_tag	AVT88_gp7
+			db_xref	GeneID:26626392
+25646	26434	CDS
+			product	membrane protein
+			protein_id	ref|YP_009199246.1|
+26447	27595	gene
+			locus_tag	AVT88_gp8
+			db_xref	GeneID:26626393
+26447	27595	CDS
+			product	nucleoprotein
+			protein_id	ref|YP_009199247.1|
+27601	27837	gene
+			locus_tag	AVT88_gp9
+			db_xref	GeneID:26626394
+27601	27837	CDS
+			product	non-structural protein 7
+			protein_id	ref|YP_009199248.1|
+
+>Feature ref|NC_028811.1|
+299	20286	gene
+			locus_tag	AVU60_gp1
+			db_xref	GeneID:26626802
+299	12238	CDS
+12238	20286
+			product	ORF1ab polyprotein
+			prot_desc	orf1ab
+			protein_id	ref|YP_009199608.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20288	24451	gene
+			locus_tag	AVU60_gp2
+			db_xref	GeneID:26626797
+20288	24451	CDS
+			product	spike glycoprotein
+			prot_desc	S
+			protein_id	ref|YP_009199609.1|
+24448	25107	gene
+			locus_tag	AVU60_gp3
+			db_xref	GeneID:26626798
+24448	25107	CDS
+			product	hypothetical protein ORF3
+			prot_desc	orf3
+			protein_id	ref|YP_009199610.1|
+25109	25339	gene
+			locus_tag	AVU60_gp4
+			db_xref	GeneID:26626799
+25109	25339	CDS
+			product	small envelope protein
+			prot_desc	E
+			protein_id	ref|YP_009199611.1|
+25349	26032	gene
+			locus_tag	AVU60_gp5
+			db_xref	GeneID:26626800
+25349	26032	CDS
+			product	membrane glycoprotein
+			prot_desc	M
+			protein_id	ref|YP_009199612.1|
+26041	27330	gene
+			locus_tag	AVU60_gp6
+			db_xref	GeneID:26626801
+26041	27330	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_009199613.1|
+
+>Feature ref|NC_028814.1|
+42	20224	gene
+			locus_tag	AVU57_gp1
+			db_xref	GeneID:26626971
+42	12203	CDS
+12203	20224
+			product	ORF1ab polyprotein
+			prot_desc	orf1ab
+			protein_id	ref|YP_009199789.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20226	24338	gene
+			locus_tag	AVU57_gp2
+			db_xref	GeneID:26626965
+20226	24338	CDS
+			product	spike glycoprotein
+			prot_desc	S
+			protein_id	ref|YP_009199790.1|
+24338	25027	gene
+			locus_tag	AVU57_gp3
+			db_xref	GeneID:26626966
+24338	25027	CDS
+			product	hypothetical protein ORF3
+			prot_desc	orf3
+			protein_id	ref|YP_009199791.1|
+25035	25232	gene
+			locus_tag	AVU57_gp4
+			db_xref	GeneID:26626967
+25035	25232	CDS
+			product	small envelope protein
+			prot_desc	E
+			protein_id	ref|YP_009199792.1|
+25242	25925	gene
+			locus_tag	AVU57_gp5
+			db_xref	GeneID:26626968
+25242	25925	CDS
+			product	membrane glycoprotein
+			prot_desc	M
+			protein_id	ref|YP_009199793.1|
+25937	27088	gene
+			locus_tag	AVU57_gp6
+			db_xref	GeneID:26626969
+25937	27088	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_009199794.1|
+27111	27359	gene
+			locus_tag	AVU57_gp7
+			db_xref	GeneID:26626970
+27111	27359	CDS
+			product	hypothetical protein ORF7
+			prot_desc	orf7
+			protein_id	ref|YP_009199795.1|
+
+>Feature ref|NC_028824.1|
+135	20284	gene
+			locus_tag	AVU56_gp1
+			db_xref	GeneID:26628039
+135	12251	CDS
+12251	20284
+			product	ORF1ab polyprotein
+			prot_desc	orf1ab
+			protein_id	ref|YP_009200734.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20281	23679	gene
+			locus_tag	AVU56_gp2
+			db_xref	GeneID:26628034
+20281	23679	CDS
+			product	spike glycoprotein
+			prot_desc	S
+			protein_id	ref|YP_009200735.1|
+23679	24368	gene
+			locus_tag	AVU56_gp3
+			db_xref	GeneID:26628035
+23679	24368	CDS
+			product	hypothetical protein ORF3
+			prot_desc	orf3
+			protein_id	ref|YP_009200736.1|
+24349	24576	gene
+			locus_tag	AVU56_gp4
+			db_xref	GeneID:26628036
+24349	24576	CDS
+			product	small envelope protein
+			prot_desc	E
+			protein_id	ref|YP_009200737.1|
+24585	25271	gene
+			locus_tag	AVU56_gp5
+			db_xref	GeneID:26628037
+24585	25271	CDS
+			product	membrane glycoprotein
+			prot_desc	M
+			protein_id	ref|YP_009200738.1|
+25283	26410	gene
+			locus_tag	AVU56_gp6
+			db_xref	GeneID:26628038
+25283	26410	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_009200739.1|
+
+>Feature ref|NC_028833.1|
+214	20009	gene
+			locus_tag	AVU58_gp1
+			db_xref	GeneID:26628975
+214	11985	CDS
+11985	20009
+			product	ORF1ab polyprotein
+			prot_desc	orf1ab
+			protein_id	ref|YP_009201729.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+20083	24114	gene
+			locus_tag	AVU58_gp2
+			db_xref	GeneID:26628970
+20083	24114	CDS
+			product	spike glycoprotein
+			prot_desc	S
+			protein_id	ref|YP_009201730.1|
+24114	24737	gene
+			locus_tag	AVU58_gp3
+			db_xref	GeneID:26628971
+24114	24737	CDS
+			product	hypothetical protein ORF3
+			prot_desc	orf3
+			protein_id	ref|YP_009201731.1|
+24762	24989	gene
+			locus_tag	AVU58_gp4
+			db_xref	GeneID:26628972
+24762	24989	CDS
+			product	small envelope protein
+			prot_desc	E
+			protein_id	ref|YP_009201732.1|
+24996	25682	gene
+			locus_tag	AVU58_gp5
+			db_xref	GeneID:26628973
+24996	25682	CDS
+			product	membrane glycoprotein
+			prot_desc	M
+			protein_id	ref|YP_009201733.1|
+25691	26986	gene
+			locus_tag	AVU58_gp6
+			db_xref	GeneID:26628974
+25691	26986	CDS
+			product	nucleocapsid protein
+			prot_desc	N
+			protein_id	ref|YP_009201734.1|
+
+>Feature ref|NC_030292.1|
+1	275	5'UTR
+276	20143	gene
+			gene	ORF1ab
+			locus_tag	A9274_gp1
+			db_xref	GeneID:27963651
+276	12122	CDS
+12122	20143
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009256195.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+276	12152	CDS
+			product	ORF1a
+			protein_id	ref|YP_009256196.1|
+20136	24452	gene
+			gene	S
+			locus_tag	A9274_gp2
+			db_xref	GeneID:27963644
+20136	24452	CDS
+			product	spike protein
+			protein_id	ref|YP_009256197.1|
+24473	25216	gene
+			gene	nsp
+			locus_tag	A9274_gp3
+			note	orf3
+			db_xref	GeneID:27963645
+24473	25216	CDS
+			product	non-structural protein 3c
+			protein_id	ref|YP_009256198.1|
+25185	25433	gene
+			gene	E
+			locus_tag	A9274_gp4
+			db_xref	GeneID:27963646
+25185	25433	CDS
+			product	envelope protein
+			protein_id	ref|YP_009256199.1|
+25448	26245	gene
+			gene	M
+			locus_tag	A9274_gp5
+			db_xref	GeneID:27963647
+25448	26245	CDS
+			product	membrane protein
+			protein_id	ref|YP_009256200.1|
+26262	27389	gene
+			gene	N
+			locus_tag	A9274_gp6
+			db_xref	GeneID:27963648
+26262	27389	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009256201.1|
+27398	27670	gene
+			gene	3x-like
+			locus_tag	A9274_gp7
+			db_xref	GeneID:27963649
+27398	27670	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_009256202.1|
+27561	28169	gene
+			gene	orf7b
+			locus_tag	A9274_gp8
+			db_xref	GeneID:27963650
+27561	28169	CDS
+			product	nsp 7b protein
+			protein_id	ref|YP_009256203.1|
+28170	28434	3'UTR
+
+>Feature ref|NC_030886.1|
+1	234	5'UTR
+235	21155	gene
+			gene	ORF1ab
+			locus_tag	BHT41_gp01
+			db_xref	GeneID:28721357
+235	13083	CDS
+13083	21155
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009273004.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+21121	24993	gene
+			gene	S
+			locus_tag	BHT41_gp02
+			db_xref	GeneID:28721348
+21121	24993	CDS
+			product	spike protein
+			product	surface protein
+			protein_id	ref|YP_009273005.1|
+24990	25676	gene
+			gene	NS3
+			locus_tag	BHT41_gp03
+			db_xref	GeneID:28721349
+24990	25676	CDS
+			product	NS3 protein
+			protein_id	ref|YP_009273006.1|
+25676	25906	gene
+			gene	E
+			locus_tag	BHT41_gp04
+			db_xref	GeneID:28721350
+25676	25906	CDS
+			product	small envelope protein
+			protein_id	ref|YP_009273007.1|
+25914	26579	gene
+			gene	M
+			locus_tag	BHT41_gp05
+			db_xref	GeneID:28721351
+25914	26579	CDS
+			product	membrane protein
+			protein_id	ref|YP_009273008.1|
+26627	27958	gene
+			gene	N
+			locus_tag	BHT41_gp06
+			db_xref	GeneID:28721352
+26627	27958	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009273009.1|
+27994	28269	gene
+			gene	p10
+			locus_tag	BHT41_gp07
+			db_xref	GeneID:28721353
+27994	28269	CDS
+			product	putative p10 protein
+			protein_id	ref|YP_009273010.1|
+28287	28850	gene
+			gene	NS7a
+			locus_tag	BHT41_gp08
+			db_xref	GeneID:28721354
+28287	28850	CDS
+			product	putative NS7a protein
+			protein_id	ref|YP_009273011.1|
+28863	29444	gene
+			gene	NS7b
+			locus_tag	BHT41_gp09
+			db_xref	GeneID:28721355
+28863	29444	CDS
+			product	putative NS7b protein
+			protein_id	ref|YP_009273012.1|
+29444	29893	gene
+			gene	NS7c
+			locus_tag	BHT41_gp10
+			db_xref	GeneID:28721356
+29444	29893	CDS
+			product	putative NS7c protein
+			protein_id	ref|YP_009273013.1|
+29894	30161	3'UTR
+
+>Feature ref|NC_032107.1|
+242	20517	gene
+			gene	orf1ab
+			locus_tag	BTU58_gp1
+			db_xref	GeneID:30522877
+242	12472	CDS
+12472	20517
+			product	ORF1ab protein
+			protein_id	ref|YP_009328933.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+242	12502	CDS
+			product	ORF1a protein
+			protein_id	ref|YP_009328934.1|
+20514	24632	gene
+			gene	S
+			locus_tag	BTU58_gp2
+			db_xref	GeneID:30522871
+20514	24632	CDS
+			product	S protein
+			protein_id	ref|YP_009328935.1|
+24632	25315	gene
+			gene	ORF3
+			locus_tag	BTU58_gp3
+			db_xref	GeneID:30522872
+24632	25315	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_009328936.1|
+25296	25529	gene
+			gene	E
+			locus_tag	BTU58_gp4
+			db_xref	GeneID:30522873
+25296	25529	CDS
+			product	E protein
+			protein_id	ref|YP_009328937.1|
+25538	26230	gene
+			gene	M
+			locus_tag	BTU58_gp5
+			db_xref	GeneID:30522874
+25538	26230	CDS
+			product	M protein
+			protein_id	ref|YP_009328938.1|
+26241	27464	gene
+			gene	N
+			locus_tag	BTU58_gp6
+			db_xref	GeneID:30522875
+26241	27464	CDS
+			product	N protein
+			protein_id	ref|YP_009328939.1|
+27927	28214	gene
+			gene	ORFx
+			locus_tag	BTU58_gp7
+			db_xref	GeneID:30522876
+27927	28214	CDS
+			product	ORFx protein
+			protein_id	ref|YP_009328940.1|
+
+>Feature ref|NC_032730.1|
+1	331	5'UTR
+332	20580	gene
+			gene	ORF1ab
+			locus_tag	BWV08_gp1
+			db_xref	GeneID:30853696
+332	12538	CDS
+12538	20580
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009336483.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+21412	24816	gene
+			gene	S
+			locus_tag	BWV08_gp2
+			db_xref	GeneID:30853692
+21412	24816	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009336484.1|
+25457	25693	gene
+			gene	E
+			locus_tag	BWV08_gp3
+			db_xref	GeneID:30853693
+25457	25693	CDS
+			product	envelope protein
+			protein_id	ref|YP_009336485.1|
+25703	26449	gene
+			gene	M
+			locus_tag	BWV08_gp4
+			db_xref	GeneID:30853694
+25703	26449	CDS
+			product	membrane protein
+			protein_id	ref|YP_009336486.1|
+26974	28149	gene
+			gene	N
+			locus_tag	BWV08_gp5
+			db_xref	GeneID:30853695
+26974	28149	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009336487.1|
+28466	28763	3'UTR
+
+>Feature ref|NC_034972.1|
+437	12361	gene
+			locus_tag	CD915_gp1
+			db_xref	GeneID:33133648
+437	12361	CDS
+			product	orf1a polyprotein
+			protein_id	ref|YP_009380519.1|
+12361	20376	gene
+			locus_tag	CD915_gp2
+			db_xref	GeneID:33133640
+<12361	20376	CDS
+			product	orf1b polyprotein
+			protein_id	ref|YP_009380520.1|
+20376	23756	gene
+			locus_tag	CD915_gp3
+			db_xref	GeneID:33133641
+20376	23756	CDS
+			product	spike protein
+			protein_id	ref|YP_009380521.1|
+23753	24397	gene
+			locus_tag	CD915_gp4
+			db_xref	GeneID:33133642
+23753	24397	CDS
+			product	ORF3
+			protein_id	ref|YP_009380522.1|
+24397	24633	gene
+			locus_tag	CD915_gp5
+			db_xref	GeneID:33133643
+24397	24633	CDS
+			product	envelope protein
+			protein_id	ref|YP_009380523.1|
+24643	25389	gene
+			locus_tag	CD915_gp6
+			db_xref	GeneID:33133644
+24643	25389	CDS
+			product	membrane protein
+			protein_id	ref|YP_009380524.1|
+25401	25901	gene
+			locus_tag	CD915_gp7
+			db_xref	GeneID:33133645
+25401	25901	CDS
+			product	ORF6
+			protein_id	ref|YP_009380525.1|
+25903	27072	gene
+			locus_tag	CD915_gp8
+			db_xref	GeneID:33133646
+25903	27072	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009380526.1|
+27074	27391	gene
+			locus_tag	CD915_gp9
+			db_xref	GeneID:33133647
+27074	27391	CDS
+			product	ORF8
+			protein_id	ref|YP_009380527.1|
+
+>Feature ref|NC_035191.1|
+1	227	5'UTR
+228	19201	gene
+			gene	ORF1ab
+			locus_tag	CGV08_gp1
+			db_xref	GeneID:33349977
+228	11207	CDS
+11207	19201
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009389424.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+19208	22612	gene
+			gene	S
+			locus_tag	CGV08_gp2
+			db_xref	GeneID:33349973
+19208	22612	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009389425.1|
+23306	23533	gene
+			gene	E
+			locus_tag	CGV08_gp3
+			db_xref	GeneID:33349974
+23306	23533	CDS
+			product	envelope protein
+			protein_id	ref|YP_009389426.1|
+23546	24235	gene
+			gene	M
+			locus_tag	CGV08_gp4
+			db_xref	GeneID:33349975
+23546	24235	CDS
+			product	membrane protein
+			protein_id	ref|YP_009389427.1|
+24239	25339	gene
+			gene	N
+			locus_tag	CGV08_gp5
+			db_xref	GeneID:33349976
+24239	25339	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009389428.1|
+25340	25995	3'UTR
+
+>Feature ref|NC_038294.1|
+1	277	5'UTR
+278	21513	gene
+			gene	ORF1ab
+			locus_tag	D1P20_gp01
+			db_xref	GeneID:37616440
+278	13431	CDS
+13431	21513
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_007188577.3|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+278	13453	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_007188578.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21455	25516	gene
+			gene	S
+			locus_tag	D1P20_gp02
+			db_xref	GeneID:37616432
+21455	25516	CDS
+			product	spike protein
+			product	surface glycoprotein
+			protein_id	ref|YP_007188579.1|
+25531	25842	gene
+			gene	ORF3
+			locus_tag	D1P20_gp03
+			db_xref	GeneID:37616433
+25531	25842	CDS
+			product	NS3A protein
+			protein_id	ref|YP_007188580.1|
+25851	26180	gene
+			gene	ORF4a
+			locus_tag	D1P20_gp04
+			db_xref	GeneID:37616434
+25851	26180	CDS
+			product	NS3B protein
+			protein_id	ref|YP_007188581.1|
+26092	26832	gene
+			gene	ORF4b
+			locus_tag	D1P20_gp05
+			db_xref	GeneID:37616435
+26092	26832	CDS
+			product	NS3C protein
+			protein_id	ref|YP_007188582.1|
+26839	27513	gene
+			gene	ORF5
+			locus_tag	D1P20_gp06
+			db_xref	GeneID:37616436
+26839	27513	CDS
+			product	NS3D protein
+			protein_id	ref|YP_007188583.1|
+27589	27837	gene
+			gene	E
+			locus_tag	D1P20_gp07
+			db_xref	GeneID:37616437
+27589	27837	CDS
+			product	envelope protein
+			protein_id	ref|YP_007188584.1|
+27852	28511	gene
+			gene	M
+			locus_tag	D1P20_gp08
+			db_xref	GeneID:37616438
+27852	28511	CDS
+			product	membrane protein
+			protein_id	ref|YP_007188585.1|
+28565	29800	gene
+			gene	N
+			locus_tag	D1P20_gp09
+			db_xref	GeneID:37616439
+28565	29800	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_007188586.1|
+28761	29099	gene
+			gene	ORF8b
+			locus_tag	D1P20_gp10
+			db_xref	GeneID:60196426
+28761	29099	CDS
+			product	ORF8b
+			protein_id	ref|YP_009944280.1|
+29801	30111	3'UTR
+
+>Feature ref|NC_038861.1|
+315	20368	gene
+			locus_tag	D1S95_gp1
+			db_xref	GeneID:37619364
+315	20368	CDS
+			product	replicase
+			protein_id	ref|NP_058422.1|
+			note	ORF 1a/1b;~the position of the frame shifting has not been experimentaly confirmed
+			exception	reasons given in citation
+			db_xref	GOA:P0C6Y5
+			db_xref	InterPro:IPR000606
+			db_xref	InterPro:IPR002589
+			db_xref	InterPro:IPR008740
+			db_xref	InterPro:IPR009003
+			db_xref	InterPro:IPR009461
+			db_xref	InterPro:IPR009466
+			db_xref	InterPro:IPR009469
+			db_xref	InterPro:IPR013016
+			db_xref	InterPro:IPR014822
+			db_xref	InterPro:IPR014827
+			db_xref	InterPro:IPR014828
+			db_xref	InterPro:IPR014829
+			db_xref	InterPro:IPR018995
+			db_xref	PDB:1LVO
+			db_xref	PDB:1P9U
+			db_xref	PDB:2AMP
+			db_xref	UniProtKB/Swiss-Prot:P0C6Y5
+315	12368	gene
+			locus_tag	D1S95_gp2
+			db_xref	GeneID:37619362
+315	12368	CDS
+			product	replicase
+			function	essential for proteolysis
+			protein_id	ref|NP_058423.1|
+			note	ORF1a
+			db_xref	GOA:P0C6V2
+			db_xref	InterPro:IPR002589
+			db_xref	InterPro:IPR008740
+			db_xref	InterPro:IPR009003
+			db_xref	InterPro:IPR013016
+			db_xref	InterPro:IPR014822
+			db_xref	InterPro:IPR014827
+			db_xref	InterPro:IPR014828
+			db_xref	InterPro:IPR014829
+			db_xref	InterPro:IPR018995
+			db_xref	PDB:1LVO
+			db_xref	PDB:1P9U
+			db_xref	PDB:2AMP
+			db_xref	PDB:3MP2
+			db_xref	UniProtKB/Swiss-Prot:P0C6V2
+20365	24708	gene
+			gene	s
+			locus_tag	D1S95_gp3
+			db_xref	GeneID:37619363
+20365	24708	CDS
+			product	spike protein
+			function	receptor binding molecule
+			protein_id	ref|NP_058424.1|
+			evidence	experimental
+			db_xref	GOA:P07946
+			db_xref	InterPro:IPR002551
+			db_xref	InterPro:IPR002552
+			db_xref	UniProtKB/Swiss-Prot:P07946
+24827	25042	gene
+			gene	nsp 3a
+			locus_tag	D1S95_gp4
+			db_xref	GeneID:37619361
+24827	25042	CDS
+			product	non-structural protein 3a
+			protein_id	ref|NP_058425.1|
+			db_xref	InterPro:IPR006784
+			db_xref	UniProtKB/Swiss-Prot:P09046
+25136	25870	gene
+			gene	nsp 3b
+			locus_tag	D1S95_gp5
+			pseudo
+			db_xref	GeneID:37619359
+25136	25870	misc_feature
+			note	transcription regulatory sequence mutated
+			db_xref	PSEUDO:CAB91147.2
+25857	26105	gene
+			gene	e
+			locus_tag	D1S95_gp6
+			db_xref	GeneID:37619360
+25857	26105	CDS
+			product	envelope protein
+			function	essential for membrane assembly
+			protein_id	ref|NP_058426.1|
+			evidence	experimental
+			db_xref	GOA:P09048
+			db_xref	InterPro:IPR003873
+			db_xref	UniProtKB/Swiss-Prot:P09048
+26116	26904	gene
+			gene	m
+			locus_tag	D1S95_gp7
+			db_xref	GeneID:37619356
+26116	26904	CDS
+			product	membrane protein
+			function	major structural protein
+			protein_id	ref|NP_058427.2|
+			evidence	experimental
+			db_xref	GOA:P04135
+			db_xref	InterPro:IPR002574
+			db_xref	UniProtKB/Swiss-Prot:P04135
+26917	28065	gene
+			gene	n
+			locus_tag	D1S95_gp8
+			db_xref	GeneID:37619357
+26917	28065	CDS
+			product	nucleoprotein
+			function	major structural protein
+			protein_id	ref|NP_058428.1|
+			evidence	experimental
+			db_xref	GOA:P04134
+			db_xref	InterPro:IPR001218
+			db_xref	UniProtKB/Swiss-Prot:P04134
+28071	28307	gene
+			gene	nsp 7
+			locus_tag	D1S95_gp9
+			db_xref	GeneID:37619358
+28071	28307	CDS
+			product	non-structural protein 7
+			function	Unknown
+			protein_id	ref|NP_058429.1|
+			evidence	experimental
+			db_xref	GOA:P04136
+			db_xref	InterPro:IPR003449
+			db_xref	UniProtKB/Swiss-Prot:P04136
+
+>Feature ref|NC_039207.1|
+241	21692	gene
+			gene	ORF1ab
+			locus_tag	D1Y28_gp01
+			db_xref	GeneID:37627013
+241	13584	CDS
+13584	21692
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009513008.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+241	13605	gene
+			gene	ORF1a
+			locus_tag	D1Y28_gp02
+			db_xref	GeneID:37627012
+241	13605	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			protein_id	ref|YP_009513009.1|
+			note	ORF1a polyprotein is cleaved to yield nonstructural proteins
+21610	25602	gene
+			gene	S
+			locus_tag	D1Y28_gp03
+			db_xref	GeneID:37627011
+21610	25602	CDS
+			product	spike protein
+			product	surface glycoprotein
+			protein_id	ref|YP_009513010.1|
+25620	25937	gene
+			gene	ORF3a
+			locus_tag	D1Y28_gp04
+			db_xref	GeneID:37627002
+25620	25937	CDS
+			product	ORF3a
+			protein_id	ref|YP_009513011.1|
+25714	26136	gene
+			gene	ORF3b
+			locus_tag	D1Y28_gp05
+			db_xref	GeneID:37627003
+25714	26136	CDS
+			product	ORF3b
+			protein_id	ref|YP_009513012.1|
+25891	26136	gene
+			gene	ORF4a
+			locus_tag	D1Y28_gp06
+			db_xref	GeneID:37627004
+25891	26136	CDS
+			product	ORF4a
+			protein_id	ref|YP_009513013.1|
+26123	26794	gene
+			gene	ORF4b
+			locus_tag	D1Y28_gp07
+			db_xref	GeneID:37627005
+26123	26794	CDS
+			product	ORF4b
+			protein_id	ref|YP_009513014.1|
+26804	27505	gene
+			gene	ORF5
+			locus_tag	D1Y28_gp08
+			db_xref	GeneID:37627006
+26804	27505	CDS
+			product	ORF5
+			protein_id	ref|YP_009513015.1|
+27579	27827	gene
+			gene	E
+			locus_tag	D1Y28_gp09
+			db_xref	GeneID:37627007
+27579	27827	CDS
+			product	E
+			protein_id	ref|YP_009513016.1|
+27842	28498	gene
+			gene	M
+			locus_tag	D1Y28_gp10
+			db_xref	GeneID:37627008
+27842	28498	CDS
+			product	membrane protein
+			protein_id	ref|YP_009513017.1|
+28552	29826	gene
+			gene	N
+			locus_tag	D1Y28_gp11
+			db_xref	GeneID:37627009
+28552	29826	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009513018.1|
+28598	29197	gene
+			gene	ORF8b
+			locus_tag	D1Y28_gp12
+			db_xref	GeneID:37627010
+28598	29197	CDS
+			product	ORF8b
+			protein_id	ref|YP_009513019.1|
+
+>Feature ref|NC_039208.1|
+1	532	5'UTR
+533	19335	gene
+			gene	ORF1ab
+			locus_tag	D1Y29_gp1
+			db_xref	GeneID:37627021
+533	11407	CDS
+11407	19335
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicase polyprotein
+			prot_desc	translated via a -1 ribosomal frameshift
+			protein_id	ref|YP_009513020.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+19317	22796	gene
+			gene	S
+			locus_tag	D1Y29_gp2
+			db_xref	GeneID:37627015
+19317	22796	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009513021.1|
+22790	23041	gene
+			gene	E
+			locus_tag	D1Y29_gp3
+			db_xref	GeneID:37627016
+22790	23041	CDS
+			product	envelope protein
+			protein_id	ref|YP_009513022.1|
+23034	23687	gene
+			gene	M
+			locus_tag	D1Y29_gp4
+			db_xref	GeneID:37627017
+23034	23687	CDS
+			product	membrane protein
+			protein_id	ref|YP_009513023.1|
+23687	23971	gene
+			gene	NS6
+			locus_tag	D1Y29_gp5
+			db_xref	GeneID:37627018
+23687	23971	CDS
+			product	NS6 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_009513024.1|
+23992	25020	gene
+			gene	N
+			locus_tag	D1Y29_gp6
+			db_xref	GeneID:37627019
+23992	25020	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009513025.1|
+24086	24688	gene
+			gene	NS7
+			locus_tag	D1Y29_gp7
+			db_xref	GeneID:37627020
+24086	24688	CDS
+			product	NS7 protein
+			prot_desc	non-structural protein
+			protein_id	ref|YP_009513026.1|
+25021	25425	3'UTR
+
+>Feature ref|NC_045512.2|
+1	265	5'UTR
+266	21555	gene
+			gene	ORF1ab
+			locus_tag	GU280_gp01
+			db_xref	GeneID:43740578
+266	13468	CDS
+13468	21555
+			product	ORF1ab polyprotein
+			protein_id	ref|YP_009724389.1|
+			note	pp1ab; translated by -1 ribosomal frameshift
+			ribosomal_slippage
+			exception	ribosomal slippage
+266	13483	CDS
+			product	ORF1a polyprotein
+			protein_id	ref|YP_009725295.1|
+			note	pp1a
+13476	13503	stem_loop
+			function	Coronavirus frameshifting stimulation element stem-loop 1
+			inference	COORDINATES: profile:Rfam-release-14.1:RF00507,Infernal:1.1.2
+13488	13542	stem_loop
+			function	Coronavirus frameshifting stimulation element stem-loop 2
+			inference	COORDINATES: profile:Rfam-release-14.1:RF00507,Infernal:1.1.2
+21563	25384	gene
+			gene	S
+			gene_syn	spike glycoprotein
+			locus_tag	GU280_gp02
+			db_xref	GeneID:43740568
+21563	25384	CDS
+			product	surface glycoprotein
+			protein_id	ref|YP_009724390.1|
+			note	structural protein; spike protein
+25393	26220	gene
+			gene	ORF3a
+			locus_tag	GU280_gp03
+			db_xref	GeneID:43740569
+25393	26220	CDS
+			product	ORF3a protein
+			protein_id	ref|YP_009724391.1|
+26245	26472	gene
+			gene	E
+			locus_tag	GU280_gp04
+			db_xref	GeneID:43740570
+26245	26472	CDS
+			product	envelope protein
+			protein_id	ref|YP_009724392.1|
+			note	ORF4; structural protein; E protein
+26523	27191	gene
+			gene	M
+			locus_tag	GU280_gp05
+			db_xref	GeneID:43740571
+26523	27191	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_009724393.1|
+			note	ORF5; structural protein
+27202	27387	gene
+			gene	ORF6
+			locus_tag	GU280_gp06
+			db_xref	GeneID:43740572
+27202	27387	CDS
+			product	ORF6 protein
+			protein_id	ref|YP_009724394.1|
+27394	27759	gene
+			gene	ORF7a
+			locus_tag	GU280_gp07
+			db_xref	GeneID:43740573
+27394	27759	CDS
+			product	ORF7a protein
+			protein_id	ref|YP_009724395.1|
+27756	27887	gene
+			gene	ORF7b
+			locus_tag	GU280_gp08
+			db_xref	GeneID:43740574
+27756	27887	CDS
+			product	ORF7b
+			protein_id	ref|YP_009725318.1|
+27894	28259	gene
+			gene	ORF8
+			locus_tag	GU280_gp09
+			db_xref	GeneID:43740577
+27894	28259	CDS
+			product	ORF8 protein
+			protein_id	ref|YP_009724396.1|
+28274	29533	gene
+			gene	N
+			locus_tag	GU280_gp10
+			db_xref	GeneID:43740575
+28274	29533	CDS
+			product	nucleocapsid phosphoprotein
+			protein_id	ref|YP_009724397.2|
+			note	ORF9; structural protein
+29558	29674	gene
+			gene	ORF10
+			locus_tag	GU280_gp11
+			db_xref	GeneID:43740576
+29558	29674	CDS
+			product	ORF10 protein
+			protein_id	ref|YP_009725255.1|
+29609	29644	stem_loop
+			function	Coronavirus 3' UTR pseudoknot stem-loop 1
+			inference	COORDINATES: profile::Rfam-release-14.1:RF00165,Infernal:1.1.2
+29629	29657	stem_loop
+			function	Coronavirus 3' UTR pseudoknot stem-loop 2
+			inference	COORDINATES: profile::Rfam-release-14.1:RF00165,Infernal:1.1.2
+29675	29903	3'UTR
+29728	29768	stem_loop
+			note	basepair exception: alignment to the Rfam model implies coordinates 29740:29758 form a noncanonical C:T basepair, but the homologous positions form a highly conserved C:G basepair in other viruses, including SARS (NC_004718.3)
+			function	Coronavirus 3' stem-loop II-like motif (s2m)
+			inference	COORDINATES: profile:Rfam-release-14.1:RF00164,Infernal:1.1.2
+
+>Feature ref|NC_046964.1|
+1	280	5'UTR
+281	20175	gene
+			gene	ORF1ab
+			locus_tag	HGI28_gp1
+			db_xref	GeneID:54124776
+281	12163	CDS
+12163	20175
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009755889.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+20172	24371	gene
+			gene	S
+			locus_tag	HGI28_gp2
+			db_xref	GeneID:54124771
+20172	24371	CDS
+			product	spike protein
+			protein_id	ref|YP_009755890.1|
+24371	25024	gene
+			gene	ORF3
+			locus_tag	HGI28_gp3
+			db_xref	GeneID:54124772
+24371	25024	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_009755891.1|
+25103	25330	gene
+			gene	E
+			locus_tag	HGI28_gp4
+			db_xref	GeneID:54124773
+25103	25330	CDS
+			product	envelope protein
+			protein_id	ref|YP_009755892.1|
+25343	26050	gene
+			gene	M
+			locus_tag	HGI28_gp5
+			db_xref	GeneID:54124774
+25343	26050	CDS
+			product	membrane protein
+			protein_id	ref|YP_009755893.1|
+26058	27356	gene
+			gene	N
+			locus_tag	HGI28_gp6
+			db_xref	GeneID:54124775
+26058	27356	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009755894.1|
+27357	28128	3'UTR
+
+>Feature ref|NC_046965.1|
+64	72	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+554	20085	gene
+			locus_tag	HGI29_gp01
+			db_xref	GeneID:54124793
+554	12001	CDS
+12001	20085
+			product	polyprotein 1ab
+			protein_id	ref|YP_009755895.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+554	12031	gene
+			locus_tag	HGI29_gp02
+			db_xref	GeneID:54124779
+554	12031	CDS
+			product	polyprotein 1a
+			protein_id	ref|YP_009755896.1|
+19978	19986	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+20069	23623	gene
+			locus_tag	HGI29_gp03
+			db_xref	GeneID:54124778
+20069	23623	CDS
+			product	spike protein
+			protein_id	ref|YP_009755897.1|
+23606	23614	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+23616	23777	gene
+			locus_tag	HGI29_gp04
+			db_xref	GeneID:54124780
+23616	23777	CDS
+			product	ORF3
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755898.1|
+23773	23781	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+23786	23953	gene
+			locus_tag	HGI29_gp05
+			db_xref	GeneID:54124781
+23786	23953	CDS
+			product	ORF4a
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755899.1|
+23913	24215	gene
+			locus_tag	HGI29_gp06
+			db_xref	GeneID:54124782
+23913	24215	CDS
+			product	envelope protein
+			protein_id	ref|YP_009755900.1|
+24129	24137	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+24212	24892	gene
+			locus_tag	HGI29_gp07
+			db_xref	GeneID:54124783
+24212	24892	CDS
+			product	membrane protein
+			protein_id	ref|YP_009755901.1|
+24892	25158	gene
+			locus_tag	HGI29_gp08
+			db_xref	GeneID:54124784
+24892	25158	CDS
+			product	ORF5b
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755902.1|
+25140	25148	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+25155	25346	gene
+			locus_tag	HGI29_gp09
+			db_xref	GeneID:54124785
+25155	25346	CDS
+			product	ORF6
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755903.1|
+25342	25350	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+25354	25632	gene
+			locus_tag	HGI29_gp10
+			db_xref	GeneID:54124786
+25354	25632	CDS
+			product	ORF7a
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755904.1|
+25574	25783	gene
+			locus_tag	HGI29_gp11
+			db_xref	GeneID:54124787
+25574	25783	CDS
+			product	ORF7b
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755905.1|
+25753	25761	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+25767	25967	gene
+			locus_tag	HGI29_gp12
+			db_xref	GeneID:54124788
+25767	25967	CDS
+			product	ORF8a
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755906.1|
+25964	26221	gene
+			locus_tag	HGI29_gp13
+			db_xref	GeneID:54124789
+25964	26221	CDS
+			product	ORF8b
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755907.1|
+26045	26053	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+26149	27393	gene
+			locus_tag	HGI29_gp14
+			db_xref	GeneID:54124790
+26149	27393	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009755908.1|
+27389	27397	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+27398	27691	gene
+			locus_tag	HGI29_gp15
+			db_xref	GeneID:54124791
+27398	27691	CDS
+			product	ORF10
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755909.1|
+27569	27577	regulatory
+			note	transcription regulatory sequence
+			regulatory_class	other
+27669	28211	gene
+			locus_tag	HGI29_gp16
+			db_xref	GeneID:54124792
+27669	28211	CDS
+			product	ORF11
+			prot_desc	hypothetical protein
+			protein_id	ref|YP_009755910.1|
+
+>Feature ref|NC_048211.1|
+1	211	5'UTR
+212	19185	gene
+			gene	ORF1ab
+			locus_tag	HO263_gp1
+			db_xref	GeneID:55060225
+212	11191	CDS
+11191	19185
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			protein_id	ref|YP_009824973.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+19192	22596	gene
+			gene	S
+			locus_tag	HO263_gp2
+			db_xref	GeneID:55060221
+19192	22596	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009824974.1|
+23290	23517	gene
+			gene	E
+			locus_tag	HO263_gp3
+			db_xref	GeneID:55060222
+23290	23517	CDS
+			product	envelope protein
+			protein_id	ref|YP_009824975.1|
+23530	24219	gene
+			gene	M
+			locus_tag	HO263_gp4
+			db_xref	GeneID:55060223
+23530	24219	CDS
+			product	membrane protein
+			protein_id	ref|YP_009824976.1|
+24223	25323	gene
+			gene	N
+			locus_tag	HO263_gp5
+			db_xref	GeneID:55060224
+24223	25323	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009824977.1|
+25324	25984	3'UTR
+
+>Feature ref|NC_048213.1|
+529	20423	gene
+			locus_tag	HO266_gp1
+			old_locus_tag	IBVgp1
+			db_xref	GeneID:55060244
+529	12360	CDS
+12360	20423
+			product	ORF1ab polyprotein
+			protein_id	ref|YP_009824996.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+529	12480	CDS
+			product	ORF 1a polyprotein
+			protein_id	ref|YP_009824997.1|
+20374	23835	gene
+			gene	S
+			locus_tag	HO266_gp2
+			old_locus_tag	IBVgp2
+			db_xref	GeneID:55060242
+20374	23835	CDS
+			product	spike glycoprotein
+			protein_id	ref|YP_009824998.1|
+			note	surface protein
+23862	24539	gene
+			gene	3
+			locus_tag	HO266_gp3
+			old_locus_tag	IBVgp3
+			db_xref	GeneID:55060241
+23862	24035	CDS
+			product	3a protein
+			protein_id	ref|YP_009824999.1|
+24035	24229	CDS
+			product	3b protein
+			protein_id	ref|YP_009825000.1|
+24210	24539	CDS
+			product	3c protein
+			protein_id	ref|YP_009825001.1|
+			note	E; small membrane protein; envelope protein
+24511	25188	gene
+			gene	4
+			locus_tag	HO266_gp4
+			old_locus_tag	IBVgp4
+			db_xref	GeneID:55060243
+24511	25188	CDS
+			product	membrane glycoprotein
+			protein_id	ref|YP_009825002.1|
+			note	M
+25539	25981	gene
+			gene	5
+			locus_tag	HO266_gp5
+			old_locus_tag	IBVgp5
+			db_xref	GeneID:55060240
+25539	25736	CDS
+			product	5a protein
+			protein_id	ref|YP_009825003.1|
+25733	25981	CDS
+			product	5b protein
+			protein_id	ref|YP_009825004.1|
+25924	27153	gene
+			gene	6
+			locus_tag	HO266_gp6
+			old_locus_tag	IBVgp6
+			db_xref	GeneID:55060239
+25924	27153	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009825005.1|
+
+>Feature ref|NC_048214.1|
+347	20364	gene
+			gene	1ab
+			locus_tag	HO267_gp01
+			db_xref	GeneID:55060258
+347	12262	CDS
+12262	20364
+			product	ORF1ab polyprotein
+			protein_id	ref|YP_009825006.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+347	12292	gene
+			gene	1a
+			locus_tag	HO267_gp02
+			db_xref	GeneID:55060247
+347	12292	CDS
+			product	ORF1a
+			protein_id	ref|YP_009825007.1|
+20318	23893	gene
+			gene	S
+			locus_tag	HO267_gp03
+			db_xref	GeneID:55060248
+20318	23893	CDS
+			product	spike protein
+			protein_id	ref|YP_009825008.1|
+23893	24066	gene
+			gene	3a
+			locus_tag	HO267_gp04
+			db_xref	GeneID:55060249
+23893	24066	CDS
+			product	3a protein
+			protein_id	ref|YP_009825009.1|
+24066	24257	gene
+			gene	3b
+			locus_tag	HO267_gp05
+			db_xref	GeneID:55060250
+24066	24257	CDS
+			product	3b protein
+			protein_id	ref|YP_009825010.1|
+24238	24519	gene
+			gene	3c
+			locus_tag	HO267_gp06
+			db_xref	GeneID:55060251
+24238	24519	CDS
+			product	3c protein
+			protein_id	ref|YP_009825011.1|
+24516	25223	gene
+			gene	M
+			locus_tag	HO267_gp07
+			db_xref	GeneID:55060252
+24516	25223	CDS
+			product	membrane protein
+			protein_id	ref|YP_009825012.1|
+25224	25508	gene
+			gene	ORFX
+			locus_tag	HO267_gp08
+			db_xref	GeneID:55060253
+25224	25508	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_009825013.1|
+25587	25784	gene
+			gene	5a
+			locus_tag	HO267_gp09
+			db_xref	GeneID:55060254
+25587	25784	CDS
+			product	5a protein
+			protein_id	ref|YP_009825014.1|
+25781	26029	gene
+			gene	5b
+			locus_tag	HO267_gp10
+			db_xref	GeneID:55060255
+25781	26029	CDS
+			product	5b protein
+			protein_id	ref|YP_009825015.1|
+25972	27216	gene
+			gene	N
+			locus_tag	HO267_gp11
+			db_xref	GeneID:55060256
+25972	27216	CDS
+			product	nucleocapsid protein
+			protein_id	ref|YP_009825016.1|
+27246	27458	gene
+			gene	ORFY
+			locus_tag	HO267_gp12
+			db_xref	GeneID:55060257
+27246	27458	CDS
+			product	hypothetical protein
+			protein_id	ref|YP_009825017.1|
+
+>Feature ref|NC_048216.1|
+246	20593	gene
+			gene	orf1ab
+			locus_tag	HO262_gp1
+			db_xref	GeneID:55060272
+246	12557	CDS
+12557	20593
+			product	ORF1ab protein
+			protein_id	ref|YP_009824965.1|
+			ribosomal_slippage
+			exception	ribosomal slippage
+246	12587	CDS
+			product	ORF1a protein
+			protein_id	ref|YP_009824966.1|
+20590	24711	gene
+			gene	S
+			locus_tag	HO262_gp2
+			db_xref	GeneID:55060266
+20590	24711	CDS
+			product	S protein
+			protein_id	ref|YP_009824967.1|
+24711	25394	gene
+			gene	ORF3
+			locus_tag	HO262_gp3
+			db_xref	GeneID:55060267
+24711	25394	CDS
+			product	ORF3 protein
+			protein_id	ref|YP_009824968.1|
+25375	25608	gene
+			gene	E
+			locus_tag	HO262_gp4
+			db_xref	GeneID:55060268
+25375	25608	CDS
+			product	E protein
+			protein_id	ref|YP_009824969.1|
+25620	26300	gene
+			gene	M
+			locus_tag	HO262_gp5
+			db_xref	GeneID:55060269
+25620	26300	CDS
+			product	M protein
+			protein_id	ref|YP_009824970.1|
+26312	27613	gene
+			gene	N
+			locus_tag	HO262_gp6
+			db_xref	GeneID:55060270
+26312	27613	CDS
+			product	N protein
+			protein_id	ref|YP_009824971.1|
+28196	28486	gene
+			gene	ORFx
+			locus_tag	HO262_gp7
+			db_xref	GeneID:55060271
+28196	28486	CDS
+			product	ORFx protein
+			protein_id	ref|YP_009824972.1|
+
+>Feature ref|NC_048217.1|
+1	210	5'UTR
+1	65	gene
+			locus_tag	HO264_gs01
+			db_xref	GeneID:55060285
+1	65	misc_RNA
+			note	leader
+66	72	misc_feature
+			note	transcriptional regulatory sequence (TRS) leader
+211	21746	gene
+			gene	ORF1ab
+			locus_tag	HO264_gp09
+			db_xref	GeneID:55060275
+211	13602	CDS
+13602	21746
+			product	ORF1ab polyprotein
+			product	polyprotein pp1ab
+			product	replicative polyprotein 1ab
+			prot_desc	replicase 1ab
+			protein_id	ref|YP_009824978.1|
+			note	ORF1ab polyprotein is cleaved to yield the RNA-dependent RNA polymerase and other nonstructural proteins
+			ribosomal_slippage
+			exception	ribosomal slippage
+211	13623	gene
+			locus_tag	HO264_gp10
+			db_xref	GeneID:55060277
+211	13623	CDS
+			product	ORF1a polyprotein
+			product	polyprotein pp1a
+			product	replicative polyprotein 1a
+			prot_desc	replicase 1a
+			protein_id	ref|YP_009824979.1|
+			note	ORF1a polyprotein is cleaved to yield the nonstructural proteins
+13596	13602	misc_feature
+			note	slippery sequence of ribosomal frameshift element
+21748	21754	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA2
+21772	22557	gene
+			gene	ORF2a
+			locus_tag	HO264_gp08
+			db_xref	GeneID:55060276
+21772	22557	CDS
+			product	nonstructural protein 2a
+			prot_desc	putative cyclic phosphodiesterase; NS2a
+			protein_id	ref|YP_009824980.1|
+22984	23922	gene
+			gene	HE
+			locus_tag	HO264_gp07
+			db_xref	GeneID:55060278
+22984	23922	CDS
+			product	hemagglutinin-esterase
+			prot_desc	HE
+			protein_id	ref|YP_009824981.1|
+			note	structural protein in some MHV strains
+23923	23929	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA3
+23930	27904	gene
+			gene	S
+			locus_tag	HO264_gp06
+			db_xref	GeneID:55060279
+23930	27904	CDS
+			product	spike glycoprotein
+			prot_desc	structural protein
+			protein_id	ref|YP_009824982.1|
+27936	27942	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA4
+28059	28379	gene
+			locus_tag	HO264_gp05
+			db_xref	GeneID:55060280
+28059	28379	CDS
+			product	putative ORF4 protein
+			protein_id	ref|YP_009824983.1|
+28319	28325	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA5
+28376	28714	gene
+			locus_tag	HO264_gp04
+			db_xref	GeneID:55060281
+28376	28714	CDS
+			product	ORF5a protein
+			protein_id	ref|YP_009824984.1|
+28707	28958	gene
+			gene	E
+			locus_tag	HO264_gp03
+			db_xref	GeneID:55060282
+28707	28958	CDS
+			product	envelope protein
+			prot_desc	structural protein E
+			protein_id	ref|YP_009824985.1|
+28959	28965	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA6
+28969	29655	gene
+			gene	M
+			locus_tag	HO264_gp02
+			db_xref	GeneID:55060283
+28969	29655	CDS
+			product	membrane protein
+			prot_desc	structural protein M
+			protein_id	ref|YP_009824986.1|
+29656	29662	misc_feature
+			note	transcription regulatory sequence (TRS) for mRNA7
+29670	31034	gene
+			gene	N
+			locus_tag	HO264_gp01
+			db_xref	GeneID:55060284
+29670	31034	CDS
+			product	nucleocapsid protein
+			prot_desc	structural protein N
+			protein_id	ref|YP_009824987.1|
+29734	30357	CDS
+			product	I protein
+			product	internal protein
+			protein_id	ref|YP_009924330.1|
+31035	31335	3'UTR
+
