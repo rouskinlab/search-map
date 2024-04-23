@@ -9,7 +9,7 @@
 
 \subsection{Development of SEISMIC-RNA}
 
-SEISMIC-RNA was written in Python (currently compatible with version 3.10 or greater) using PyCharm Community Edition.
+SEISMIC-RNA was written in Python (currently compatible with v3.10 or greater) using PyCharm Community Edition.
 Its dependencies include Python packages NumPy~\cite{Harris2020}, Numba~\cite{Lam2015}, Pandas~\cite{McKinney2010,Reback2020}, and SciPy~\cite{Virtanen2020}; as well as Samtools~\cite{Li2009}, Cutadapt~\cite{Martin2011}, Bowtie~2~\cite{Langmead2012}, and RNAstructure~\cite{Reuter2010}.
 
 
@@ -18,14 +18,14 @@ Its dependencies include Python packages NumPy~\cite{Harris2020}, Numba~\cite{La
 \subsubsection{Synthesis of 2,924~nt SARS-CoV-2 RNA}
 
 A DNA template of the 2,924~nt segment of SARS-CoV-2, including a T7 promoter, was amplified from a previously constructed plasmid~\cite{Lan2022} ([Supplementary Data]) in 50~\textmu l using 2X CloneAmp HiFi PCR Premix (Takara Bio) with 250~nM primers TAATACGACTCACTATAGAATAATGAGCTTAGTCCTGTTGCACTACG and TAAATTGCGGACATACTTATCGGCAATTTTGTTACC (Thermo Fisher Scientific); initial denaturation at 98\textdegree C for 60~s; 35 cycles of 98\textdegree C for 10~s, 65\textdegree C for 10~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 60~s.
-The 50~\textmu l PCR product with 10~\textmu l of 6X Purple Loading Dye (New England Biolabs) was electrophoresed through a 50~ml gel -- 1\%~SeaKem Agarose (Lonza), 1X tris-acetate-EDTA (Boston BioProducts), and 1X SYBR Safe (Invitrogen) -- at 60 V for 60~min.
+The 50~\textmu l PCR product with 10~\textmu l of 6X Purple Loading Dye (New England Biolabs) was electrophoresed through a 50~ml gel -- 1\%~SeaKem Agarose (Lonza), 1X tris-acetate-EDTA (Boston BioProducts), and 1X SYBR Safe (Invitrogen) -- at 60~V for 60~min.
 The band at roughly 3 kb was extracted using a Zymoclean Gel DNA Recovery Kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 To increase yield, the gel-extracted DNA was fed into a second round of PCR and gel extraction using the same protocol.
-Due to remaining contaminants, the DNA was further purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
+Due to remaining contaminants, the DNA was further purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
-RNA was transcribed using a MEGAscript T7 Transcription Kit (Invitrogen) according to the manufacturer's protocol, with 150~ng of DNA template from the previous step, incubating at 37\textdegree C for 3~hr.
+150~ng of DNA template was transcribed using a MEGAscript T7 Transcription Kit (Invitrogen) according to the manufacturer's protocol, incubating at 37\textdegree C for 3~hr.
 DNA template was then degraded by incubating with 1~\textmu l of TURBO DNase (Invitrogen) at 37\textdegree C for 15~min.
-RNA was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 20~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
+RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 20~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
 \subsubsection{DMS treatment of 2,924~nt SARS-CoV-2 RNA}
 
@@ -37,90 +37,146 @@ To refold the RNA, 35~\textmu l of 1.4X refolding buffer comprising 400~mM sodiu
 For no-ASO control 1, 12.5~\textmu l of TE Buffer was used instead of an ASO pool.
 For no-ASO control 2, 12.5~\textmu l of TE Buffer was added after placing on ice and before refolding to confirm the timing of adding TE Buffer would not alter the RNA structure.
 
-RNA was treated with DMS in 50~\textmu l containing 1.5~\textmu l (320 nM) DMS (Sigma-Aldrich) in a ThermoMixer C (Eppendorf) while shaking at 500 rpm at 37\textdegree C for 5~min.
+RNA was treated with DMS in 50~\textmu l containing 1.5~\textmu l (320 nM) of DMS (Sigma-Aldrich) while shaking at 500~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
 To quench, 30~\textmu l of beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly.
-RNA was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
+RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
 ASOs were removed from 4~\textmu l of DMS-modified RNA in 10~\textmu l containing 1~\textmu l of TURBO DNase (Invitrogen) and 1X TURBO DNase Buffer (Invitrogen), incubated at 37\textdegree C for 30~min.
 To stop the reaction, 2~\textmu l of DNase Inactivation Reagent was added and incubated at room temperature for 10~min, mixing several times throughout by flicking.
 DNase Inactivation Reagent was precipitated by spinning on a benchtop PCR tube centrifuge for 10~min and transferring 4~\textmu l of supernatant to a new tube.
 
-\subsubsection{Library generation for 2,924~nt SARS-CoV-2 RNA}
+\subsubsection{Library generation of 2,924~nt SARS-CoV-2 RNA}
 
 4~\textmu l RNA was reverse transcribed in 20~\textmu l containing 1X First Strand Buffer (Invitrogen), 500~\textmu M dNTPs (Promega), 5~mM dithiothreitol (Invitrogen), 500~nM FSE primer CTTCGTCCTTTTCTTGGAAGCGACA (Integrated DNA Technologies), 500~nM section-specific reverse primer (Integrated DNA Technologies, Supplementary Table~\ref{primers2924}), 1~\textmu l of RNaseOUT (Invitrogen), and 1~\textmu l of TGIRT-III enzyme (InGex) at 57\textdegree C for 90~min, followed by inactivation at 85\textdegree C for 15~min.
 To degrade the RNA, 1~\textmu l of Hybridase Thermostable RNase H (Lucigen) was added to each tube and incubated at 37\textdegree C for 20~min.
 1~\textmu l of unpurified RT product was amplified in 12.5~\textmu l using the Advantage HF 2 PCR Kit (Takara Bio) with 1X Advantage 2 PCR Buffer, 1X Advantage-HF 2 dNTP Mix, 1X Advantage-HF 2 Polymerase Mix, 250~nM primers (Integrated DNA Technologies) for either the FSE (CCCTGTGGGTTTTACACTTAAAAAC and CTTCGTCCTTTTCTTGGAAGCGACA) or specific section (Supplementary Table~\ref{primers2924}); initial denaturation at 94\textdegree C for 60~s; 25 cycles of 94\textdegree C for 30~s, 60\textdegree C for 30~s, and 68\textdegree C for 60~s; and final extension at 68\textdegree C for 60~s.
-5~\textmu l of every amplicon from the same RT product was pooled and then purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 20~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
+5~\textmu l of every amplicon from the same RT product was pooled and then purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 20~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
 200~ng of pooled PCR product was prepared for sequencing using the NEBNext Ultra II DNA Library Prep Kit for Illumina (New England Biolabs) according to the manufacturer's protocol with the following modifications.
 During size selection after adapter ligation, 27.5~\textmu l and 12.5~\textmu l of NEBNext Sample Purification Beads (New England Biolabs) were used in the first and second steps, respectively, to select inserts of 280-300 bp.
 Indexing PCR was run at half volume (25~\textmu l) for 3 cycles.
 In lieu of the final bead cleanup, 420~bp inserts were selected using a 2\% E-Gel SizeSelect II Agarose Gel (Invitrogen) according to the manufacturer's protocol.
-DNA concentrations were measured using a Qubit 3.0 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
-Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
+DNA concentrations were measured using a Qubit~3.0 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
+Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
 
-\subsubsection{Data analysis for 2,924~nt SARS-CoV-2 RNA}
+\subsubsection{Data analysis of 2,924~nt SARS-CoV-2 RNA}
 
-Sequencing reads (FASTQ files) were processed with SEISMIC-RNA versions 0.12 and 0.13 to compute mutation rates, clusters, correlations between samples, and secondary structure models.
-Commands for computing the effects of each ASO group (Figure~\ref{tiles}b, Supplementary Figures~\ref{sars2-tile-target} and~\ref{sars2-tile-fse}) are in the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/run-tile.sh}.
-Commands for finding alternative secondary structures and models (Figure~\ref{tiles}c and~d, Supplementary Figure~\ref{sars2-clusters-fold}a and~b) are in the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/run-deep.sh}.
-Because some samples contained amplicons that overlapped each other, sequence alignment map (SAM) files for these samples were filtered between SEISMIC-RNA's align and relate steps to select only reads with desired amplicons using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/filter-deep.py}).
-For each cluster, the fraction of modeled structures containing long-range stems (Supplementary Figure~\ref{sars2-clusters-fold}c) was determined using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/fraction_folded.py}).
+Sequencing data were processed with SEISMIC-RNA v0.12 and v0.13 to compute mutation rates, clusters, correlations, and secondary structures.
+Effects of each ASO group (Figure~\ref{tiles}b, Supplementary Figures~\ref{sars2-tile-target} and~\ref{sars2-tile-fse}) were computed with the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/run-tile.sh}.
+Clustering and structure modeling (Figure~\ref{tiles}c and~d, Supplementary Figure~\ref{sars2-clusters-fold}a and~b) were performed with the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/run-deep.sh}.
+Because some samples contained amplicons that overlapped each other, sequence alignment map (SAM) files were filtered by amplicon using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/filter-deep.py}.
+The fraction of structures containing long-range stems (Supplementary Figure~\ref{sars2-clusters-fold}c) was determined using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/fraction_folded.py}.
 
 
-\subsection{Verification of the refined model of long-range base pairs and mutually exclusive base pairs in SARS-CoV-2}
+\subsection{SEARCH-MaP of long-range base pairs in multiple coronaviruses}
 
-\subsubsection{RNA synthesis}
+\subsubsection{Computational screen for long-range base pairs in coronaviruses}
+\label{screen_lri_comp}
 
-A 1,799~nt segment of the SARS-CoV-2 genome, beginning 290~nt upstream of and ending 1,502~nt downstream of the conserved 7~nt slippery site (TTTAAAC), was ordered from Twist Bioscience as a gene fragment flanked by the standard 5' and 3' adapters CAATCCGCCCTCACTACAACCG and CTACTCTGGCGTCGATGAGGGA, respectively.
-A DNA template for \textit{in vitro transcription}, including a T7 promoter, was amplified from the 1,799 bp construct with 250~nM primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG (Integrated DNA Technologies) using 2X CloneAmp HiFi PCR Premix (Takara Bio) in a 20~\textmu l volume with initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 10~s, 65\textdegree C for 10~s, and 72\textdegree C for 10~s; and final extension at 72\textdegree C for 60~s.
-The PCR product was purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; it was eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen) and measured with a NanoDrop One (Thermo Fisher Scientific).
-RNA was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol.
-Specifically, 100 ng of DNA template from the previous step was diluted to 8~\textmu l in nuclease-free water (Fisher Bioreagents), mixed with 2~\textmu l of each of the four 10X (100~mM)~NTP solutions followed by 2~\textmu l of the 10X reaction buffer and 2~\textmu l of the 10X T7 RNA polymerase mix, and then incubated at 37\textdegree C for 11 hr.
-The DNA template was then degraded by adding 1~\textmu l of TURBO DNase (Invitrogen) and incubating at 37\textdegree C for 30~min.
-The RNA transcript was purified using an RNA Clean \& Concentrator-25 kit (Zymo Research) according to the manufacturer's protocol; samples were eluted in 50~\textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop One (Thermo Fisher Scientific).
+All coronaviruses with reference genomes in the NCBI Reference Sequence Database~\cite{OLeary2016} as of December 2021 were searched for using the following query:
+\begin{verbatim}
+refseq[filter] AND ("Alphacoronavirus"[Organism] OR
+                    "Betacoronavirus"[Organism] OR
+                    "Gammacoronavirus"[Organism] OR
+                    "Deltacoronavirus"[Organism])
+\end{verbatim}
+The reference sequences (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/cov_refseq.fasta}) and table of features (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/cov_features.txt}) were downloaded and used to locate the slippery site in each genome using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/extract_long_fse.py}).
+For each genome, up to 100 secondary structure models of the 2,000~nt segment from 100~nt upstream to 1,893~nt downstream of the slippery site (excluding genomes with ambiguous nucleotides in this segment) were generated using Fold v6.3 from RNAstructure~\cite{Reuter2010} via the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/fold_long_fse.py}.
+The fraction of models in which each base paired with any other base between positions 101 and 250 was calculated using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/analyze_interactions.py}.
+Using these fractions, coronaviruses were clustered via the unweighted pair group method with arithmetic mean (UPGMA) and a euclidean distance metric, implemented in Seaborn v0.11~\cite{Waskom2021} and SciPy v1.7~\cite{Virtanen2020} (Supplementary Figure~\ref{contact_freqs}).
+From each cluster with prominent potential long-range interactions involving the FSE, coronaviruses were manually selected for experimental study.
 
-\subsubsection{DMS treatment}
+\subsubsection{Synthesis of 239 and 1,799~nt coronaviral RNAs}
 
-For each antisense oligonucleotide (ASO) treatment, 1 pmol (580 ng) of RNA was diluted to 8~\textmu l in nuclease-free water (Fisher Bioreagents) and mixed with 100 pmol (1~\textmu l at 100~\textmu M) each of zero, one, or two ASOs (Integrated DNA Technologies, Supplementary Table~\ref{asos1799sars2}); the total volume was adjusted to 10~\textmu l by adding nuclease-free water (Fisher Bioreagents).
-In a PCR tube, the RNA was heated to 95\textdegree C for 60~s to denature it, then placed on ice for 5-10~min.
-Meanwhile, 1.15X refolding buffer was assembled from 75~\textmu l of 400~mM sodium cacodylate pH~7.2 (Electron Microscopy Sciences), 0.6~\textmu l of 1 M magnesium chloride (Invitrogen), and 11.5~\textmu l nuclease-free water (Fisher Bioreagents).
-If no ASO would be added during refolding, then an additional 1~\textmu l of nuclease-free water (Fisher Bioreagents) was added.
-The refolding buffer was pre-warmed to 37\textdegree C in a 1.5 ml tube.
-The denatured, chilled RNA was pipetted into the pre-warmed refolding buffer and incubated at 37\textdegree C for 15-20~min to refold the RNA.
-If an ASO would be added during refolding, then 1~\textmu l (100 pmol) of ASO was added.
-The RNA was incubated for another 15~min to allow any newly added ASOs to bind.
+For each selected coronavirus, the 1,799~nt segment from 290 to 1,502~nt downstream of the slippery site was ordered from Twist Bioscience as a gene fragment flanked by the standard 5' and 3' adapters CAATCCGCCCTCACTACAACCG and CTACTCTGGCGTCGATGAGGGA, respectively.
+Gene fragments were resuspended to 10~ng/\textmu l in 10~mM Tris-HCl pH~8 (Invitrogen).
+Each DNA template for transcription of 1,799~nt RNA segments, including a T7 promoter, was amplified from 0.5~\textmu l (5 ng) of a gene fragment in 20~\textmu l using 2X CloneAmp HiFi PCR Premix (Takara Bio) with 250~nM of each primer TAATACGACTCACTATAGGCAATCCGCCCTCACTACAACCG and TCCCTCATCGACGCCAGAGTAG; initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 10~s, X\textdegree C (see Supplementary Table~\ref{cov_groups}) for 10~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 60~s.
+DNA templates for transcription of 239~nt RNA segments were amplified using the same procedure but with the forward primers with T7 promoters (F+T7) and reverse primers (R) in Supplementary Table \ref{primers239}.
+For experiments in which the RNAs were transcribed as a pool of all coronaviruses, all PCR products of the same length (i.e. 239 or 1,799~nt) were pooled, then purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; concentrations were measured with a NanoDrop (Thermo Fisher Scientific).
+Otherwise, PCR products were purified individually.
 
-For chemical probing, 1.9~\textmu l of neat DMS (Sigma-Aldrich) was added for a total volume of 100~\textmu l including 200~mM DMS, 300~mM sodium cacodylate, 6~mM magnesium chloride, and 10~nM RNA.
-DMS was initially mixed by swirling the pipette tip and then kept suspended by shaking at 500 rpm in a ThermoMixer C (Eppendorf) throughout the treatment at 37\textdegree C for 5~min.
-The reaction was quenched by adding 20~\textmu l neat beta-mercaptoethanol (Sigma-Aldrich) and mixing thoroughly by pipetting.
-DMS-modified RNA was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; RNA was eluted in 15~\textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop One (Thermo Fisher Scientific).
+50~ng of DNA template was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol but at one-quarter volume (5~\textmu l), supplemented with 0.25~\textmu l RNaseOUT (Invitrogen), for 16 hr.
+DNA template was degraded by incubating with 0.5~\textmu l of TURBO DNase (Invitrogen) at 37\textdegree C for 30~min.
+RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 50~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
-\subsubsection{Sequencing library generation}
+\subsubsection{DMS treatment of 239 and 1,799~nt coronaviral RNAs}
 
-Before reverse transcription, 1~\textmu l of DMS-modified RNA was mixed with 7~\textmu l nuclease-free water (Fisher Bioreagents), 1~\textmu l of 10~mM dNTPs (Promega), and 1~\textmu l of 10~\textmu M FSE reverse primer CTTCGTCCTTTTCTTGGAAGCGACA (Integrated DNA Technologies) in a PCR tube.
-The tube was heated at 65\textdegree C for 5~min to denature the RNA and anneal the primer, then placed on ice for 5~min.
-Meanwhile, 2X reverse transcription mix was assembled from 5~\textmu l of nuclease-free water (Fisher Bioreagents), 4~\textmu l of 5X Induro RT Reaction Buffer (New England Biolabs), and 1~\textmu l of Induro Reverse Transcriptase (New England Biolabs).
-The 10~\textmu l of denatured nucleic acids was mixed with 10~\textmu l of 2X reverse transcription mix.
-RNA was reverse transcribed at 57\textdegree C for 30~min, followed by inactivation at 95\textdegree C for 1~min.
+Antisense oligonucleotides (ASOs) in Supplementary Table~\ref{asos1799covs} were ordered from Integrated DNA Technologies and resuspended to 100~\textmu M in low-EDTA TE buffer: 10~mM Tris pH 7.4 with 0.1~mM EDTA (Integrated DNA Technologies).
+For each coronavirus, 5~\textmu l of each corresponding ASO (Supplementary Table~\ref{asos1799covs}) was pooled; the pool of ASOs was diluted with low-EDTA TE buffer to a final volume of 100~\textmu l, bringing each ASO to 5~\textmu M.
+1X refolding buffer comprising 300~mM sodium cacodylate pH 7.2 (Electron Microscopy Sciences) and 6~mM magnesium chloride (Invitrogen) was assembled, then pre-warmed to 37\textdegree C.
 
-The FSE section was amplified by mixing 1~\textmu l of unpurified cDNA with 7~\textmu l of nuclease-free water (Fisher Bioreagents), 10~\textmu l of Q5 High-Fidelity 2X Master Mix (New England Biolabs), 1~\textmu l of 10~\textmu M FSE forward primer CCCTGTGGGTTTTACACTTAAAAAC (Integrated DNA Technologies), and 1~\textmu l of 10~\textmu M FSE reverse primer CTTCGTCCTTTTCTTGGAAGCGACA (Integrated DNA Technologies); initially denaturing at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 10~s, 65\textdegree C for 20~s, and 72\textdegree C for 20~s; and finally extending at 72\textdegree C for 120~s.
-Amplification was confirmed by electrophoresing 1~\textmu l of the PCR product through an E-Gel EX Agarose Gel, 2\% (Invitrogen) and checking for a 283 bp band.
-The PCR product was purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; it was eluted in 20~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen) and measured with a NanoDrop One (Thermo Fisher Scientific).
+For already-pooled RNA, 300~ng was diluted in 2.5~\textmu l of nuclease-free water (Fisher Bioreagents) in a PCR tube, heated to 95\textdegree C for 1 min to denature, chilled on ice for 3 min, added to 95~\textmu l of pre-warmed refolding buffer, and incubated at 37\textdegree C for 20 min to refold.
+For individually transcribed RNA, 1 pmol was mixed with 10~\textmu l of either low-EDTA TE buffer (for probing without ASOs) or the ASO pool for the corresponding coronavirus (for probing with ASOs) in a PCR tube, heated to 95\textdegree C for 1 min to denature the RNA, chilled on ice for 3 min, added to pre-warmed refolding buffer for a total volume of 100~\textmu l, and incubated at 37\textdegree C for 20 min to refold the RNA (possibly with ASOs).
+Subsequently, equimolar amounts of all refolded RNAs were combined into one 97~\textmu l pool in a 1.5 ml tube.
 
-A 50-100 ng aliquot of the purified FSE amplicon was diluted in 10~mM Tris-HCl pH~8 (Invitrogen) to a total of 25~\textmu l.
-A sequencing library was generated using the NEBNext Ultra II DNA Library Prep Kit for Illumina (New England Biolabs) according to the manufacturer's protocol with the following modifications.
-To conserve reagents, all steps were performed at half of the volume specified in the protocol, including reactions, bead cleanups, and washes.
-During two-step size selection after adapter ligation, 14~\textmu l and 7~\textmu l of SPRIselect Beads (Beckman Coulter) were used in the first and second steps, respectively, to select inserts of 283 bp.
-Also to conserve reagents, indexing PCR was run not only at half volume (25~\textmu l) but also with each primer at 400~nM (instead of 1000~nM specified in the protocol) for 4 cycles.
-After indexing, PCR products were pooled in pairs; each pool (50~\textmu l) was mixed with 5~\textmu l of 10X E-Gel Sample Loading Buffer (Invitrogen), and 25~\textmu l was electrophoresed through a 2\% E-Gel SizeSelect II Agarose Gel (Invitrogen) according to the manufacturer's protocol.
-Samples were extracted in 50~\textmu l nuclease-free water (Fisher Bioreagents).
-DNA concentrations were measured using a Qubit 4 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
-Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
+RNA was treated with DMS (Sigma-Aldrich) -- 2.5~\textmu l (260 mM) for RNAs transcribed as pools or 3~\textmu l (320 mM) for RNAs pooled after transcription -- in 100~\textmu l while shaking at 800~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
+To quench, 60~\textmu l of beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly.
+DMS-modified RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 16~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
+If added, ASOs were then degraded in 50~\textmu l containing 1X TURBO DNase Buffer (Invitrogen) and 1~\textmu l of TURBO DNase Enzyme (Invitrogen) at 37\textdegree C for 30 min; RNA was purified with an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 16~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
-\subsubsection{Data analysis}
+\subsubsection{Sequencing library generation of 239 and 1,799~nt coronaviral RNAs}
 
-Sequencing reads (FASTQ files) were processed with SEISMIC-RNA versions 0.11 and 0.12 to compute mutation rates, clusters, and correlations between samples using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-1799/run.sh}.
+100~ng of DMS-modified RNA was prepared for sequencing using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the following modifications.
+During fragmentation, 8~\textmu l of RNA was combined with 1~\textmu l of Reagent F1, 4~\textmu l of Reagent F3, and 2~\textmu l of Reagent F2. 
+For reverse transcription, 1~\textmu l of Enzyme R1, 2~\textmu l of TGIRT-III enzyme (InGex), and 1~\textmu l of 100 mM dithiothreitol (Invitrogen) was used instead of the reaction mix, then incubated at room temperature for 30 minutes before adding 2~\textmu l of Reagent F2.
+Reverse transcription was stopped by adding 1~\textmu l of 4 M sodium hydroxide (Fluka), heating to 95\textdegree C for 3 min, chilling at 4\textdegree C, then neutralizing with 1\textmu l of 4 M hydrochloric acid ([SUPPLIER]).
+Instead of a bead cleanup after the final PCR, unpurified PCR products with 6X DNA loading dye (Invitrogen) were elecrophoresed through an 8\% polyacrylamide Tris-borate-EDTA (TBE) gel (Invitrogen) at 180~V for 55~min.
+The gel was stained with SYBR Gold (Invitrogen); the section between 250 and 500~bp was excised and placed in a 0.5~ml tube with a hole punctured in the bottom by an 18-gauge needle (BD Biosciences), which was nested inside a 1.5~ml tube and centrifuged at [SPEED] for 1~min to crush the gel slice into the latter.
+Crushed gel pieces were suspended in 500~\textmu l of 300 mM sodium chloride (Boston Bioproducts), shaken at 1,500~rpm in a ThermoMixer~C (Eppendorf) at 70\textdegree C for 20~min, and centrifuged at [SPEED] through a 0.22~\textmu m Costar Spin-X filter column to remove the gel pieces.
+Filtrate was mixed with 600~\textmu l isopropanol (Sigma-Aldrich) and 3~\textmu l GlycoBlue Coprecipitant (Invitrogen), vortexed briefly, and stored at -20\textdegree C overnight.
+DNA was then pelleted by centrifugation at 4\textdegree C at [SPEED] for 45~min.
+The supernatant was aspirated, and the pellet was washed with 1~ml of ice-cold 70\% ethanol (Sigma-Aldritch), resuspended in 15~\textmu l nuclease-free water (Fisher Bioreagents), and quantified using the 1X dsDNA High Sensitivity Assay Kit for the Qubit~3.0 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
+Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
+
+\subsubsection{Data analysis of 239 and 1,799~nt coronaviral RNAs}
+
+Sequencing data were processed with SEISMIC-RNA v0.11 and v0.12 to compute mutation rates, correlations between samples, and secondary structure models using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-1799/run.sh}.
+For the 239 and 1,799~nt RNAs that had been pooled during transcription, the two replicates for each coronavirus for each length were confirmed to give similar results, then merged before comparing the 239 and 1,799~nt RNAs to each other.
+For the comparison of RNAs with and without ASOs, the no-ASO samples that had been transcribed individually were confirmed to give similar results to those transcribed as a pool; then, all no-ASO samples were pooled before comparing to samples with ASOs.
+For each coronavirus, the DMS reactivities of the combined no-ASO samples were used to model up to 20 secondary structures of the 1,799~nt segment using Fold from RNAstructure v6.3~\cite{Reuter2010}.
+Structure models were checked manually for correspondence with the rolling correlation between the +ASO and no-ASO conditions; the minimum free energy structure was chosen for every coronavirus except for transmissible gastroenteritis virus, in which the first sub-optimal structure -- but not the minimum free energy structure -- contained long-range base pairs supported by the rolling correlation.
+Rolling correlations between +ASO and no-ASO conditions superimposed on secondary structure models (Figure~\ref{covs}) were graphed using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/util/pairs_vs_correl.py}.
+
+
+\subsection{SEARCH-MaP of 1,799~nt SARS-CoV-2 RNA}
+
+\subsubsection{RNA synthesis of 1,799~nt SARS-CoV-2 RNA}
+
+A DNA template for transcription, including a T7 promoter, was amplified from the 1,799~bp gene fragment of SARS-CoV-2 as described above but with primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG, an annealing temperature of 65\textdegree C, and an extension time of 10~s; eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen); and measured with a NanoDrop One (Thermo Fisher Scientific).
+100 ng of DNA template was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol for 11 hr.
+DNA template was degraded by incubating with 1~\textmu l of TURBO DNase (Invitrogen) at 37\textdegree C for 30~min.
+RNA was purified using an RNA Clean~\& Concentrator-25 kit (Zymo Research) according to the manufacturer's protocol, eluted in 50~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop One (Thermo Fisher Scientific).
+
+\subsubsection{DMS treatment of 1,799~nt SARS-CoV-2 RNA}
+
+1.15X refolding buffer comprising 345~mM sodium cacodylate pH~7.2 (Electron Microscopy Sciences) and 7~mM magnesium chloride (Invitrogen) was assembled and pre-warmed to 37\textdegree C.
+1~pmol of RNA was mixed with 100~pmol of each ASO (Integrated DNA Technologies, Supplementary Table~\ref{asos1799sars2}) in 10~\textmu l total, heated to 95\textdegree C for 60~s to denature, chilled on ice for 5-10~min, and added to 87.1~\textmu l of pre-warmed refolding buffer.
+If no ASO would be added during refolding, then 1~\textmu l of nuclease-free water (Fisher Bioreagents) was added.
+RNA was incubated at 37\textdegree C for 15-20~min to refold.
+If an ASO would be added during refolding, then 100~pmol (1~\textmu l) of ASO was added.
+RNA was incubated for another 15~min to allow any newly added ASOs to bind.
+
+RNA was probed in 100~\textmu l containing 1.9~\textmu l (300~mM) DMS (Sigma-Aldrich) while shaking at 500~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
+To quench, 20~\textmu l of beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly.
+DMS-modified RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 15~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop One (Thermo Fisher Scientific).
+
+\subsubsection{Library generation 1,799~nt SARS-CoV-2 RNA}
+
+1~\textmu l of DMS-modified RNA was reverse transcribed in 20~\textmu l using Induro Reverse Transcriptase (New England Biolabs) according to the manufacturer's protocol with 500~nM of primer CTTCGTCCTTTTCTTGGAAGCGACA (Integrated DNA Technologies) at 57\textdegree C for 30~min, followed by inactivation at 95\textdegree C for 1~min.
+1~\textmu l of unpurified RT product was amplified in 20~\textmu l using Q5 High-Fidelity 2X Master Mix (New England Biolabs) with 500~nM of each primer CCCTGTGGGTTTTACACTTAAAAAC and CTTCGTCCTTTTCTTGGAAGCGACA (Integrated DNA Technologies); initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 10~s, 65\textdegree C for 20~s, and 72\textdegree C for 20~s; and final extension at 72\textdegree C for 120~s.
+The PCR product was purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 20~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen), and measured with a NanoDrop One (Thermo Fisher Scientific).
+
+50-100~ng of purified PCR product was prepared for sequencing using the NEBNext Ultra II DNA Library Prep Kit for Illumina (New England Biolabs) according to the manufacturer's protocol with the following modifications.
+All steps were performed at half of the volume specified in the protocol, including reactions, bead cleanups, and washes.
+During size selection after adapter ligation, 14~\textmu l and 7~\textmu l of SPRIselect Beads (Beckman Coulter) were used in the first and second steps, respectively, to select inserts of 283~bp.
+Indexing PCR was run with 400~nM of each primer for 4 cycles.
+After indexing, PCR products were pooled in pairs; in lieu of the final bead cleanup, 405~bp products were selected using a 2\% E-Gel SizeSelect II Agarose Gel (Invitrogen) according to the manufacturer's protocol.
+DNA concentrations were measured using a Qubit~4 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
+Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
+
+\subsubsection{Data analysis of 1,799~nt SARS-CoV-2 RNA}
+
+Sequencing data were processed with SEISMIC-RNA v0.11 and v0.12 to compute mutation rates, clusters, and correlations between samples using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-1799/run.sh}.
 Heatmaps of the reproducibility of clustering between replicates (Supplementary Figure~\ref{sars2-compare-clusters}) were generated using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-1799/compare-clusters.py}.
 After the two replicates were confirmed to give similar clusters, they were pooled for subsequent analyses.
 Secondary structures with rolling correlations (Figure~\ref{lnas}b) were drawn using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-1799/draw-structure.py}.
@@ -128,124 +184,30 @@ Alternative structure models (Figure~\ref{lnas}c) were selected and created with
 Heatmaps of areas under the curve (Figure~\ref{lnas}d) were generated using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-1799/atlas-plot.py}.
 
 
-\subsection{Investigation of long-range base pairing in multiple coronaviruses}
-
-\subsubsection{Computational screen of long-range base pairing in coronaviruses}
-\label{screen_lri_comp}
-
-All coronaviruses with reference genomes in the NCBI Reference Sequence Database~\cite{OLeary2016} were searched for using the following query:
-\begin{verbatim}
-refseq[filter] AND ("Alphacoronavirus"[Organism] OR
-                    "Betacoronavirus"[Organism] OR
-                    "Gammacoronavirus"[Organism] OR
-                    "Deltacoronavirus"[Organism])
-\end{verbatim}
-The reference sequences were downloaded in FASTA format (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/cov_refseq.fasta}) and the complete records in Feature Table format (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/cov_features.txt}).
-
-The location of the frameshift stimulating element (FSE) in each genome was estimated from the feature table, and the nearest instance of UUUAAAC was used as the slippery site, using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/extract_long_fse.py}).
-The 2,000~nt segment beginning 100~nt upstream of and ending 1,893~nt downstream of the slippery site was used for predicting long-range interactions involving the FSE.
-Genomes with ambiguous nucleotides (e.g. \verb|N|) in this segment were discarded.
-For each coronavirus genome, up to 100 secondary structure models of the 2,000~nt segment were generated using Fold version 6.3 from RNAstructure~\cite{Reuter2010} with \verb|-M 100| and otherwise default parameters, using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/fold_long_fse.py}).
-
-Then, for each position, the fraction of models for the coronavirus in which the base at the position paired with any other base between positions 101 (the first base of the slippery sequence) and 250 was calculated using a custom Python script (\url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-screen/analyze_interactions.py}).
-The coronaviruses were clustered by their fraction vectors using the unweighted pair group method with arithmetic mean (UPGMA) and a euclidean distance metric, implemented in Seaborn version 0.11~\cite{Waskom2021} and SciPy version 1.7~\cite{Virtanen2020}.
-The resulting hierarchically-clustered heatmap (Supplementary Figure~\ref{contact_freqs}) was examined manually to select coronaviruses based on the prominence of potential long-range interactions with the FSE (relatively large fractions far from positions 101-250).
-
-\subsubsection{RNA synthesis}
-
-For each selected coronavirus, a 1,799~nt segment beginning 290~nt upstream of and ending 1,502~nt downstream of the conserved 7~nt slippery site (TTTAAAC) was ordered from Twist Bioscience as a gene fragment flanked by the standard 5' and 3' adapters CAATCCGCCCTCACTACAACCG and CTACTCTGGCGTCGATGAGGGA, respectively.
-Gene fragments were resuspended to 10~ng/\textmu l in 10~mM Tris-HCl pH~8 (Invitrogen).
-Each DNA template for \textit{in vitro} transcription of 1,799~nt RNA segments, including a T7 promoter, was amplified from 0.5~\textmu l (5 ng) of a gene fragment with 250~nM of each primer TAATACGACTCACTATAGGCAATCCGCCCTCACTACAACCG and TCCCTCATCGACGCCAGAGTAG using 2X CloneAmp HiFi PCR Premix (Takara Bio) in a 20~\textmu l volume with initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 10~s, X\textdegree C (see Supplementary Table~\ref{cov_groups}) for 10~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 60~s.
-DNA templates for \textit{in vitro} transcription of 239~nt RNA segments were amplified using the same procedure but with the forward primers with T7 promoters (F+T7) and reverse primers (R) in Supplementary Table \ref{primers239}.
-
-For experiments in which the RNAs were transcribed as a pool of all coronaviruses, all PCR products of the same length (i.e. 1,799~nt or 239~nt) were pooled, then purified.
-Otherwise, PCR products were purified individually.
-Purification was performed using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; concentrations were measured with a NanoDrop (Thermo Fisher Scientific).
-
-RNA was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol but at one-quarter volume (5~\textmu l).
-Specifically, 50 ng of DNA template from the previous step was diluted to 1.75~\textmu l in nuclease-free water (Fisher Bioreagents), mixed with 0.5~\textmu l of each of the four 10X (100~mM)~NTP solutions followed by 0.5~\textmu l of the 10X reaction buffer and 0.5~\textmu l of the 10X T7 RNA polymerase mix, supplemented with 0.25~\textmu l RNaseOUT (Invitrogen), and then incubated at 37\textdegree C for 16 hr.
-DNA templates were then degraded by adding 0.5~\textmu l of TURBO DNase (Invitrogen) and incubating at 37\textdegree C for 30~min.
-RNA transcripts were purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; RNA was eluted in 50~\textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher Scientific).
-
-\subsubsection{DMS treatment}
-
-Refolding buffer was assembled from 750~\textmu l of 400 mM sodium cacodylate pH 7.2 (Electron Microscopy Sciences), 6~\textmu l of 1 M magnesium chloride (Invitrogen), and 244~\textmu l of nuclease-free water (Fisher Bioreagents), then pre-warmed to 37\textdegree C.
-Antisense oligonucleotides (ASOs) in Supplementary Table~\ref{asos1799covs} were ordered from Integrated DNA Technologies.
-Each ASO was resuspended to 100~\textmu M in low-EDTA TE buffer: 10~mM Tris pH 7.4 with 0.1~mM EDTA (Integrated DNA Technologies).
-For each coronavirus, 5~\textmu l of each corresponding ASO (Supplementary Table~\ref{asos1799covs}) was pooled; the pool of ASOs was diluted with low-EDTA TE buffer to a final volume of 100~\textmu l, bringing each ASO to 5~\textmu M.
-
-If the RNAs had already been pooled, then 300~ng of pooled RNA was diluted in 2.5~\textmu l of nuclease-free water (Fisher Bioreagents) in a PCR tube.
-The tube was heated to 95\textdegree C for 1 min to denature the RNA, then chilled on ice for 3 min.
-The denatured, chilled RNA (2.5~\textmu l) was added to 95~\textmu l of pre-warmed refolding buffer and incubated at 37\textdegree C for 20 min to refold the RNA.
-
-If the RNAs had not been pooled, then for each coronavirus, 1 pmol of RNA for that coronavirus was mixed with 10~\textmu l of either low-EDTA TE buffer (for probing without ASOs) or the ASO pool for that coronavirus (for probing with ASOs) in a PCR tube.
-Each tube was heated to 95\textdegree C for 1 min to denature the RNA, then chilled on ice for 3 min.
-Each denatured, chilled RNA was added to pre-warmed refolding buffer for a total volume of 100~\textmu l and incubated at 37\textdegree C for 20 min to refold the RNA (possibly with ASOs).
-Subsequently, equimolar amounts of all refolded RNAs were combined into one 97~\textmu l pool in a 1.5 ml tube.
-
-Neat DMS (Sigma-Aldrich) was added to a total volume of 100~\textmu l (2.5~\textmu l of DMS for RNAs transcribed as pools, 3~\textmu l of DMS for RNAs pooled after transcription), mixed by pipetting up and down and swirling the tip, and shaken at 800 rpm and 37\textdegree C in a ThermoMixer C (Eppendorf) for 5 min.
-To quench the reaction, 60~\textmu l of neat beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly by pipetting.
-DMS-modified RNA was purified using an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; RNA was eluted in 16~\textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher Scientific).
-
-For samples containing ASOs, 5~\textmu l of TURBO DNase Buffer (Invitrogen) and 1~\textmu l of TURBO DNase Enzyme (Invitrogen) were added along with nuclease-free water (Fisher Bioreagents) to a total volume of 50~\textmu l.
-Samples were incubated at 37\textdegree C for 30 min to degrade the ASOs.
-Then, the RNA was purified with an RNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol; RNA was eluted in 16~\textmu l of nuclease-free water (Fisher Bioreagents) and measured with a NanoDrop (Thermo Fisher Scientific).
-
-\subsubsection{Sequencing library generation}
-
-Sequencing libraries were generated from 100~ng of DMS-modified RNA using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the following modifications.
-During fragmentation, 8~\textmu l of RNA was combined with 1~\textmu l of Reagent F1, 4~\textmu l of Reagent F3, and 2~\textmu l of Reagent F2. 
-For reverse transcription, 1~\textmu l of Enzyme R1, 2~\textmu l of TGIRT-III enzyme (InGex), and 1~\textmu l of 100 mM dithiothreitol (Invitrogen) was added to the fragmented RNA (instead of the reaction mix), then incubated at room temperature for 30 minutes before adding 2~\textmu l of Reagent F2.
-Reverse transcription was stopped by adding 1~\textmu l of 4 M sodium hydroxide (Fluka), heating to 95\textdegree C for 3 min, and chilling at 4\textdegree C.
-The pH was neutralized with 1\textmu l of 4 M hydrochloric acid ([SUPPLIER]).
-Instead of a bead cleanup after the final PCR, unpurified PCR products were mixed with 4~\textmu l of 6X DNA loading dye (Invitrogen) and run alongside 4~\textmu l of 1~Kb Plus DNA Ladder (Invitrogen) on an 8\% Tris-borate-EDTA (TBE) gel (Invitrogen) in 1X TBE buffer (Invitrogen) at 180 V for 55 min.
-The gel was stained with SYBR Gold (Invitrogen).
-The section between 250 and 500~bp was excised and placed in a 0.5~ml tube with a hole punctured in the bottom by an 18-gauge needle (BD Biosciences).
-The 0.5~ml tube was nested inside a 1.5~ml tube and centrifuged at [SPEED] for 1 min to crush the gel slice into the latter.
-The crushed gel pieces were suspended in 500~\textmu l of 300 mM sodium chloride (Boston Bioproducts) and shaken in a ThermoMixer C (Eppendorf) at 1,500~rpm while incubating at 70\textdegree C for 20~min.
-The entire slurry was then centrifuged at [SPEED] through a 0.22~\textmu m Costar Spin-X filter column to remove the gel pieces.
-The filtrate was mixed with 600~\textmu l isopropanol (Sigma-Aldrich) and 3~\textmu l GlycoBlue Coprecipitant (Invitrogen), vortexed briefly, and stored at -20\textdegree C overnight.
-DNA was then pelleted by centrifugation at [SPEED] for 45 min in an Eppendorf 5430R benchtop centrifuge cooled to 4\textdegree C.
-The supernatant was aspirated, and the pellet was washed with 1~ml of ice-cold 70\% ethanol (Sigma-Aldritch).
-The pellet was resuspended in 15~\textmu l nuclease-free water (Fisher Bioreagents) and quantified using the 1X dsDNA High Sensitivity Assay Kit for the Qubit 3.0 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
-Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
-
-\subsubsection{Data analysis}
-
-Sequencing reads (FASTQ files) were processed with SEISMIC-RNA versions 0.11 and 0.12 to compute mutation rates, correlations between samples, and secondary structure models using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/covs-1799/run.sh}.
-For the 239~nt and 1,799~nt RNAs that had been pooled during \textit{in vitro} transcription, the two replicates for each coronavirus for each length were confirmed to give similar results, then merged before comparing the 239~nt and 1,799~nt RNAs to each other.
-For the comparison of RNAs with and without ASOs, the no-ASO samples that had been transcribed individually were confirmed to give similar results to those transcribed as a pool; then, all no-ASO samples were pooled before comparing to samples with ASOs.
-For each coronavirus, the DMS reactivities of the combined no-ASO samples were used to model up to 20 secondary structures of the 1,799~nt segment using Fold from RNAstructure v6.3~\cite{Reuter2010}.
-Structure models were checked manually for correspondence with the rolling correlation between the +ASO and no-ASO conditions; the minimum free energy structure was chosen for every coronavirus except for transmissible gastroenteritis virus, in which the first sub-optimal structure -- but not the minimum free energy structure -- contained long-range base pairs supported by the rolling correlation.
-Rolling correlations between +ASO and no-ASO conditions superimposed on secondary structure models (Figure~\ref{covs}) were graphed using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/util/pairs_vs_correl.py}.
-
-
 \subsection{DMS-MaPseq of transmissible gastroenteritis virus in ST cells}
 
 \subsubsection{Amplicons of the frameshift stimulating element and long-range interaction element}
 
-1~\textmu l of rRNA-depleted RNA was mixed with 2.5~\textmu l of nuclease-free water (Fisher Bioreagents), 0.5~\textmu l of 10~mM dNTPs (Promega), 0.5~\textmu l of 10~\textmu M primer ACAATTCGTCTTAAGGAATTTACCAATACACGCAA (Integrated DNA Technologies), and 0.5~\textmu l of 10~\textmu M primer CTATACCAAGTTGTTTGAAATGGTAACCTGCAGTAACA (Integrated DNA Technologies) in a PCR tube; denatured at 65\textdegree C for 5 min; and chilled on ice.
-Meanwhile, 2.5~\textmu l of nuclease-free water (Fisher Bioreagents), 2~\textmu l of 5X Induro reaction buffer (New England Biolabs), and 0.5~\textmu l of Induro RT (New England Biolabs) were mixed, then added to the denatured RNA.
-Reverse transcription proceeded at 57\textdegree C for 30 min, followed by inactivation at 95\textdegree C for 1 min.
-1~\textmu l of unpurified RT product was amplified in 10~\textmu l using Q5 High-Fidelity 2X Master Mix (New England Biolabs) with 1~\textmu M of each primer, either GCCGCTACAAAGGTAAGTTCGTGCAAATACCAACT and ACAATTCGTCTTAAGGAATTTACCAATACACGCAA or GTGAAAAGTGACATCTATGGTTCTGATTATAAGCAGTA and CTATACCAAGTTGTTTGAAATGGTAACCTGCAGTAACA (Integrated DNA Technologies); initially denaturing at 98\textdegree C for 30 s; 30 cycles of 98\textdegree C for 5 s, 69\textdegree C for 20 s, and 72\textdegree C for 15 s; and finally extending at 72\textdegree C for 120 s.
+1~\textmu l of rRNA-depleted RNA was reverse transcribed in 20~\textmu l using Induro Reverse Transcriptase (New England Biolabs) according to the manufacturer's protocol with 500~nM of primer ACAATTCGTCTTAAGGAATTTACCAATACACGCAA (Integrated DNA Technologies) at 57\textdegree C for 30~min, followed by inactivation at 95\textdegree C for 1~min.
+1~\textmu l of unpurified RT product was amplified in 10~\textmu l using Q5 High-Fidelity 2X Master Mix (New England Biolabs) with 1~\textmu M of each primer, either GCCGCTACAAAGGTAAGTTCGTGCAAATACCAACT and ACAATTCGTCTTAAGGAATTTACCAATACACGCAA or GTGAAAAGTGACATCTATGGTTCTGATTATAAGCAGTA and CTATACCAAGTTGTTTGAAATGGTAACCTGCAGTAACA (Integrated DNA Technologies); initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 5~s, 69\textdegree C for 20~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 120~s.
 Amplification was confirmed by electrophoresing 1~\textmu l of each PCR product.
-PCR products for both pairs of primers were pooled and then purified using a DNA Clean \& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 18~\textmu l of 10 mM Tris-HCl pH 8 (Invitrogen), and measured with a NanoDrop (Thermo Fisher Scientific).
+PCR products for both pairs of primers were pooled and then purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen), and measured with a NanoDrop (Thermo Fisher Scientific).
 
-175-225~\textmu l of DNA was prepared for sequencing using the NEBNext Ultra II DNA Library Prep Kit for Illumina (New England Biolabs) according to the manufacturer's protocol with the following modifications.
+175-225~ng of purified PCR product was prepared for sequencing using the NEBNext Ultra II DNA Library Prep Kit for Illumina (New England Biolabs) according to the manufacturer's protocol with the following modifications.
 All steps were performed at half of the volume specified in the protocol, including reactions, bead cleanups, and washes.
-During size selection after adapter ligation, 14~\textmu l and 7~\textmu l of SPRIselect Beads (Beckman Coulter) were used in the first and second steps, respectively, to select inserts of 295 bp.
+During size selection after adapter ligation, 14~\textmu l and 7~\textmu l of SPRIselect Beads (Beckman Coulter) were used in the first and second steps, respectively, to select inserts of 295~bp.
 Indexing PCR was run with 400~nM of each primer for 4 cycles.
-In lieu of the final bead cleanup, 420~bp inserts were selected using a 2\% E-Gel SizeSelect II Agarose Gel (Invitrogen) according to the manufacturer's protocol.
-DNA concentrations were measured using a Qubit 4 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
-Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2 x 150 bp paired-end reads according to the manufacturer's protocol.
+In lieu of the final bead cleanup, 415~bp products were selected using a 2\% E-Gel SizeSelect II Agarose Gel (Invitrogen) according to the manufacturer's protocol.
+DNA concentrations were measured using a Qubit~4 Fluorometer (Thermo Fisher Scientific) according to the manufacturer's protocol.
+Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
 
-\subsubsection{Data analysis}
+\subsubsection{Data analysis of transmissible gastroenteritis virus in ST cells}
 
 The genomic sequence of this TGEV strain was determined using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/consensus.sh}: reads from the untreated sample were aligned to the TGEV reference genome (\verb|NC_038861.1|) using Bowtie~2~\cite{Langmead2012} and the consensus sequence was determined using Samtools~\cite{Li2009}.
-All reads were processed with SEISMIC-RNA version 0.15 to compute mutation rates, correlations between samples, and secondary structure models using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/run.sh}.
+All reads were processed with SEISMIC-RNA v0.15 to compute mutation rates, correlations between samples, and secondary structure models using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/run.sh}.
 Positions in the untreated sample with mutation rates greater than 1\% were masked.
 Replicates were checked for reproducibility and pooled for clustering and structure modeling.
-A model of short-range base pairs (maximum distance 300 nt) in the TGEV genome was generated from the DMS reactivities using Fold-smp from RNAstructure~\cite{Reuter2010} in five overlapping 10~kb segments, which were merged using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/assemble-tgev-ss.py}.
+A model of short-range base pairs (maximum distance 300~nt) in the TGEV genome was generated from the DMS reactivities using Fold-smp from RNAstructure~\cite{Reuter2010} in five overlapping 10~kb segments, which were merged using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/assemble-tgev-ss.py}.
 Rolling area under the curve superimposed on secondary structure models (Figure~\ref{tgev}d) was graphed using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/make-figure-6d.py}.
 
 \end{document}
