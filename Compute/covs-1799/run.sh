@@ -8,15 +8,6 @@ DEST=../../MainFigures/covs
 PVC=../util/pairs_vs_correl.py
 
 
-#rm -r $OUT/*/align
-#rm -r $OUT/*/relate
-#rm -r $OUT/*/mask
-#rm -r $OUT/*/table
-#rm -r $OUT/*/fold
-#rm -r $OUT/*/graph
-#rmdir $OUT/*__and__*
-
-
 # LONG VS SHORT
 
 # - 1799 nt (long) segment (2 replicates)

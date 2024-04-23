@@ -40,25 +40,25 @@ This step uses SEISMIC-RNA to cluster the no-ASO ensemble into two mutational pr
 Because the ASO blocks the P--R base pairs, the +ASO mutational profile will correlate better with that of the structure where P and R do not base-pair; in this case, cluster 2 correlates better.
 Therefore, the mutational profile of cluster 1 corresponds to the structure where P and R base-pair.
 
-\subsection{SEARCH-MaP finds base pairs in ribosomal RNA}
-
-We first validated SEARCH-MaP using 23S ribosomal RNA (rRNA) from \textit{E.~coli}.
-We obtained ground truth structure models from the Comparative RNA Web~\cite{Cannone2002} and selected two known stems.
-For each stem, we designed two ASOs, one targeting each side.
-
-\begin{figure}[H]
-	\includegraphics[width=0.5\textwidth]{../MainFigures/rrna/rrna.pdf}
-	\caption{\textbf{Validation of SEARCH-MaP on 23S ribosomal RNA from \textit{E.~coli}.} Each graph shows the rolling (window = 45~nt) Pearson correlation coefficient (PCC) between the rRNA to which one ASO was added and a no-ASO control. The known secondary structure of the 23S rRNA~\cite{Cannone2002} is drawn above the graph; base pairs with one side within the ASO target site are highlighted.}
-	\label{rrna}
-\end{figure}
-
-We folded the 23S rRNA with each ASO, performed DMS-MaPseq over the entire transcripts, and compared ensemble average mutational profiles with and without ASOs using SEISMIC-RNA (Figure~\ref{rrna}).
-Every ASO caused a prominent dip in the rolling Pearson correlation coefficient (PCC) at its target site and the immediate vicinity, confirming that each ASO bound properly to the RNA.
-The ASO targeting positions 1,647-1,668 also caused a smaller dip in PCC around positions 1,987-2,045 -- coinciding with the 3' side of a stem whose 5' side was targeted by the ASO -- showing that this stem could be detected with SEARCH-MaP.
-Conversely, targeting the 3' side of this stem with an ASO binding positions 1,978-2,010 caused a small -- though still above-baseline -- dip in PCC around position 1,670 (near the stem's 5' side) and another around position 1,800 (the 5' side of another stem targeted by the ASO).
-Shifting the ASO slightly downstream to target positions 2,042-2,076 maintained the dips in PCC around 1,670 and 1,800 while introducing new dips around positions 2,245, 2,435, and 2,630, which correspond to the 3' sides of three stems within or close to the ASO target site.
-Binding an ASO to 2,429-2,452 -- the 3' side of one such stem -- caused the PCC to dip around position 2,055 at the 5' end of this stem.
-These results show that SEARCH-MaP could detect multiple stems ranging from 200 to 600~nt in 23S rRNA from \textit{E.~coli}.
+%\subsection{SEARCH-MaP finds base pairs in ribosomal RNA}
+%
+%We first validated SEARCH-MaP using 23S ribosomal RNA (rRNA) from \textit{E.~coli}.
+%We obtained ground truth structure models from the Comparative RNA Web~\cite{Cannone2002} and selected two known stems.
+%For each stem, we designed two ASOs, one targeting each side.
+%
+%\begin{figure}[H]
+%	\includegraphics[width=0.5\textwidth]{../MainFigures/rrna/rrna.pdf}
+%	\caption{\textbf{Validation of SEARCH-MaP on 23S ribosomal RNA from \textit{E.~coli}.} Each graph shows the rolling (window = 45~nt) Pearson correlation coefficient (PCC) between the rRNA to which one ASO was added and a no-ASO control. The known secondary structure of the 23S rRNA~\cite{Cannone2002} is drawn above the graph; base pairs with one side within the ASO target site are highlighted.}
+%	\label{rrna}
+%\end{figure}
+%
+%We folded the 23S rRNA with each ASO, performed DMS-MaPseq over the entire transcripts, and compared ensemble average mutational profiles with and without ASOs using SEISMIC-RNA (Figure~\ref{rrna}).
+%Every ASO caused a prominent dip in the rolling Pearson correlation coefficient (PCC) at its target site and the immediate vicinity, confirming that each ASO bound properly to the RNA.
+%The ASO targeting positions 1,647-1,668 also caused a smaller dip in PCC around positions 1,987-2,045 -- coinciding with the 3' side of a stem whose 5' side was targeted by the ASO -- showing that this stem could be detected with SEARCH-MaP.
+%Conversely, targeting the 3' side of this stem with an ASO binding positions 1,978-2,010 caused a small -- though still above-baseline -- dip in PCC around position 1,670 (near the stem's 5' side) and another around position 1,800 (the 5' side of another stem targeted by the ASO).
+%Shifting the ASO slightly downstream to target positions 2,042-2,076 maintained the dips in PCC around 1,670 and 1,800 while introducing new dips around positions 2,245, 2,435, and 2,630, which correspond to the 3' sides of three stems within or close to the ASO target site.
+%Binding an ASO to 2,429-2,452 -- the 3' side of one such stem -- caused the PCC to dip around position 2,055 at the 5' end of this stem.
+%These results show that SEARCH-MaP could detect multiple stems ranging from 200 to 600~nt in 23S rRNA from \textit{E.~coli}.
 
 \subsection{SEARCH-MaP detects and quantifies long-range base pairing in SARS-CoV-2}
 
@@ -90,7 +90,7 @@ These results suggest both inner stems of the FSE-arch exist and are the predomi
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
-	\caption{\textbf{Search for a long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5' FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups 4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9; each point is one position in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
+	\caption{\textbf{Search for long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5' FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups 4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9; each point is one position in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
 	\label{tiles}
 \end{figure}
 

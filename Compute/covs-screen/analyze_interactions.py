@@ -1,6 +1,4 @@
 import os
-import sys
-sys.path.append("/home/ma629/git")
 
 import numpy as np
 import pandas as pd

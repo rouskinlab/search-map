@@ -8,7 +8,7 @@ seismic -vv align --serial -x fq-deep sars2-2924.fa
 # Extract only the reads aligning to the FSE and amplicon 9.
 TEMP=temp
 mkdir $TEMP
-for sample in ctrl1 ctrl2 aso4 aso9
+for sample in ctrl2
 do
 	BAM=out/$sample-deep/align/sars2-2924.bam
 	SAMI=$TEMP/$sample-input.sam

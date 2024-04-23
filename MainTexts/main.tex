@@ -53,6 +53,10 @@
 \usepackage{setspace}
 \doublespacing
 
+% line numbers
+\usepackage{lineno}
+% \linenumbers
+
 % title
 \title{Discovery and Quantification of Long-Range RNA Base Pairs in Coronavirus Genomes with SEARCH-MaP and SEISMIC-RNA}
 \author{Matthew F. Allan, Justin Aruda, Yves Martin, Scott Grote,\\Alberic de Lajarte, Jesse Plung, Mateo Valenzuela,\\Mark Bathe, and Silvi Rouskin}
@@ -73,6 +77,12 @@
 \subfile{discuss}
 \newpage
 \subfile{methods}
+\newpage
+\subfile{availability}
+
+% Include supplementary information.
+\newpage
+\subfile{../SupplementaryInformation/si}
 
 % Create the references section.
 \newpage
@@ -80,9 +90,5 @@
 	\bibliographystyle{unsrt}
 	\bibliography{refs}
 \end{singlespace}
-
-% Include supplementary information.
-\newpage
-\subfile{../SupplementaryInformation/si}
 
 \end{document}

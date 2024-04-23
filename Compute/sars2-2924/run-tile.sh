@@ -21,7 +21,6 @@ for n in $(seq 1 12)
 do
 	seismic graph corroll -m pcc -w 45 -n 9 --pdf out/ctrl1-tile/table/sars2-2924/fse out/aso$n-tile/table/sars2-2924/fse
 done
-python correlations.py ../../MainFigures/sars2-tile/correlations out/ctrl[12]-tile/table/sars2-2924/fse/mask-per-pos.csv out/aso*-tile/table/sars2-2924/fse/mask-per-pos.csv
 
 rm -r log
 
