@@ -8,7 +8,7 @@ PREFIX=main
 
 compile_main () {
     clear
-    pdflatex -shell-escape $PREFIX.tex
+    pdflatex $PREFIX.tex
 }
 
 
