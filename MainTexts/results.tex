@@ -97,9 +97,8 @@ We quantified this agreement using receiver operating characteristic (ROC) curve
 The area under the curve (AUC) for cluster 1 was 1.00, indicating perfect agreement with the two inner stems of the FSE-arch; while that of cluster 2 was 0.57, close to no agreement (0.50).
 This result further supports that clusters 1 and 2 correspond to the two inner stems formed and unformed, respectively.
 
-If the RNA did exist as an ensemble of the two inner stems formed and unformed, the 3' side of the FSE-arch would also cluster into formed and unformed states.
-To investigate, we performed RT-PCR with primers flanking the 3' side of the inner two stems -- both without ASOs and with ASO group 4 (targeting the 5' side of the FSE-arch).
-We clustered the no-ASO control into two clusters (51/49\% split) and found -- similar to the previous result -- that the DMS reactivities after blocking the 5' FSE-arch with ASO group 4 resembled those of cluster 2 (PCC~=~0.94) but not cluster 1 (PCC~=~0.80), while the structure of the two inner stems agreed with cluster 1 (AUC~=~1.00) but not cluster 2 (AUC~=~0.57) (Figure~\ref{tiles}d).
+If the RNA did exist as an ensemble of the two inner stems formed and unformed, the 3' side of the FSE-arch would also cluster into states with the two inner stems formed and unformed.
+We thus RT-PCRed and clustered the 3' FSE-arch in the no-ASO control and +ASO group 4 and found -- similar to the previous result -- that the DMS reactivities after blocking the 5' FSE-arch with ASO group 4 resembled those of cluster 2 (PCC~=~0.94) but not cluster 1 (PCC~=~0.80), while the structure of the two inner stems agreed with cluster 1 (AUC~=~1.00) but not cluster 2 (AUC~=~0.57) (Figure~\ref{tiles}d).
 We concluded that the RNA exists as an ensemble of structures in which the two inner stems of the FSE-arch form in 47\% ± 4\% of molecules (Figure~\ref{tiles}e).
 
 \subsection{The long-range stems compete with the frameshift pseudoknot in SARS-CoV-2}
@@ -110,11 +109,7 @@ For the innermost stem -- which we call long stem 1 (LS1) -- nine of thirteen st
 For the second-most inner stem (LS2), eight structures (62\%) predicted using cluster 1 contained LS2, while none did using average or no DMS reactivities.
 Thus, the DMS reactivities corresponding to the long-range cluster enabled predicting the long-range stems more consistently, allowing us to refine our model of the long-range stems.
 
-Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2a/b -- but also two long stems (LS3a/b and LS4) that were not in the original FSE-arch model~\cite{Ziv2020}.
-The structure also contained the alternative stem 1 (AS1) that we had previously discovered~\cite{Lan2022}.
-To our surprise, LS2b, LS3, and LS4 of the refined model collectively overlapped all three stems of the pseudoknot (PS1, PS2, and PS3) that is thought to stimulate frameshifting~\cite{Kelly2020,KZhang2021,Jones2022}.
-Thus, these long stems -- if they exist -- would be mutually exclusive with the pseudoknot.
-
+Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2a/b -- but also two long stems (LS3a/b and LS4) absent from the original FSE-arch model~\cite{Ziv2020}, as well as alternative stem 1 (AS1)~\cite{Lan2022}.
 To verify this refined model, we performed SEARCH-MaP on the 1,799~nt segment using 15-20~nt LNA/DNA mixmer ASOs for single-stem precision (Figure~\ref{lnas}b, Supplementary Table~\ref{asos1799sars2}).
 Each ASO targeted the 3' side of one stem, and we measured the change in DMS reactivities of the FSE.
 ASOs targeting the 3' sides of LS1 and LS2a perturbed the DMS reactivities in exactly the expected locations on the 5' sides.
@@ -122,9 +117,8 @@ Binding an ASO to the 3' side of LS2b caused a larger perturbation with more off
 Blocking LS3b also resulted in a main effect around the intended location, with one off-target effect upstream, suggesting that other base pairs between the pseudoknot and this upstream region may exist.
 Therefore, stems LS1, LS2a/b, and LS3b do exist -- at least in a portion of the ensemble.
 
-We then investigated whether the long-range stems compete with the pseudoknot.
-If they did, blocking them with ASOs would increase the proportion of the pseudoknot in the ensemble.
-To test this hypothesis, we first generated four possible models of the FSE structure by combining mutually compatible stems from the refined model (Figure~\ref{lnas}c).
+LS2b, LS3, and LS4 of the refined model overlap all three stems of the pseudoknot (PS1, PS2, and PS3) that stimulates frameshifting~\cite{Kelly2020,KZhang2021,Jones2022}.
+To test whether these long stems actually compete with the pseudoknot, we first generated four possible models of the FSE structure by combining mutually compatible stems from the refined model (Figure~\ref{lnas}c).
 Then, we clustered the 1,799~nt segment without ASOs up to 6 clusters -- the maximum number reproducible between replicates -- (Supplementary Figure~\ref{sars2-compare-clusters}a) and compared each cluster to each structure model using the area under the receiver operating characteristic curve (AUC-ROC) over the positions spanned by the pseudoknot, 305-371 (Figure~\ref{lnas}d, top).
 We considered a cluster and model to be ``consistent" if the AUC-ROC was at least 0.90.
 The locally nested model (AS1 plus PS2 and PS3) was consistent with three clusters totaling 52\% of the ensemble, while the extended model (AS1 plus all long-range stems) was consistent with one cluster (20\%).
@@ -135,7 +129,7 @@ Adding an ASO targeting the 5' side of AS1 reduced the proportion of AS1-contain
 In their absence emerged clusters consistent with the pseudoknotted and truncated models, constituting 56\% and 20\% of the ensemble, respectively.
 Meanwhile, adding an ASO that blocked the part of LS2b that overlaps PS2 eliminated the extended state (which includes LS2b) and produced one cluster (13\%) consistent with the pseudoknotted model (Figure~\ref{lnas}d, right; Supplementary Figure~\ref{sars2-compare-clusters}c).
 Adding both ASOs simultaneously collapsed the ensemble into three clusters of which two (87\%) were highly consistent with the pseudoknotted model (Figure~\ref{lnas}d, bottom; Supplementary Figure~\ref{sars2-compare-clusters}d).
-Since blocking the PS2-overlapping portion of LS2b increased the proportion of clusters consistent (or nearly so) with the pseudoknotted model -- both alone and combined with the anti-AS1 ASO -- we conclude that the long-range stems do outcompete the pseudoknot.
+Since blocking the PS2-overlapping portion of LS2b increased the proportion of clusters consistent (or nearly so) with the pseudoknotted model -- both alone and combined with the anti-AS1 ASO -- the long-range stems did appear to outcompete the pseudoknot.
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.png}
@@ -146,23 +140,18 @@ Since blocking the PS2-overlapping portion of LS2b increased the proportion of c
 \subsection{Frameshift stimulating elements of multiple coronaviruses form long-range base pairs}
 
 We hypothesized that other coronaviruses would also feature long-range base pairs involving the FSE.
-To search for these structures, we performed SEARCH-MaP with FSE-targeted ASOs on 1,799~nt segments from eight coronaviral genomes.
+To identify coronaviruses with potential long-range base pairs involving the FSE, we downloaded 62 complete coronavirus genomes from the NCBI Reference Sequence Database~\cite{OLeary2016} and predicted structures of 2,000~nt sections surrounding their FSEs (Supplementary Figure~\ref{contact_freqs}).
+We selected ten coronaviruses, at least one from each genus (Supplementary Figure~\ref{ten-covs}a), based on with which bases the FSE was predicted to base-pair.
+In \textit{Betacoronavirus}, SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) because they clustered into their own structural outgroup; MERS coronavirus (\verb|NC_019843.3|), predicted to pair with positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both predicted to pair with positions 10-20.
+In \textit{Alphacoronavirus}, transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to pair with positions 440-460 and 350-360, respectively.
+In \textit{Gammacoronavirus}, avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|), predicted to pair with positions 330-350.
+And in \textit{Deltacoronavirus}, common moorhen coronavirus HKU21 (\verb|NC_016996.1|) had the most promising long-range base pairs.
 
-As of December 2021, the NCBI Reference Sequence Database~\cite{OLeary2016} contained 62 complete genomes of coronaviruses.
-To focus on those likely to have long-range base pairs involving the FSE, we predicted the likelihood that each base in a 2,000~nt section surrounding the FSE would pair with a base in the FSE (Supplementary Figure~\ref{contact_freqs}).
-Based on these predicted structures, we selected ten coronaviruses -- at least one from each genus (Supplementary Figure~\ref{ten-covs}a) -- including SARS-CoV-2 as a positive control.
-Within the genus \textit{Betacoronavirus}, we included all three SARS-related viruses -- SARS coronaviruses 1 (\verb|NC_004718.3|) and 2 (\verb|NC_045512.2|) and bat coronavirus BM48-31 (\verb|NC_014470.1|) -- because they clustered into their own structural outgroup.
-The other three strains of \textit{Betacoronavirus} that we selected were MERS coronavirus (\verb|NC_019843.3|) with predicted base pairs at positions 510-530; and human coronavirus OC43 (\verb|NC_006213.1|) and murine hepatitis virus strain A59 (\verb|NC_048217.1|), both with a predicted upstream base pairs at positions 10-20.
-We selected two strains of \textit{Alphacoronavirus}: transmissible gastroenteritis virus (\verb|NC_038861.1|) and bat coronavirus 1A (\verb|NC_010437.1|), predicted to have base pairs at positions 440-460 and 350-360, respectively.
-For avian infectious bronchitis virus strain Beaudette (\verb|NC_001451.1|) -- a strain of \textit{Gammacoronavirus} -- the FSE was predicted to base-pair with positions 330-350; while common moorhen coronavirus HKU21 (\verb|NC_016996.1|) was the species of \textit{Deltacoronavirus} with the most promising long-range base pairs.
+We screened each of these ten coronaviruses for long-range base pairs with the FSE by comparing the DMS reactivities of 239~nt segment comprising the FSE with minimal flanking sequences and a 1,799~nt segment encompassing the FSE and all sites with which it was predicted to interact.
+All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239 and 1,799~nt segments (Supplementary Figure~\ref{ten-covs}b), suggesting their FSEs formed long-range base pairs.
 
-We reasoned that if an FSE does interact with a distant RNA element, removing that element by truncating the RNA would change the structure of the FSE, which we could detect with DMS-MaPseq~\cite{Zubradt2016}.
-For each of the ten coronaviruses that passed the computational screen, we \textit{in vitro} transcribed and performed DMS-MaPseq on both a 239~nt segment comprising the FSE and minimal flanking sequences and a 1,799~nt segment encompassing the FSE and all sites with which it was predicted to interact.
-All coronaviruses except for human coronavirus OC43 and MERS coronavirus showed differences in their DMS reactivity profiles between the 239~nt and 1,799~nt segments (Supplementary Figure~\ref{ten-covs}b), suggesting the FSE forms long-range base pairs.
-
-To determine which RNA elements the FSE base-pairs with in each coronavirus, we performed SEARCH-MaP on the 1,799~nt RNA segment using DNA ASOs targeting the vicinity of the FSE (Figure~\ref{covs}, Supplementary Table~\ref{asos1799covs}).
+To determine which RNA elements the FSE base-pairs with in each coronavirus, we performed SEARCH-MaP on the 1,799~nt RNA segment using DNA ASOs targeting the vicinity of the FSE (Figure~\ref{covs}).
 The rolling Spearman correlation coefficient (SCC) between the +ASO and no-ASO mutational profiles dipped below 0.9 at the ASO target site in every coronavirus segment, confirming the ASOs bound and altered the structure.
-
 To confirm we could detect long-range base pairs, we compared the rolling SCC for the SARS-CoV-2 segment to our refined model of the FSE structure (Figure~\ref{covs}, blue).
 The SCC dipped below 0.9 at positions 1,483-1,560 and at 1,611-1,642, which coincide with stems LS2-LS3 (positions 1,476-1,550 within the 1,799~nt segment) and stem LS4 (positions 1,600-1,622).
 These dips were the two largest downstream of the FSE; although others (corresponding to no known base pairs) existed, they were barely below 0.9 and could have resulted from base pairing between these regions and other (non-FSE) regions.
@@ -181,22 +170,19 @@ Thus, three SARS-related viruses share these long-range stems involving the FSE,
 \end{figure}
 
 In every other species except common moorhen coronavirus, we found prominent dips in SCC at least 200~nt from the ASO target site.
-To model potential base pairing between these dip positions and the FSE, we used the Fold program from RNAstructure~\cite{Reuter2010} with the no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012}.
-We surmised that using the DMS reactivities corresponding to the long-range base pairs formed would generally yield more accurate predictions of the long-range structure than would using the ensemble average DMS reactivities (a mixture of all structures).
-For instance, the prediction for SARS-CoV-2 based on the ensemble average included LS1 and LS2b but missed the other long-range stems.
-Although clustered data were unavailable in this case, we were still able to find long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure~\ref{covs}, orange).
+To determine what long-range base pairs could have caused those dips, we used RNAstructure Fold~\cite{Reuter2010,Cordero2012} guided by the DMS reactivities of the no-ASO ensemble average, as clustered data -- while more accurate (Supplementary Figure~\ref{sars2-clusters-fold}) -- were unavailable.
+Nevertheless, we were able to find long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure~\ref{covs}, orange).
 We conclude that long-range base pairing involving the FSE occurs more widely than in just SARS-CoV-2, including in the genus \textit{Alphacoronavirus}.
 
 \subsection{Structure of the full TGEV genome in ST cells supports long-range base pairing involving the FSE}
 
-Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea -- almost always fatally in baby piglets~\cite{Liu2021}.
-Due to the impacts of TGEV on animal health and economics~\cite{Liu2021} and our evidence of a long-range stem, we sought to model the genomic secondary structures of live TGEV.
-We began by treating TGEV-infected ST cells with DMS (two biological replicates) and performing DMS-MaPseq~\cite{Zubradt2016} (two technical replicates per biological replicate) on the extracted RNA (Figure~\ref{tgev}a).
-The DMS reactivities over the full genome were consistent between biological replicates (PCC~=~0.97), albeit not with the 1,799~nt segment \textit{in vitro} (PCC~=~0.82), which showed that verifying the long-range stem in live TGEV would be necessary (Supplementary Figure~\ref{tgev_reps}).
+Transmissible gastroenteritis virus (TGEV) is a strain of \textit{Alphacoronavirus 1}~\cite{Whittaker2018} that infects pigs and causes vomiting and diarrhea, often fatally~\cite{Liu2021}.
+Due to the impacts of TGEV~\cite{Liu2021} and our evidence of long-range base pairs, we sought to model the genomic secondary structures of live TGEV.
+We began by infecting ST cells with TGEV and performing DMS-MaPseq~\cite{Zubradt2016} (Figure~\ref{tgev}a).
+The DMS reactivities over the full genome were consistent between technical and biological replicates (PCC~=~0.94, Supplementary Figure~\ref{tgev_reps}a and~b), albeit not with the 1,799~nt segment \textit{in vitro} (PCC~=~0.77), which showed that verifying the long-range stem in live TGEV would be necessary (Supplementary Figure~\ref{tgev_reps}c).
 
-To determine the structure ensembles, we performed RT-PCR on the extracted RNA using primers targeting both sides of the long-range stems.
-The DMS reactivities from RT-PCR were consistent with those over the full genome (Supplementary Figure).
-For each side of the long-range stem, we clustered the reads into two clusters (Figure~\ref{tgev}b).
+To quantify the long-range base pairs, we RT-PCRed the 5' and 3' sides, confirmed their DMS reactivities were consistent with the full genome's (Supplementary Figure~\ref{tgev_reps}d), and clustered both sides (Figure~\ref{tgev}b).
+
 These clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{tiles}).
 Nevertheless, we realized that on each side, the bases that were predicted to interact had generally lower DMS reactivities in one cluster compared to the other cluster, and hypothesized that this cluster corresponded to the long-range stem formed (Figure~\ref{tgev}b).
 On the 5' side, the less-reactive cluster constituted 52\% of the ensemble; on the 3' side, 60\%.

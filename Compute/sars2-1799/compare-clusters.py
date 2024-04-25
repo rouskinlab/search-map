@@ -4,7 +4,7 @@ from itertools import product
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-from scipy.stats import spearmanr
+from scipy.stats import pearsonr
 
 
 def make_heatmap(aso: int, order: int):
@@ -17,7 +17,7 @@ def make_heatmap(aso: int, order: int):
         series1 = rep1[str(cluster1)]
         series2 = rep2[str(cluster2)]
         mask = np.isnan(series1) | np.isnan(series2)
-        corr[cluster1][cluster2] = spearmanr(series1[~mask], series2[~mask]).statistic
+        corr[cluster1][cluster2] = pearsonr(series1[~mask], series2[~mask]).statistic
     corr = pd.DataFrame(corr)
     csv_file_out = f"compare-clusters/LNA{aso}_{order}.csv"
     corr.to_csv(csv_file_out)

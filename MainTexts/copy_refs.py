@@ -64,7 +64,7 @@ def parse_bbl(bbl_file: str):
 
 if __name__ == "__main__":
     entries = dict(parse_bib(FROM_BIB_FILE))
-    with open(TO_BIB_FILE, "w") as f:
+    with open(TO_BIB_FILE, "x") as f:
         for name in parse_bbl(BBL_FILE):
             f.write(f"{entries[name]}\n")
 
