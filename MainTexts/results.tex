@@ -182,15 +182,9 @@ We began by infecting ST cells with TGEV and performing DMS-MaPseq~\cite{Zubradt
 The DMS reactivities over the full genome were consistent between technical and biological replicates (PCC~=~0.94, Supplementary Figure~\ref{tgev_reps}a and~b), albeit not with the 1,799~nt segment \textit{in vitro} (PCC~=~0.77), which showed that verifying the long-range stem in live TGEV would be necessary (Supplementary Figure~\ref{tgev_reps}c).
 
 To quantify the long-range base pairs, we RT-PCRed the 5' and 3' sides, confirmed their DMS reactivities were consistent with the full genome's (Supplementary Figure~\ref{tgev_reps}d), and clustered both sides (Figure~\ref{tgev}b).
-
-These clusters had similar correlations with the +ASO sample and similar AUC-ROC scores (Supplementary Figure), making it more difficult to identify them for TGEV than for SARS-CoV-2 (Figure~\ref{tiles}).
-Nevertheless, we realized that on each side, the bases that were predicted to interact had generally lower DMS reactivities in one cluster compared to the other cluster, and hypothesized that this cluster corresponded to the long-range stem formed (Figure~\ref{tgev}b).
-On the 5' side, the less-reactive cluster constituted 52\% of the ensemble; on the 3' side, 60\%.
-To investigate, we refined the structure of the 1,799~nt segment using the DMS reactivities from both of these clusters.
-Consistent with our hypothesis, the minimum free energy (MFE) model included the long-range stem, which we hereafter call long stem 3 (LS3) (Figure~\ref{tgev}c); predicting the structure using both more-reactive clusters did not produce LS3 (Supplementary Figure).
-The refined model also featured a prominent new stem connecting 20~nt upstream of the FSE with 400~nt downstream, which we call LS2.
-We suspect that LS2 exists because it coincides with a broad region perturbed by adding an ASO to the FSE in the 1,799~nt segment of TGEV (Figure~\ref{tgev}c).
-Another stem spanning just under 300~nt, which we call LS1, was also predicted in the same location as in the 1,799~nt segment.
+Although the clusters were indistinguishable by their correlations with the +ASO sample or AUC-ROC scores (Supplementary Figure), bases involved in the predicted long-range pairs were generally less DMS-reactive in cluster 2 (Figure~\ref{tgev}b), which we hypothesized corresponded to the long-range base pairs forming.
+In support, the long-range stem (hereafter, LS3) was modeled based on DMS reactivities from cluster 2 on both sides (Figure~\ref{tgev}c), but not based on cluster 1 (Supplementary Figure).
+The refined model based on cluster 2 included another long-range stem, LS2, which was also supported by a dip in the rolling SCC (Figure~\ref{tgev}c).
 
 \begin{figure}[H]
 	\includegraphics[width=0.5\textwidth]{../MainFigures/tgev/tgev.png}
@@ -198,16 +192,12 @@ Another stem spanning just under 300~nt, which we call LS1, was also predicted i
 	\label{tgev}
 \end{figure}
 
-We used the ensemble average DMS reactivities to produce one ``ensemble average" model of the secondary structure of the full TGEV genome (Supplementary Figure).
-We restricted base pairs to a maximum distance of 300~nt to make the computation tractable and avoid over-predicting spurious long-range base pairs.
-To verify the model quality, we confirmed that the predicted structure of the first 520~nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a) and was consistent with the DMS reactivities (AUC-ROC = 0.94) (Supplementary Figure~\ref{tgev_5utr}b).
-
-The AUC-ROC was lower in many locations throughout the rest of the genome (Supplementary Figure), indicating that a single secondary structure consistent with the ensemble average DMS reactivities could not be found.
-We had noticed a similar phenomenon in SARS-CoV-2 -- in particular, at the FSE~\cite{Lan2022}.
-Thus, we surmised that regions with low AUC-ROC scores likely form alternative structures or long-range base pairs -- or both -- that a single secondary structure model could not capture.
-Checking if this relationship also held for TGEV, we found a large dip in AUC-ROC just upstream of the FSE, centered on the 5' ends of LS2 and LS3, as well as smaller dips at the 3' ends of both stems (Figure~\ref{tgev}d).
+We used the ensemble average DMS reactivities to produce one ``ensemble average" model of short-range (up to 300~nt) base pairs in the full TGEV genome (Supplementary Figure).
+To verify the model quality, we confirmed that the modeled structure of the first 330~nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a) and was consistent with the DMS reactivities (AUC-ROC = 0.97) (Supplementary Figure~\ref{tgev_5utr}b).
+The AUC-ROC was lower in many locations throughout the rest of the genome (Supplementary Figure), indicating that a single secondary structure consistent with the ensemble average DMS reactivities could not be found -- which suggests alternative structures, long-range base pairs, or both~\cite{Lan2022}.
+Accordingly, we found a large dip in AUC-ROC just upstream of the FSE, centered on the 5' ends of LS2 and LS3, as well as smaller dips at the 3' ends of both stems (Figure~\ref{tgev}d).
 In fact, at or near every location that SEARCH-MaP had evidenced to interact with the FSE -- where the rolling SCC had dipped -- the AUC-ROC also dipped.
-This finding supports the hypothesis that long-range base pairs and/or alternative structures are often the reason why predicted structures are not locally consistent with the DMS reactivities on which they were based.
+This finding supports that regions with low AUC-ROC in general are good starting points for investigating alternative structures and long-range base pairing with SEARCH-MaP.
 
 
 \end{document}
