@@ -51,7 +51,7 @@ seismic -vv cluster --serial -k 2 -e 12 out/$AMPS_POOL/mask/tgev/fse out/$AMPS_P
 seismic -v join -J both out/tgev_*/mask/tgev/fse out/tgev_*/mask/tgev/lri
 seismic -v join -J both -j join_tgev_amps_pool.csv out/$AMPS_POOL/cluster/tgev/fse out/$AMPS_POOL/cluster/tgev/lri
 seismic -v table --no-table-read out/tgev_*/mask out/$AMPS_POOL/cluster
-seismic graph profile out/$AMPS_POOL/table/tgev/*/*s*-per-pos.csv
+seismic graph profile --pdf out/$AMPS_POOL/table/tgev/*/*s*-per-pos.csv
 seismic graph delprof --compself --no-comppair --pdf out/$AMPS_POOL/table/tgev/*/clust-per-pos.csv
 # Predict the structures of the 1,799 nt segment.
 seismic -v fold -s sections-1799.csv --fold-percent 100 out/$AMPS_POOL/table/tgev/both/clust-per-pos.csv

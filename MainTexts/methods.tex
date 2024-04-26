@@ -188,8 +188,10 @@ Heatmaps of areas under the curve (Figure~\ref{lnas}d) were generated using the 
 
 \subsubsection{Cells and Viruses}
 
-ST cells (ATCC, CRL-1746) were maintained in Eagle’s Minimum Essential Medium (EMEM, Gibco) supplemented with 10\% FBS (v/v), 1\% Sodium Pyruvate (v/v), and 1\% P/S (v/v, Gibco).
-The coronavirus Transmissible Gastroenteritis Virus (TGEV) (TC-adapted Miller strain, VR-1740 ATCC) was used. Virus was grown on ST cells. Briefly, ST cells were seeded at 1 x 107 cells in a 150 mm dish. The next day virus was serially diluted such than an at an MOI of 0.1 could be achieved. ST cells were washed 2x with PBS and inoculated with 8 mL of the diluted TGEV in infection media (IM) consisting of EMEM (Gibco) supplemented with 2% FBS, 1% Sodium Pyruvate, 1% P/S, and 1 ug/mL TPCK trypsin (Thermo Fisher). Inoculum was kept on the cells for 1 hour with rocking back and forth every 15 minutes. The inoculum was removed and cells were washed 2x with PBS and 26 mL of IM was added.
+A 150 mm dish was seeded with 1 x 10\textsuperscript{7} ST cells (American Type Culture Collection CRL-1746) in Eagle’s Minimum Essential Medium (EMEM, Gibco) supplemented with 10\% v/v FBS (Gibco), 1\% v/v Sodium Pyruvate (Gibco), and 1\% v/v Penicillin-Streptomycin (Gibco).
+The following day, transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, American Type Culture Collection VR-1740) was serially diluted to achieve an MOI of 0.1.
+ST cells were washed twice with phosphate buffered saline [SUPPLIER] and inoculated with 8~ml of diluted in
+Transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, VR-1740 ATCC) was used. Virus was grown on ST cells. Briefly, ST cells were seeded at 1 x 107 cells in a 150 mm dish. The next day virus was serially diluted such than an at an MOI of 0.1 could be achieved. ST cells were washed 2x with PBS and inoculated with 8 mL of the diluted TGEV in infection media (IM) consisting of EMEM (Gibco) supplemented with 2% FBS, 1% Sodium Pyruvate, 1% P/S, and 1 ug/mL TPCK trypsin (Thermo Fisher). Inoculum was kept on the cells for 1 hour with rocking back and forth every 15 minutes. The inoculum was removed and cells were washed 2x with PBS and 26 mL of IM was added.
 Cells were checked daily for CPE and after 5 days, significant (80%) CPE was observed and virus was harvested, aliquoted, and titered.
 
 
@@ -216,6 +218,6 @@ All reads were processed with SEISMIC-RNA v0.15 to compute mutation rates, corre
 Positions in the untreated sample with mutation rates greater than 0.01 were masked.
 Replicates were checked for reproducibility and pooled for clustering and structure modeling.
 A model of short-range base pairs (maximum distance 300~nt) in the TGEV genome was generated from the DMS reactivities using Fold-smp from RNAstructure~\cite{Reuter2010} in five overlapping 10~kb segments, which were merged using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/assemble-tgev-ss.py}.
-Rolling area under the curve superimposed on secondary structure models (Figure~\ref{tgev}d) was graphed using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/make-figure-6d.py}.
+Rolling area under the curve superimposed on secondary structure models in Figure~\ref{tgev}d was graphed using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/make-figure-6d.py}, and in Supplementary Figure~\ref{tgev-full} using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/tgev-virus/plot_genome.py}.
 
 \end{document}
