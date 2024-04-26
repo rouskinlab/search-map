@@ -3,64 +3,19 @@
 
 \begin{document}
 
-\begin{spacing}{1.0}
 
+\section{Abstract}
 
-\begin{center}
-
-\textbf{Investigating and Reprogramming RNA Folding with Molecular Probes}\\
-
-\vspace{0.25cm}
-
-by
-
-\vspace{0.25cm}
-
-\textbf{Matthew F. Allan}
-
-\vspace{0.25cm}
-
-Bachelor of Science in Biochemistry and Molecular Biology\\
-The Pennsylvania State University, 2018 
-
-\vspace{1cm}
-
-Submitted to the Program of Computational and Systems Biology on 15 August, 2023\\
-in Partial Fulfillment of the Requirements for the Degree of\\
-Doctor of Philosophy in Computational and Systems Biology
-
-\vspace{1cm}
-
-\end{center}
-
-
-\noindent
-ABSTRACT
-
-\vspace{0.5cm}
-
-Ribonucleic acid (RNA) performs versatile, essential functions in all known organisms and viruses. These functions require the RNA to fold into specific secondary and tertiary structures, and in many cases to switch among multiple structural states. Predicting and experimentally determining RNA structures remains challenging, particularly because of this propensity of one RNA sequence to form a heterogeneous ensemble of structures.
-
-This thesis investigates two related problems in RNA folding. First, a method of nucleic acid origami is developed in which four divergent RNA sequences are reprogrammed by short antisense oligonucleotides (ASOs) to fold into six different 3D wireframe polyhedra. How each type of structural feature in the polyhedra affects the stability of local base pairs is revealed using dimethyl sulfate mutational profiling with sequencing (DMS-MaPseq). Second, the structural ensembles formed by the genome of SARS coronavirus 2 (SARS-CoV-2) are investigated using DMS-MaPseq. In particular, a method for detecting long-range RNA:RNA interactions using ASOs is developed and applied to pinpoint an interaction between the frameshifting stimulation element (FSE) and a sequence of RNA over one kilobase downstream, which occurs in nearly half of the RNA molecules. This technique is expanded to reveal long-range interactions in three additional coronaviruses, suggesting that this type of RNA structure is more common than previously thought.
-
-Overall, this thesis uses ASOs and mutational profiling to reprogram and investigate RNA folding. A wide variety of RNA sequences prove amenable to these techniques, which enable the creation of synthetic RNA structures and the characterization of natural ones including long-range RNA:RNA interactions. The results of this study enable future investigations on developing RNA origami for research and therapeutic applications and on the roles of distant RNA elements in regulating ribosomal frameshifting in coronaviruses.
-
-\end{spacing}
-
-\vspace{1cm}
-
-
-\noindent
-Thesis supervisor: Mark Bathe
-
-\noindent
-Title: Professor of Biological Engineering, Massachusetts Institute of Technology
-
-\noindent
-Thesis supervisor: Silvi Rouskin
-
-\noindent
-Title: Assistant Professor of Microbiology, Harvard Medical School
+In every living organism and virus, RNA molecules perform a diversity of essential functions for which their linear sequences must fold into higher-order structures.
+Techniques including crystallography and cryogenic electron microscopy have revealed 3D structures of ribosomal, transfer, and other well-structured RNAs; while chemical probing with sequencing facilitates secondary structure modeling of arbitrary RNAs, even within cells.
+Ongoing efforts continue increasing the accuracy, resolution, and ability to distinguish coexisting alternative structures.
+However, no method can identify and quantify alternative structures with base pairs spanning arbitrarily long distances, which, as mounting evidence indicates, occur abundantly in the genomes of RNA viruses.
+Here, we develop the method of Structure Ensemble Ablation by Reverse Complement Hybridization with Mutational Profiling (SEARCH-MaP) and the data analysis software Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering of RNA (SEISMIC-RNA).
+We use SEARCH-MaP and SEISMIC-RNA to discover that the frameshift stimulating element of SARS coronavirus 2 base-pairs with another element 1~kilobase downstream in nearly half of RNA molecules, and that this structure inhibits the folding of a pseudoknot that stimulates ribosomal frameshifting.
+Moreover, we identify long-range base pairs involving the frameshift stimulating element in other coronaviruses including SARS coronavirus 1 and transmissible gastroenteritis virus, and model the full genomic secondary structure of the latter.
+These findings suggest that stable long-range base pairs are common in coronaviruses and may regulate ribosomal frameshifting, which is essential for viral RNA synthesis.
+We anticipate that SEARCH-MaP and SEISMIC-RNA will facilitate studies on viral, messenger, and long noncoding RNAs -- particularly of alternative structures and long-range base pairing.
+Ultimately, the results of many such studies could be collected in a vast database of long RNA structures for training and benchmarking RNA folding algorithms, making possible a true ``AlphaFold for RNA".
 
 
 \end{document}

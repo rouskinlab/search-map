@@ -115,6 +115,7 @@ DMS-modified RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Res
 If added, ASOs were then degraded in 50~\textmu l containing 1X TURBO DNase Buffer (Invitrogen) and 1~\textmu l of TURBO DNase Enzyme (Invitrogen) at 37\textdegree C for 30 min; RNA was purified with an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 16~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
 \subsubsection{Sequencing library generation of 239 and 1,799~nt coronaviral RNAs}
+\label{xgen_library}
 
 100~ng of DMS-modified RNA was prepared for sequencing using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the following modifications.
 During fragmentation, 8~\textmu l of RNA was combined with 1~\textmu l of Reagent F1, 4~\textmu l of Reagent F3, and 2~\textmu l of Reagent F2. 
@@ -188,17 +189,61 @@ Heatmaps of areas under the curve (Figure~\ref{lnas}d) were generated using the 
 
 \subsubsection{Cells and Viruses}
 
-A 150 mm dish was seeded with 1 x 10\textsuperscript{7} ST cells (American Type Culture Collection CRL-1746) in Eagle’s Minimum Essential Medium (EMEM, Gibco) supplemented with 10\% v/v FBS (Gibco), 1\% v/v Sodium Pyruvate (Gibco), and 1\% v/v Penicillin-Streptomycin (Gibco).
-The following day, transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, American Type Culture Collection VR-1740) was serially diluted to achieve an MOI of 0.1.
-ST cells were washed twice with phosphate buffered saline [SUPPLIER] and inoculated with 8~ml of diluted in
-Transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, VR-1740 ATCC) was used. Virus was grown on ST cells. Briefly, ST cells were seeded at 1 x 107 cells in a 150 mm dish. The next day virus was serially diluted such than an at an MOI of 0.1 could be achieved. ST cells were washed 2x with PBS and inoculated with 8 mL of the diluted TGEV in infection media (IM) consisting of EMEM (Gibco) supplemented with 2% FBS, 1% Sodium Pyruvate, 1% P/S, and 1 ug/mL TPCK trypsin (Thermo Fisher). Inoculum was kept on the cells for 1 hour with rocking back and forth every 15 minutes. The inoculum was removed and cells were washed 2x with PBS and 26 mL of IM was added.
-Cells were checked daily for CPE and after 5 days, significant (80%) CPE was observed and virus was harvested, aliquoted, and titered.
+Transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, ATCC VR-1740) and ST cells (ATCC CRL-1746) were ordered from American Type Culture Collection (ATCC).
+ST cells were maintained in Eagle's Minimum Essential Medium (EMEM, Gibco) supplemented with 10\% fetal bovine serum (Gibco), 1\% sodium pyruvate (Gibco), and 1\% Pen Strep (Gibco) at 37\textdegree C with 5\% carbon dioxide.
+For TGEV, the infection medium (IM) comprised EMEM (Gibgo) supplemented with 10\% fetal bovine serum (Gibco), 1\% sodium pyruvate, and 1~\textmu g/\textmu l of TPCK trypsin (Thermo Fisher Scientific).
 
+\subsubsection{Production and titering of TGEV}
 
+A 150 mm dish was seeded with 1 x 10\textsuperscript{7} ST cells, grown overnight, and washed twice with phosphate-buffered saline (PBS, Gibco).
+Cells were inoculated with 8~ml of TGEV in IM at a multiplicity of infection (MOI) of 0.1, which was kept on for 60~min with rocking every 15~min.
+The inoculum was removed, cells were washed twice with PBS, and 26~ml of IM was added.
+Cells were checked daily for cytopathic effects (CPE) and were harvested after 5~days upon development of significant (80\%) CPE.
 
-\subsubsection{Amplicons of the frameshift stimulating element and long-range interaction element}
+Harvested TGEV was titered via tissue culture infectious dose (TCID\textsubscript{50}).
+Briefly, ST cells were seeded in a poly-L-lysine coated 96-well plate at 4 x 10\textsuperscript{4} cells per well and grown overnight.
+TGEV was thawed on ice and serially diluted in a 12-well plate from 10\textsubscript{-1} to 10\textsubscript{-10} in IM.
+Cells were washed once with PBS, and each well was inoculated with one serial dilution of TGEV (8 replicates per dilution level).
+The plate was wrapped in parafilm and incubated until CPE appeared.
+Then, media was aspirated and cells were fixed with 4\% paraformaldehyde for 30~min and decanted.
+0.5\% crystal violet was then added to each well; the plate was rocked for 10~min, submerged in water to remove excess crystal violet, and dried.
+Wells with CPE were counted and the titer determined using the Spearman-Kärber method.
 
-1~\textmu l of rRNA-depleted RNA was reverse transcribed in 20~\textmu l using Induro Reverse Transcriptase (New England Biolabs) according to the manufacturer's protocol with 500~nM of primer ACAATTCGTCTTAAGGAATTTACCAATACACGCAA (Integrated DNA Technologies) at 57\textdegree C for 30~min, followed by inactivation at 95\textdegree C for 1~min.
+\subsubsection{TGEV infection and DMS treatment}
+
+Four 150 mm dishes were each seeded with 1 x 10\textsuperscript{7} ST cells, grown overnight, and washed twice with phosphate-buffered saline.
+Cells were inoculated with 8~ml of TGEV in IM at a multiplicity of infection (MOI) of 2, which was kept on for 60~min with rocking every 15~min.
+The inoculum was removed, cells were washed twice with PBS, and 26~ml of IM was added.
+
+After 48~hr, media was aspirated.
+250~\textmu l of DMS was mixed with 10~ml of IM and immediately added to two plates; the other two received 10~ml IM without DMS.
+Plates were incubated at 37\textdegree C for 5~min.
+The media was aspirated and replaced with stop solution (30\% beta-mercaptoethanol in 1X PBS).
+Cells were scraped off using a cell scraper, spun down at 3000~x~g for 3~min.
+The pellet was washed with stop solution, spun down again, washed with 10~ml PBS, dissolved in 3~ml of TRIzol, and split into 1~ml techincal replicates.
+
+\subsubsection{RNA purification}
+
+200~\textmu l of chloroform was added to each 1~ml techincal replicate, vortexed for 20~s, and rested until the phases separated.
+Samples were then spun at 18,200~x~g for 15~min at 4\textdegree C; the aqueous phase transferred to a new tube and mixed with an equal volume of 100\% ethanol.
+RNA was purified using a 50~\textmu g Monarch RNA Cleanup Column (New England Biolabs), eluted in nuclease-free water, and quantified with a NanoDrop.
+
+To remove rRNA, 10~\textmu g of total RNA was diluted in 6~\textmu l of nuclease-free water and mixed with 1~\textmu l of anti-rRNA ASOs (Integrated DNA Technologies) and 3~\textmu l of HYBE buffer (200~mM sodium chloride, 100~mM Tris-HCl pH~7.5).
+The mixture was incubated at 95\textdegree C for 2~min and cooled by 0.1\textdegree C/s until reaching 45\textdegree C.
+A preheated mixture of 10~\textmu l of RNase H and 2~\textmu l of RNase H Buffer was added and incubated at 45\textdegree C for 30 min.
+RNA was purified using a 10~\textmu g Monarch RNA Cleanup Column (New England Biolabs) and eluted in 42~\textmu l of nuclease-free water.
+
+To remove DNA (including anti-rRNA ASOs), 5~\textmu l of 10X Turbo DNase Buffer (Thermo Fisher) and 3~\textmu l of TURBO RNase (Thermo Fisher) were added and incubated at 37\textdegree C for 20~min.
+RNA was purified using a 10~\textmu g Monarch RNA Cleanup Column (New England Biolabs) and eluted in 10~\textmu l of nuclease-free water.
+
+\subsubsection{Library generation for the full TGEV genome}
+
+RNA was prepared for sequencing using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the same modifications as described above (\ref{xgen_library}), notably the substitution of TGIRT-III (InGex) for the kit reverse transcriptase.
+Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
+
+\subsubsection{Library generation for amplicons}
+
+1~\textmu l of rRNA-depleted, DNased RNA was reverse transcribed in 20~\textmu l using Induro Reverse Transcriptase (New England Biolabs) according to the manufacturer's protocol with 500~nM of primer ACAATTCGTCTTAAGGAATTTACCAATACACGCAA (Integrated DNA Technologies) at 57\textdegree C for 30~min, followed by inactivation at 95\textdegree C for 1~min.
 1~\textmu l of unpurified RT product was amplified in 10~\textmu l using Q5 High-Fidelity 2X Master Mix (New England Biolabs) with 1~\textmu M of each primer, either GCCGCTACAAAGGTAAGTTCGTGCAAATACCAACT and ACAATTCGTCTTAAGGAATTTACCAATACACGCAA or GTGAAAAGTGACATCTATGGTTCTGATTATAAGCAGTA and CTATACCAAGTTGTTTGAAATGGTAACCTGCAGTAACA (Integrated DNA Technologies); initial denaturation at 98\textdegree C for 30~s; 30 cycles of 98\textdegree C for 5~s, 69\textdegree C for 20~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 120~s.
 Amplification was confirmed by electrophoresing 1~\textmu l of each PCR product.
 PCR products for both pairs of primers were pooled and then purified using a DNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen), and measured with a NanoDrop (Thermo Fisher Scientific).

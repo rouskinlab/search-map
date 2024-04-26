@@ -60,15 +60,19 @@
 % title
 \title{Discovery and Quantification of Long-Range RNA Base Pairs in Coronavirus Genomes with SEARCH-MaP and SEISMIC-RNA}
 \author{Matthew F. Allan, Justin Aruda, Yves Martin, Scott Grote,\\Alberic de Lajarte, Jesse Plung, Mateo Valenzuela,\\Mark Bathe, and Silvi Rouskin}
+\date{}
 
 
 \begin{document}
+
 
 % Discourage text from running into the margins.
 \emergencystretch \textwidth
 
 % Include the sections of the paper.
 \maketitle
+\newpage
+\subfile{abstract}
 \newpage
 \subfile{intro}
 \newpage
@@ -78,11 +82,7 @@
 \newpage
 \subfile{methods}
 \newpage
-\subfile{availability}
-
-% Include supplementary information.
-\newpage
-\subfile{../SupplementaryInformation/si}
+\subfile{extras}
 
 % Create the references section.
 \newpage
@@ -90,5 +90,10 @@
 	\bibliographystyle{unsrt}
 	\bibliography{refs}
 \end{singlespace}
+
+% Include supplementary information.
+\newpage
+\subfile{../SupplementaryInformation/si}
+
 
 \end{document}
