@@ -13,29 +13,36 @@
 % ..(((..((...)).))) [P--R base pairs formed] and
 % ((...))((...)).... [P--R base pairs unformed].
 
+SEISMIC-RNA is all-in-one software for processing and graphing mutational profiling data (e.g. DMS-MaPseq~\cite{Zubradt2016} and SHAPE-MaP~\cite{Siegfried2014}), deconvoluting alternative structures, and generating structure models (Figure~\ref{wf}a).
+Designed for high speed and flexibility, SEISMIC-RNA accepts inputs ranging from one file to multiple directories and processes samples in parallel to optimize performance.
+It accepts raw reads in FASTQ format (which it will automatically preprocess with Cutadapt~\cite{Martin2011} and align with Bowtie~2~\cite{Langmead2012}) and pre-aligned reads in SAM/BAM/CRAM format~\cite{Li2009}.
+SEISMIC-RNA introduces an algorithm to mark ambiguous mutations (e.g. indels within repetitive sequences) and automatically masks out low-quality reads and unusable positions (e.g. low read coverage).
+Alternative structures can be deconvoluted using a new clustering algorithm, similar to DREEM~\cite{Tomezsko} yet highly optimized for speed and able to handle reads that cover only part of the section being clustered, which is particularly useful for long RNA molecules prepared by random fragmentation/priming.
+SEISMIC-RNA interfaces with RNAstructure Fold~\cite{Reuter2010} to model secondary structures from chemical reactivities~\cite{Cordero2012} and with Plotly to generate a variety of graphs.
+
+We illustrate SEARCH-MaP with an RNA comprising three sections (P, Q, and R) that folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not (Figure~\ref{wf}b).
+Searching for base pairs involving section P begins by blocking P with an antisense oligonucleotide (ASO), which ablates the base pairs between P and R (Figure~\ref{wf}c).
+The RNA is chemically probed separately with (+ASO) and without (no-ASO) the ASO, followed by mutational profiling (MaP) and sequencing (e.g. DMS-MaPseq~\cite{Zubradt2016}).
+
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/wf/wf.pdf}
-	\caption{\textbf{The workflow of SEARCH-MaP and SEISMIC-RNA.} (Continued on next page.)}
-	\label{strat}
+	\caption{\textbf{Workflows of SEISMIC-RNA and SEARCH-MaP.} (Continued on next page.)}
+	\label{wf}
 \end{figure}
 \addtocounter{figure}{-1}
 \begin{figure}[H]
-	\caption[]{(Continued from previous page.) \textbf{(a)}~This RNA is partitioned into three sections (P, Q, and R) and folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not. \textbf{(b)}~Hybridizing an ASO to P blocks it from base-pairing with R. \textbf{(c)}~A SEARCH-MaP experiment entails separate chemical probing and mutational profiling (MaP) with (+ASO) and without (no-ASO) the ASO, followed by sequencing to generate FASTQ files. The RNA molecules and FASTQ files use the same color scheme as in (a) and are illustrated/colored in proportion to their abundances in the ensemble. \textbf{(d)}~Mutational profiles with (+ASO) and without (no-ASO) the ASO, computed as ensemble averages with SEISMIC-RNA. The \textit{x}-axis is the position in the RNA sequence; the \textit{y}-axis is the fraction of mutated bases ($\mu$) at the position. Each bar in the no-ASO profile is drawn in two colors merely to illustrate how many mutations at each position come from each structure; in a real experiment, this information would not exist before clustering. The change upon ASO binding indicates the difference in the fraction of mutated bases ($\Delta \mu$) between the +ASO and no-ASO conditions. \textbf{(e)}~Mutational profiles of two clusters (top) obtained by clustering the no-ASO ensemble in (d) using SEISMIC-RNA, and scatter plots comparing the mutational profiles (bottom) between the +ASO ensemble average (\textit{x}-axis) and each cluster (\textit{y}-axis); each point represents one base in section R. The expected Pearson correlation coefficient (PCC) is shown beside each scatter plot. \textbf{(f)}~The workflow of SEISMIC-RNA. First, sequencing reads (in FASTQ files) are aligned to reference sequence(s). For every read, the relationship to each base in the reference sequence (i.e. match, substitution, deletion, insertion) is determined. In the next step, relationships are called as mutated, matched, or uninformative; and positions and reads failing to meet certain criteria are masked out. Optionally, masked reads can be clustered to reveal alternative structures. The types of relationships at each position and in each read are then counted and tabulated. SEISMIC-RNA can use these tables to predict RNA secondary structures or draw a variety of graphs including mutational profiles, scatter plots, and receiver operating characteristic (ROC) curves.}
+	\caption[]{(Continued from previous page.) \textbf{(a)}~Workflow of SEISMIC-RNA. First, sequencing reads (in FASTQ files) are aligned to reference sequence(s). For every read, the relationship to each base in the reference sequence (i.e. match, substitution, deletion, insertion) is determined. In the next step, relationships are called as mutated, matched, or uninformative; and positions and reads are masked by user-specified filters. Reads can then be clustered to reveal alternative structures. The types of relationships at each position and in each read are counted and tabulated. SEISMIC-RNA can use these tables to predict RNA secondary structures or draw a variety of graphs including mutational profiles, scatter plots, and receiver operating characteristic (ROC) curves. \textbf{(b)}~This RNA is partitioned into three sections (P, Q, and R) and folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not. \textbf{(c)}~Hybridizing an ASO to P blocks it from base-pairing with R. \textbf{(d)}~Mutational profiles with (+ASO) and without (no-ASO) the ASO, computed as ensemble averages with SEISMIC-RNA. The \textit{x}-axis is the position in the RNA sequence; the \textit{y}-axis is the fraction of mutated bases ($\mu$) at the position. Each bar in the no-ASO profile is drawn in two colors merely to illustrate how many mutations at each position come from each structure; in a real experiment, this information would not exist before clustering. The change upon ASO binding indicates the difference in the fraction of mutated bases ($\Delta \mu$) between the +ASO and no-ASO conditions. \textbf{(e)}~Mutational profiles of two clusters (top) obtained by clustering the no-ASO ensemble in (d) using SEISMIC-RNA, and scatter plots comparing the mutational profiles (bottom) between the +ASO ensemble average (\textit{x}-axis) and each cluster (\textit{y}-axis); each point represents one base in section R. The expected Pearson correlation coefficient (PCC) is shown beside each scatter plot.}
 \end{figure}
 
-We illustrate SEARCH-MaP with an RNA comprising three sections (P, Q, and R) that folds into an ensemble of two structures: one in which base pairs between P and R form and one in which they do not (Figure~\ref{strat}a).
-Searching for base pairs involving section P begins by blocking P with an antisense oligonucleotide (ASO), which ablates the base pairs between P and R (Figure~\ref{strat}b).
-The RNA is chemically probed separately with (+ASO) and without (no-ASO) the ASO, followed by mutational profiling (MaP) and sequencing, e.g. using DMS-MaPseq~\cite{Zubradt2016} (Figure~\ref{strat}c).
-
 SEISMIC-RNA can detect base pairs by comparing the +ASO and no-ASO mutational profiles.
-Theoretically, each structure has its own mutational profile~\cite{Sherpa2015}, but the mutational profile of a single structure is not directly observable because all structures are physically mixed during the experiment (Figure~\ref{strat}c, top).
-Instead, the directly observable mutational profile is of the ``ensemble average" -- the average of the structures' (unobserved) mutational profiles, weighted by the their (unobserved) proportions (Figure~\ref{strat}d, top).
-Because the mutational profile of section R changes when it base-pairs with P, the ensemble averages of R differ between the +ASO and no-ASO conditions (Figure~\ref{strat}d, middle).
-However, the ASO has little effect on section Q because this section does not base-pair with P (Figure~\ref{strat}d, middle).
+Theoretically, each structure has its own mutational profile~\cite{Sherpa2015}, but the mutational profile of a single structure is not directly observable because all structures are physically mixed during the experiment (Figure~\ref{wf}c, top).
+Instead, the directly observable mutational profile is of the ``ensemble average" -- the average of the structures' (unobserved) mutational profiles, weighted by the their (unobserved) proportions (Figure~\ref{wf}d, top).
+Because the mutational profile of section R changes when it base-pairs with P, the ensemble averages of R differ between the +ASO and no-ASO conditions (Figure~\ref{wf}d, middle).
+However, the ASO has little effect on section Q because this section does not base-pair with P (Figure~\ref{wf}d, middle).
 Therefore, one can deduce that P interacts with R -- but not with Q -- because hybridizing an ASO to P alters the mutational profile of R but not of Q.
 
 Going one step further, one can resolve the mutational profile where P and R base-pair, even without knowing the exact base pairs.
-This step uses SEISMIC-RNA to cluster the no-ASO ensemble into two mutational profiles over section R -- each corresponding to one structure -- and comparing them to the +ASO ensemble average (Figure~\ref{strat}e).
+This step uses SEISMIC-RNA to cluster the no-ASO ensemble into two mutational profiles over section R -- each corresponding to one structure -- and comparing them to the +ASO ensemble average (Figure~\ref{wf}e).
 Because the ASO blocks the P--R base pairs, the +ASO mutational profile will correlate better with that of the structure where P and R do not base-pair; in this case, cluster 2 correlates better.
 Therefore, the mutational profile of cluster 1 corresponds to the structure where P and R base-pair.
 
@@ -45,7 +52,7 @@ Therefore, the mutational profile of cluster 1 corresponds to the structure wher
 %We obtained ground truth structure models from the Comparative RNA Web~\cite{Cannone2002} and selected two known stems.
 %For each stem, we designed two ASOs, one targeting each side.
 %
-%\begin{figure}[H]
+%\begin{figure}[h]
 %	\includegraphics[width=0.5\textwidth]{../MainFigures/rrna/rrna.pdf}
 %	\caption{\textbf{Validation of SEARCH-MaP on 23S ribosomal RNA from \textit{E.~coli}.} Each graph shows the rolling (window = 45~nt) Pearson correlation coefficient (PCC) between the rRNA to which one ASO was added and a no-ASO control. The known secondary structure of the 23S rRNA~\cite{Cannone2002} is drawn above the graph; base pairs with one side within the ASO target site are highlighted.}
 %	\label{rrna}
@@ -79,12 +86,6 @@ ASO group 9 -- targeting both 3' inner stems of the FSE-arch -- caused the rolli
 The only other ASO groups with substantial effects were 3, 4, and 5, which overlapped or abutted the FSE and presumably perturbed short-range base pairs; the outer stem of the FSE-arch (targeted by ASO group 10) did not apparently form.
 These results suggest both inner stems (but not the outer stem) of the proposed FSE-arch~\cite{Ziv2020} exist and are the predominant long-range base pairs involving the immediate vicinity of the FSE.
 
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
-	\caption{\textbf{SEARCH-MaP of long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5' FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups 4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9, with PCC indicated; each point is one base in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
-	\label{tiles}
-\end{figure}
-
 To determine in what fraction of molecules the two inner stems of the FSE-arch form, we clustered reads from the 5' side of the FSE-arch for the no-ASO control.
 We found two clusters with a 43/57\% split and -- to determine if they corresponded to the two inner stems formed versus unformed -- compared their DMS reactivities to those after adding ASO group 9, which would block the two inner stems (Figure~\ref{tiles}c, top).
 Cluster 2 had similar DMS reactivities (PCC~=~0.95), indicating it corresponds to the stems unformed.
@@ -95,6 +96,12 @@ If cluster 1 did correspond to the two inner stems formed, its DMS reactivities 
 We quantified this agreement using receiver operating characteristic (ROC) curves (Figure~\ref{tiles}c, bottom).
 The area under the curve (AUC) for cluster 1 was 1.00, indicating perfect agreement with the two inner stems of the FSE-arch; while that of cluster 2 was 0.57, close to no agreement (0.50).
 This result further supports that clusters 1 and 2 correspond to the two inner stems formed and unformed, respectively.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
+	\caption{\textbf{SEARCH-MaP of long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5' FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups 4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5' FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5' FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group 9, with PCC indicated; each point is one base in the 5' FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3' FSE-arch, and comparing to the sample with ASO group 4. One highly reactive outlier was ignored when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
+	\label{tiles}
+\end{figure}
 
 If the RNA did exist as an ensemble of the two inner stems formed and unformed, the 3' side of the FSE-arch would also cluster into states with the two inner stems formed and unformed.
 We thus RT-PCRed and clustered the 3' FSE-arch in the no-ASO control and +ASO group 4 and found -- similar to the previous result -- that the DMS reactivities after blocking the 5' FSE-arch with ASO group 4 resembled those of cluster 2 (PCC~=~0.94) but not cluster 1 (PCC~=~0.80), while the structure of the two inner stems agreed with cluster 1 (AUC~=~1.00) but not cluster 2 (AUC~=~0.57) (Figure~\ref{tiles}d).
@@ -108,7 +115,13 @@ For the innermost stem -- which we call long stem 1 (LS1) -- nine of thirteen st
 For the second-most inner stem (LS2), eight structures (62\%) predicted using cluster 1 contained LS2, while none did using average or no DMS reactivities.
 Thus, the DMS reactivities corresponding to the long-range cluster enabled predicting the long-range stems more consistently, allowing us to refine our model of the long-range stems.
 
-Our refined model based on the long-range cluster (Figure~\ref{lnas}) included not only the two inner stems of the FSE-arch -- LS1 and LS2a/b -- but also two long stems (LS3a/b and LS4) absent from the original FSE-arch model~\cite{Ziv2020}, as well as alternative stem 1 (AS1)~\cite{Lan2022}.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
+	\caption{\textbf{Refinement of the long-range structure model and competition with the frameshift pseudoknot.} \textbf{(a)}~Refined model of the long-range stems (minimum free energy prediction based on cluster 1 in Figure~\ref{tiles}c and d) including alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)}~Rolling (window~=~21~nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)}~Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)}~Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
+	\label{lnas}
+\end{figure}
+
+Our refined model based on the long-range cluster (Figure~\ref{lnas}a) included not only the two inner stems of the FSE-arch -- LS1 and LS2a/b -- but also two long stems (LS3a/b and LS4) absent from the original FSE-arch model~\cite{Ziv2020}, as well as alternative stem 1 (AS1)~\cite{Lan2022}.
 To verify this refined model, we performed SEARCH-MaP on the 1,799~nt segment using 15-20~nt LNA/DNA mixmer ASOs for single-stem precision (Figure~\ref{lnas}b, Supplementary Table~\ref{asos1799sars2}).
 Each ASO targeted the 3' side of one stem, and we measured the change in DMS reactivities of the FSE.
 ASOs targeting the 3' sides of LS1 and LS2a perturbed the DMS reactivities in exactly the expected locations on the 5' sides.
@@ -129,12 +142,6 @@ In their absence emerged clusters consistent with the pseudoknotted and truncate
 Meanwhile, adding an ASO that blocked the part of LS2b that overlaps PS2 eliminated the extended state (which includes LS2b) and produced one cluster (13\%) consistent with the pseudoknotted model (Figure~\ref{lnas}d, right; Supplementary Figure~\ref{sars2-compare-clusters}c).
 Adding both ASOs simultaneously collapsed the ensemble into three clusters of which two (87\%) were highly consistent with the pseudoknotted model (Figure~\ref{lnas}d, bottom; Supplementary Figure~\ref{sars2-compare-clusters}d).
 Since blocking the PS2-overlapping portion of LS2b increased the proportion of clusters consistent (or nearly so) with the pseudoknotted model -- both alone and combined with the anti-AS1 ASO -- the long-range stems did appear to outcompete the pseudoknot.
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
-	\caption{\textbf{Refinement of the long-range structure model and competition with the frameshift pseudoknot.} \textbf{(a)}~Refined model of the long-range stems (minimum free energy prediction based on cluster 1 in Figure~\ref{tiles}c and d) including alternative stem 1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)}~Rolling (window~=~21~nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)}~Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)}~Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
-	\label{lnas}
-\end{figure}
 
 \subsection{Frameshift stimulating elements of multiple coronaviruses form long-range base pairs}
 
@@ -157,16 +164,16 @@ These dips were the two largest downstream of the FSE; although others (correspo
 Near LS1 (positions 1,367-1,381), the SCC dipped only slightly to a minimum of 0.95, presumably because LS1 is the smallest (15~nt) and most isolated long-range stem.
 Therefore, this method was sensitive enough to detect all but the smallest long-range stem, and specific enough that the two largest dips corresponded to validated long-range stems.
 
-We found similar long-range stems in SARS-CoV-1 and another SARS-related virus, bat coronavirus BM48-31.
-Both viruses showed dips in SCC at roughly the same positions as LS2-LS4 in SARS-CoV-2, indicating that they have homologous structures.
-SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, corresponding to a homologous LS1.
-Thus, three SARS-related viruses share these long-range stems involving the FSE, hinting that these structures are functional.
-
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/covs/covs.pdf}
 	\caption{\textbf{Evidence for long-range RNA--RNA base pairs involving the FSE in four additional coronaviruses.} Rolling (window~=~45~nt) Spearman correlation coefficient (SCC) of DMS reactivities between the +ASO and no-ASO samples for each 1,799~nt segment of a coronaviral genome. The target site of each ASO is highlighted on the SCC data and shown above each graph. Structures predicted with RNAstructure~\cite{Reuter2010} using no-ASO ensemble average DMS reactivities as constraints~\cite{Cordero2012} are drawn above each graph; base pairs connecting the ASO target site to an off-target position with SCC less than 0.9 are colored. For SARS-CoV-2, the refined model (Figure~\ref{lnas}a) is also drawn, with LS1-LS4 labeled.}
 	\label{covs}
 \end{figure}
+
+We found similar long-range stems in SARS-CoV-1 and another SARS-related virus, bat coronavirus BM48-31.
+Both viruses showed dips in SCC at roughly the same positions as LS2-LS4 in SARS-CoV-2, indicating that they have homologous structures.
+SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, corresponding to a homologous LS1.
+Thus, three SARS-related viruses share these long-range stems involving the FSE, hinting that these structures are functional.
 
 In every other species except common moorhen coronavirus, we found prominent dips in SCC at least 200~nt from the ASO target site.
 To determine what long-range base pairs could have caused those dips, we used RNAstructure Fold~\cite{Reuter2010,Cordero2012} guided by the DMS reactivities of the no-ASO ensemble average, as clustered data -- while more accurate (Supplementary Figure~\ref{sars2-clusters-fold}) -- were unavailable.
@@ -180,16 +187,16 @@ Due to the impacts of TGEV~\cite{Liu2021} and our evidence of long-range base pa
 We began by infecting ST cells with TGEV and performing DMS-MaPseq~\cite{Zubradt2016} (Figure~\ref{tgev}a).
 The DMS reactivities over the full genome were consistent between technical and biological replicates (PCC~=~0.94, Supplementary Figure~\ref{tgev_reps}a and~b), albeit not with the 1,799~nt segment \textit{in vitro} (PCC~=~0.77), which showed that verifying the long-range stem in live TGEV would be necessary (Supplementary Figure~\ref{tgev_reps}c).
 
-To quantify the long-range base pairs, we RT-PCRed the 5' and 3' sides, confirmed their DMS reactivities were consistent with the full genome's (Supplementary Figure~\ref{tgev_reps}d), and clustered both sides (Figure~\ref{tgev}b).
-Although the clusters were indistinguishable by their correlations with the +ASO sample or AUC-ROC scores (Supplementary Figure~\ref{tgev-clusters}a and~b), bases involved in the predicted long-range pairs were generally less DMS-reactive in cluster 2 (Figure~\ref{tgev}b), which we hypothesized corresponded to the long-range base pairs forming.
-In support, the long-range stem (hereafter, LS3) appeared when using DMS reactivities from cluster 2 on both sides (Figure~\ref{tgev}c), but not cluster 1 (Supplementary Figure~\ref{tgev-clusters}c).
-The refined model based on cluster 2 included another long-range stem, LS2, which was also supported by a dip in the rolling SCC (Figure~\ref{tgev}c).
-
 \begin{figure}[H]
 	\includegraphics[width=0.5\textwidth]{../MainFigures/tgev/tgev.pdf}
 	\caption{\textbf{Genomic secondary structure of live TGEV.} \textbf{(a)}~Schematic of the experiment in which two biological replicates of ST cells were infected with TGEV, DMS-treated, and pelleted. Cell pellets were divided into two technical replicates prior to extraction of DMS-modified RNA. \textbf{(b)}~Differences in DMS reactivities between the two clusters on each side of the long-range stem. Each bar represents one base. Bases are shaded dark blue if they pair in the initial model of the long-range stem (from Figure~\ref{covs}), shown above along with its location in the full genome. The locations of FSE pseudoknot stem 1 (PS1) and the regions amplified for clustering are also indicated. \textbf{(c)}~Refined model of the long-range stem in TGEV based on the DMS reactivities of the less-reactive cluster from both sides. Long stems 1 (LS1), 2 (LS2), and 3 (LS3) are labeled. For comparison with the regions of the 1,799~nt segment perturbed by the ASO (Figure~\ref{covs}), positions after the FSE where the Spearman correlation coefficient (SCC) dipped below 0.9 are shaded light blue. \textbf{(d)}~Rolling AUC-ROC (window = 45~nt) between the full-genome DMS reactivities and full-genome secondary structure modeled from the DMS reactivities (maximum 300~nt between paired bases). The structure model is drawn above the graph. Only positions 12,042-13,840 are shown here. For comparison, the locations of PS1, LS1, LS2, LS3, and dips in SCC after the FSE are also indicated.}
 	\label{tgev}
 \end{figure}
+
+To quantify the long-range base pairs, we RT-PCRed the 5' and 3' sides, confirmed their DMS reactivities were consistent with the full genome's (Supplementary Figure~\ref{tgev_reps}d), and clustered both sides (Figure~\ref{tgev}b).
+Although the clusters were indistinguishable by their correlations with the +ASO sample or AUC-ROC scores (Supplementary Figure~\ref{tgev-clusters}a and~b), bases involved in the predicted long-range pairs were generally less DMS-reactive in cluster 2 (Figure~\ref{tgev}b), which we hypothesized corresponded to the long-range base pairs forming.
+In support, the long-range stem (hereafter, LS3) appeared when using DMS reactivities from cluster 2 on both sides (Figure~\ref{tgev}c), but not cluster 1 (Supplementary Figure~\ref{tgev-clusters}c).
+The refined model based on cluster 2 included another long-range stem, LS2, which was also supported by a dip in the rolling SCC (Figure~\ref{tgev}c).
 
 We used the ensemble average DMS reactivities to produce one ``ensemble average" model of short-range (up to 300~nt) base pairs in the full TGEV genome (Supplementary Figure~\ref{tgev-full}).
 To verify the model quality, we confirmed that the modeled structure of the first 330~nt included the highly conserved stem loops SL1, SL2, SL4, and SL5a/b/c in the 5' UTR~\cite{Yang2015a} (Supplementary Figure~\ref{tgev_5utr}a) and was consistent with the DMS reactivities (AUC-ROC = 0.97) (Supplementary Figure~\ref{tgev_5utr}b).
