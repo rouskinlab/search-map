@@ -8,7 +8,7 @@ PREFIX=main
 
 compile_main () {
     clear
-    pdflatex $PREFIX.tex
+    xelatex $PREFIX.tex
 }
 
 

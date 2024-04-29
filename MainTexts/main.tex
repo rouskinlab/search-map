@@ -13,7 +13,7 @@
 % prevent widow/orphan lines over the entire document
 \usepackage[defaultlines=2,all]{nowidow}
 
-% url formatting
+% URL formatting
 \usepackage{url}
 
 % automatic intradocument links
@@ -40,26 +40,31 @@
 % bibliography
 \usepackage{natbib}
 
-% main typeface
-\usepackage[default]{lato}
+% Greek letters in text mode
+\usepackage{textgreek}
 
-% title and heading typefaces
-\usepackage{titlesec}
-\titleformat{\section}{\LARGE\raggedright\bfseries}{}{0pt}{}
-\titleformat{\subsection}{\Large\raggedright\bfseries}{}{0pt}{}
-\titleformat{\subsubsection}{\large\raggedright\bfseries}{}{0pt}{}
+% main typeface
+\usepackage{fontspec}
+\setmainfont{Helvetica}
+\setmonofont{Courier}
 
 % 2.0-line spacing
 \usepackage{setspace}
 \doublespacing
 
+% title and heading typefaces
+\usepackage{titlesec}
+\titleformat{\section}{\singlespacing\LARGE\raggedright\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\singlespacing\Large\raggedright\bfseries}{}{0pt}{}
+\titleformat{\subsubsection}{\singlespacing\large\raggedright\bfseries}{}{0pt}{}
+
 % line numbers
 \usepackage{lineno}
-%\linenumbers
+\linenumbers
 
 % title
 \title{Discovery and Quantification of Long-Range RNA Base Pairs in Coronavirus Genomes with SEARCH-MaP and SEISMIC-RNA}
-\author{Matthew F. Allan\textsuperscript{123}, Justin Aruda\textsuperscript{14}, Scott Grote\textsuperscript{1}, \\ Yves J. Martin des Taillades\textsuperscript{6}, Alberic de Lajarte\textsuperscript{1}, Jesse Plung\textsuperscript{15}, \\ Mateo Valenzuela\textsuperscript{4}, Mark Bathe\textsuperscript{23}, and Silvi Rouskin\textsuperscript{1}*}
+\author{Matthew F. Allan\textsuperscript{123}, Justin Aruda\textsuperscript{14}, Jesse Plung\textsuperscript{15}, \\ Scott Grote\textsuperscript{1}, Yves J. Martin des Taillades\textsuperscript{6}, Alberic de Lajarte\textsuperscript{1}, \\ Mark Bathe\textsuperscript{2}, and Silvi Rouskin\textsuperscript{1\textdagger}}
 \date{
 	\textsuperscript{1} Department of Microbiology, Harvard Medical School, Boston, Massachusetts, USA 02115 \\
 	\textsuperscript{2} Department of Biological Engineering, Massachusetts Institute of Technology, Cambridge, Massachusetts, USA 02139 \\
@@ -67,7 +72,7 @@
 	\textsuperscript{4} Harvard Program in Biological and Biomedical Sciences, Division of Medical Sciences, Harvard Medical School, Boston, MA, USA 02115 \\
 	\textsuperscript{5} Harvard Program in Virology, Division of Medical Sciences, Harvard Medical School, Boston, MA, USA 02115 \\
 	\textsuperscript{6} Department of Biochemistry, Stanford University, Stanford, California, USA 94305 \\
-	* To whom correspondence should be addressed: silvi@hms.harvard.edu \\
+	\textsuperscript{\textdagger} To whom correspondence should be addressed: silvi@hms.harvard.edu \\
 }
 
 
@@ -78,7 +83,9 @@
 \emergencystretch \textwidth
 
 % Include the sections of the paper.
+\begin{singlespace}
 \maketitle
+\end{singlespace}
 \newpage
 \subfile{abstract}
 \newpage
