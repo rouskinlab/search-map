@@ -15,9 +15,13 @@ Its dependencies include Python packages NumPy~\cite{Harris2020}, Numba~\cite{La
 
 \subsection{SEARCH-MaP of 2,924~nt SARS-CoV-2 RNA}
 
+\subsubsection{Design of antisense oligonucleotide groups}
+
+Antisense oligonucleotides (ASOs, Supplementary Table~\ref{asos2924}) and their flanking primers (Supplementary Table~\ref{primers2924}), with constraints on length and melting temperature, were designed using the Python script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/sars2-2924/olaygo.py}.
+
 \subsubsection{Synthesis of 2,924~nt SARS-CoV-2 RNA}
 
-A DNA template of the 2,924~nt segment of SARS-CoV-2, including a T7 promoter, was amplified from a previously constructed plasmid~\cite{Lan2022} ([Supplementary Data]) in 50~\textmu l using 2X CloneAmp HiFi PCR Premix (Takara Bio) with 250~nM primers TAATACGACTCACTATAGAATAATGAGCTTAGTCCTGTTGCACTACG and TAAATTGCGGACATACTTATCGGCAATTTTGTTACC (Thermo Fisher Scientific); initial denaturation at 98\textdegree C for 60~s; 35 cycles of 98\textdegree C for 10~s, 65\textdegree C for 10~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 60~s.
+A DNA template of the 2,924~nt segment of SARS-CoV-2, including a T7 promoter, was amplified from a previously constructed plasmid~\cite{Lan2022} in 50~\textmu l using 2X CloneAmp HiFi PCR Premix (Takara Bio) with 250~nM primers TAATACGACTCACTATAGAATAATGAGCTTAGTCCTGTTGCACTACG and TAAATTGCGGACATACTTATCGGCAATTTTGTTACC (Thermo Fisher Scientific); initial denaturation at 98\textdegree C for 60~s; 35 cycles of 98\textdegree C for 10~s, 65\textdegree C for 10~s, and 72\textdegree C for 15~s; and final extension at 72\textdegree C for 60~s.
 The 50~\textmu l PCR product with 10~\textmu l of 6X Purple Loading Dye (New England Biolabs) was electrophoresed through a 50~ml gel -- 1\%~SeaKem Agarose (Lonza), 1X tris-acetate-EDTA (Boston BioProducts), and 1X SYBR Safe (Invitrogen) -- at 60~V for 60~min.
 The band at roughly 3 kb was extracted using a Zymoclean Gel DNA Recovery Kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 To increase yield, the gel-extracted DNA was fed into a second round of PCR and gel extraction using the same protocol.
@@ -29,7 +33,7 @@ RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) accord
 
 \subsubsection{DMS treatment of 2,924~nt SARS-CoV-2 RNA}
 
-Antisense oligonucleotides (ASOs) were ordered from Integrated DNA Technologies already resuspended to 10~\textmu M in 1X IDTE buffer (10~mM Tris, 0.1~mM EDTA) in a 96-well PCR plate.
+ASOs were ordered from Integrated DNA Technologies already resuspended to 10~\textmu M in 1X IDTE buffer (10~mM Tris, 0.1~mM EDTA) in a 96-well PCR plate.
 Each ASO pool was assembled from 25 pmol of each constituent ASO (Supplementary Table~\ref{asos2924}); volume was adjusted to 12.5~\textmu l by adding TE Buffer -- 10~mM Tris (Invitrogen) with 0.1~mM EDTA (Invitrogen).
 450~fmol of 2,924~nt SARS-CoV-2 RNA was added to each ASO pool for a total of 13.5~\textmu l in a PCR tube.
 The tube was heated to 95\textdegree C for 60~s to denature the RNA, placed on ice for several minutes, and transferred to a 1.5~ml tube.
@@ -37,7 +41,7 @@ To refold the RNA, 35~\textmu l of 1.4X refolding buffer comprising 400~mM sodiu
 For no-ASO control 1, 12.5~\textmu l of TE Buffer was used instead of an ASO pool.
 For no-ASO control 2, 12.5~\textmu l of TE Buffer was added after placing on ice and before refolding to confirm the timing of adding TE Buffer would not alter the RNA structure.
 
-RNA was treated with DMS in 50~\textmu l containing 1.5~\textmu l (320 nM) of DMS (Sigma-Aldrich) while shaking at 500~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
+RNA was treated with DMS in 50~\textmu l containing 1.5~\textmu l (320 mM) of DMS (Sigma-Aldrich) while shaking at 500~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
 To quench, 30~\textmu l of beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly.
 RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop (Thermo Fisher Scientific).
 
@@ -122,7 +126,7 @@ During fragmentation, 8~\textmu l of RNA was combined with 1~\textmu l of Reagen
 For reverse transcription, 1~\textmu l of Enzyme R1, 2~\textmu l of TGIRT-III enzyme (InGex), and 1~\textmu l of 100 mM dithiothreitol (Invitrogen) was used instead of the reaction mix, then incubated at room temperature for 30 minutes before adding 2~\textmu l of Reagent F2.
 Reverse transcription was stopped by adding 1~\textmu l of 4 M sodium hydroxide (Fluka), heating to 95\textdegree C for 3 min, chilling at 4\textdegree C, then neutralizing with 1\textmu l of 4 M hydrochloric acid.
 Instead of a bead cleanup after the final PCR, unpurified PCR products with 6X DNA loading dye (Invitrogen) were elecrophoresed through an 8\% polyacrylamide Tris-borate-EDTA (TBE) gel (Invitrogen) at 180~V for 55~min.
-The gel was stained with SYBR Gold (Invitrogen); the section between 250 and 500~bp was excised and placed in a 0.5~ml tube with a hole punctured in the bottom by an 18-gauge needle (BD Biosciences), which was nested inside a 1.5~ml tube and centrifuged at 21,300~x~g for 1~min to crush the gel slice into the latter.
+The gel was stained with SYBR Gold (Invitrogen); the section between 250 and 500~bp was excised and placed in a 0.5~ml tube with a hole punctured in the bottom by an 18-gauge needle (BD Biosciences), which was nested inside a 1.5~ml tube and centrifuged at 21,300~x~g for 1~min to crush the gel slice into the larger tube.
 Crushed gel pieces were suspended in 500~\textmu l of 300 mM sodium chloride (Boston Bioproducts), shaken at 1,500~rpm in a ThermoMixer~C (Eppendorf) at 70\textdegree C for 20~min, and centrifuged at 21,300~x~g through a 0.22~\textmu m Costar Spin-X filter column to remove the gel pieces.
 Filtrate was mixed with 600~\textmu l isopropanol (Sigma-Aldrich) and 3~\textmu l GlycoBlue Coprecipitant (Invitrogen), vortexed briefly, and stored at -20\textdegree C overnight.
 DNA was then pelleted by centrifugation at 4\textdegree C at 18,200~x~g for 45~min.
@@ -143,7 +147,7 @@ Rolling correlations between +ASO and no-ASO conditions superimposed on secondar
 
 \subsubsection{RNA synthesis of 1,799~nt SARS-CoV-2 RNA}
 
-A DNA template for transcription, including a T7 promoter, was amplified from the 1,799~bp gene fragment of SARS-CoV-2 as described above but with primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG, an annealing temperature of 65\textdegree C, and an extension time of 10~s; eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen); and measured with a NanoDrop One (Thermo Fisher Scientific).
+A DNA template for transcription, including a T7 promoter, was amplified from the 1,799~bp gene fragment of SARS-CoV-2 (Twist Bioscience) as described above but with primers TAATACGACTCACTATAGGTACTGGTCAGGCAATAACAGTTACAC and GACCCCATTTATTAAATGGAAAACCAGCTG (Integrated DNA Technologies), an annealing temperature of 65\textdegree C, and an extension time of 10~s; eluted in 18~\textmu l of 10~mM Tris-HCl pH~8 (Invitrogen); and measured with a NanoDrop One (Thermo Fisher Scientific).
 100 ng of DNA template was transcribed using a HiScribe T7 High Yield RNA Synthesis Kit (New England Biolabs) according to the manufacturer's protocol for 11 hr.
 DNA template was degraded by incubating with 1~\textmu l of TURBO DNase (Invitrogen) at 37\textdegree C for 30~min.
 RNA was purified using an RNA Clean~\& Concentrator-25 kit (Zymo Research) according to the manufacturer's protocol, eluted in 50~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop One (Thermo Fisher Scientific).
@@ -191,20 +195,20 @@ Heatmaps of areas under the curve (Figure~\ref{lnas}d) were generated using the 
 
 Transmissible gastroenteritis virus (TGEV, TC-adapted Miller strain, ATCC VR-1740) and ST cells (ATCC CRL-1746) were ordered from American Type Culture Collection (ATCC).
 ST cells were maintained in Eagle's Minimum Essential Medium (EMEM, Gibco) supplemented with 10\% fetal bovine serum (Gibco), 1\% sodium pyruvate (Gibco), and 1\% Pen Strep (Gibco) at 37\textdegree C with 5\% carbon dioxide.
-For TGEV, the infection medium (IM) comprised EMEM (Gibgo) supplemented with 10\% fetal bovine serum (Gibco), 1\% sodium pyruvate, and 1~\textmu g/\textmu l of TPCK trypsin (Thermo Fisher Scientific).
+For TGEV, the infection medium (IM) comprised EMEM (Gibgo) supplemented with 10\% fetal bovine serum (Gibco), 1\% sodium pyruvate, and 1~\textmu g/ml of TPCK trypsin (Thermo Fisher Scientific).
 
 \subsubsection{Production and titering of TGEV}
 
 A 150 mm dish was seeded with 1 x 10\textsuperscript{7} ST cells, grown overnight, and washed twice with phosphate-buffered saline (PBS, Gibco).
 Cells were inoculated with 8~ml of TGEV in IM at a multiplicity of infection (MOI) of 0.1, which was kept on for 60~min with rocking every 15~min.
 The inoculum was removed, cells were washed twice with PBS, and 26~ml of IM was added.
-Cells were checked daily for cytopathic effects (CPE) and were harvested after 5~days upon development of significant (80\%) CPE.
+Cells were checked daily for cytopathic effects (CPE); after 5~days, upon development of 80\% CPE, the supernatant was centrifuged at 200~x~g for 5~min and then filtered through a 0.45~\textmu m filter to harvest TGEV, which was frozen at -80\textdegree C in 1~ml aliquots.
 
 Harvested TGEV was titered via tissue culture infectious dose (TCID\textsubscript{50}).
 Briefly, ST cells were seeded in a poly-L-lysine coated 96-well plate at 4 x 10\textsuperscript{4} cells per well and grown overnight.
-TGEV was thawed on ice and serially diluted in a 12-well plate from 10\textsubscript{-1} to 10\textsubscript{-10} in IM.
-Cells were washed once with PBS, and each well was inoculated with one serial dilution of TGEV (8 replicates per dilution level).
-The plate was wrapped in parafilm and incubated until CPE appeared.
+TGEV was thawed on ice and serially diluted from 10\textsuperscript{-1} to 10\textsuperscript{-10} in IM.
+Cells were washed once with PBS, and each well was inoculated with 100~\textmu l of either one serial dilution of TGEV (8 replicates per dilution level) or sterile IM (for negative controls).
+The plate was wrapped in parafilm and incubated at 37\textdegree C until CPE appeared.
 Then, media was aspirated and cells were fixed with 4\% paraformaldehyde for 30~min and decanted.
 0.5\% crystal violet was then added to each well; the plate was rocked for 10~min, submerged in water to remove excess crystal violet, and dried.
 Wells with CPE were counted and the titer determined using the Spearman-Kärber method.
@@ -219,18 +223,18 @@ After 48~hr, media was aspirated.
 250~\textmu l of DMS was mixed with 10~ml of IM and immediately added to two plates; the other two received 10~ml IM without DMS.
 Plates were incubated at 37\textdegree C for 5~min.
 The media was aspirated and replaced with stop solution (30\% beta-mercaptoethanol in 1X PBS).
-Cells were scraped off using a cell scraper, spun down at 3000~x~g for 3~min.
-The pellet was washed with stop solution, spun down again, washed with 10~ml PBS, dissolved in 3~ml of TRIzol, and split into 1~ml techincal replicates.
+Cells were scraped off using a cell scraper and spun down at 3,000~x~g for 3~min.
+The pellet was washed with stop solution, spun down again, washed with 10~ml PBS, dissolved in 3~ml of TRIzol (Invitrogen), and split into 1~ml techincal replicates.
 
 \subsubsection{RNA purification}
 
 200~\textmu l of chloroform was added to each 1~ml techincal replicate, vortexed for 20~s, and rested until the phases separated.
-Samples were then spun at 18,200~x~g for 15~min at 4\textdegree C; the aqueous phase transferred to a new tube and mixed with an equal volume of 100\% ethanol.
-RNA was purified using a 50~\textmu g Monarch RNA Cleanup Column (New England Biolabs), eluted in nuclease-free water, and quantified with a NanoDrop.
+Samples were then spun at 18,200~x~g for 15~min at 4\textdegree C; the aqueous phase transferred to a new tube and mixed with an equal volume of 100\% ethanol (Koptec).
+RNA was purified using a 50~\textmu g Monarch RNA Cleanup Column (New England Biolabs), eluted in 20~\textmu l of nuclease-free water, and quantified with a NanoDrop.
 
 To remove rRNA, 10~\textmu g of total RNA was diluted in 6~\textmu l of nuclease-free water and mixed with 1~\textmu l of anti-rRNA ASOs (Integrated DNA Technologies) and 3~\textmu l of HYBE buffer (200~mM sodium chloride, 100~mM Tris-HCl pH~7.5).
 The mixture was incubated at 95\textdegree C for 2~min and cooled by 0.1\textdegree C/s until reaching 45\textdegree C.
-A preheated mixture of 10~\textmu l of RNase H and 2~\textmu l of RNase H Buffer was added and incubated at 45\textdegree C for 30 min.
+A preheated mixture of 10~\textmu l of RNase H (New England Biolabs) and 2~\textmu l of RNase H Buffer (New England Biolabs) was added and incubated at 45\textdegree C for 30 min.
 RNA was purified using a 10~\textmu g Monarch RNA Cleanup Column (New England Biolabs) and eluted in 42~\textmu l of nuclease-free water.
 
 To remove DNA (including anti-rRNA ASOs), 5~\textmu l of 10X Turbo DNase Buffer (Thermo Fisher) and 3~\textmu l of TURBO RNase (Thermo Fisher) were added and incubated at 37\textdegree C for 20~min.
@@ -238,7 +242,7 @@ RNA was purified using a 10~\textmu g Monarch RNA Cleanup Column (New England Bi
 
 \subsubsection{Library generation for the full TGEV genome}
 
-RNA was prepared for sequencing using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the same modifications as described above (\ref{xgen_library}), notably the substitution of TGIRT-III (InGex) for the kit reverse transcriptase.
+RNA was prepared for sequencing using the xGen Broad-Range RNA Library Preparation Kit (Integrated DNA Technologies) according to the manufacturer’s protocol, with the same modifications as described above (\ref{xgen_library}), notably the substitution of TGIRT-III (InGex) for the kit's reverse transcriptase.
 Samples were pooled and sequenced using a NextSeq 1000 Sequencing System (Illumina) with 2~x 150~bp paired-end reads according to the manufacturer's protocol.
 
 \subsubsection{Library generation for amplicons}

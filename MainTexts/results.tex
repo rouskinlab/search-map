@@ -17,7 +17,6 @@ SEISMIC-RNA is all-in-one software for processing and graphing mutational profil
 Designed for modern experiments comprising many samples and reference sequences, SEISMIC-RNA can process as many samples in parallel as there are CPUs, at high speed with low memory and storage footprints.
 Input files can be in (gzipped) FASTQ format (which SEISMIC-RNA preprocesses with Cutadapt~\cite{Martin2011} and aligns with Bowtie~2~\cite{Langmead2012}) or SAM/BAM/CRAM format~\cite{Li2009}.
 SEISMIC-RNA ensures data quality with new algorithms that flag ambiguous base calls (e.g. deletions within repetitive sequences) and mask unusable reads and positions (e.g. with insufficient coverage).
-Masking can also be applied to specific types of mutations, such as A-to-G mismatches caused by ADAR editing~\cite{Roth2019}.
 To identify alternative structures, SEISMIC-RNA introduces a new clustering algorithm -- similar to DREEM~\cite{Tomezsko2020} yet able to cluster RNAs longer than the reads themselves -- enabling analyses of structure ensembles in long transcripts.
 After computing chemical reactivities, SEISMIC-RNA can use them to model secondary structures with RNAstructure Fold~\cite{Reuter2010,Cordero2012} or to generate a variety of graphs -- including correlations between samples and receiver operating characteristic (ROC) curves.
 This entire workflow can be run via the command line, while an additional Python interface enables highly customized analyses, making SEISMIC-RNA accessible yet applicable to many kinds of mutational profiling experiments.
@@ -73,19 +72,20 @@ Aside from ribosomes, many of the best-characterized functional long-range RNA b
 In coronaviruses, the first open reading frame (ORF1) contains a frameshift stimulation element (FSE) that makes a fraction of ribosomes slip into the -1 reading frame, bypass a 0-frame stop codon, and translate to the end of ORF1~\cite{Plant2008}.
 Every coronaviral FSE contains a ``slippery site" (UUUAAAC) and a structure characterized as a pseudoknot in multiple species~\cite{Brierley1989,Herald1993,Plant2005b}.
 For SARS coronavirus 2 (SARS-CoV-2), 80-90~nt segments of the core FSE have been shown to fold into a pseudoknot with three stems~\cite{KZhang2021,Roman2021,Jones2022}.
-However, in intact SARS-CoV-2, the FSE adopts a different structure: one that could be recapitulated with a 2,924~nt segment but not a 283~nt segment~\cite{Lan2022}.
-This finding suggested that the SARS-CoV-2 FSE involves long-range base pairs.
+However, in intact SARS-CoV-2, the FSE adopts a different structure: one whose DMS reactivities could be recapitulated \textit{in vitro} with a 2,924~nt segment but not a 283~nt segment, suggesting long-range base pairs~\cite{Lan2022}.
 
-We hypothesized that the long-range base pairs would match a proposed structure named the ``FSE-arch"~\cite{Ziv2020}.
-If so, the structure of the FSE would be perturbed by -- and only by -- ASOs targeting either side of the FSE-arch.
-To investigate, we performed DMS-MaPseq~\cite{Zubradt2016} on a 2,924~nt segment of SARS-CoV-2 after adding each of thirteen groups of DNA ASOs (Figure~\ref{tiles}a).
-We used RT-PCR primers flanking the ASO target site to confirm binding (Supplementary Figure~\ref{sars2-tile-target}) and flanking the 5'~side of the FSE-arch to measure changes in its structure (Supplementary Figure~\ref{sars2-tile-fse}), except for ASO group~13, for which we obtained no data.
+To search for long-range base pairs explaining these results, we performed SEARCH-MaP on the 2,924~nt segment after adding each of thirteen groups of DNA ASOs tiling the entire transcript (Figure~\ref{tiles}a).
+We used one pair of RT-PCR primers flanking each ASO target site to confirm binding (Supplementary Figure~\ref{sars2-tile-target}) and another pair flanking the 283~nt section of the FSE to assess its structure (Supplementary Figure~\ref{sars2-tile-fse}).
 
-To quantify structural changes over the 5'~FSE-arch, we calculated the rolling Pearson correlation coefficient (PCC) of the DMS reactivities between each sample and a no-ASO control (Figure~\ref{tiles}b).
+To quantify structural changes over the FSE, we calculated the rolling Pearson correlation coefficient (PCC) of the DMS reactivities between each sample and a no-ASO control (Figure~\ref{tiles}b).
 The rolling PCC of a no-ASO replicate remained between 0.93 and 1.00 (mean~=~0.97), confirming the DMS reactivities were reproducible.
-ASO group~9 -- targeting both 3'~inner stems of the FSE-arch -- caused the rolling PCC to dip below 0.5 over both 5'~inner stems, as expected if the inner stems of the FSE-arch existed.
-The only other ASO groups with substantial effects were 3, 4, and 5, which overlapped or abutted the FSE and presumably perturbed short-range base pairs; the outer stem of the FSE-arch (targeted by ASO group~10) did not apparently form.
-These results suggest both inner stems (but not the outer stem) of the proposed FSE-arch~\cite{Ziv2020} exist and are the predominant long-range base pairs involving the immediate vicinity of the FSE.
+Besides ASO group 4 (targeting the FSE itself), the FSE structure was most perturbed by ASO group 9, targeting about 1~kb downstream.
+Intervening ASO groups 6, 7, and 8 had no effect on the FSE.
+
+This result is consistent with a proposed structure named the ``FSE-arch"~\cite{Ziv2020} comprising three long-range stems (Figure~\ref{tiles}a).
+The two inner stems connect the FSE (on the 5' side) to the target site of ASO group 9 (on the 3' side); thus, ASO group 9 would have disrupted them and perturbed the FSE, as we observed.
+For the outer stem, the 3' side lies within the target site for ASO group 10, but this group had no effect: the outer stem apparently did not form.
+These results suggest both inner stems (but not the outer stem) of the proposed FSE-arch~\cite{Ziv2020} exist, explaining our previous finding that a 283~nt segment was insufficient to recapitulate the FSE structure \textit{in vitro}~\cite{Lan2022}.
 
 To determine in what fraction of molecules the two inner stems of the FSE-arch form, we clustered reads from the 5'~side of the FSE-arch for the no-ASO control.
 We found two clusters with a 43/57\% split and -- to determine if they corresponded to the two inner stems formed versus unformed -- compared their DMS reactivities to those after adding ASO group~9, which would block the two inner stems (Figure~\ref{tiles}c, top).
@@ -100,7 +100,7 @@ This result further supports that clusters~1 and~2 correspond to the two inner s
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/sars2-tile/sars2-tile.pdf}
-	\caption{\textbf{SEARCH-MaP of long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and putative FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5'~FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups~4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5'~FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5'~FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group~9, with PCC indicated; each point is one base in the 5'~FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3'~FSE-arch, and comparing to the sample with ASO group~4. One highly reactive outlier was excluded when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
+	\caption{\textbf{SEARCH-MaP of long-range base pairs involving the SARS-CoV-2 FSE.} \textbf{(a)}~The 2,924~nt segment of the SARS-CoV-2 genome containing the frameshift stimulation element (FSE) and model of the FSE-arch~\cite{Ziv2020}. The target site for each group of antisense oligonucleotides (ASOs) is indicated by dotted lines; lengths are to scale. \textbf{(b)}~Rolling (window~=~45~nt) Pearson correlation coefficient (PCC) of DMS reactivities over the 5'~FSE-arch between each +ASO sample and a no-ASO control. Each curve represents one ASO group, colored as in (a); groups~4 and 13 are not shown. Locations of the FSE and the outer and inner stems of the 5'~FSE-arch are also indicated. \textbf{(c)}~(Top) Scatter plots of DMS reactivities over the 5'~FSE-arch comparing each cluster of the no-ASO sample to the sample with ASO group~9, with PCC indicated; each point is one base in the 5'~FSE-arch. (Bottom) Receiver operating characteristic (ROC) curves comparing each cluster of the no-ASO sample to the two inner stems of the FSE-arch, with area under the curve (AUC) indicated. \textbf{(d)}~Like (c) but over the 3'~FSE-arch, and comparing to the sample with ASO group~4. One highly reactive outlier was excluded when calculating PCC (which is sensitive to outliers) but included in the ROC (which is robust). \textbf{(e)}~Model of the inner two stems in the ensemble of structures formed by the 2,924~nt segment.}
 	\label{tiles}
 \end{figure}
 
@@ -118,7 +118,7 @@ Thus, the DMS reactivities corresponding to the long-range cluster enabled predi
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{../MainFigures/lnas/lnas.pdf}
-	\caption{\textbf{Refinement of the long-range structure model and competition with the frameshift pseudoknot.} \textbf{(a)}~Refined model of the long-range stems (minimum free energy prediction based on cluster~1 in Figure~\ref{tiles}c and d) including alternative stem~1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3 are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)}~Rolling (window~=~21~nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)}~Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)}~Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
+	\caption{\textbf{Refinement of the long-range structure model and competition with the frameshift pseudoknot.} \textbf{(a)}~Refined model of the long-range stems (minimum free energy prediction based on cluster~1 in Figure~\ref{tiles}c and d) including alternative stem~1 (AS1)~\cite{Lan2022}; the attenuator hairpin (AH)~\cite{Su2005}; and long stems LS1, LS2a/b, LS3a/b, and LS4. Locations of pseudoknot stems PS1, PS2, and PS3~\cite{KZhang2021} are also shown; as are the base pairs they overlap in AS1 and LS2b. \textbf{(b)}~Rolling (window~=~21~nt) Pearson correlation coefficient of DMS reactivities between each +ASO sample and a no-ASO control; base pairs targeted by each ASO are colored. \textbf{(c)}~Models of possible structures for the FSE, by combining non-overlapping stems from (a). \textbf{(d)}~Heatmaps comparing models in (c) to clusters of DMS reactivities over positions 305-371 via the area under the receiver operating characteristic curve (AUC-ROC). AUC-ROCs at least 0.90 are annotated. Cluster widths indicate proportions in the ensemble.}
 	\label{lnas}
 \end{figure}
 
@@ -139,7 +139,7 @@ No clusters were fully consistent with the pseudoknotted model, though the least
 The remaining cluster (21\%) was not consistent with any model, suggesting that the ensemble contains structures beyond those in Figure~\ref{lnas}c.
 
 Adding an ASO targeting the 5'~side of AS1 reduced the proportion of AS1-containing states (extended and locally nested) from 72\% to 16\% (Figure~\ref{lnas}d, left; Supplementary Figure~\ref{sars2-compare-clusters}b).
-In their absence emerged clusters consistent with the pseudoknotted and truncated models, constituting 56\% and 20\% of the ensemble, respectively.
+In their place emerged clusters consistent with the pseudoknotted and truncated models, constituting 56\% and 20\% of the ensemble, respectively.
 Meanwhile, adding an ASO that blocked the part of LS2b that overlaps PS2 eliminated the extended state (which includes LS2b) and produced one cluster (13\%) consistent with the pseudoknotted model (Figure~\ref{lnas}d, right; Supplementary Figure~\ref{sars2-compare-clusters}c).
 Adding both ASOs simultaneously collapsed the ensemble into three clusters of which two (87\%) were highly consistent with the pseudoknotted model (Figure~\ref{lnas}d, bottom; Supplementary Figure~\ref{sars2-compare-clusters}d).
 Since blocking the PS2-overlapping portion of LS2b increased the proportion of clusters consistent (or nearly so) with the pseudoknotted model -- both alone and combined with the anti-AS1 ASO -- the long-range stems did appear to outcompete the pseudoknot.
@@ -177,8 +177,8 @@ SARS-CoV-1 also had a wide dip below 0.9 at positions 1,284-1,394, corresponding
 Thus, three SARS-related viruses share these long-range stems involving the FSE, hinting at a conserved function.
 
 In every other species except common moorhen coronavirus, we found prominent dips in SCC at least 200~nt from the ASO target site.
-To determine what long-range base pairs could have caused those dips, we used RNAstructure Fold~\cite{Reuter2010,Cordero2012} guided by the DMS reactivities of the no-ASO ensemble average; clustered DMS reactivities, while superior for structure modeling (Supplementary Figure~\ref{sars2-clusters-fold}), were unavailable.
-Nevertheless, we managed to find long-range base pairs consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure~\ref{covs}, orange).
+To determine what long-range base pairs could have caused those dips, we used RNAstructure Fold~\cite{Reuter2010} guided by the DMS reactivities of the no-ASO ensemble average~\cite{Cordero2012}.
+We obtained models consistent with the SEARCH-MaP data for both murine hepatitis virus and transmissible gastroenteritis virus (Figure~\ref{covs}, orange); although the algorithm did not successfully predict the long-range stems LS2-LS4 in SARS-CoV-1, likely due to the unreliability of long-range structure prediction~\cite{Nicholson2015} and our reliance on ensemble average (rather than clustered) DMS reactivities (Supplementary Figure~\ref{sars2-clusters-fold}).
 We conclude that long-range base pairing involving the FSE occurs more widely than in just SARS-CoV-2, including in the genus \textit{Alphacoronavirus}.
 
 \subsection{Structure of the full TGEV genome in ST cells supports long-range base pairing involving the FSE}
