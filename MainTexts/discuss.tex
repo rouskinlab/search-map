@@ -9,18 +9,18 @@ In this work, we developed SEARCH-MaP and SEISMIC-RNA and applied them to detect
 Previous studies have demonstrated that binding an ASO to one side of a long-range stem would perturb the chemical probing reactivities of the other side~\cite{Legiewicz2010,Archer2013,Bai2014}.
 Here, we separated and identified the reactivities corresponding to long-range stems formed and unformed.
 This advance enables isolating the reactivities of the long-range stem formed -- on not just one but both sides of the stem, linking corresponding alternative structures over distances much greater than the length of a read, which has not been possible in previous studies~\cite{Tomezsko2020,Morandi2021}.
-Using the linked reactivities from both sides of a long-range stem, its secondary structure can be modeled more accurately than would be possible using the ensemble average reactivities, as we have done for SARS-CoV-2 (Figure~\ref{lnas}) and TGEV (Figure~\ref{tgev}).
+Using the linked reactivities from both sides of a long-range stem, its secondary structure can be modeled more accurately than would be possible using the ensemble average reactivities, as we have done for SARS-CoV-2 (Supplementary Figure~\ref{sars2-clusters-fold}) and TGEV (Supplementary Figure~\ref{tgev-clusters}).
 
 SEISMIC-RNA builds upon our previous work, the DREEM algorithm~\cite{Tomezsko2020}.
-Here, we have optimized the algorithm to run approximately 10-30 times faster and built an entirely new workflow around it for aligning reads, calling mutations, masking data, and outputting a variety of graphs.
+Here, we have optimized the algorithm to run approximately 10-20 times faster and built an entirely new workflow around it for aligning reads, calling mutations, masking data, and outputting a variety of graphs.
 SEISMIC-RNA can process data from any mutational profiling experiment, including DMS-MaPseq~\cite{Zubradt2016} and SHAPE-MaP~\cite{Siegfried2014}, not just SEARCH-MaP.
-The software is available from the Python Package Index (pypi.org/project/seismic-rna) or GitHub (github.com/rouskinlab/seismic-rna) and can be used as a command line executable program (\verb|seismic|) or via its Python application programming interface (\verb|import seismicrna|).
+The software is available from the Python Package Index (\url{pypi.org/project/seismic-rna}) and GitHub (\url{github.com/rouskinlab/seismic-rna}) and can be used as a command line executable program (\verb|seismic|) or via its Python application programming interface (\verb|import seismicrna|).
 
 We envision SEARCH-MaP and SEISMIC-RNA bridging the gap between broad and detailed investigations of RNA structure.
 Other methods such as proximity ligation~\cite{Aw2016,Lu2016,Sharma2016,Ziv2018,vanDamme2022} provide broad, transcriptome-wide information on RNA structure and could be used as a starting point to find structures of interest for deeper investigation with SEARCH-MaP/SEISMIC-RNA.
 Indeed, the first evidence of the FSE-arch in SARS-CoV-2 came from such a study~\cite{Ziv2020}.
 To investigate RNA structures in detail, M2-seq~\cite{Cheng2017} and related methods~\cite{Cordero2015} can pinpoint base pairs with up to single-nucleotide resolution and minimal need for structure prediction.
-However, base pairs are detectible only if the paired bases occur on the same sequencing read, which restricts their spans to at most the read length (typically 300 nt).
+However, base pairs are detectible only if the paired bases occur on the same sequencing read, which restricts their spans to at most the read length (typically 300~nt).
 Because the capabilities of M2-seq and SEARCH-MaP complement each other, they could be integrated: first SEARCH-MaP/SEISMIC-RNA to discover, quantify, and model long-range base pairs; then M2-seq for short-range base pairs.
 By providing the missing link -- structure ensembles involving long-range base pairs -- SEARCH-MaP and SEISMIC-RNA could combine broad and detailed views of RNA structure into one coherent model.
 
@@ -35,7 +35,7 @@ This integrated workflow could characterize the secondary structures of RNA mole
 In this study, we focused on the genomes of coronaviruses, specifically long-range base pairs involving the frameshift stimulating element (FSE).
 Long-range base pairs implicated in frameshifting also occur in several plant viruses of the family \textit{Tombusviridae}~\cite{Barry2002,Tajima2011,Mikkelsen2023}.
 However, in \textit{Tombusviridae} species, the frameshift pseudoknots themselves are made of long-range base pairs; in coronaviruses, the pseudoknots are local structures~\cite{Brierley1989,Herald1993,Plant2005b,KZhang2021} and (at least in SARS-CoV-2) compete with long-range base pairs.
-Consequently, the long-range base pairs are necessary for frameshifting in \textit{Tombusviridae} species~\cite{Barry2002,Tajima2011,Mikkelsen2023} but dispensable in coronaviruses: even the 80-90 nt core FSE of SARS-CoV-2 has stimulated 15-40\% of ribosomes to frameshift in dual luciferase constructs~\cite{Kelly2020,Haniff2020,KZhang2021,Bhatt2021,YSun2021,Lan2022}.
+Consequently, the long-range base pairs are necessary for frameshifting in \textit{Tombusviridae} species~\cite{Barry2002,Tajima2011,Mikkelsen2023} but dispensable in coronaviruses: even the 80-90~nt core FSE of SARS-CoV-2 has stimulated 15-40\% of ribosomes to frameshift in dual luciferase constructs~\cite{Kelly2020,Haniff2020,KZhang2021,Bhatt2021,YSun2021,Lan2022}.
 Surprisingly, frameshifting has appeared to be nearly twice as frequent (50-70\%) in live SARS-CoV-2~\cite{Finkel2021a,Kim2021,PurayChavez2022}; whether this discrepancy is due to long-range base-pairing, methodological artifacts, or \textit{trans} factors~\cite{Riegger2022} is unknown~\cite{Allan2023}.
 
 If, how, and why the long-range base pairs affect frameshifting in coronaviruses are open questions.
