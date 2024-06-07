@@ -33,6 +33,7 @@ PAIR_TRUE = "#0072b2"
 PAIR_FALSE = "#e5e5e5"
 ASO_COLOR = "#f0e442"
 NO_ASO_COLOR = "#009e73"
+LINE_COLOR = "#303030"
 
 
 def calc_arc_aspect_ratio(ax: plt.Axes):
@@ -170,9 +171,7 @@ def graph_correl(ax: plt.Axes, correl: pd.Series, aso_coords: tuple[int, int]):
                     where=where_aso, facecolor=ASO_COLOR)
     ax.fill_between(positions, correl, 1.0,
                     where=~where_aso, facecolor=NO_ASO_COLOR)
-    ax.plot(positions[: aso5 - 1], correl[: aso5 - 1], color=NO_ASO_COLOR)
-    ax.plot(positions[aso5: aso3], correl[aso5: aso3], color=ASO_COLOR)
-    ax.plot(positions[aso3 + 1:], correl[aso3 + 1:], color=NO_ASO_COLOR)
+    ax.plot(positions, correl, color=LINE_COLOR)
     ax.plot(ax.get_xlim(), [CORR_THRESH, CORR_THRESH],
             color="#d55e00", linewidth=0.5)
 

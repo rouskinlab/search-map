@@ -75,13 +75,13 @@ $$p_k = \frac{\pi_k \sum_{a=1}^{L} \sum_{b=a}^{L} \eta_{ab} d_{abk}}{\sum_{k'=1}
 \label{calc_params}
 
 The observed mutation rates ($m_{jk}$), end coordinate proportions ($e_{abk}$), and cluster proportions ($p_k$) can be calculated as weighted averages over the $N$ reads with no two mutations too close:
-$$m_{jk} = \frac{\sum_{i=1}^{N} z_{ik} x_{ij}}{\sum_{i=1}^{N} z_{ik}}$$
+$$m_{jk} = \frac{\sum_{i=1}^{N} z_{ik} x_{ij}}{\sum_{i=1}^{N} z_{ik} s_{ij}}$$
 $$e_{abk} = \frac{\sum_{i=1}^{N} z_{ik} y_{abi}}{\sum_{i=1}^{N} z_{ik}}$$
 $$p_k = \frac{\sum_{i=1}^{N} z_{ik}}{N}$$
-where $x_{ij}$ is $1$ if read $i$ has a mutation at position $j$, otherwise $0$; $y_{abi}$ is $1$ if read $i$ aligns to coordinates $a$ and $b$, otherwise $0$; and $z_{ik}$ is the probability that read $i$ came from cluster $k$.
+where $s_{ij}$ is $1$ if read $i$ contains position $j$, otherwise $0$; $x_{ij}$ is $1$ if read $i$ has a mutation at position $j$, otherwise $0$; $y_{abi}$ is $1$ if read $i$ aligns to coordinates $a$ and $b$, otherwise $0$; and $z_{ik}$ is the probability that read $i$ came from cluster $k$.
 
-The original parameters $\mu_{jk}$, $\eta_{abk}$, and $\pi_k$ can be solved by setting the two formula each for $m_{jk}$, $e_{abk}$, and $p_k$ equal to each other, creating a system of equations:
-$$\mu_{jk} \frac{\sum_{a=1}^{j}\sum_{b=j}^{L}\eta_{ab} f_{abjk}}{\sum_{a=1}^{j}\sum_{b=j}^{L}\eta_{ab}d_{abk}} = m_{jk} = \frac{\sum_{i=1}^{N} z_{ik} x_{ij}}{\sum_{i=1}^{N} z_{ik}}$$
+The original parameters $\mu_{jk}$, $\eta_{abk}$, and $\pi_k$ can be solved by setting the two formulae each for $m_{jk}$, $e_{abk}$, and $p_k$ equal to each other, creating a system of equations:
+$$\mu_{jk} \frac{\sum_{a=1}^{j}\sum_{b=j}^{L}\eta_{ab} f_{abjk}}{\sum_{a=1}^{j}\sum_{b=j}^{L}\eta_{ab}d_{abk}} = m_{jk} = \frac{\sum_{i=1}^{N} z_{ik} x_{ij}}{\sum_{i=1}^{N} z_{ik} s_{ij}}$$
 $$\eta_{ab} \frac{d_{abk}}{\sum_{a'=1}^{L} \sum_{b'=a'}^{L} \eta_{a'b'} d_{a'b'k}} = e_{ab} = \frac{\sum_{i=1}^{N} z_{ik} y_{abi}}{\sum_{i=1}^{N} z_{ik}}$$
 $$\pi_k \frac{\sum_{a=1}^{L} \sum_{b=a}^{L} \eta_{ab} d_{abk}}{\sum_{k'=1}^{K} \pi_{k'} \sum_{a=1}^{L} \sum_{b=a}^{L} \eta_{ab} d_{abk'}} = p_k = \frac{\sum_{i=1}^{N} z_{ik}}{N}$$
 Solving this entire system at once has proven computationally impractical for all but extremely short sequences.
