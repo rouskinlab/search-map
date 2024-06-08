@@ -2,7 +2,7 @@
 
 ### Benchmark the accurary of SEISMIC-RNA ###
 
-set -euxo pipefail
+set -euo pipefail
 
 
 declare -A nprofiles=( [1]=1 [2]=4 [3]=3 [4]=3 )
@@ -15,6 +15,7 @@ do
 	declare -A param3=( ["frag1"]=$((50. / $length + 0.5)) ["frag2"]=$((100. / $length + 0.5)) ["ampl2"]=1.0 )
 	declare -A paraml=( ["frag1"]=$((100. / $length)) ["frag2"]=$((200. / $length)) ["ampl2"]=1.0 )
 	seismic +sim ref --reflen $length --refs $ref --ref $ref
+	fastqs=()
 	for clusters in 1 2 3 4
 	do
 		cname=c$clusters
@@ -71,19 +72,37 @@ do
 					for reads in 10000
 					do
 						sample=$pname-n$reads
+						echo "Sample $sample for ref $ref"
 						if [ $library = frag1 ]
 						then
-							ended="--single-end"
+							fq=sim/samples/$sample/${ref}.fq.gz
+							fastqs+=(-Z $fq)
+							if [ ! -f $fq ]
+							then
+								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length 151 --single-end
+							fi
 						else
-							ended="--paired-end"
+							fq1=sim/samples/$sample/${ref}_R1.fq.gz
+							fq2=sim/samples/$sample/${ref}_R2.fq.gz
+							fastqs+=(-X $fq1 -X $fq2)
+							if [ $library = ampl2 ]
+							then
+								readlength=$(($length / 2 + 11))
+							else
+								readlength=151
+							fi
+							if [ ! -f $fq1 ] || [ ! -f $fq2 ]
+							then
+								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length $readlength --paired-end
+							fi
 						fi
-						seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads $ended
 					done
 				done
 			done
 		done
 	done
 	# Process the simulated FASTQ files with SEISMIC-RNA.
-	seismic -vv wf -X sim/samples -Z sim/samples --no-fastqc --cut-nextseq sim/refs/$ref.fa
+	echo "Running SEISMIC-RNA on ${fastqs[@]}"
+	seismic wf ${fastqs[@]} --no-fastqc --bt2-X $length -k 6 --no-table-read --no-graph-mprof --no-graph-tmprof --no-graph-ncov --no-graph-mhist --no-graph-giniroll --no-html sim/refs/$ref.fa
 done
 
