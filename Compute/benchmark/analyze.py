@@ -9,13 +9,13 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 from seismicrna.cluster.compare import assign_clusterings
-from seismicrna.cluster.report import ClusterReport, NumUniqReadKeptF
+from seismicrna.cluster.report import ClusterReport, NumUniqReadKeptF, NumClustsF
 from seismicrna.core.header import ORDER_NAME, parse_header
 from seismicrna.table.base import MUTAT_REL, UNAMB_REL
 from seismicrna.table.load import load_pos_table
 
-LENGTHS = [280, 560, 1120]
-CLUSTERS = [(1, 1),
+LENGTHS = (280, 560, 1120)
+CLUSTERS = ((1, 1),
             (2, 1),
             (2, 2),
             (2, 3),
@@ -25,10 +25,10 @@ CLUSTERS = [(1, 1),
             (3, 3),
             (4, 1),
             (4, 2),
-            (4, 3)]
-MRATES = [1, 3, 6]
-LIBRARIES = ["frag1", "frag2", "ampl2"]
-NUM_READS = [10000]
+            (4, 3))
+MRATES = (4,)
+LIBRARIES = ("frag1", "frag2", "ampl2")
+NUM_READS = (10000, 30000, 100000, 300000)
 
 
 def format_sample_name(order: int,
@@ -102,119 +102,143 @@ def find_clust_report_file(length: int,
     return Path("out", sample, "cluster", ref, "full", "cluster-report.json")
 
 
+def get_num_clusters(cluster_report: Path):
+    report = ClusterReport.load(cluster_report)
+    return int(report.get_field(NumClustsF))
+
+
 def get_num_uniq_reads(cluster_report: Path):
     report = ClusterReport.load(cluster_report)
     return int(report.get_field(NumUniqReadKeptF))
 
 
-def iter_attrs():
+def iter_attrs(lengths=LENGTHS,
+               clusters=CLUSTERS,
+               mrates=MRATES,
+               libraries=LIBRARIES,
+               ns_reads=NUM_READS):
     """ Iterate through all combinations of attributes. """
-    for length in LENGTHS:
-        for order, props in CLUSTERS:
-            for mrate in MRATES:
-                for library in LIBRARIES:
-                    for n_reads in NUM_READS:
+    for length in lengths:
+        for order, props in clusters:
+            for mrate in mrates:
+                for library in libraries:
+                    for n_reads in ns_reads:
                         yield length, order, props, mrate, library, n_reads
 
 
-def load_expected(csv_file: str | Path):
+def load_expected_mus(csv_file: str | Path):
     """ Load expected mutation rates from a CSV file. """
     data = pd.read_csv(csv_file,
                        index_col=list(range(2)),
                        header=list(range(3)))
     # Cast the columns from str to int.
-    data.columns = parse_header(data.columns).index
+    clusters = parse_header(data.columns)
+    data.columns = clusters.index
     raw_mut_rate = (data.loc[:, "16"]
                     + data.loc[:, "32"]
                     + data.loc[:, "64"]
                     + data.loc[:, "128"])
-    return raw_mut_rate / (raw_mut_rate + data.loc[:, "1"])
+    mus = raw_mut_rate / (raw_mut_rate + data.loc[:, "1"])
+    return mus.loc[:, clusters.max_order]
 
 
-def load_observed(table_file: str | Path):
+def load_observed_mus(table_file: str | Path, order: int | None = None):
     """ Load observed mutation rates from a table file. """
     table = load_pos_table(Path(table_file))
-    return table.fetch_ratio(rel=MUTAT_REL)[MUTAT_REL]
+    if order is None:
+        order = parse_header(table.header).max_order
+    return table.fetch_ratio(rel=MUTAT_REL)[MUTAT_REL, order]
 
 
-def load_coverage(table_file: str | Path):
-    """ Load read coverage from a table file. """
-    table = load_pos_table(Path(table_file))
-    return table.fetch_count(rel=UNAMB_REL)[UNAMB_REL]
+def load_expected_pis(csv_file: str | Path):
+    """ Load expected cluster proportions from a CSV file. """
+    data = pd.read_csv(csv_file, index_col=list(range(2)))
+    clusters = parse_header(data.index)
+    return data.loc[clusters.max_order, "Proportion"]
 
 
-def calc_diffs_clusters(expected: pd.DataFrame,
-                        observed: pd.DataFrame,
-                        coverage: pd.DataFrame):
+def load_observed_pis(csv_file: str | Path):
+    """ Load observed cluster proportions from a CSV file. """
+    data = pd.read_csv(csv_file, index_col=list(range(2)))
+    clusters = parse_header(data.index)
+    counts = data.loc[clusters.max_order, "Number of Reads"]
+    return counts / counts.sum()
+
+
+def calc_diff_mus(expected: pd.DataFrame, observed: pd.DataFrame):
     """ Compare expected and observed mutation rates of clusters. """
-    orders = list(set(expected.columns.get_level_values(ORDER_NAME).to_list()))
-    if len(orders) != 1:
-        raise ValueError(f"Expected one order, but got\n{expected}")
-    order = int(orders[0])
-    expected_order = expected[order].values
-    try:
-        observed_order = observed[order].values
-        coverage_order = coverage[order].values
-    except KeyError:
-        return np.array([])
-    assignments = assign_clusterings(expected_order, observed_order)
-    expected_total = np.concatenate([expected_order[:, i]
-                                     for i, _ in assignments],
-                                    axis=None)
-    observed_total = np.concatenate([observed_order[:, j]
-                                     for _, j in assignments],
-                                    axis=None)
-    coverage_total = np.concatenate([coverage_order[:, j]
-                                     for _, j in assignments],
-                                    axis=None)
-    diffs = observed_total - expected_total
-    mask = ~np.isnan(diffs)
-    return coverage_total[mask], diffs[mask]
+    assignments = assign_clusterings(expected.values, observed.values)
+    return observed.values[:, assignments] - expected.values
 
 
-def calc_diffs():
+def calc_rms(x: np.ndarray):
+    """ Root-mean-square. """
+    return np.sqrt(np.nanmean(np.square(x)))
+
+
+def calc_data():
     """ DataFrame of the difference between every observed and expected
     mutation rates in every simulated dataset. """
-    data = list()
-    for length, order, props, mrate, library, n_reads in iter_attrs():
-        table_file = find_pos_table_file(length,
-                                         order,
-                                         props,
-                                         mrate,
-                                         library,
-                                         n_reads)
-        if not table_file.is_file():
+    nums_clusters = list()
+    rmsds_mus = list()
+    rmsds_pis = list()
+    for length, order, props, mrate, library, n_reads in iter_attrs(lengths=[280]):
+        clust_report_file = find_clust_report_file(length,
+                                                   order,
+                                                   props,
+                                                   mrate,
+                                                   library,
+                                                   n_reads)
+        num_uniq_reads = get_num_uniq_reads(clust_report_file)
+        num_clusters = get_num_clusters(clust_report_file)
+        attrs = {"ReferenceLength": length,
+                 "ExpectedClusters": order,
+                 "ExpectedProportions": props,
+                 "NumUniqReads": num_uniq_reads,
+                 "MutationRate": mrate,
+                 "Library": library}
+        nums_clusters.append(attrs | {"ObservedClusters": num_clusters})
+        if num_clusters != order:
             continue
-        observed = load_observed(table_file)
-        coverage = load_coverage(table_file)
-        expected = load_expected(find_muts_param_file(length, order, mrate))
-        for cover, diff in zip(*calc_diffs_clusters(expected,
-                                                    observed,
-                                                    coverage)):
-            data.append({"ReferenceLength": length,
-                         "Clusters": order,
-                         "Proportions": props,
-                         "MutationRate": mrate,
-                         "Library": library,
-                         "Coverage": cover,
-                         "Difference": diff})
-    return pd.DataFrame.from_records(data)
+        observed_mus = load_observed_mus(find_pos_table_file(length,
+                                                             order,
+                                                             props,
+                                                             mrate,
+                                                             library,
+                                                             n_reads),
+                                         order)
+        expected_mus = load_expected_mus(find_muts_param_file(length, order, mrate))
+        rmsd_mus = calc_rms(calc_diff_mus(expected_mus, observed_mus))
+        rmsds_mus.append(attrs | {"MutationRMSD": rmsd_mus})
+    nums_clusters = pd.DataFrame.from_records(nums_clusters)
+    rmsds_mus = pd.DataFrame.from_records(rmsds_mus)
+    rmsds_pis = pd.DataFrame.from_records(rmsds_pis)
+    return nums_clusters, rmsds_mus, rmsds_pis
 
 
-def graph_diffs():
-    diffs = calc_diffs()
-    for length in LENGTHS:
-        for order, props in CLUSTERS:
-            data = diffs.loc[np.logical_and(diffs["ReferenceLength"] == length,
-                                            diffs["Clusters"] == order,
-                                            diffs["Proportions"] == props)]
-            print(length, order, props)
-            sns.scatterplot(data, y="Difference", x="Coverage", hue="Library")
+def graph_rmsds():
+    nums_clusters, rmsds_mus, rmsds_pis = calc_data()
+    for length in [280]:
+        for clusts, props in CLUSTERS:
+            print(clusts, props)
+            select = np.logical_and.reduce([nums_clusters["ReferenceLength"] == length,
+                                            nums_clusters["ExpectedClusters"] == clusts,
+                                            nums_clusters["ExpectedProportions"] == props])
+            data = nums_clusters.loc[select]
+            assert np.all(data["ExpectedProportions"] == props)
+            print(data)
+            fig, ax = plt.subplots()
+            sns.lineplot(data,
+                         y="ObservedClusters",
+                         x="NumUniqReads",
+                         hue="ReferenceLength",
+                         style="Library")
+            ax.set_ylim((0, 6))
             plt.show()
 
 
 def main():
-    graph_diffs()
+    graph_rmsds()
 
 
 if __name__ == "__main__":

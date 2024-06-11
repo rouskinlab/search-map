@@ -35,7 +35,7 @@ do
 				pl=${paraml[$library]}
 				seismic +sim ends -3 $p3 -l $pl -i $lct
 			fi
-			for m in 1 3 6
+			for m in 4
 			do
 				mname=$cname-m$m
 				mct=$pdir/$mname.ct
@@ -69,7 +69,7 @@ do
 					then
 						ln -s $PWD/clusts/c$clusters-$profile.csv $pdir/$pname.clusts.csv
 					fi
-					for reads in 10000
+					for reads in 10000 30000 100000 300000
 					do
 						sample=$pname-n$reads
 						echo "Sample $sample for ref $ref"
