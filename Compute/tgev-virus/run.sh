@@ -22,18 +22,20 @@ seismic graph profile out/tgev-ut/table/tgev/full/mask-per-pos.csv
 # Mask and tabulate all samples/pools of DMS-treated total RNA.
 seismic -vv mask --mask-pos-file out/tgev-ut/list/tgev/full/mask-per-pos.csv --min-finfo-read 0.9 --min-ninfo-pos 500 out/tgev-i*
 seismic -vv mask --mask-pos-file out/tgev-ut/list/tgev/full/mask-per-pos.csv --min-finfo-read 0.9 out/tgev-full-pool
-seismic -vv table --no-table-read out/tgev-i*/mask/tgev/full out/tgev-full-pool/mask/tgev/full
+seismic -vv mask --mask-pos-file out/tgev-ut/list/tgev/full/mask-per-pos.csv --min-finfo-read 0.9 -c tgev 1 330 out/tgev-full-pool
+seismic -vv table --no-table-read out/tgev-i*/mask/tgev/full out/tgev-full-pool/mask/tgev/full out/tgev-full-pool/mask/tgev/1-330
 
 # Predict the MFE structure of the full TGEV genome with base pairs up to 300 nt.
 seismic -vv fold -f sections-fold.csv -q 0.95 --fold-mfe --fold-md 300 out/$FULL_POOL/table/tgev/full/mask-per-pos.csv
-if [ ! -f out/tgev-full-pool/fold/tgev/full/full__average.db ]
-then
-    python assemble-tgev-ss.py
-fi
+python assemble-tgev-ss.py
 # Graph the AUC-ROC between the full genome structure and DMS data.
 seismic graph aucroll --svg out/$FULL_POOL/table/tgev/full/mask-per-pos.csv
+# Graph the ROC between the 5' end (coords 1 - 330) and the DMS data.
+seismic graph roc --struct-file out/tgev-full-pool/fold/tgev/full/full__average.ct --svg out/$FULL_POOL/table/tgev/1-330/mask-per-pos.csv
 # Graph the mutational profile of the pool.
 seismic graph profile out/$FULL_POOL/table/tgev/full/mask-per-pos.csv
+python make-figure-6d.py
+python plot_genome.py
 # Compare the mutational profiles of the replicates.
 seismic graph scatter --svg out/tgev-i-[12]/table/tgev/full/mask-per-pos.csv
 seismic graph scatter --svg out/tgev-ii-[12]/table/tgev/full/mask-per-pos.csv

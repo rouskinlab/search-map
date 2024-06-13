@@ -26,26 +26,24 @@ CLUSTERS = ((1, 1),
             (4, 1),
             (4, 2),
             (4, 3))
-MRATES = (4,)
-LIBRARIES = ("frag1", "frag2", "ampl2")
-NUM_READS = (10000, 30000, 100000, 300000)
+LIBRARIES = ("frag2", "ampl2")
+NUM_READS = (10000, 30000, 100000, 300000, 1000000)
 
 
 def format_sample_name(order: int,
                        props: int,
-                       mrate: int,
                        library: str,
                        n_reads: int):
-    return f"c{order}-{props}-m{mrate}-{library}-n{n_reads}"
+    return f"c{order}-{props}-{library}-n{n_reads}"
 
 
 def format_ref_name(length: int):
     return f"ref-{length}"
 
 
-def find_muts_param_file(length: int, order: int, mrate: int):
+def find_muts_param_file(length: int, order: int):
     """ Find the path to a mutation rate parameter file. """
-    filename = f"c{order}-m{mrate}.muts.csv"
+    filename = f"c{order}.muts.csv"
     ref = format_ref_name(length)
     return Path("sim", "params", ref, "full", filename)
 
@@ -59,11 +57,10 @@ def find_clusts_param_file(order: int, proportions: int):
 def find_table_dir(length: int,
                    order: int,
                    props: int,
-                   mrate: int,
                    library: str,
                    n_reads: int):
     """ Find the directory of a table file. """
-    sample = format_sample_name(order, props, mrate, library, n_reads)
+    sample = format_sample_name(order, props, library, n_reads)
     ref = format_ref_name(length)
     return Path("out", sample, "table", ref, "full")
 
@@ -71,33 +68,30 @@ def find_table_dir(length: int,
 def find_pos_table_file(length: int,
                         order: int,
                         props: int,
-                        mrate: int,
                         library: str,
                         n_reads: int):
     """ Find the path to a table file of positions. """
-    return Path(find_table_dir(length, order, props, mrate, library, n_reads),
+    return Path(find_table_dir(length, order, props, library, n_reads),
                 "clust-per-pos.csv")
 
 
 def find_clust_table_file(length: int,
                           order: int,
                           props: int,
-                          mrate: int,
                           library: str,
                           n_reads: int):
     """ Find the path to a table file of cluster proportions. """
-    return Path(find_table_dir(length, order, props, mrate, library, n_reads),
+    return Path(find_table_dir(length, order, props, library, n_reads),
                 "clust-freq.csv")
 
 
 def find_clust_report_file(length: int,
                            order: int,
                            props: int,
-                           mrate: int,
                            library: str,
                            n_reads: int):
     """ Find the path to a table file of cluster proportions. """
-    sample = format_sample_name(order, props, mrate, library, n_reads)
+    sample = format_sample_name(order, props, library, n_reads)
     ref = format_ref_name(length)
     return Path("out", sample, "cluster", ref, "full", "cluster-report.json")
 
@@ -114,16 +108,14 @@ def get_num_uniq_reads(cluster_report: Path):
 
 def iter_attrs(lengths=LENGTHS,
                clusters=CLUSTERS,
-               mrates=MRATES,
                libraries=LIBRARIES,
                ns_reads=NUM_READS):
     """ Iterate through all combinations of attributes. """
     for length in lengths:
         for order, props in clusters:
-            for mrate in mrates:
-                for library in libraries:
-                    for n_reads in ns_reads:
-                        yield length, order, props, mrate, library, n_reads
+            for library in libraries:
+                for n_reads in ns_reads:
+                    yield length, order, props, library, n_reads
 
 
 def load_expected_mus(csv_file: str | Path):
@@ -182,11 +174,10 @@ def calc_data():
     nums_clusters = list()
     rmsds_mus = list()
     rmsds_pis = list()
-    for length, order, props, mrate, library, n_reads in iter_attrs(lengths=[280]):
+    for length, order, props, library, n_reads in iter_attrs(lengths=[280]):
         clust_report_file = find_clust_report_file(length,
                                                    order,
                                                    props,
-                                                   mrate,
                                                    library,
                                                    n_reads)
         num_uniq_reads = get_num_uniq_reads(clust_report_file)
@@ -195,7 +186,6 @@ def calc_data():
                  "ExpectedClusters": order,
                  "ExpectedProportions": props,
                  "NumUniqReads": num_uniq_reads,
-                 "MutationRate": mrate,
                  "Library": library}
         nums_clusters.append(attrs | {"ObservedClusters": num_clusters})
         if num_clusters != order:
@@ -203,11 +193,10 @@ def calc_data():
         observed_mus = load_observed_mus(find_pos_table_file(length,
                                                              order,
                                                              props,
-                                                             mrate,
                                                              library,
                                                              n_reads),
                                          order)
-        expected_mus = load_expected_mus(find_muts_param_file(length, order, mrate))
+        expected_mus = load_expected_mus(find_muts_param_file(length, order))
         rmsd_mus = calc_rms(calc_diff_mus(expected_mus, observed_mus))
         rmsds_mus.append(attrs | {"MutationRMSD": rmsd_mus})
     nums_clusters = pd.DataFrame.from_records(nums_clusters)
@@ -225,8 +214,6 @@ def graph_rmsds():
                                             nums_clusters["ExpectedClusters"] == clusts,
                                             nums_clusters["ExpectedProportions"] == props])
             data = nums_clusters.loc[select]
-            assert np.all(data["ExpectedProportions"] == props)
-            print(data)
             fig, ax = plt.subplots()
             sns.lineplot(data,
                          y="ObservedClusters",

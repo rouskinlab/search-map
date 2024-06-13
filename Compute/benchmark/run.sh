@@ -8,7 +8,7 @@ set -euo pipefail
 declare -A nprofiles=( [1]=1 [2]=4 [3]=3 [4]=3 )
 
 # Simulate structures for each reference sequence.
-for length in 280 560 1120
+for length in 280 560 1120 2240
 do
 	ref=ref-$length
 	pdir=$PWD/sim/params/$ref/full
@@ -21,7 +21,7 @@ do
 		cname=c$clusters
 		ct=$pdir/$cname.ct
 		seismic +sim fold --profile-name $cname --fold-max $clusters sim/refs/$ref.fa
-		for library in frag1 frag2 ampl2
+		for library in frag2 ampl2
 		do
 			lct=$pdir/$library.ct
 			if [ ! -e $lct ]
@@ -33,7 +33,7 @@ do
 			then
 				p3=${param3[$library]}
 				pl=${paraml[$library]}
-				seismic +sim ends -3 $p3 -l $pl -i $lct
+				seismic +sim ends -e 0.333 -3 $p3 -l $pl -i $lct
 			fi
 			for m in 4
 			do
@@ -69,21 +69,21 @@ do
 					then
 						ln -s $PWD/clusts/c$clusters-$profile.csv $pdir/$pname.clusts.csv
 					fi
-					for reads in 10000 30000 100000 300000
+					for reads in 10000 30000 100000 300000 1000000
 					do
 						sample=$pname-n$reads
 						echo "Sample $sample for ref $ref"
 						if [ $library = frag1 ]
 						then
-							fq=sim/samples/$sample/${ref}.fq.gz
+							fq=sim/samples/$sample/${ref}.fq
 							fastqs+=(-Z $fq)
 							if [ ! -f $fq ]
 							then
-								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length 151 --single-end
+								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length 151 --single-end --fq-text
 							fi
 						else
-							fq1=sim/samples/$sample/${ref}_R1.fq.gz
-							fq2=sim/samples/$sample/${ref}_R2.fq.gz
+							fq1=sim/samples/$sample/${ref}_R1.fq
+							fq2=sim/samples/$sample/${ref}_R2.fq
 							fastqs+=(-X $fq1 -X $fq2)
 							if [ $library = ampl2 ]
 							then
@@ -93,7 +93,7 @@ do
 							fi
 							if [ ! -f $fq1 ] || [ ! -f $fq2 ]
 							then
-								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length $readlength --paired-end
+								seismic -v +sim fastq -s $sample -d $pdir -P $pname -n $reads --read-length $readlength --paired-end --fq-text
 							fi
 						fi
 					done
@@ -103,6 +103,6 @@ do
 	done
 	# Process the simulated FASTQ files with SEISMIC-RNA.
 	echo "Running SEISMIC-RNA on ${fastqs[@]}"
-	seismic wf ${fastqs[@]} --no-fastqc --bt2-X $length -k 6 --no-table-read --no-graph-mprof --no-graph-tmprof --no-graph-ncov --no-graph-mhist --no-graph-giniroll --no-html sim/refs/$ref.fa
+	seismic -v wf ${fastqs[@]} --no-fastqc --bt2-X $length -k 6 --no-table-read --no-graph-mprof --no-graph-tmprof --no-graph-ncov --no-graph-mhist --no-graph-giniroll --no-html sim/refs/$ref.fa
 done
 

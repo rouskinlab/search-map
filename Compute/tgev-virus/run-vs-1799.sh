@@ -26,15 +26,14 @@ then
 	gzip $TGEV_2KB_ASO.fq
 fi
 seismic -vv align --no-fastqc --no-cut -y $TGEV_2KB_ASO.fq.gz tgev_consensus.fa
-seismic -vv relate --batch-size 1200 tgev_consensus.fa out/$TGEV_2KB out/$TGEV_2KB_ASO
-seismic -vv mask -s sections-1799.csv --exclude-file out/tgev-ut/list/tgev/clip/mask-per-pos.csv --min-finfo-read 0.9 --min-mut-gap 0 out/$TGEV_2KB out/$TGEV_FULL
-seismic -vv mask -s sections.csv --exclude-file out/tgev-ut/list/tgev/clip/mask-per-pos.csv --min-mut-gap 3 out/$TGEV_2KB out/$TGEV_2KB_ASO
+seismic -vv relate tgev_consensus.fa out/$TGEV_2KB out/$TGEV_2KB_ASO
+seismic -vv mask -s sections-1799.csv --mask-pos-file out/tgev-ut/list/tgev/full/mask-per-pos.csv --min-finfo-read 0.9 --max-fmut-pos 0.4 out/$TGEV_2KB out/$TGEV_FULL
+seismic -vv mask -s sections.csv --mask-pos-file out/tgev-ut/list/tgev/full/mask-per-pos.csv --min-finfo-read 0.9 --max-fmut-pos 0.4 out/$TGEV_2KB out/$TGEV_2KB_ASO
 seismic -vv table --no-table-read out/$TGEV_2KB/mask out/$TGEV_2KB_ASO/mask/tgev/lri out/$TGEV_FULL/mask
 
 # Compare the TGEV in-cell data with the 1.8 kb segment.
-seismic graph scatter --pdf out/$TGEV_FULL/table/tgev/tgev-1799 out/$TGEV_2KB/table/tgev/tgev-1799
-seismic graph scatter --pdf out/$TGEV_AMPS/table/tgev/lri/clust-per-pos.csv out/$TGEV_2KB_ASO/table/tgev/lri/mask-per-pos.csv
-seismic graph roc --pdf --struct-file models/fold/tgev/tgev-1799/clip__average.ct out/$TGEV_AMPS/table/tgev/both/clust-per-pos.csv
+seismic graph scatter --svg out/$TGEV_FULL/table/tgev/tgev-1799 out/$TGEV_2KB/table/tgev/tgev-1799
+seismic graph scatter --svg out/$TGEV_AMPS/table/tgev/lri/clust-per-pos.csv out/$TGEV_2KB_ASO/table/tgev/lri/mask-per-pos.csv
 
 rm -r log
 
