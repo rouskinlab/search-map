@@ -1,0 +1,35 @@
+{
+    "Sample": "c4-2-ampl2-n10000",
+    "Reference": "ref-280",
+    "Discard reads with mapping qualities below this threshold": 0,
+    "Specify the Phred score encoding of FASTQ and SAM/BAM/CRAM files": 0,
+    "Mark base calls with Phred scores lower than this threshold as ambiguous": 0,
+    "Mark all ambiguous insertions and deletions": false,
+    "Retain the overhangs of paired-end mates that dovetail": true,
+    "Clip this many bases from the 5' end of each read": 0,
+    "Clip this many bases from the 3' end of each read": 0,
+    "Discard alignment maps with fewer than this many reads": 0,
+    "Number of reads in SAM/BAM/CRAM file": 0,
+    "Number of reads processed by relate": 9015,
+    "Number of batches": 4,
+    "MD5 checksums of batches": {
+        "relate": [
+            "913618edc4361244ff3ee791fc311587",
+            "a407dead8c38c4fb644ff802546f7104",
+            "fcdbed07a59acf3afd9573a631d8c7df",
+            "5b8f4ed888bf0134f44bba3687ffdd29"
+        ],
+        "qnames": [
+            "ae339e607788d53b4c7dc3ac4fd3866b",
+            "ad31825c7a42a28be07286ed0a24f83a",
+            "5f3030f162139bf23698782c5d132e2f",
+            "e3c0e19a8ded9e4563d14a6396f6f0e8"
+        ]
+    },
+    "MD5 checksum of reference sequence": "5aaf714dcda5f462f9ce47a2be8a1fe7",
+    "Branches": [],
+    "Time began": "2024-06-20 at 01:51:50",
+    "Time ended": "2024-06-20 at 01:51:53",
+    "Time taken (minutes)": 0.04,
+    "Version of SEISMIC-RNA": "0.18.0"
+}
