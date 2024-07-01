@@ -1,0 +1,49 @@
+{
+    "Sample": "c4-2-ampl2-n10000",
+    "Reference": "ref-280-8",
+    "Section": "full",
+    "Number of unique reads": 5144,
+    "Attempt to find at most this many clusters": 5,
+    "Repeat EM this many times for each number of clusters": 12,
+    "Run EM for at least this many iterations (times number of clusters)": 10,
+    "Run EM for at most this many iterations (times number of clusters)": 500,
+    "Stop EM when the log likelihood increases by less than this threshold": 0.37,
+    "Iterations for each run (-1 if unconverged)": {
+        "1": [
+            2
+        ]
+    },
+    "Final log likelihood for each run": {
+        "1": [
+            -86742.044
+        ]
+    },
+    "NRMSD of each run versus run 0": {
+        "1": [
+            0.0
+        ]
+    },
+    "Pearson correlation of each run versus run 0": {
+        "1": [
+            1.0
+        ]
+    },
+    "Bayesian information criterion for each number of clusters": {
+        "1": 174781.337
+    },
+    "Number of clusters with the best BIC": 1,
+    "Number of batches": 4,
+    "MD5 checksums of batches": {
+        "cluster": [
+            "14db852d589acba10a8271adfadab4bb",
+            "061af4b0ab248f52219372cd4fba234d",
+            "042400503d9a5351b8a5540e319047c6",
+            "678f906f63eb1ed0259e27a65b9a5ba8"
+        ]
+    },
+    "Branches": [],
+    "Time began": "2024-06-27 at 06:54:17",
+    "Time ended": "2024-06-27 at 07:02:24",
+    "Time taken (minutes)": 8.12,
+    "Version of SEISMIC-RNA": "0.18.1"
+}

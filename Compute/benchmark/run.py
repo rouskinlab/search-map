@@ -1,6 +1,7 @@
 # Benchmark the accurary of SEISMIC-RNA
 
 import os
+from itertools import chain
 from pathlib import Path
 
 from seismicrna.sim import (ends as ends_mod,
@@ -17,6 +18,9 @@ logs.set_config(2, 0)
 
 MAX_CLUSTERS = 4
 ENDS_VAR = 1. / 3.
+LENGTHS = [280, 560, 1120]
+SMALLEST = LENGTHS[0]
+REPS = 12
 
 mean_fragment_length = 200
 nprofiles = {1: 1, 2: 3, 3: 3, 4: 3}
@@ -24,7 +28,7 @@ nprofiles = {1: 1, 2: 3, 3: 3, 4: 3}
 
 def link_if_needed(src: str, dst: str):
     try:
-        os.symlink(src, dst)
+        os.symlink(os.path.abspath(src), dst)
     except FileExistsError:
         pass
 
@@ -32,47 +36,60 @@ def link_if_needed(src: str, dst: str):
 def simulate():
     """ Simulate samples for each reference sequence. """
     relate_reports = list()
-    for length in [280, 560, 1120]:
-        ref = f"ref-{length}"
-        pdir = os.path.join(os.getcwd(), "sim", "params", ref, "full")
+    for length in LENGTHS:
+        refs = [f"ref-{length}"]
+        if length == SMALLEST:
+            refs.extend(f"ref-{length}-{i}" for i in range(1, REPS))
+        pdirs = [os.path.join(os.getcwd(), "sim", "params", ref, "full")
+                 for ref in refs]
         param3 = {"frag2": mean_fragment_length / (length * 2.) + 0.5, "ampl2": 1.0}
         paraml = {"frag2": mean_fragment_length / length, "ampl2": 1.0}
-        fasta = f"sim/refs/{ref}.fa"
         print("ref")
-        ref_mod.run(refs=ref, ref=ref, reflen=length)
+        fastas = [ref_mod.run(refs=ref, ref=ref, reflen=length) for ref in refs]
         for clusters in range(1, MAX_CLUSTERS + 1):
             cname = f"c{clusters}"
-            ct = os.path.join(pdir, f"{cname}.ct")
             print("fold")
-            fold_mod.run(fasta=fasta, profile_name=cname, fold_max=clusters)
-            muts = os.path.join(pdir, f"{cname}.muts.csv")
+            cts = list(chain(*[fold_mod.run(fasta=fasta, profile_name=cname, fold_max=clusters)
+                               for fasta in fastas]))
+            pdirs = [os.path.dirname(ct) for ct in cts]
+            print("PDIRS")
+            print(pdirs)
             print("muts")
-            muts_mod.run(ct_file=(ct,))
+            muts = muts_mod.run(ct_file=cts)
             for library in ["ampl2", "frag2"]:
-                if library == "ampl2" and length != 280:
+                if library == "ampl2" and length != SMALLEST:
                     continue
-                lct = os.path.join(pdir, f"{library}.ct")
-                link_if_needed(ct, lct)
-                ends = os.path.join(pdir, f"{library}.ends.csv")
-                ends_mod.run(ct_file=(lct,),
-                             end3_fmean=param3[library],
-                             insert_fmean=paraml[library],
-                             ends_var=ENDS_VAR)
+                lcts = list()
+                for pdir, ct in zip(pdirs, cts, strict=True):
+                    lct = os.path.join(pdir, f"{library}.ct")
+                    lcts.append(lct)
+                    link_if_needed(ct, lct)
+                print("LCTS")
+                print(lcts)
+                ends = ends_mod.run(ct_file=lcts,
+                                    end3_fmean=param3[library],
+                                    insert_fmean=paraml[library],
+                                    ends_var=ENDS_VAR)
                 for profile in range(1, nprofiles[clusters] + 1):
                     pname = f"c{clusters}-{profile}-{library}"
-                    pct = os.path.join(pdir, f"{pname}.ct")
-                    link_if_needed(ct, pct)
-                    pends = os.path.join(pdir, f"{pname}.ends.csv")
-                    link_if_needed(ends, pends)
-                    pmuts = os.path.join(pdir, f"{pname}.muts.csv")
-                    link_if_needed(muts, pmuts)
-                    pclusts = os.path.join(pdir, f"{pname}.clusts.csv")
-                    link_if_needed(os.path.join(os.getcwd(), "clusts", f"c{clusters}-{profile}.csv"),
-                                   pclusts)
-                    for reads in [10000, 20000, 50000, 100000, 200000, 500000, 1000000]:
+                    print(len(pdirs), len(cts), len(ends), len(muts))
+                    for pdir, ct, e, m in zip(pdirs, cts, ends, muts, strict=True):
+                        pct = os.path.join(pdir, f"{pname}.ct")
+                        link_if_needed(ct, pct)
+                        pends = os.path.join(pdir, f"{pname}.ends.csv")
+                        link_if_needed(e, pends)
+                        pmuts = os.path.join(pdir, f"{pname}.muts.csv")
+                        link_if_needed(m, pmuts)
+                        pclusts = os.path.join(pdir, f"{pname}.clusts.csv")
+                        link_if_needed(os.path.join(os.getcwd(), "clusts", f"c{clusters}-{profile}.csv"),
+                                       pclusts)
+                    for reads in [2000, 3000, 4000,
+                                  5000, 10000, 20000,
+                                  50000, 100000, 200000,
+                                  500000, 1000000]:
                         sample = f"{pname}-n{reads}"
-                        print(f"Sample {sample} for ref {ref}")
-                        relate_reports.extend(relate_mod.run(param_dir=(pdir,),
+                        print(f"Sample {sample} for ref {refs}")
+                        relate_reports.extend(relate_mod.run(param_dir=pdirs,
                                                              profile_name=pname,
                                                              sample=sample,
                                                              num_reads=reads,

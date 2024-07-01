@@ -1,0 +1,61 @@
+{
+    "Sample": "c1-1-frag2-n1000000",
+    "Reference": "ref-280-6",
+    "Section": "full",
+    "Number of unique reads": 527551,
+    "Attempt to find at most this many clusters": 5,
+    "Repeat EM this many times for each number of clusters": 12,
+    "Run EM for at least this many iterations (times number of clusters)": 10,
+    "Run EM for at most this many iterations (times number of clusters)": 500,
+    "Stop EM when the log likelihood increases by less than this threshold": 0.37,
+    "Iterations for each run (-1 if unconverged)": {
+        "1": [
+            2
+        ]
+    },
+    "Final log likelihood for each run": {
+        "1": [
+            -11614098.941
+        ]
+    },
+    "NRMSD of each run versus run 0": {
+        "1": [
+            0.0
+        ]
+    },
+    "Pearson correlation of each run versus run 0": {
+        "1": [
+            1.0
+        ]
+    },
+    "Bayesian information criterion for each number of clusters": {
+        "1": 23676174.537
+    },
+    "Number of clusters with the best BIC": 1,
+    "Number of batches": 16,
+    "MD5 checksums of batches": {
+        "cluster": [
+            "eb8841f0f36f1f2192c9b98c63d12187",
+            "88a2abdc715629f612d60110810a7ff1",
+            "30a811d02de94258893dd975cff6e3a0",
+            "7d766883037847e029967134c8b8e1a9",
+            "d4d05dafeefa24e9ea18a2c7c3ad94fb",
+            "4483aca511a3b8e945e70bc329ef8d71",
+            "5259cf40fbdd1fa74a6d728f36092fe1",
+            "3577ef7e5305c03e3f5251c7db90422c",
+            "d1ce0d652078693269560c805c282585",
+            "ae41e5ab113ebd236d079f532b420162",
+            "e0350516b7f053f695a6992f38fdf3f4",
+            "0410a81de929a4166526630982cea2b5",
+            "ab59874a7a6a4f13cfd3a4afb3b03ad4",
+            "7ad076ffc7281e072f2f4c21d6e6e784",
+            "3d21a5cef1da6e986b91dff085f69c7c",
+            "13193fe52c30d30ecf460447f06889c4"
+        ]
+    },
+    "Branches": [],
+    "Time began": "2024-06-26 at 08:53:02",
+    "Time ended": "2024-06-26 at 09:12:59",
+    "Time taken (minutes)": 19.95,
+    "Version of SEISMIC-RNA": "0.18.1"
+}

@@ -1,0 +1,165 @@
+{
+    "Sample": "c3-1-frag2-n200000",
+    "Reference": "ref-280-3",
+    "Section": "full",
+    "Number of unique reads": 114032,
+    "Attempt to find at most this many clusters": 5,
+    "Repeat EM this many times for each number of clusters": 12,
+    "Run EM for at least this many iterations (times number of clusters)": 10,
+    "Run EM for at most this many iterations (times number of clusters)": 500,
+    "Stop EM when the log likelihood increases by less than this threshold": 0.37,
+    "Iterations for each run (-1 if unconverged)": {
+        "1": [
+            2
+        ],
+        "2": [
+            36,
+            35,
+            43,
+            40,
+            73,
+            49,
+            80,
+            53,
+            105,
+            77,
+            60,
+            85
+        ],
+        "3": [
+            41,
+            52,
+            41,
+            42,
+            39,
+            53,
+            36,
+            40,
+            63,
+            69,
+            57,
+            50
+        ]
+    },
+    "Final log likelihood for each run": {
+        "1": [
+            -2266740.134
+        ],
+        "2": [
+            -2259356.271,
+            -2259359.648,
+            -2259361.489,
+            -2259395.904,
+            -2259403.978,
+            -2259417.801,
+            -2259439.206,
+            -2259482.733,
+            -2259516.025,
+            -2259517.597,
+            -2259546.758,
+            -2260584.619
+        ],
+        "3": [
+            -2254249.176,
+            -2254258.318,
+            -2254283.493,
+            -2254284.67,
+            -2254287.932,
+            -2254296.02,
+            -2254303.372,
+            -2254347.979,
+            -2254363.867,
+            -2254376.206,
+            -2254387.178,
+            -2254404.211
+        ]
+    },
+    "NRMSD of each run versus run 0": {
+        "1": [
+            0.0
+        ],
+        "2": [
+            0.0,
+            0.016,
+            0.0,
+            0.018,
+            0.002,
+            0.003,
+            0.004,
+            0.006,
+            0.006,
+            0.007,
+            0.008,
+            0.035
+        ],
+        "3": [
+            0.0,
+            0.004,
+            0.01,
+            0.006,
+            0.01,
+            0.005,
+            0.006,
+            0.011,
+            0.009,
+            0.009,
+            0.007,
+            0.008
+        ]
+    },
+    "Pearson correlation of each run versus run 0": {
+        "1": [
+            1.0
+        ],
+        "2": [
+            1.0,
+            0.995,
+            1.0,
+            0.994,
+            1.0,
+            1.0,
+            1.0,
+            0.999,
+            0.999,
+            0.999,
+            0.999,
+            0.975
+        ],
+        "3": [
+            1.0,
+            1.0,
+            0.998,
+            0.999,
+            0.998,
+            1.0,
+            0.999,
+            0.998,
+            0.999,
+            0.999,
+            0.999,
+            0.999
+        ]
+    },
+    "Bayesian information criterion for each number of clusters": {
+        "1": 4784142.063,
+        "2": 4771089.509,
+        "3": 4762590.491
+    },
+    "Number of clusters with the best BIC": 3,
+    "Number of batches": 6,
+    "MD5 checksums of batches": {
+        "cluster": [
+            "fb358063a69d2c5ea74eb6bde50e9b6f",
+            "716014904c3c4071f9cfe08b98f497b3",
+            "4724a244dc3dbd974be07abe219c3cb6",
+            "fd6a58633ac954e90a4b78e63d844624",
+            "ec8b8fbc9cb98edbf87c6a2420f05312",
+            "42cfb7dab2d9b9d68f72a3a568d0ef8c"
+        ]
+    },
+    "Branches": [],
+    "Time began": "2024-06-25 at 13:32:46",
+    "Time ended": "2024-06-25 at 14:43:54",
+    "Time taken (minutes)": 71.13,
+    "Version of SEISMIC-RNA": "0.18.1"
+}

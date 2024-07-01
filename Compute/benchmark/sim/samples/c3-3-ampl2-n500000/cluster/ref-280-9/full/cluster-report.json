@@ -1,0 +1,168 @@
+{
+    "Sample": "c3-3-ampl2-n500000",
+    "Reference": "ref-280-9",
+    "Section": "full",
+    "Number of unique reads": 142457,
+    "Attempt to find at most this many clusters": 5,
+    "Repeat EM this many times for each number of clusters": 12,
+    "Run EM for at least this many iterations (times number of clusters)": 10,
+    "Run EM for at most this many iterations (times number of clusters)": 500,
+    "Stop EM when the log likelihood increases by less than this threshold": 0.37,
+    "Iterations for each run (-1 if unconverged)": {
+        "1": [
+            2
+        ],
+        "2": [
+            109,
+            114,
+            174,
+            239,
+            149,
+            301,
+            286,
+            84,
+            71,
+            168,
+            73,
+            131
+        ],
+        "3": [
+            129,
+            98,
+            123,
+            121,
+            108,
+            172,
+            175,
+            142,
+            125,
+            189,
+            111,
+            176
+        ]
+    },
+    "Final log likelihood for each run": {
+        "1": [
+            -3714808.882
+        ],
+        "2": [
+            -3713658.323,
+            -3713658.476,
+            -3713658.763,
+            -3713663.21,
+            -3713700.032,
+            -3713708.378,
+            -3713732.184,
+            -3713747.207,
+            -3713750.725,
+            -3713782.164,
+            -3713797.918,
+            -3714103.738
+        ],
+        "3": [
+            -3712565.329,
+            -3712578.459,
+            -3712606.557,
+            -3712850.572,
+            -3712939.542,
+            -3712952.748,
+            -3712972.863,
+            -3713072.48,
+            -3713280.073,
+            -3713370.236,
+            -3713375.869,
+            -3713560.689
+        ]
+    },
+    "NRMSD of each run versus run 0": {
+        "1": [
+            0.0
+        ],
+        "2": [
+            0.0,
+            0.003,
+            0.003,
+            0.004,
+            0.017,
+            0.006,
+            0.008,
+            0.027,
+            0.046,
+            0.034,
+            0.024,
+            0.075
+        ],
+        "3": [
+            0.0,
+            0.008,
+            0.01,
+            0.05,
+            0.038,
+            0.04,
+            0.039,
+            0.041,
+            0.049,
+            0.073,
+            0.057,
+            0.085
+        ]
+    },
+    "Pearson correlation of each run versus run 0": {
+        "1": [
+            1.0
+        ],
+        "2": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.996,
+            0.999,
+            0.999,
+            0.99,
+            0.967,
+            0.984,
+            0.991,
+            0.863
+        ],
+        "3": [
+            1.0,
+            0.999,
+            0.998,
+            0.948,
+            0.976,
+            0.975,
+            0.975,
+            0.972,
+            0.96,
+            0.898,
+            0.947,
+            0.854
+        ]
+    },
+    "Bayesian information criterion for each number of clusters": {
+        "1": 7431358.998,
+        "2": 7430811.731,
+        "3": 7430379.594
+    },
+    "Number of clusters with the best BIC": 3,
+    "Number of batches": 9,
+    "MD5 checksums of batches": {
+        "cluster": [
+            "d2e61235233ed119b258e520e08b1b6c",
+            "51d86047a079e784aad3e33233dd0462",
+            "78e6c93317fd56d8db1d39d96df54ba7",
+            "b0fc599e6d0d084c1e92d107d31b766d",
+            "ff880f5f1fbcc2a99fdb2a8e0f05002b",
+            "cdeb0aa7da8698033005ae50177ba691",
+            "7829fba3a4ee1490835bcf8a5517dcb2",
+            "d8d63cf8c628d63fecadc1ab93ef78fe",
+            "fd49781f78d7e340275ea70b499f9391"
+        ]
+    },
+    "Branches": [],
+    "Time began": "2024-06-27 at 12:10:13",
+    "Time ended": "2024-06-27 at 15:04:27",
+    "Time taken (minutes)": 174.23,
+    "Version of SEISMIC-RNA": "0.18.1"
+}

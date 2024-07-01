@@ -1,0 +1,47 @@
+{
+    "Sample": "c4-2-frag2-n500000",
+    "Reference": "ref-280-5",
+    "Discard reads with mapping qualities below this threshold": 0,
+    "Specify the Phred score encoding of FASTQ and SAM/BAM/CRAM files": 0,
+    "Mark base calls with Phred scores lower than this threshold as ambiguous": 0,
+    "Mark all ambiguous insertions and deletions": false,
+    "Retain the overhangs of paired-end mates that dovetail": true,
+    "Clip this many bases from the 5' end of each read": 0,
+    "Clip this many bases from the 3' end of each read": 0,
+    "Discard alignment maps with fewer than this many reads": 0,
+    "Number of reads in SAM/BAM/CRAM file": 0,
+    "Number of reads processed by relate": 450947,
+    "Number of batches": 10,
+    "MD5 checksums of batches": {
+        "relate": [
+            "97449d870d01ca47a5b17d1af2a0cfbb",
+            "8e1d7d814fcf356c0bb8ef110207a449",
+            "99b3a2816a4c3daa52d0ed63a00b5ed3",
+            "763e99ddb62d56bf2a4102cb6e0a847a",
+            "00a408384fa9299ba4e2e10a237b4f59",
+            "32f4e330f498969d7c2f970aae8f7407",
+            "28646b6bf2075a9a6ccacd59dfe4ce38",
+            "7fa9e6c19583c1996ecaff5f105f99de",
+            "f7be0fffe79129e1740efcb44c6d2a81",
+            "0f70f18f0708a9c82c8a4bb66c6fc0e3"
+        ],
+        "qnames": [
+            "76c876076eb818b38893ad1482db5244",
+            "80dce14f5b56d9cdc242b5473fa06c5a",
+            "8dfd59cf9c4eb485b68adea52dd834e4",
+            "d38367c8e89fa0b46a061969ab6b9405",
+            "840296ac29457dd7c48c3a5e0060b1fe",
+            "f68e457061682a49422ee6e4d020c574",
+            "4751aa2864ffb6c505ffa07cc5db44a5",
+            "a3ea352ab45067102dc3671f6974b990",
+            "56d6fa09a5082464e5edb8852ed904b6",
+            "063d10a5c68bb51b26f08b6ff57cc1d0"
+        ]
+    },
+    "MD5 checksum of reference sequence": "73995786ed0fe5df9cb510cba05bc55d",
+    "Branches": [],
+    "Time began": "2024-06-24 at 17:26:55",
+    "Time ended": "2024-06-24 at 17:27:30",
+    "Time taken (minutes)": 0.59,
+    "Version of SEISMIC-RNA": "0.18.1"
+}
