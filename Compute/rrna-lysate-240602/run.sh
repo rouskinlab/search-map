@@ -6,6 +6,8 @@ SCRIPT=plot_genome.py
 FIG_DIR=../../MainFigures/search-map
 MOD_23S=models/fold/ecoli-23S/full/d.23.b.E.coli.ct
 MOD_16S=models/fold/ecoli-16S/full/d.16.b.E.coli.ct
+WINDOW=45
+WINMIN=9
 
 # Process the data with SEISMIC-RNA.
 seismic -vv align --serial -x fq ecoli-rrna.fa
@@ -31,8 +33,8 @@ done
 # Graph the rolling correlations with each ASO.
 for aso in 0 1a 1b
 do
-	seismic graph corroll out/rRNA-aso$aso-rep1/table/*/full/mask-per-pos.csv out/rRNA-noaso-rep1/table/*/full/mask-per-pos.csv
-	python $SCRIPT models/fold/ecoli-16S/full/d.16.b.E.coli.ct out/rRNA-aso$aso-rep1__and__rRNA-noaso-rep1/graph/ecoli-16S/full/corroll_masked_m-ratio-q0_45-9_pcc.csv $FIG_DIR/aso-$aso.svg
+	seismic graph corroll -w $WINDOW -n $WINMIN out/rRNA-aso$aso-rep1/table/*/full/mask-per-pos.csv out/rRNA-noaso-rep1/table/*/full/mask-per-pos.csv
+	python $SCRIPT models/fold/ecoli-16S/full/d.16.b.E.coli.ct out/rRNA-aso$aso-rep1__and__rRNA-noaso-rep1/graph/ecoli-16S/full/corroll_masked_m-ratio-q0_$WINDOW-${WINMIN}_pcc.csv $FIG_DIR/aso-$aso.pdf
 done
 
 rm -r log
