@@ -7,10 +7,34 @@
 \label{methods}
 
 
-\subsection{Development of SEISMIC-RNA}
+\subsection{SEARCH-MaP of \textit{E. coli} ribosomes}
 
-SEISMIC-RNA was written in Python (currently compatible with v3.10 or greater) using PyCharm Community Edition.
-Its dependencies include Python packages NumPy~\cite{Harris2020}, Numba~\cite{Lam2015}, pandas~\cite{McKinney2010}, and SciPy~\cite{Virtanen2020}; as well as Samtools~\cite{Li2009}, Cutadapt~\cite{Martin2011}, Bowtie~2~\cite{Langmead2012}, and RNAstructure~\cite{Reuter2010}.
+\subsubsection{Growth and lysis of \textit{E. coli}}
+
+Stellar Chemically Competent Cells (Takara) transformed with an ampicillin resistance plasmid were inoculated into 7~ml of LB Broth (Lennox) containing [CONCENTRATION] of ampicillin [SUPPLIER].
+The culture was incubated at 37\textdegree C while shaking at 180 rpm for 18.5 hr.
+OD\textsubscript{600} of 1~ml was measured using a NanoDrop One cuvette reader.
+The remaining 6~ml was spun at 21,000~x~g.
+The pellet was resuspended in 1,158~\textmu l of 50~mM Tris-HCl pH~7.4 (Invitrogen) and lysed by adding 1.16~\textmu l of NEBExpress T4 Lysozyme (New England Biolabs) and incubating at room temperature on a tube rotator at 20~rpm for 5~min.
+The lysate was centrifuged at 16,000~x~g at 4\textdegree C for 10~min, and the supernatant collected and kept on ice.
+
+\subsubsection{DMS treatment of \textit{E. coli} lysate}
+
+RNA concentration in the supernatant was estimated by purifying 50~\textmu l with an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluting in 20~\textmu l of nuclease-free water (Fisher Bioreagents), and measuring with a NanoDrop One (Thermo Fisher Scientific).
+Supernatant containing an estimated 1.5~pmol (2.2~\textmu g) of rRNA was mixed with 300~mM Tris-HCl pH~7.4 (Invitrogen), 6~mM magnesium chloride (Invitrogen), and optionally 750~nM ASO (Integrated DNA Technologies) in 98.1~\textmu l; and incubated at 37\textdegree C for 20~min to allow the ASO to bind.
+1.9~\textmu l DMS (Sigma-Aldrich) was added (to 200~mM) and shaken at 500~rpm in a ThermoMixer~C (Eppendorf) at 37\textdegree C for 5~min.
+To quench, 20~\textmu l of beta-mercaptoethanol (Sigma-Aldrich) was added and mixed thoroughly.
+DMS-modified RNA was purified using an RNA Clean~\& Concentrator-5 kit (Zymo Research) according to the manufacturer's protocol, eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents), and measured with a NanoDrop One (Thermo Fisher Scientific).
+ASOs and genomic DNA were removed using 0.5~\textmu l TURBO DNase and 1X TURBO DNase Buffer (Invitrogen) in 25~\textmu l at 37\textdegree C for 30~min.
+RNA was purified again using an RNA Clean~\& Concentrator-5 kit (Zymo Research) and eluted in 10~\textmu l of nuclease-free water (Fisher Bioreagents).
+
+\subsubsection{Library generation for \textit{E. coli} RNA}
+
+
+
+
+
+
 
 
 \subsection{SEARCH-MaP of 2,924~nt SARS-CoV-2 RNA}
