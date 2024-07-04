@@ -1,3 +1,4 @@
+import argparse
 import math
 from pathlib import Path
 
@@ -28,7 +29,7 @@ def mm_to_point(mm: float):
 plt.rcParams["font.family"] = "Helvetica Neue"
 plt.rcParams["font.size"] = 6.
 plt.rcParams["svg.fonttype"] = "none"
-AXIS_ASPECT = 300.
+AXIS_ASPECT = 500.
 ARC_ASPECT = 1.
 
 
@@ -92,20 +93,24 @@ def partition_structure(structure: RNAStructure, nrows: int):
     return partitions
 
 
-def plot_rows(svg_file: Path,
-              structure: RNAStructure,
-              mutated: pd.Series,
-              aucroc: pd.Series,
-              nrows: int):
+def plot_rows(structure: RNAStructure,
+              trend: pd.Series,
+              mutated: pd.Series | None,
+              output_file: Path,
+              nrows: int = 1):
     """ Plot the structure, mutation rate, and AUC-ROC for each row. """
+    if mutated is not None:
+        mutated = mutated.reindex(trend.index)
     partitions = partition_structure(structure, nrows)
-    mutated = mutated.reindex(aucroc.index)
-    fig, axes = plt.subplots(nrows=len(partitions), sharex=False, sharey=True)
+    fig, axes = plt.subplots(nrows=len(partitions),
+                                       sharex=False,
+                                       sharey=True)
     fig.set_size_inches(mm_to_inch(180.),
                         mm_to_inch(240.))
     fig.set_layout_engine("compressed")
-    axes[-1].set_xlabel("Position in TGEV genome")
-    axes[-1].set_ylabel("DMS reactivity and AUC-ROC")
+    axes = np.atleast_1d(axes)
+    axes[-1].set_xlabel("Position")
+    axes[-1].set_ylabel("Attribute")
     for ax, (row5, row3) in zip(axes, partitions, strict=True):
         print(f"Row: {row5} - {row3}")
         positions = structure.section.range[row5: row3].get_level_values("Position")
@@ -140,17 +145,18 @@ def plot_rows(svg_file: Path,
                 linewidth=mm_to_point(0.2),
                 color="#e5e5e5")
         # Mutation rate.
-        ax.bar(positions,
-               mutated.loc[positions],
-               width=1.,
-               color="#d55e00")
-        # AUC-ROC.
+        if mutated is not None:
+            ax.bar(positions,
+                   mutated.loc[positions],
+                   width=1.,
+                   color="#d55e00")
+        # Trend.
         ax.plot(positions,
-                aucroc.loc[positions],
+                trend.loc[positions],
                 linewidth=mm_to_point(0.2),
                 color="#009e73")
         ax.fill_between(positions,
-                        aucroc.loc[positions],
+                        trend.loc[positions],
                         y2=1.,
                         color="#83e8cc")
         # Secondary structure.
@@ -170,29 +176,45 @@ def plot_rows(svg_file: Path,
                                  theta2=180.,
                                  linewidth=mm_to_point(0.03),
                                  edgecolor="#56b4e9"))
-    plt.savefig(svg_file)
+    plt.savefig(output_file)
     plt.close()
 
 
-def run(svg_file: Path,
-        ct_file: Path,
-        table_file: Path,
-        aucroc_file: Path,
-        nrows: int):
-    structure = load_structure(ct_file)
-    table = load_pos_table(table_file)
-    mutated = table.fetch_ratio(rel="Mutated", squeeze=True)
-    aucroc = pd.read_csv(aucroc_file,
-                         index_col=[0, 1],
-                         header=[0, 1]).loc[:, ("average", "E. coli 16s rRNA from CRW2")]
-    plot_rows(svg_file, structure, mutated, aucroc, nrows)
+def run(ct_file: str,
+        trend_file: str,
+        table_file: str | None,
+        output_file: str,
+        nrows: int = 1):
+    structure = load_structure(Path(ct_file))
+    trend = pd.read_csv(Path(trend_file),
+                        index_col=[0, 1],
+                        header=[0, 1])
+    if trend.columns.size > 1:
+        raise ValueError(f"Expected 1 column, but got {trend.columns.size}")
+    trend = trend.iloc[:, 0]
+    assert isinstance(trend, pd.Series)
+    if table_file:
+        table = load_pos_table(Path(table_file))
+        mutated = table.fetch_ratio(rel="Mutated", squeeze=True)
+    else:
+        mutated = None
+    plot_rows(structure,
+              trend,
+              mutated,
+              Path(output_file),
+              nrows)
 
 
 if __name__ == "__main__":
-    svg_file = Path("ecoli-16S.pdf")
-    ct_file = Path("models/fold/ecoli-16S/full/d.16.b.E.coli.ct")
-    table_file = Path("out/rRNA-noaso-rep1/table/ecoli-16S/full/mask-per-pos.csv")
-    aucroc_file = Path("out/rRNA-noaso-rep1/graph/ecoli-16S/full/"
-                       "aucroll_full__masked_m-ratio-q0_45-9.csv")
-    run(svg_file, ct_file, table_file, aucroc_file, nrows=2)
-
+    parser = argparse.ArgumentParser()
+    parser.add_argument("ct", type=str)
+    parser.add_argument("trend", type=str)
+    parser.add_argument("output", type=str)
+    parser.add_argument("--table", "-t", type=str)
+    parser.add_argument("--nrows", "-n", type=int, default=1)
+    args = parser.parse_args()
+    run(args.ct,
+        args.trend,
+        args.table,
+        args.output,
+        args.nrows)
