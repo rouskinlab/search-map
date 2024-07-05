@@ -7,6 +7,16 @@
 \label{methods}
 
 
+\subsection{Validation of SEISMIC-RNA}
+
+SEISMIC-RNA v0.18 was used to simulate and process mutational profiling data for the validation tests, using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/validation/run.py}.
+Briefly, 12 reference sequences of 280 nt, secondary structures, and ground-truth mutation rates were generated with SEISMIC-RNA.
+For each set of ground-truth cluster proportions, nine datasets were simulated with target numbers of 2, 5, 10, 20, 50, 100, 200, 500, and 1,000 thousand reads.
+Note that the actual number of reads used for clustering (after masking with default parameters) was 50-100\% of the target number (e.g. a 20,000-read target could have 10,000-20,000 reads).
+Each dataset was clustered up to a maximum of 5 clusters; the optimal number of clusters was that which minimized the Bayesian information criterion~\cite{Tomezsko2020}.
+After clustering, the number of simulations yielding each number of clusters and the accuracies of the cluster proportions and mutation rates were graphed using the Jupyter notebook \url{https://github.com/rouskinlab/search-map/tree/main/Compute/validation/analyze.ipynb}.
+
+
 \subsection{SEARCH-MaP of \textit{E. coli} ribosomes}
 
 \subsubsection{Growth and lysis of \textit{E. coli}}
@@ -48,7 +58,7 @@ Samples were pooled and sequenced using an iSeq 100 Sequencing System (Illumina)
 \subsubsection{Data analysis of \textit{E. coli} 16S rRNA}
 
 Sequencing data were processed with SEISMIC-RNA v0.16 to compute mutation rates, clusters, and correlations between samples using the commands in the shell script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/rrna-lysate-240602/run.sh}.
-Rolling correlations were plotted with the secondary structure from the Comparative RNA Web~\cite{Cannone2022} using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/rrna-lysate-240602/plot_genome.py}.
+Rolling correlations were plotted with the secondary structure from the Comparative RNA Web~\cite{Cannone2002} using the script \url{https://github.com/rouskinlab/search-map/tree/main/Compute/rrna-lysate-240602/plot_genome.py}.
 
 
 \subsection{SEARCH-MaP of 2,924~nt SARS-CoV-2 RNA}

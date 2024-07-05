@@ -1,4 +1,4 @@
-# Benchmark the accurary of SEISMIC-RNA
+# Measure the accurary of SEISMIC-RNA
 
 import os
 from itertools import chain
