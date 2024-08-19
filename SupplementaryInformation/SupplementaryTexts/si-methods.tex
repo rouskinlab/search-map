@@ -47,7 +47,7 @@ $$m_{jk} = \mu_{jk} \frac{\sum_{a=1}^{j}\sum_{b=j}^{L}\eta_{ab} f_{abjk}}{\sum_{
 \label{calc_p_ends_noclose}
 
 The total proportions ($\eta_{ab}$) of reads aligned to 5' and 3' coordinates $a$ and $b$, respectively, are $P(E_{ab})$; and the proportions of reads with no two mutations too close that align with coordinates $a$ and $b$ ($e_{abk}$) are $P(E_{ab} | G_g C_k)$.
-Note that, while reads are assumed to come from the same distribution of coordinates ($\eta_{ab}$) regardless of their cluster $k$, the observable distribution of coordinates ($e_{abk}$) varies by cluster because P($G_g C_k$) depends on $k$.
+Note that, while reads are assumed to come from the same distribution of coordinates ($\eta_{ab}$) regardless of their cluster $k$, the observable distribution of coordinates ($e_{abk}$) varies by cluster because $P(G_g C_k)$ depends on $k$.
 Using these definitions and Bayes' theorem yields a probabilistic formula for $e_{abk}$:
 $$e_{abk} = P(E_{ab} | G_g C_k) = P(G_g | E_{ab} C_k) \frac{P(E_{ab} | C_k)}{P(G_g | C_k)} = d_{abk} \frac{\eta_{ab}}{P(G_g | C_k)}$$
 
